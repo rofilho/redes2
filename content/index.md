@@ -37,7 +37,15 @@ title: "🌐 Redes de Computadores II"
   <a href="./Aula-01---Plano-de-Ensino-e-Contrato-da-Disciplina" data-spa>
     <div class="au-thumb">S01</div>
     <div class="au-pbar"><i style="width:100%"></i></div>
-    <div class="au-cap"><b>Plano de Ensino e Contrato da Disciplina</b><span>Teórica · 28/07 · Lab 0</span></div>
+    <div class="au-cap"><b>Plano de Ensino e Contrato da Disciplina</b><span>Teórica · 28/07</span></div>
+  </a>
+</li>
+
+<li class="au-card">
+  <a href="./Aula-01---Lab-0-Resgate-(Pratica)" data-spa>
+    <div class="au-thumb">S01</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 0 — Resgate: o método de diagnóstico</b><span>Prática · P11 27/07 · P12 30/07</span></div>
   </a>
 </li>
 

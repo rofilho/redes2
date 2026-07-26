@@ -1051,6 +1051,26 @@ article :target {
   border-color: var(--au-bd);
 }
 
+/* podcast de revisão (NotebookLM) — bloco discreto, nunca protagonista */
+.au-podcast {
+  margin: 2rem 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--au-bd);
+  border-left: 4px solid var(--au-par-azul);
+  border-radius: 8px;
+  background: var(--au-bg2);
+  max-width: var(--au-medida);
+}
+.au-podcast p {
+  margin: 0.25rem 0;
+  font-family: var(--au-sans);
+  font-size: var(--au-t--1);
+}
+.au-podcast audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 /* ──────────────────────────────────────────────────────────────
    5. ACESSIBILIDADE, IMPRESSÃO E MOVIMENTO
    ────────────────────────────────────────────────────────────── */

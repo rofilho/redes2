@@ -353,6 +353,11 @@ Toda aula termina do mesmo jeito: duas perguntas anônimas, sem nota, no **Vevox
 
 ---
 
+
+<div class="au-podcast">
+  <p><b>🎧 Revisão em áudio (~10 min)</b> — gerada por IA a partir desta página, para ouvir no trajeto. O áudio complementa; a página é a fonte.</p>
+  <p><i>Disponível em breve.</i></p>
+</div>
 ## 📋 Resumo Estrutural
 
 | Item | O que você precisa lembrar |
