@@ -1,1 +1,6 @@
 node_modules
+
+# public/ e gerado: o deploy.yml roda `npx quartz build` e sobe a pasta como
+# artefato do Pages. Versionar significa um diff de 22 arquivos a cada build.
+# Divergencia deliberada dos outros seis portais, que herdaram public/ no index.
+public/
