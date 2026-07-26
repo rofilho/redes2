@@ -1,0 +1,170 @@
+---
+title: "🌐 Redes de Computadores II"
+---
+
+<div class="au-vitrine">
+
+<div class="au-hero">
+  <span class="au-badge">49309 · 2026-2 · Ciência da Computação</span>
+  <h1>Redes de Computadores II</h1>
+  <p>Redes I ensinou a rede a funcionar. Aqui ela aprende a <b>não cair</b> — e a não deixar o problema de um setor derrubar os outros. Comutar, segmentar, rotear e proteger, com as mãos no simulador toda semana.</p>
+  <p style="margin-top:1rem"><a href="./Aula-01---Plano-de-Ensino-e-Contrato-da-Disciplina" data-spa><span class="au-badge" style="letter-spacing:.08em">▶ Comece aqui — Plano de Ensino e Contrato</span></a></p>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.5rem 0">
+  <span class="au-chip on">Prova N1 · 22/09</span>
+  <span class="au-chip on">Prova N2 · 01/12</span>
+  <span class="au-chip">Aprovação ≥ 60 pts e frequência ≥ 75%</span>
+  <span class="au-chip">Lab vale ponto: Lab 0 a 5</span>
+</div>
+
+<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 1 — Comutar e segmentar <span style="color:var(--au-tx3);font-weight:400">· S01–S08</span></h2>
+
+<ul class="au-cards">
+
+<li class="au-card">
+  <a href="./Aula-01---Plano-de-Ensino-e-Contrato-da-Disciplina" data-spa>
+    <div class="au-thumb">S01</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Plano de Ensino e Contrato da Disciplina</b><span>Teórica · 28/07 · Lab 0</span></div>
+  </a>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S02</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Comutação: tabela MAC e domínios de broadcast</b><span>04/08 · Lab 1</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S03</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>VLANs: conceito, criação e portas de acesso</b><span>11/08 · Lab 2</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S04</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Trunking 802.1Q</b><span>18/08 · Lab 3</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S05</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Roteamento entre VLANs (router-on-a-stick)</b><span>25/08 · Lab 4</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S06</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>01/09</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S07</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>EtherChannel e redundância de gateway</b><span>08/09</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S08</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>DHCPv4, SLAAC/DHCPv6 e revisão N1</b><span>15/09 · Lab 5</span></div>
+</li>
+
+</ul>
+
+<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Avaliação N1 <span style="color:var(--au-tx3);font-weight:400">· S09–S10</span></h2>
+
+<ul class="au-cards">
+
+<li class="au-card au-espera" style="border-color:var(--au-par-laranja)">
+  <div class="au-thumb" style="color:var(--au-par-laranja)">S09</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Prova N1 — duas etapas</b><span>22/09 · individual + grupo</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S10</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Vista da N1 — devolutiva por erro</b><span>29/09</span></div>
+</li>
+
+</ul>
+
+<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 2 — Rotear e proteger <span style="color:var(--au-tx3);font-weight:400">· S11–S17</span></h2>
+
+<ul class="au-cards">
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S11</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Roteamento dinâmico e OSPF: introdução</b><span>06/10 · Lab 6</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S13</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>OSPF: custo, DR/BDR e verificação</b><span>20/10 · Lab 7</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S14</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>NAT estático, dinâmico e PAT</b><span>27/10 · Lab 8</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S15</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>ACLs padrão: lógica, wildcard e posicionamento</b><span>03/11</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S16</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>ACLs estendidas e segurança de camada 2</b><span>10/11 · Lab 9</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S17</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>WLAN: 802.11, WPA2/WPA3 e configuração</b><span>17/11 · Lab 10</span></div>
+</li>
+
+</ul>
+
+<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Fechamento <span style="color:var(--au-tx3);font-weight:400">· S18–S20</span></h2>
+
+<ul class="au-cards">
+
+<li class="au-card au-espera" style="border-color:var(--au-par-verde)">
+  <div class="au-thumb" style="color:var(--au-par-verde)">S18</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Projeto integrador e defesas orais</b><span>24/11 · dupla + individual</span></div>
+</li>
+
+<li class="au-card au-espera" style="border-color:var(--au-par-laranja)">
+  <div class="au-thumb" style="color:var(--au-par-laranja)">S19</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Prova N2 — duas etapas</b><span>01/12 · individual + grupo</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">S20</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>Vista da N2, substituta e fechamento</b><span>08/12</span></div>
+</li>
+
+</ul>
+
+<div class="au-antes" style="margin:0 1.5rem 1.5rem;max-width:none">
+  <p style="margin:0 0 .5rem"><b>Como ler este portal.</b> Cada semana ganha uma página quando a aula acontece — o card acende no dia. As três turmas dividem a teórica de terça (VIA203) e praticam separadas: <b>P11</b> na segunda (VIA215), <b>P12</b> na quinta (VIA216).</p>
+  <p style="margin:0"><b>Laboratório novo só cai em semana em que as duas práticas se encontram.</b> É o que impede que os feriados de segunda deixem a P11 atrás — o cronograma completo, com feriados e datas das três turmas, está na página da Aula 01.</p>
+</div>
+
+<div style="padding:0 1.5rem 1.5rem;font-family:var(--au-mono);font-size:var(--au-t--2);color:var(--au-tx3)">
+  Prof. Romualdo Mathias Filho · Uniube · atualizado em 26/07/2026
+</div>
+
+</div>

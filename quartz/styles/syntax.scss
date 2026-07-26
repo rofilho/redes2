@@ -1,0 +1,16 @@
+/* Tema Shiki — Fix: permits individual token colors */
+code[data-theme*=" "] {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+/* IMPORTANT: Do NOT override individual span colors for light theme */
+/* This allows syntax highlighting tokens to keep their distinct colors */
+
+[saved-theme="dark"] code[data-theme*=" "] {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+/* IMPORTANT: Do NOT override individual span colors for dark theme */
+/* This allows syntax highlighting tokens to keep their distinct colors */
