@@ -7,6 +7,7 @@ tipo: teorica
 semana: 1
 date: 2026-07-28
 tags: [redes2, 2026-2, plano-de-ensino, cronograma, contrato]
+anatomia: nao   # contrato da disciplina, nao aula de conteudo — sem os 16 blocos
 ---
 
 # 🟢 Aula 01: Plano de Ensino e Contrato da Disciplina
