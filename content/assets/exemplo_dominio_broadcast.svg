@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 250" role="img"
+     aria-label="Um switch ligado a quatro hosts; o broadcast do PC-A alcanca os tres outros, formando um unico dominio de broadcast">
+  <!-- Fundo TRANSPARENTE de proposito: o mesmo arquivo serve aos tres modos.
+       Por isso nenhum traco e preto — preto sumiria no modo operacao. -->
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9702a"/>
+    </marker>
+  </defs>
+
+  <!-- o dominio: a moldura e o conceito que a figura ensina -->
+  <rect x="14" y="14" width="532" height="222" rx="14"
+        fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="30" y="38" font-family="monospace" font-size="13" fill="#d9702a">
+    UM UNICO DOMINIO DE BROADCAST
+  </text>
+
+  <!-- switch -->
+  <rect x="215" y="62" width="130" height="40" rx="7" fill="none" stroke="#1d2057" stroke-width="2.5"/>
+  <text x="280" y="87" text-anchor="middle" font-family="monospace" font-size="13" fill="#1d2057">
+    SW-ACESSO-01
+  </text>
+
+  <!-- enlaces -->
+  <line x1="240" y1="102" x2="90"  y2="160" stroke="#2778c4" stroke-width="2"/>
+  <line x1="265" y1="102" x2="225" y2="160" stroke="#2778c4" stroke-width="2"/>
+  <line x1="295" y1="102" x2="335" y2="160" stroke="#2778c4" stroke-width="2"/>
+  <line x1="320" y1="102" x2="470" y2="160" stroke="#2778c4" stroke-width="2"/>
+
+  <!-- hosts: rotulo DENTRO do elemento, nunca legenda numerada embaixo -->
+  <g font-family="monospace" font-size="12">
+    <rect x="40" y="160" width="100" height="32" rx="6" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+    <text x="90" y="180" text-anchor="middle" fill="#00aa9f">PC-A</text>
+
+    <rect x="175" y="160" width="100" height="32" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="225" y="180" text-anchor="middle" fill="#8a8f98">PC-B</text>
+
+    <rect x="285" y="160" width="100" height="32" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="335" y="180" text-anchor="middle" fill="#8a8f98">PC-C</text>
+
+    <rect x="420" y="160" width="100" height="32" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="470" y="180" text-anchor="middle" fill="#8a8f98">PC-D</text>
+  </g>
+
+  <!-- A SINALIZACAO: um destaque so por figura. O broadcast saindo do PC-A. -->
+  <path d="M140 176 L172 176" stroke="#d9702a" stroke-width="2.5" marker-end="url(#seta)"/>
+  <path d="M90 192 L90 214 L335 214 L335 195" stroke="#d9702a" stroke-width="2.5"
+        fill="none" stroke-dasharray="4 4" marker-end="url(#seta)"/>
+  <path d="M335 214 L470 214 L470 195" stroke="#d9702a" stroke-width="2.5"
+        fill="none" stroke-dasharray="4 4" marker-end="url(#seta)"/>
+
+  <text x="200" y="150" font-family="monospace" font-size="12" fill="#d9702a">
+    o broadcast do PC-A chega em TODOS
+  </text>
+
+  <text x="530" y="228" text-anchor="end" font-family="monospace" font-size="11" fill="#8a8f98">
+    Redes II · 49309
+  </text>
+</svg>

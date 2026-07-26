@@ -1255,6 +1255,305 @@ article :target {
 }
 
 /* ──────────────────────────────────────────────────────────────
+   4B. ANATOMIA DA AULA — os blocos que TODA aula tem
+
+   Cada classe daqui corresponde a uma seção obrigatória do
+   `_Template_Aula.md`. O agente de conteúdo não inventa marcação:
+   escolhe o bloco desta lista. É o que torna a publicação
+   plug-and-play — o padrão está no CSS, não na disciplina de quem
+   escreve.
+   ────────────────────────────────────────────────────────────── */
+
+/* NOSSO CAMINHO ATÉ AQUI — abertura de toda aula.
+   Regra dura: isto é RECUPERAÇÃO, não resumo. O aluno responde antes de ver.
+   Recap passivo (professor relendo a aula passada) não move a agulha; prática
+   de recuperação em sala rende g = 0,50 (Yang et al. 2021; Rowland 2014) e
+   g = 0,74 quando espaçada (Latimier et al. 2021). Por isso o bloco é feito de
+   PERGUNTAS colapsadas — nunca de parágrafo pronto. */
+.au-caminho {
+  margin: var(--au-s-6) 0;
+  padding: var(--au-s-4) var(--au-s-5);
+  border: 1px solid var(--au-bd);
+  border-left: 4px solid var(--uni-turquesa);
+  border-radius: var(--au-raio);
+  background: var(--au-bg2);
+  max-width: var(--au-medida);
+}
+.au-caminho > b:first-child,
+.au-caminho .au-nota-t {
+  display: block;
+  font-family: var(--au-display);
+  font-size: var(--au-t-0);
+  color: var(--uni-turquesa);
+  margin-bottom: var(--au-s-2);
+}
+/* cada pergunta de recuperação */
+.au-caminho details {
+  border-top: 1px solid var(--au-bd);
+  padding: var(--au-s-3) 0 0;
+  margin: var(--au-s-3) 0 0;
+}
+.au-caminho details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--au-tx);
+  list-style: none;
+}
+.au-caminho details summary::before {
+  content: "?";
+  display: inline-grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: var(--au-s-2);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--uni-turquesa) 16%, transparent);
+  color: var(--uni-turquesa);
+  font-family: var(--au-mono);
+  font-size: var(--au-t--2);
+  font-weight: 700;
+}
+.au-caminho details[open] summary::before {
+  content: "✓";
+  background: var(--uni-turquesa);
+  color: #fff;
+}
+.au-caminho details > :not(summary) {
+  margin: var(--au-s-2) 0 0 1.75rem;
+  color: var(--au-tx2);
+  font-size: var(--au-t--1);
+}
+
+/* SLOT INTERATIVO — a moldura onde entra ferramenta de aprendizagem:
+   H5P (via h5p-standalone, roda sem servidor), Vevox, Plickers, widget
+   próprio ou <iframe>. O slot existe SEMPRE; o conteúdo é opcional.
+   Sem ferramenta pronta, o bloco mostra a alternativa de sala — a aula
+   nunca depende de a internet do campus funcionar. */
+.au-slot {
+  margin: var(--au-s-6) 0;
+  border: 1px solid var(--au-bd);
+  border-radius: var(--au-raio);
+  background: var(--au-bg2);
+  overflow: hidden;
+}
+.au-slot-h {
+  display: flex;
+  align-items: center;
+  gap: var(--au-s-2);
+  padding: var(--au-s-3) var(--au-s-4);
+  border-bottom: 1px solid var(--au-bd);
+  background: color-mix(in srgb, var(--uni-azul) 6%, transparent);
+  font-family: var(--au-mono);
+  font-size: var(--au-t--2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--uni-azul);
+}
+.au-slot-h b {
+  font-weight: 700;
+}
+.au-slot-c {
+  padding: var(--au-s-4);
+}
+.au-slot-c > iframe,
+.au-slot-c > .h5p-container {
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+}
+/* plano B declarado: o que fazer se a ferramenta não subir */
+.au-slot-b {
+  margin: 0;
+  padding: var(--au-s-3) var(--au-s-4);
+  border-top: 1px dashed var(--au-bd);
+  font-size: var(--au-t--1);
+  color: var(--au-tx2);
+}
+.au-slot-b b {
+  color: var(--au-par-laranja);
+}
+
+/* EXERCÍCIO PRÁTICO — só do que foi visto NO DIA. Numerado porque aqui a
+   ordem carrega informação de verdade: é um roteiro a executar. */
+.au-pratica {
+  margin: var(--au-s-6) 0;
+  padding: var(--au-s-4) var(--au-s-5);
+  border: 1px solid color-mix(in srgb, var(--au-par-laranja) 35%, var(--au-bd));
+  border-radius: var(--au-raio);
+  background: color-mix(in srgb, var(--au-par-laranja) 4%, var(--au-bg2));
+}
+.au-pratica > b:first-child {
+  display: block;
+  font-family: var(--au-display);
+  color: var(--au-par-laranja);
+  margin-bottom: var(--au-s-2);
+}
+.au-pratica ol {
+  counter-reset: passo;
+  list-style: none;
+  padding-left: 0;
+}
+.au-pratica ol > li {
+  counter-increment: passo;
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: var(--au-s-3);
+  max-width: var(--au-medida);
+}
+.au-pratica ol > li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--au-par-laranja);
+  color: #fff;
+  font-family: var(--au-mono);
+  font-size: var(--au-t--2);
+  font-weight: 700;
+}
+/* critério de pronto — o aluno tem de saber quando terminou */
+.au-pratica .au-pronto {
+  margin-top: var(--au-s-4);
+  padding-top: var(--au-s-3);
+  border-top: 1px solid color-mix(in srgb, var(--au-par-laranja) 30%, transparent);
+  font-size: var(--au-t--1);
+  color: var(--au-tx2);
+}
+
+/* RESUMO — cheatsheet de fim de aula. Denso de propósito: é para consultar
+   depois, não para ler agora. */
+.au-resumo {
+  margin: var(--au-s-6) 0;
+  padding: var(--au-s-4) var(--au-s-5);
+  border: 1px solid var(--au-bd);
+  border-radius: var(--au-raio);
+  background: var(--au-bg2);
+}
+.au-resumo > b:first-child {
+  display: block;
+  font-family: var(--au-display);
+  color: var(--uni-navy);
+  margin-bottom: var(--au-s-3);
+}
+:root[saved-theme="dark"] .au-resumo > b:first-child {
+  color: var(--au-tx);
+}
+.au-resumo table {
+  margin: 0;
+  font-size: var(--au-t--1);
+}
+
+/* REFLEXÃO — pergunta aberta de saída. Sem resposta na página: de propósito.
+   É o que o aluno leva no ônibus. */
+.au-reflexao {
+  margin: var(--au-s-6) 0;
+  padding: var(--au-s-5);
+  border-left: 3px solid var(--uni-navy);
+  background: color-mix(in srgb, var(--uni-navy) 4%, transparent);
+  border-radius: 0 var(--au-raio) var(--au-raio) 0;
+  max-width: var(--au-medida);
+}
+:root[saved-theme="dark"] .au-reflexao {
+  border-left-color: var(--au-tx2);
+  background: color-mix(in srgb, var(--au-tx) 5%, transparent);
+}
+.au-reflexao p {
+  margin: 0;
+  font-size: var(--au-t-1);
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--au-tx);
+}
+.au-reflexao > b:first-child {
+  display: block;
+  font-family: var(--au-mono);
+  font-size: var(--au-t--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--au-tx3);
+  font-style: normal;
+  margin-bottom: var(--au-s-2);
+}
+
+/* REFERÊNCIAS — com autor, obra, editora, ano E página. A página é
+   obrigatória: mandar o aluno para um livro de 900 folhas sem número de
+   página não é referência, é gesto. */
+.au-refs {
+  margin: var(--au-s-6) 0 var(--au-s-5);
+  padding-top: var(--au-s-4);
+  border-top: 2px solid var(--au-bd);
+  font-size: var(--au-t--1);
+  line-height: 1.6;
+}
+.au-refs > b:first-child {
+  display: block;
+  font-family: var(--au-display);
+  font-size: var(--au-t-0);
+  color: var(--au-tx);
+  margin-bottom: var(--au-s-3);
+}
+.au-refs ol,
+.au-refs ul {
+  padding-left: 1.1rem;
+}
+.au-refs li {
+  margin-bottom: var(--au-s-3);
+  max-width: var(--au-medida);
+  color: var(--au-tx2);
+}
+/* o localizador exato — capítulo/página — em mono, para saltar aos olhos */
+.au-refs .au-pag {
+  font-family: var(--au-mono);
+  font-size: var(--au-t--2);
+  color: var(--uni-azul);
+  white-space: nowrap;
+}
+
+/* PRÓXIMA AULA — gancho de fechamento. Uma frase que abre laço, não um
+   índice do que vem. */
+.au-proxima {
+  margin: var(--au-s-6) 0 var(--au-s-7);
+  padding: var(--au-s-4) var(--au-s-5);
+  border: 1px dashed color-mix(in srgb, var(--uni-azul) 45%, transparent);
+  border-radius: var(--au-raio);
+  background: color-mix(in srgb, var(--uni-azul) 5%, transparent);
+  max-width: var(--au-medida);
+}
+.au-proxima > b:first-child {
+  display: block;
+  font-family: var(--au-mono);
+  font-size: var(--au-t--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uni-azul);
+  margin-bottom: var(--au-s-2);
+}
+.au-proxima p {
+  margin: 0;
+  color: var(--au-tx);
+}
+
+@media (max-width: 800px) {
+  .au-caminho,
+  .au-pratica,
+  .au-resumo,
+  .au-reflexao,
+  .au-proxima {
+    padding: var(--au-s-4);
+  }
+  .au-slot-c > iframe,
+  .au-slot-c > .h5p-container {
+    min-height: 320px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
    5. ACESSIBILIDADE, IMPRESSÃO E MOVIMENTO
    ────────────────────────────────────────────────────────────── */
 
