@@ -29,7 +29,7 @@ title: "🌐 Redes de Computadores II"
   <span class="au-chip">Lab vale ponto: Lab 0 a 5</span>
 </div>
 
-<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 1 — Comutar e segmentar <span style="color:var(--au-tx3);font-weight:400">· S01–S08</span></h2>
+<h2 style="font-family:var(--au-display);font-size:var(--au-t-2);font-weight:700;letter-spacing:-.02em;margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 1 — Comutar e segmentar <span style="color:var(--au-tx3);font-weight:400">· S01–S08</span></h2>
 
 <ul class="au-cards au-vb1">
 
@@ -93,7 +93,7 @@ title: "🌐 Redes de Computadores II"
 
 </ul>
 
-<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Avaliação N1 <span style="color:var(--au-tx3);font-weight:400">· S09–S10</span></h2>
+<h2 style="font-family:var(--au-display);font-size:var(--au-t-2);font-weight:700;letter-spacing:-.02em;margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Avaliação N1 <span style="color:var(--au-tx3);font-weight:400">· S09–S10</span></h2>
 
 <ul class="au-cards au-vav">
 
@@ -111,7 +111,7 @@ title: "🌐 Redes de Computadores II"
 
 </ul>
 
-<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 2 — Rotear e proteger <span style="color:var(--au-tx3);font-weight:400">· S11–S17</span></h2>
+<h2 style="font-family:var(--au-display);font-size:var(--au-t-2);font-weight:700;letter-spacing:-.02em;margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 2 — Rotear e proteger <span style="color:var(--au-tx3);font-weight:400">· S11–S17</span></h2>
 
 <ul class="au-cards au-vb2">
 
@@ -153,7 +153,7 @@ title: "🌐 Redes de Computadores II"
 
 </ul>
 
-<h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Fechamento <span style="color:var(--au-tx3);font-weight:400">· S18–S20</span></h2>
+<h2 style="font-family:var(--au-display);font-size:var(--au-t-2);font-weight:700;letter-spacing:-.02em;margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Fechamento <span style="color:var(--au-tx3);font-weight:400">· S18–S20</span></h2>
 
 <ul class="au-cards au-vfim">
 

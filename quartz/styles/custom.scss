@@ -35,6 +35,9 @@
      fica disponível para citação longa, não para corpo */
   --au-serif: "Source Serif 4", Charter, Georgia, serif;
   --au-sans: "Inter", "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* display — geométrica com corte de instrumento de medição. Entra só em
+     hero, título de bloco e código de semana; o corpo continua Inter. */
+  --au-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --au-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Consolas, monospace;
 
   /* escala modular 1.25 (Major Third) a partir de 16px */
@@ -59,12 +62,24 @@
   --au-medida: 68ch;
 
   /* pares T568B — semântica fixa, saturação de LMS moderno */
-  --au-par-azul: #3b6ce0; /* conceito primário, links, VLAN de dados  */
-  --au-par-verde: #2f9469; /* sucesso, verificação, estado convergido  */
-  --au-par-laranja: #d9702a; /* atenção, quebra deliberada, VLAN de voz  */
-  --au-par-marrom: #8a5a34; /* legado, obsoleto, "não faça isso"        */
+  /* IDENTIDADE UNIUBE — extraída dos ativos oficiais em 26/07/2026, não
+     escolhida por gosto: #1D2057 é o fill do logo_azul.svg; os demais são as
+     cores dominantes do uniube.br. É a âncora institucional do portal. */
+  --uni-navy: #1d2057; /* tinta do logo — chrome, hero, títulos     */
+  --uni-navy-2: #11275b; /* azul profundo — par de gradiente          */
+  --uni-azul: #2778c4; /* azul de ação — link, foco                 */
+  --uni-turquesa: #00aa9f; /* o acento distintivo da marca              */
 
-  --au-raio: 12px;
+  /* Pares do T568B: a SEMÂNTICA é fonte de verdade (Design System v2.0) e não
+     muda. O que muda é a tonalidade — azul e verde passam a ser os da Uniube,
+     de modo que a cor que ensina o cabo e a cor da casa sejam a mesma. Laranja
+     e marrom permanecem quentes: são cor de cabo e precisam ler como alerta. */
+  --au-par-azul: var(--uni-azul); /* conceito primário, links, VLAN de dados */
+  --au-par-verde: var(--uni-turquesa); /* sucesso, verificação, convergido   */
+  --au-par-laranja: #d9702a; /* atenção, quebra deliberada, VLAN de voz */
+  --au-par-marrom: #8a5a34; /* legado, obsoleto, "não faça isso"       */
+
+  --au-raio: 14px;
   --au-borda: 1px;
   --au-transicao: 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -223,21 +238,28 @@ article li::marker {
   color: var(--au-ac);
 }
 
-/* títulos em sans, com equilíbrio de linha */
+/* Títulos na display (Space Grotesk) — é o fio que liga a capa à página de
+   aula. O corpo continua Inter: a display entra em título e etiqueta, nunca
+   em prosa longa. */
 article h1,
 article h2,
 article h3,
 article h4 {
-  font-family: var(--au-sans);
+  font-family: var(--au-display);
   line-height: 1.18;
-  letter-spacing: -0.018em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
 article h1 {
   font-size: var(--au-t-3);
-  font-weight: 750;
+  font-weight: 700;
   margin: var(--au-s-6) 0 var(--au-s-3);
+  color: var(--uni-navy);
+}
+
+:root[saved-theme="dark"] article h1 {
+  color: var(--au-tx);
 }
 
 article h2 {
@@ -927,31 +949,23 @@ article :target {
 /* VITRINE — hero e cards do índice */
 .au-hero {
   position: relative;
-  padding: var(--au-s-6) var(--au-s-5) var(--au-s-5);
+  /* alinhado com o padding lateral da grade de cards, para hero e cards
+     compartilharem a mesma margem de ataque */
+  margin: var(--au-s-4) var(--au-s-5) 0;
+  /* O HERO É O NAVY DA UNIUBE. É aqui, e só aqui, que a página levanta a voz:
+     um campo sólido na tinta do logo, com a malha de rede desenhada por cima
+     em linha fina. O resto do portal permanece off-white e quieto — uma peça
+     forte vale mais que a página inteira gritando.
+     Funciona nos dois temas: no claro é o contraste da capa, no escuro é a
+     casa. Por isso o hero NÃO herda --au-bg. */
+  padding: var(--au-s-7) var(--au-s-5) var(--au-s-6);
+  border-radius: var(--au-raio);
   background:
-    /* malha de rede: o motivo visual da disciplina, sutil */
-    repeating-linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--au-tx) 5%, transparent) 0 1px,
-      transparent 1px 56px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      color-mix(in srgb, var(--au-tx) 5%, transparent) 0 1px,
-      transparent 1px 56px
-    ),
-    radial-gradient(
-      130% 110% at 80% 0%,
-      color-mix(in srgb, var(--au-par-laranja) 34%, transparent),
-      transparent 55%
-    ),
-    radial-gradient(
-      110% 130% at 8% 100%,
-      color-mix(in srgb, var(--au-par-azul) 30%, transparent),
-      transparent 52%
-    ),
-    linear-gradient(180deg, var(--au-bg2) 0%, var(--au-bg) 100%);
-  border-bottom: var(--au-borda) solid var(--au-bd);
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 56px),
+    radial-gradient(120% 130% at 88% 8%, rgba(0, 170, 159, 0.42), transparent 58%),
+    radial-gradient(110% 120% at 4% 100%, rgba(39, 120, 196, 0.38), transparent 55%),
+    linear-gradient(158deg, var(--uni-navy) 0%, var(--uni-navy-2) 62%, #0d1740 100%);
   overflow: hidden;
 }
 
@@ -960,24 +974,53 @@ article :target {
 }
 
 .au-hero h1 {
-  margin: var(--au-s-3) 0 var(--au-s-2);
-  font-family: var(--au-sans);
-  font-size: clamp(var(--au-t-3), 6vw, var(--au-t-4));
-  line-height: 1.08;
+  margin: var(--au-s-3) 0 var(--au-s-3);
+  font-family: var(--au-display);
+  font-size: clamp(var(--au-t-3), 6vw, 3rem);
+  line-height: 1.04;
   letter-spacing: -0.03em;
-  font-weight: 750;
-  max-width: 20ch;
+  font-weight: 700;
+  max-width: 18ch;
   text-wrap: balance;
-  color: var(--au-tx);
+  color: #fff;
   border: none;
   padding: 0;
 }
 
 .au-hero p {
   margin: 0;
-  color: var(--au-tx2);
-  max-width: 56ch;
+  color: rgba(255, 255, 255, 0.76);
+  max-width: 58ch;
   font-family: var(--au-sans);
+  line-height: 1.6;
+}
+
+.au-hero p b {
+  color: #fff;
+}
+
+/* etiqueta do topo: contorno claro sobre o navy */
+.au-hero .au-badge {
+  color: rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* a chamada principal — único elemento preenchido no turquesa da marca */
+.au-hero a .au-badge {
+  color: var(--uni-navy);
+  background: var(--uni-turquesa);
+  border-color: var(--uni-turquesa);
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: filter var(--au-transicao);
+}
+.au-hero a:hover .au-badge {
+  filter: brightness(1.08);
+}
+.au-hero a:focus-visible .au-badge {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
 .au-badge {
@@ -1010,20 +1053,34 @@ article :target {
 .au-cards.au-vfim { --vit: var(--au-par-marrom); }
 
 .au-card {
-  border: var(--au-borda) solid color-mix(in srgb, var(--au-tx) 12%, transparent);
+  position: relative;
+  border: var(--au-borda) solid color-mix(in srgb, var(--au-tx) 10%, transparent);
   border-radius: var(--au-raio);
   overflow: hidden;
   /* claro: card branco elevado por sombra suave sobre o off-white */
   background: var(--au-bg2);
-  box-shadow:
-    0 1px 2px rgba(18, 22, 30, 0.05),
-    0 6px 18px rgba(18, 22, 30, 0.06);
+  box-shadow: 0 1px 2px rgba(29, 32, 87, 0.04);
   transition:
     transform var(--au-transicao),
     border-color var(--au-transicao),
     box-shadow var(--au-transicao);
   margin: 0;
   max-width: none;
+}
+
+/* A ESPINHA — filete vertical na cor do bloco, correndo na borda de ataque de
+   cada card. É o que agrupa visualmente as semanas de um mesmo bloco sem
+   precisar de moldura, rótulo repetido ou fundo colorido. Fica saturada na
+   aula aberta e apagada na que ainda não abriu. */
+.au-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: color-mix(in srgb, var(--vit) 30%, transparent);
+}
+.au-card:has(> a)::before {
+  background: var(--vit);
 }
 
 /* escuro: sombra não existe — a elevação vem do tom */
@@ -1034,55 +1091,85 @@ article :target {
 
 .au-card:hover,
 .au-card:focus-within {
-  transform: translateY(-3px);
-  border-color: var(--vit);
-  box-shadow: 0 10px 28px color-mix(in srgb, var(--vit) 28%, transparent);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--vit) 45%, transparent);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--uni-navy) 14%, transparent);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .au-card,
+  .au-card:hover,
+  .au-card:focus-within {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* O Quartz pinta link interno com `background: var(--highlight)` e um padding
+   arredondado. Dentro do card isso virava um retângulo azulado cobrindo parte
+   da área e deixando uma faixa branca sobrando embaixo. Aqui o link É o card:
+   ocupa a altura toda e não carrega fundo nenhum. */
 .au-card a {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: none;
+  padding: 0;
+  border-radius: 0;
   font-weight: inherit;
 }
 
-/* card publicado (tem <a>): é o que deve gritar, não o futuro */
+/* card publicado (tem <a>): é o que deve chamar, não o futuro */
 .au-card:has(> a) {
-  border-color: color-mix(in srgb, var(--vit) 50%, transparent);
+  border-color: color-mix(in srgb, var(--vit) 35%, transparent);
 }
 .au-card:has(> a) .au-cap b {
   color: var(--au-tx);
 }
-.au-card:has(> a) .au-cap span::before {
-  content: "▶ ";
-  color: var(--vit);
+
+/* foco de teclado visível — o índice inteiro é navegável por Tab */
+.au-card a:focus-visible {
+  outline: 2px solid var(--uni-azul);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
+/* O CÓDIGO DA SEMANA — antes uma caixa 16:9 de gradiente ocupando mais da
+   metade do card para dizer "S03". Muita tinta, nenhuma informação nova: a
+   miniatura não mostrava miniatura nenhuma. Vira uma etiqueta compacta, e o
+   espaço devolvido vai para o título, que é o que o aluno lê para escolher.
+   Efeito colateral pretendido: o card encurta ~45% e cabe muito mais semestre
+   numa tela — o índice existe para escolher, e escolher exige comparar. */
 .au-card .au-thumb {
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-  /* a cor do bloco é a identidade do card — thumb nunca mais cinza no vazio */
-  background:
-    radial-gradient(
-      120% 140% at 85% -10%,
-      color-mix(in srgb, var(--vit) 52%, transparent),
-      transparent 62%
-    ),
-    linear-gradient(
-      145deg,
-      color-mix(in srgb, var(--vit) 34%, var(--au-bg2)),
-      color-mix(in srgb, var(--vit) 10%, var(--au-bg2))
-    );
-  border-bottom: 2px solid color-mix(in srgb, var(--vit) 55%, transparent);
+  display: inline-block;
+  /* dentro do card-link (flex column) a etiqueta esticaria para a largura
+     inteira e viraria uma barra — ela se mantém do tamanho do texto */
+  align-self: flex-start;
+  margin: var(--au-s-4) 0 var(--au-s-2) var(--au-s-4);
+  padding: 2px 8px;
+  border-radius: 6px;
   font-family: var(--au-mono);
-  font-size: var(--au-t-2);
-  font-weight: 700;
-  color: color-mix(in srgb, var(--vit) 30%, var(--au-tx));
-  letter-spacing: 0.14em;
-  text-shadow: 0 1px 8px color-mix(in srgb, var(--vit) 40%, transparent);
+  font-size: var(--au-t--2);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  /* semana ainda fechada: etiqueta silenciosa, só contorno */
+  color: var(--au-tx3);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--au-tx) 16%, transparent);
 }
 
+/* imagem de capa continua suportada — se um dia entrar uma, ela manda */
+.au-card .au-thumb:has(img) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  aspect-ratio: 16 / 9;
+}
 .au-card .au-thumb img {
   width: 100%;
   height: 100%;
@@ -1091,44 +1178,55 @@ article :target {
   border-radius: 0;
 }
 
+/* a barra de progresso marcava 100% em tudo que estava no ar — repetia o que
+   o estado do card já diz. Removida (uma peça a menos, nada perdido). */
 .au-card .au-pbar {
-  height: 2px;
-  background: var(--au-bd);
-}
-.au-card .au-pbar > i {
-  display: block;
-  height: 100%;
-  background: var(--au-ac);
+  display: none;
 }
 
 .au-card .au-cap {
-  padding: var(--au-s-2) var(--au-s-3) var(--au-s-3);
+  padding: 0 var(--au-s-4) var(--au-s-4);
 }
 .au-card .au-cap b {
   display: block;
-  font-size: var(--au-t--1);
+  font-family: var(--au-display);
+  font-size: 1.0625rem;
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 2px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--au-s-2);
+  text-wrap: balance;
+  color: var(--au-tx);
 }
 .au-card .au-cap span {
+  display: block;
   font-family: var(--au-mono);
   font-size: var(--au-t--2);
+  line-height: 1.5;
   color: var(--au-tx2);
 }
 
-/* card ainda não publicado: existe no mapa, não é clicável.
-   NUNCA opacity no card inteiro — o título tem de continuar legível;
-   o que apaga é só a energia do thumb. */
-.au-card.au-espera .au-thumb {
-  filter: saturate(0.4);
+/* AULA ABERTA — o único estado que o aluno pode agir sobre. Ganha a etiqueta
+   preenchida na cor do bloco; tudo mais na página fica quieto. */
+.au-card:has(> a) .au-thumb {
+  color: #fff;
+  background: var(--vit);
+  border-color: var(--vit);
 }
+.au-card:has(> a) .au-cap span {
+  color: var(--au-tx2);
+  font-weight: 600;
+}
+
+/* card ainda não publicado: existe no mapa, não é clicável.
+   NUNCA opacity no card inteiro — o título tem de continuar legível. */
 .au-card.au-espera .au-cap b {
   color: var(--au-tx2);
+  font-weight: 500;
 }
 .au-card.au-espera:hover {
   transform: none;
-  border-color: color-mix(in srgb, var(--au-tx) 16%, transparent);
+  border-color: color-mix(in srgb, var(--au-tx) 12%, transparent);
   box-shadow: none;
 }
 .au-card.au-espera .au-cap span::after {

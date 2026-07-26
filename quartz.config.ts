@@ -40,35 +40,44 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        // identidade LMS clean (Brilliant/LearnHouse): sans moderna em tudo
-        header: "Inter",
+        // Space Grotesk no display: geometrica, com corte tecnico de instrumento
+        // de medicao — vocabulario do proprio assunto. Usada com parcimonia
+        // (hero, titulos de bloco, codigo da semana). Inter no corpo, como pedido.
+        header: "Space Grotesk",
         body: "Inter",
         code: "JetBrains Mono",
       },
+      // Paleta ancorada na identidade REAL da Uniube, extraida dos proprios
+      // ativos da instituicao em 26/07/2026 (nao inventada):
+      //   #1D2057  tinta do logo oficial (logo_azul.svg, fill:rgb(29,32,87))
+      //   #11275B  azul profundo do uniube.br
+      //   #2778C4  azul de acao/link do uniube.br
+      //   #00AA9F  turquesa — o acento distintivo da marca
       colors: {
-        // claro = a CARA do portal (off-white, pastel, cards arredondados)
+        // claro = a CARA do portal (off-white nitido, navy institucional)
         lightMode: {
           light: "#fafaf8",
-          lightgray: "#eceae5",
+          lightgray: "#e9e7e2",
           gray: "#8a8f98",
-          darkgray: "#2b2e35",
-          dark: "#16181d",
-          secondary: "#3b6ce0",
-          tertiary: "#2f9469",
-          highlight: "rgba(59, 108, 224, 0.07)",
-          textHighlight: "#f5d68a66",
+          darkgray: "#252a3f",
+          dark: "#1d2057",
+          secondary: "#2778c4",
+          tertiary: "#00aa9f",
+          highlight: "rgba(39, 120, 196, 0.07)",
+          textHighlight: "#ffd97d66",
         },
-        // escuro = modo operação (bancada, ao lado do Packet Tracer)
+        // escuro = modo operação (bancada, ao lado do Packet Tracer).
+        // O navy vira o proprio fundo — a marca continua presente no escuro.
         darkMode: {
-          light: "#12161c",
-          lightgray: "#29313c",
-          gray: "#6b7683",
-          darkgray: "#dfe4ea",
-          dark: "#f2f3f5",
-          secondary: "#63c78e",
-          tertiary: "#8fc4f5",
-          highlight: "rgba(99, 199, 142, 0.10)",
-          textHighlight: "#b1541b66",
+          light: "#10131f",
+          lightgray: "#272c42",
+          gray: "#7b8397",
+          darkgray: "#e2e5ef",
+          dark: "#f4f5f9",
+          secondary: "#3fd0c4",
+          tertiary: "#7fb4ea",
+          highlight: "rgba(63, 208, 196, 0.10)",
+          textHighlight: "#2778c466",
         },
       },
     },
