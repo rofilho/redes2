@@ -2,6 +2,17 @@
 title: "🌐 Redes de Computadores II"
 ---
 
+<style>
+/* Índice em modo vitrine: o hero JÁ é o título, então o .article-title do
+   Quartz duplicaria; e "modificado em" não diz nada numa capa de disciplina.
+   O <style> mora dentro do <article>, que o Quartz troca inteiro ao navegar
+   (enableSPA) — por isso a regra não escapa para as páginas de aula. */
+.article-title,
+.content-meta {
+  display: none;
+}
+</style>
+
 <div class="au-vitrine">
 
 <div class="au-hero">
