@@ -175,6 +175,21 @@
   }
 }
 
+/* Cabeçalho: "🌐 Redes de Computadores II" é longo e, em tela estreita, quebrava
+   em três linhas por baixo da caixa de busca — título e busca se sobrepunham.
+   Declarar a linha como flex que QUEBRA resolve sem encurtar o nome. */
+.page-header > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--au-s-2) var(--au-s-3);
+}
+.page-header > header > .page-title {
+  margin: 0;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
 /* prosa — sans em tudo (identidade LMS clean); serifa só se um bloco pedir */
 article {
   font-family: var(--au-sans);

@@ -16,12 +16,19 @@ $mobile: "(max-width: #{map.get($breakpoints, mobile)})";
 $tablet: "(min-width: #{map.get($breakpoints, mobile)}) and (max-width: #{map.get($breakpoints, desktop)})";
 $desktop: "(min-width: #{map.get($breakpoints, desktop)})";
 
-// Este portal não usa sidebar (quartz.layout.ts: left: [], right: []).
-// Manter 320px de cada lado reservava 640px de nada e espremia o conteúdo
-// numa coluna estreita em janela média — corrigido em 26/07/2026.
-// A medida de leitura continua garantida em `article p, article li` (68ch),
-// então largura maior beneficia tabela e diagrama sem prejudicar a prosa.
-$pageWidth: 1080px;
+// Este portal roda SEM sidebar: `quartz.layout.ts` traz `left: []` e `right: []`,
+// e o HTML gerado não contém nenhuma `div.sidebar` (verificado em 26/07/2026).
+// Os grids de tablet/desktop do Quartz, porém, reservavam colunas para elas —
+// 320px de cada lado sem conteúdo nenhum. Entre 800px e 1200px de janela isso
+// espremia o conteudo num filete e empilhava os cards em coluna unica.
+//
+// Trocar $sidePanelWidth por 0px NAO resolve: uma trilha de 0px colapsa o grid
+// (o conteudo virou uma coluna de ~44px). A correcao e estrutural — os tres
+// breakpoints usam UMA coluna, e a largura passa a ser governada por $pageWidth
+// em `.page`. A medida de leitura continua garantida em `article p, article li`
+// (68ch, custom.scss), entao a pagina larga beneficia card, tabela e diagrama
+// sem alongar a linha de prosa.
+$pageWidth: 1120px;
 $sidePanelWidth: 0px;
 $topSpacing: 2rem;
 $boldWeight: 700;
@@ -30,7 +37,7 @@ $normalWeight: 400;
 
 $mobileGrid: (
   templateRows: "auto auto auto auto auto",
-  templateColumns: "auto",
+  templateColumns: "minmax(0, 1fr)",
   rowGap: "5px",
   columnGap: "5px",
   templateAreas:
@@ -40,24 +47,31 @@ $mobileGrid: (
       "grid-sidebar-right"\
       "grid-footer"',
 );
+// Tablet e desktop repetem o empilhamento de uma coluna do mobile — sem sidebar,
+// nao ha segunda coluna a distribuir. As areas de sidebar continuam declaradas
+// para nao quebrar caso um componente lateral volte ao `quartz.layout.ts`; como
+// hoje nao existe elemento nenhum nelas, essas linhas colapsam para altura zero.
 $tabletGrid: (
-  templateRows: "auto auto auto auto",
-  templateColumns: "#{$sidePanelWidth} auto",
+  templateRows: "auto auto auto auto auto",
+  templateColumns: "minmax(0, 1fr)",
   rowGap: "5px",
   columnGap: "5px",
   templateAreas:
-    '"grid-sidebar-left grid-header"\
-      "grid-sidebar-left grid-center"\
-      "grid-sidebar-left grid-sidebar-right"\
-      "grid-sidebar-left grid-footer"',
+    '"grid-sidebar-left"\
+      "grid-header"\
+      "grid-center"\
+      "grid-sidebar-right"\
+      "grid-footer"',
 );
 $desktopGrid: (
-  templateRows: "auto auto auto",
-  templateColumns: "#{$sidePanelWidth} auto #{$sidePanelWidth}",
+  templateRows: "auto auto auto auto auto",
+  templateColumns: "minmax(0, 1fr)",
   rowGap: "5px",
   columnGap: "5px",
   templateAreas:
-    '"grid-sidebar-left grid-header grid-sidebar-right"\
-      "grid-sidebar-left grid-center grid-sidebar-right"\
-      "grid-sidebar-left grid-footer grid-sidebar-right"',
+    '"grid-sidebar-left"\
+      "grid-header"\
+      "grid-center"\
+      "grid-sidebar-right"\
+      "grid-footer"',
 );

@@ -160,7 +160,8 @@ a {
 }
 
 .page {
-  max-width: calc(#{map.get($breakpoints, desktop)} + 300px);
+  // sem sidebar, a largura da pagina e a largura do conteudo — ver variables.scss
+  max-width: $pageWidth;
   margin: 0 auto;
   & article {
     & > h1 {
