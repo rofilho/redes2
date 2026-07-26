@@ -31,7 +31,7 @@ title: "🌐 Redes de Computadores II"
 
 <h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 1 — Comutar e segmentar <span style="color:var(--au-tx3);font-weight:400">· S01–S08</span></h2>
 
-<ul class="au-cards">
+<ul class="au-cards au-vb1">
 
 <li class="au-card">
   <a href="./Aula-01---Plano-de-Ensino-e-Contrato-da-Disciplina" data-spa>
@@ -95,7 +95,7 @@ title: "🌐 Redes de Computadores II"
 
 <h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Avaliação N1 <span style="color:var(--au-tx3);font-weight:400">· S09–S10</span></h2>
 
-<ul class="au-cards">
+<ul class="au-cards au-vav">
 
 <li class="au-card au-espera" style="border-color:var(--au-par-laranja)">
   <div class="au-thumb" style="color:var(--au-par-laranja)">S09</div>
@@ -113,7 +113,7 @@ title: "🌐 Redes de Computadores II"
 
 <h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Bloco 2 — Rotear e proteger <span style="color:var(--au-tx3);font-weight:400">· S11–S17</span></h2>
 
-<ul class="au-cards">
+<ul class="au-cards au-vb2">
 
 <li class="au-card au-espera">
   <div class="au-thumb">S11</div>
@@ -155,7 +155,7 @@ title: "🌐 Redes de Computadores II"
 
 <h2 style="font-family:var(--au-sans);font-size:var(--au-t-1);margin:1.5rem 1.5rem .25rem;border:none;padding:0;color:var(--au-tx)">Fechamento <span style="color:var(--au-tx3);font-weight:400">· S18–S20</span></h2>
 
-<ul class="au-cards">
+<ul class="au-cards au-vfim">
 
 <li class="au-card au-espera" style="border-color:var(--au-par-verde)">
   <div class="au-thumb" style="color:var(--au-par-verde)">S18</div>

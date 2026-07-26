@@ -40,23 +40,23 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        // modo leitura: título em sans, corpo em serifa (leitura longa)
-        header: "Source Sans 3",
-        body: "Source Serif 4",
+        // identidade LMS clean (Brilliant/LearnHouse): sans moderna em tudo
+        header: "Inter",
+        body: "Inter",
         code: "JetBrains Mono",
       },
       colors: {
-        // claro = modo leitura (polaridade positiva para tarefa de precisão)
+        // claro = a CARA do portal (off-white, pastel, cards arredondados)
         lightMode: {
-          light: "#fbfaf7",
-          lightgray: "#e4e0d7",
-          gray: "#868d98",
-          darkgray: "#23262b",
-          dark: "#14171b",
-          secondary: "#1f5fa8",
-          tertiary: "#2e7d52",
-          highlight: "rgba(31, 95, 168, 0.08)",
-          textHighlight: "#e8c07a66",
+          light: "#fafaf8",
+          lightgray: "#eceae5",
+          gray: "#8a8f98",
+          darkgray: "#2b2e35",
+          dark: "#16181d",
+          secondary: "#3b6ce0",
+          tertiary: "#2f9469",
+          highlight: "rgba(59, 108, 224, 0.07)",
+          textHighlight: "#f5d68a66",
         },
         // escuro = modo operação (bancada, ao lado do Packet Tracer)
         darkMode: {

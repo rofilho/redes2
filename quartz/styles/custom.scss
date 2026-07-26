@@ -31,8 +31,10 @@
    assunto, não paleta genérica. Semântica fixa em TODA a disciplina.
    ────────────────────────────────────────────────────────────── */
 :root {
-  --au-serif: "Source Serif 4", Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
-  --au-sans: "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* identidade LMS clean: Inter em tudo (Brilliant/LearnHouse); a serifa
+     fica disponível para citação longa, não para corpo */
+  --au-serif: "Source Serif 4", Charter, Georgia, serif;
+  --au-sans: "Inter", "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --au-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Consolas, monospace;
 
   /* escala modular 1.25 (Major Third) a partir de 16px */
@@ -56,13 +58,13 @@
   /* medida de leitura — regra dura (Dyson & Haselgrove 2001; WCAG 1.4.8) */
   --au-medida: 68ch;
 
-  /* pares T568B */
-  --au-par-azul: #1f5fa8; /* conceito primário, links, VLAN de dados  */
-  --au-par-verde: #2e7d52; /* sucesso, verificação, estado convergido  */
-  --au-par-laranja: #b1541b; /* atenção, quebra deliberada, VLAN de voz  */
-  --au-par-marrom: #6b4423; /* legado, obsoleto, "não faça isso"        */
+  /* pares T568B — semântica fixa, saturação de LMS moderno */
+  --au-par-azul: #3b6ce0; /* conceito primário, links, VLAN de dados  */
+  --au-par-verde: #2f9469; /* sucesso, verificação, estado convergido  */
+  --au-par-laranja: #d9702a; /* atenção, quebra deliberada, VLAN de voz  */
+  --au-par-marrom: #8a5a34; /* legado, obsoleto, "não faça isso"        */
 
-  --au-raio: 3px;
+  --au-raio: 12px;
   --au-borda: 1px;
   --au-transicao: 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -77,12 +79,12 @@
 /* modo LEITURA — página de aula */
 :root:not([saved-theme="dark"]),
 .au-leitura {
-  --au-bg: #fbfaf7;
-  --au-bg2: #f3f1ec;
-  --au-bd: #e4e0d7;
-  --au-tx: #23262b;
-  --au-tx2: #5c626c;
-  --au-tx3: #868d98;
+  --au-bg: #fafaf8;
+  --au-bg2: #ffffff;
+  --au-bd: #e8e6e0;
+  --au-tx: #2b2e35;
+  --au-tx2: #5d636d;
+  --au-tx3: #8a8f98;
   --au-ac: var(--au-par-azul);
   --au-cod-bg: #2b2f36;
   --au-cod-tx: #e4e7ea;
@@ -111,7 +113,7 @@
 .au-leitura {
   background: var(--au-bg);
   color: var(--au-tx);
-  font-family: var(--au-serif);
+  font-family: var(--au-sans);
   font-size: var(--au-t-0);
   line-height: 1.65;
 }
@@ -128,16 +130,9 @@
    streaming paga: é onde o aluno escolhe. Sem autoplay, sem countdown,
    sem recomendação, sem grade infinita. */
 .au-vitrine {
-  --au-bg: #0e0f12;
-  --au-bg2: #17191e;
-  --au-bd: #262a32;
-  --au-tx: #f2f3f5;
-  --au-tx2: #9aa1ac;
-  --au-tx3: #6e747d;
-  --au-ac: #e8763a;
-  --au-cod-bg: #0b0e13;
-  --au-cod-tx: #dfe4ea;
-  --au-cod-tx2: #a7aeb8;
+  /* herda a paleta do TEMA — a vitrine é off-white no claro e bancada no
+     escuro, nunca mais um dark hardcoded que ignora o botão de tema */
+  --au-ac: var(--au-par-laranja);
 
   background: var(--au-bg);
   color: var(--au-tx);
@@ -180,9 +175,9 @@
   }
 }
 
-/* prosa */
+/* prosa — sans em tudo (identidade LMS clean); serifa só se um bloco pedir */
 article {
-  font-family: var(--au-serif);
+  font-family: var(--au-sans);
   font-size: var(--au-t-0);
   line-height: 1.65;
   color: var(--au-tx);
@@ -908,15 +903,37 @@ article :target {
   scroll-margin-top: 4rem;
 }
 
+/* toda página de aula traz o próprio H1 (template da disciplina) — o
+   .article-title do Quartz duplicaria o título em cada página */
+.article-title {
+  display: none;
+}
+
 /* VITRINE — hero e cards do índice */
 .au-hero {
   position: relative;
   padding: var(--au-s-6) var(--au-s-5) var(--au-s-5);
   background:
+    /* malha de rede: o motivo visual da disciplina, sutil */
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--au-tx) 5%, transparent) 0 1px,
+      transparent 1px 56px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--au-tx) 5%, transparent) 0 1px,
+      transparent 1px 56px
+    ),
     radial-gradient(
-      120% 90% at 78% 12%,
-      color-mix(in srgb, var(--au-ac) 26%, transparent),
-      transparent 62%
+      130% 110% at 80% 0%,
+      color-mix(in srgb, var(--au-par-laranja) 34%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      110% 130% at 8% 100%,
+      color-mix(in srgb, var(--au-par-azul) 30%, transparent),
+      transparent 52%
     ),
     linear-gradient(180deg, var(--au-bg2) 0%, var(--au-bg) 100%);
   border-bottom: var(--au-borda) solid var(--au-bd);
@@ -964,29 +981,47 @@ article :target {
 
 .au-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   gap: var(--au-s-3);
-  padding: var(--au-s-5);
+  padding: var(--au-s-4) var(--au-s-5) var(--au-s-5);
   list-style: none;
   margin: 0;
+  /* cor do bloco: cada seção da vitrine herda um par do T568B */
+  --vit: var(--au-ac);
 }
+.au-cards.au-vb1 { --vit: var(--au-par-azul); }
+.au-cards.au-vav { --vit: var(--au-par-laranja); }
+.au-cards.au-vb2 { --vit: var(--au-par-verde); }
+.au-cards.au-vfim { --vit: var(--au-par-marrom); }
 
 .au-card {
-  border: var(--au-borda) solid var(--au-bd);
-  border-radius: 4px;
+  border: var(--au-borda) solid color-mix(in srgb, var(--au-tx) 12%, transparent);
+  border-radius: var(--au-raio);
   overflow: hidden;
+  /* claro: card branco elevado por sombra suave sobre o off-white */
   background: var(--au-bg2);
+  box-shadow:
+    0 1px 2px rgba(18, 22, 30, 0.05),
+    0 6px 18px rgba(18, 22, 30, 0.06);
   transition:
     transform var(--au-transicao),
-    border-color var(--au-transicao);
+    border-color var(--au-transicao),
+    box-shadow var(--au-transicao);
   margin: 0;
   max-width: none;
 }
 
+/* escuro: sombra não existe — a elevação vem do tom */
+:root[saved-theme="dark"] .au-card {
+  background: color-mix(in srgb, var(--au-bg2) 88%, var(--au-tx));
+  box-shadow: none;
+}
+
 .au-card:hover,
 .au-card:focus-within {
-  transform: scale(1.03);
-  border-color: var(--au-ac);
+  transform: translateY(-3px);
+  border-color: var(--vit);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--vit) 28%, transparent);
 }
 
 .au-card a {
@@ -996,16 +1031,41 @@ article :target {
   font-weight: inherit;
 }
 
+/* card publicado (tem <a>): é o que deve gritar, não o futuro */
+.au-card:has(> a) {
+  border-color: color-mix(in srgb, var(--vit) 50%, transparent);
+}
+.au-card:has(> a) .au-cap b {
+  color: var(--au-tx);
+}
+.au-card:has(> a) .au-cap span::before {
+  content: "▶ ";
+  color: var(--vit);
+}
+
 .au-card .au-thumb {
   aspect-ratio: 16 / 9;
   display: grid;
   place-items: center;
-  background: var(--au-bg);
-  border-bottom: var(--au-borda) solid var(--au-bd);
+  /* a cor do bloco é a identidade do card — thumb nunca mais cinza no vazio */
+  background:
+    radial-gradient(
+      120% 140% at 85% -10%,
+      color-mix(in srgb, var(--vit) 52%, transparent),
+      transparent 62%
+    ),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--vit) 34%, var(--au-bg2)),
+      color-mix(in srgb, var(--vit) 10%, var(--au-bg2))
+    );
+  border-bottom: 2px solid color-mix(in srgb, var(--vit) 55%, transparent);
   font-family: var(--au-mono);
-  font-size: var(--au-t-1);
-  color: var(--au-tx3);
-  letter-spacing: 0.08em;
+  font-size: var(--au-t-2);
+  font-weight: 700;
+  color: color-mix(in srgb, var(--vit) 30%, var(--au-tx));
+  letter-spacing: 0.14em;
+  text-shadow: 0 1px 8px color-mix(in srgb, var(--vit) 40%, transparent);
 }
 
 .au-card .au-thumb img {
@@ -1042,13 +1102,23 @@ article :target {
   color: var(--au-tx2);
 }
 
-/* card ainda não publicado: existe no mapa, não é clicável */
-.au-card.au-espera {
-  opacity: 0.5;
+/* card ainda não publicado: existe no mapa, não é clicável.
+   NUNCA opacity no card inteiro — o título tem de continuar legível;
+   o que apaga é só a energia do thumb. */
+.au-card.au-espera .au-thumb {
+  filter: saturate(0.4);
+}
+.au-card.au-espera .au-cap b {
+  color: var(--au-tx2);
 }
 .au-card.au-espera:hover {
   transform: none;
-  border-color: var(--au-bd);
+  border-color: color-mix(in srgb, var(--au-tx) 16%, transparent);
+  box-shadow: none;
+}
+.au-card.au-espera .au-cap span::after {
+  content: " · em breve";
+  color: var(--au-tx3);
 }
 
 /* podcast de revisão (NotebookLM) — bloco discreto, nunca protagonista */

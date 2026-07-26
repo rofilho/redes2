@@ -128,14 +128,7 @@ LessonNavigation.css = `
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
-  position: relative;
-}
-.nav-pill__icon::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(59,130,246,0.25) 0%, transparent 100%);
+  background: color-mix(in srgb, var(--secondary) 12%, transparent);
 }
 
 /* ── Corpo de texto ── */
@@ -182,18 +175,16 @@ LessonNavigation.css = `
   -webkit-box-orient: vertical;
 }
 
-/* ── Modo escuro ── */
+/* ── Modo escuro ──
+   nunca usar --darkgray como fundo aqui: no tema dark do Quartz ele é a
+   cor do TEXTO (quase branca) — foi o card ilegível de 26/07 */
 :root[saved-theme="dark"] .nav-pill {
-  background: color-mix(in srgb, var(--darkgray) 60%, transparent);
-  border-color: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 :root[saved-theme="dark"] .nav-pill:hover {
-  background: var(--darkgray);
-}
-
-:root[saved-theme="dark"] .nav-pill__title {
-  color: var(--light);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ── Mobile ── */
