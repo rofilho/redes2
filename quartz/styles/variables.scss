@@ -16,9 +16,14 @@ $mobile: "(max-width: #{map.get($breakpoints, mobile)})";
 $tablet: "(min-width: #{map.get($breakpoints, mobile)}) and (max-width: #{map.get($breakpoints, desktop)})";
 $desktop: "(min-width: #{map.get($breakpoints, desktop)})";
 
-$pageWidth: #{map.get($breakpoints, mobile)};
-$sidePanelWidth: 320px; //380px;
-$topSpacing: 6rem;
+// Este portal não usa sidebar (quartz.layout.ts: left: [], right: []).
+// Manter 320px de cada lado reservava 640px de nada e espremia o conteúdo
+// numa coluna estreita em janela média — corrigido em 26/07/2026.
+// A medida de leitura continua garantida em `article p, article li` (68ch),
+// então largura maior beneficia tabela e diagrama sem prejudicar a prosa.
+$pageWidth: 1080px;
+$sidePanelWidth: 0px;
+$topSpacing: 2rem;
 $boldWeight: 700;
 $semiBoldWeight: 600;
 $normalWeight: 400;
