@@ -66,10 +66,7 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 > - Os **acordos de sala**, escritos e votados por vocês.
 >
 > **📂 Recursos**
-> - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis e obrigatório. **P12:** instalar até quinta, 30/07. **P11:** você já precisou dele no Lab 0 de segunda — se não conseguiu instalar, me procure hoje, no intervalo.
-> - [Wireshark](https://www.wireshark.org/download.html) — analisador de tráfego, grátis
-> - [Vevox](https://vevox.app/) — votação e exit ticket (anônimo, sem cadastro)
-> - AVA Uniube On-line — entregas, Uniube+ e o vídeo de 6 min de cada semana
+> Ferramentas, contas necessárias e prazos de instalação estão reunidos no **Tópico 4 — Ferramentas e acesso**.
 
 ### ⏱️ Os 75 minutos de hoje
 
@@ -85,6 +82,8 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 | 58–67 | **Regras de sala** — propostas e votação | Slot interativo |
 | 67–70 | Reflexão + exit ticket | Fechamento |
 | **70–75** | **Folga** — máquina que não liga, dúvida longa, sala trocada | — |
+
+> Os Tópicos 4 (Ferramentas e acesso) e 5 (Organização das aulas) não são falados hoje — o tempo de terça está inteiro nos blocos acima. São leitura de referência para o semestre.
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
@@ -206,7 +205,7 @@ Três turmas, três calendários. **T** = teórica de terça (VIA203) · **P11**
 
 Repare na coluna da segunda: **a P11 perde quatro aulas em feriado; a P12 não perde nenhuma.** Se cada prática seguisse o próprio ritmo, em novembro as turmas estariam a quatro laboratórios de distância.
 
-A regra do cronograma resolve isso: **laboratório novo só cai em semana em que as duas práticas se encontram.** Nas semanas em que só a P12 tem aula (S06, S07, S15), ela recebe aprofundamento **sem nota** — desafio, diagnóstico extra — e o conteúdo novo fica na teórica de terça, que todo mundo assiste.
+A regra do cronograma resolve isso: **laboratório novo só cai em semana em que as duas práticas se encontram.** Nas semanas em que só a P12 tem aula (S06, S07, **S12**, S15), ela recebe aprofundamento **sem nota** — desafio, diagnóstico extra — e o conteúdo novo fica na teórica de terça, que todo mundo assiste (a S12 é o caso extremo, detalhado a seguir).
 
 A **S12 é o caso extremo**: ali caem **os dois feriados juntos**, 12/10 e 13/10, então nem a P11 nem a teórica acontecem. Só a P12 tem aula naquela semana, e por isso ela não recebe conteúdo novo nenhum — recebe prática **espiral** de OSPF, revisão do que a S11 já deu a todo mundo. Nenhuma turma sai na frente porque, na S12, ninguém anda.
 
@@ -324,17 +323,19 @@ A régua é a escala AIAS, declarada por instrumento:
 
 **Detector de IA não é usado nem aceito como evidência nesta disciplina.** O motivo é técnico: essas ferramentas produzem falso positivo em taxa alta contra quem não escreve em inglês nativo — a Universidade Vanderbilt desativou o detector do Turnitin exatamente por isso (Vanderbilt University, Center for Teaching, 2023). Declarar o uso não desconta nota. **Não declarar um uso que aparecer na defesa, desconta** — e o que se perde são os 4 pontos da defesa oral, não os 6 do projeto: são instrumentos diferentes, e a defesa mede se você entende o que entregou.
 
-### 3.6 As ferramentas do semestre
+---
+
+## 📌 4. Ferramentas e acesso
 
 | Momento | Ferramenta | Custo | Precisa de conta? |
 | :--- | :--- | :-- | :--- |
-| Laboratórios | **Cisco Packet Tracer** | Grátis | **Sim** — conta NetAcad, resolver esta semana |
+| Laboratórios | **[Cisco Packet Tracer](https://www.netacad.com/)** | Grátis | **Sim** — conta NetAcad, resolver esta semana |
 | Votação em aula | **Plickers** | Grátis | **Não** — é cartão de papel, sem celular |
-| Exit ticket | **Vevox** | Grátis | **Não** — anônimo, por QR |
-| Análise de tráfego | **Wireshark** | Grátis | Não |
+| Exit ticket | **[Vevox](https://vevox.app/)** | Grátis | **Não** — anônimo, por QR |
+| Análise de tráfego | **[Wireshark](https://www.wireshark.org/download.html)** | Grátis | Não |
 | Revisão pré-prova | **Gemini Notebook** | Grátis | Opcional — o áudio sai publicado no AVA |
 | Material das aulas | **Este portal** | — | Não |
-| Entregas e Uniube+ | **AVA Uniube On-line** | — | Institucional |
+| Entregas e Uniube+ | **AVA Uniube On-line** | — | Institucional — entregas, Uniube+ e o vídeo de 6 min de cada semana |
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
 > A rede da faculdade não aguenta a turma inteira baixando o Packet Tracer ao mesmo tempo. **Instale em casa, hoje.**
@@ -353,21 +354,6 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
 
-### Como cada aula funciona — leitura em casa, não cabe nos 75 min de hoje
-
-> Esta subseção **não é falada na aula de hoje** — o tempo de terça está inteiro nos blocos 1 a 4 e na votação. Leia até a próxima terça: é o formato que vai se repetir por 20 semanas.
-
-| Momento | O que acontece | Quanto dura |
-| :--- | :--- | :--- |
-| **Nosso caminho até aqui** | 3 a 4 questões de recuperação — as recentes mais **uma antiga**, em espiral. Sem nota. | 6–8 min |
-| **Gancho** | Uma história real de rede que caiu, terminando numa pergunta. | 2 min |
-| **Exposição em blocos** | Nunca mais de 15 min seguidos falando. | — |
-| **Pausa procedural** | "Comparem anotações com o colega. Eu fico calado." | 2 min |
-| **ConcepTest** | Você vota → discute com o vizinho → vota de novo. | 8 min |
-| **Exit ticket** | "O que ficou mais confuso hoje?" — e isso **abre** a aula seguinte. | 3 min |
-
-O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sentir que está aprendendo menos**. Não é impressão — é resultado medido. Alunos numa aula ativa aprendem mais e avaliam a própria aprendizagem como pior que a de uma aula expositiva excelente (Deslauriers et al., 2019); no agregado, aula ativa derruba a reprovação de 33,8% para 21,8% (Freeman et al., 2014). Digo isso hoje de propósito, e vou lembrar em novembro: sem esse combinado, o método vira reclamação em vez de virar nota.
-
 ---
 
 <div class="au-slot">
@@ -385,6 +371,23 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 </div>
 <p class="au-slot-b"><b>Plano B:</b> se a rede cair, a votação vai nos cartões <b>Plickers</b> — cada proposta é uma pergunta de A/B/C, e o acordo extra vai em meia folha de papel recolhida na saída. Mesmo conteúdo, mesmos 9 minutos, zero dependência de internet.</p>
 </div>
+
+---
+
+## 📌 5. Organização: como cada aula vai funcionar
+
+> Este tópico **não é falado na aula de hoje** — o tempo de terça está inteiro nos blocos 1 a 3 e na votação. Leia até a próxima terça: é o formato que vai se repetir por 20 semanas.
+
+| Momento | O que acontece | Quanto dura |
+| :--- | :--- | :--- |
+| **Nosso caminho até aqui** | 3 a 4 questões de recuperação — as recentes mais **uma antiga**, em espiral. Sem nota. | 6–8 min |
+| **Gancho** | Uma história real de rede que caiu, terminando numa pergunta. | 2 min |
+| **Exposição em blocos** | Nunca mais de 15 min seguidos falando. | — |
+| **Pausa procedural** | "Comparem anotações com o colega. Eu fico calado." | 2 min |
+| **ConcepTest** | Você vota → discute com o vizinho → vota de novo. | 8 min |
+| **Exit ticket** | "O que ficou mais confuso hoje?" — e isso **abre** a aula seguinte. | 3 min |
+
+O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sentir que está aprendendo menos**. Não é impressão — é resultado medido. Alunos numa aula ativa aprendem mais e avaliam a própria aprendizagem como pior que a de uma aula expositiva excelente (Deslauriers et al., 2019); no agregado, aula ativa derruba a reprovação de 33,8% para 21,8% (Freeman et al., 2014). Digo isso hoje de propósito, e vou lembrar em novembro: sem esse combinado, o método vira reclamação em vez de virar nota.
 
 ---
 
@@ -409,7 +412,7 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 | **STP/EtherChannel na N1** | Explicar e analisar — **nunca** configurar |
 | **Política de IA** | Declarar por instrumento (AIAS 1 a 3). Sem detector de IA. |
 | **Celular** | Agendado, não proibido — janelas declaradas |
-| **Pendência da semana** | Conta NetAcad + Packet Tracer — **P12 até 30/07**; P11, se ainda não instalou, falar comigo hoje |
+| **Pendência da semana** | Conta NetAcad + Packet Tracer — prazo e detalhes no Tópico 4 |
 
 </div>
 
