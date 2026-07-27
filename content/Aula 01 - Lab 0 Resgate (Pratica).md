@@ -75,6 +75,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > - **1 ponto da Atividade N1**, apurado na tela, antes de você sair da sala.
 >
 > **📂 Recursos**
+> - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — a referência do semestre: calendário das três turmas, nota, prazos e regras
 > - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis, obrigatório, **instale antes de vir**. Sem ele você faz o laboratório na tela do colega, e ele vale ponto.
 > - `lab00_resgate.pka` — o cenário de hoje, entregue em sala
 > - [Vevox](https://vevox.app/) — exit ticket, anônimo e sem cadastro

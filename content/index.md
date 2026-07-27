@@ -19,7 +19,7 @@ title: "🌐 Redes de Computadores II"
   <span class="au-badge">49309 · 2026-2 · Ciência da Computação</span>
   <h1>Redes de Computadores II</h1>
   <p>Redes I ensinou a rede a funcionar. Aqui ela aprende a <b>não cair</b> — e a não deixar o problema de um setor derrubar os outros. Comutar, segmentar, rotear e proteger, com as mãos no simulador toda semana.</p>
-  <p style="margin-top:1rem"><a href="./Aula-01---Plano-de-Ensino-e-Contrato-da-Disciplina" data-spa><span class="au-badge" style="letter-spacing:.08em">▶ Comece aqui — Plano de Ensino e Contrato</span></a></p>
+  <p style="margin-top:1rem"><a href="./Plano-de-Ensino-e-Contrato" data-spa><span class="au-badge" style="letter-spacing:.08em">📘 Plano de Ensino e Contrato — a referência do semestre</span></a></p>
 </div>
 
 <div style="display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.5rem 0">
@@ -37,7 +37,7 @@ title: "🌐 Redes de Computadores II"
   <a href="./Aula-01---Plano-de-Ensino-e-Contrato-da-Disciplina" data-spa>
     <div class="au-thumb">S01</div>
     <div class="au-pbar"><i style="width:100%"></i></div>
-    <div class="au-cap"><b>Plano de Ensino e Contrato da Disciplina</b><span>Teórica · 28/07</span></div>
+    <div class="au-cap"><b>Apresentação, Diagnóstico e Contrato</b><span>Teórica · 28/07</span></div>
   </a>
 </li>
 
@@ -172,14 +172,14 @@ title: "🌐 Redes de Computadores II"
 <li class="au-card au-espera">
   <div class="au-thumb">S20</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Vista da N2, substituta e fechamento</b><span>08/12</span></div>
+  <div class="au-cap"><b>Vista da N2 e fechamento</b><span>08/12</span></div>
 </li>
 
 </ul>
 
 <div class="au-antes" style="margin:0 1.5rem 1.5rem;max-width:none">
   <p style="margin:0 0 .5rem"><b>Como ler este portal.</b> Cada semana ganha uma página quando a aula acontece — o card acende no dia. As três turmas dividem a teórica de terça (VIA203) e praticam separadas: <b>P11</b> na segunda (VIA215), <b>P12</b> na quinta (VIA216).</p>
-  <p style="margin:0"><b>Laboratório novo só cai em semana em que as duas práticas se encontram.</b> É o que impede que os feriados de segunda deixem a P11 atrás — o cronograma completo, com feriados e datas das três turmas, está na página da Aula 01.</p>
+  <p style="margin:0"><b>Laboratório novo só cai em semana em que as duas práticas se encontram.</b> É o que impede que os feriados de segunda deixem a P11 atrás — o cronograma completo, com feriados e datas das três turmas, está no <a href="./Plano-de-Ensino-e-Contrato" data-spa>Plano de Ensino e Contrato</a>.</p>
 </div>
 
 <div style="padding:0 1.5rem 1.5rem;font-family:var(--au-mono);font-size:var(--au-t--2);color:var(--au-tx3)">
