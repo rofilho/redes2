@@ -16,7 +16,7 @@ title: "🌐 Redes de Computadores II"
 <div class="au-vitrine">
 
 <div class="au-hero">
-  <span class="au-badge">49309 · 2026-2 · Ciência da Computação</span>
+  <span class="au-badge">49309 · 2026-2</span>
   <h1>Redes de Computadores II</h1>
   <p>Redes I ensinou a rede a funcionar. Aqui ela aprende a <b>não cair</b> — e a não deixar o problema de um setor derrubar os outros. Comutar, segmentar, rotear e proteger, com as mãos no simulador toda semana.</p>
   <p style="margin-top:1rem"><a href="./Plano-de-Ensino-e-Contrato" data-spa><span class="au-badge" style="letter-spacing:.08em">📘 Plano de Ensino e Contrato — a referência do semestre</span></a></p>

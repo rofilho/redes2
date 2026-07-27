@@ -14,7 +14,7 @@ tags: [redes2, 2026-2, lab, packet-tracer, diagnostico, troubleshooting]
 
 # 🟢 Aula 01 — Lab 0: Resgate
 
-**Disciplina:** Redes de Computadores II (49309) · Ciência da Computação — Uniube
+**Disciplina:** Redes de Computadores II (49309) — Uniube
 **Professor:** Romualdo Mathias Filho
 **Semana:** 1 · 🛠️ Prática (75 min)
 **P11:** segunda, 27/07/2026 · VIA215 — **P12:** quinta, 30/07/2026 · VIA216
@@ -95,7 +95,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 | **70–75** | **Folga** — máquina que não instala, dúvida longa | — |
 
 > [!NOTE] 🧭 P11 e P12 — a ordem é diferente para vocês, e isso é intencional
-> **P11 (segunda):** você faz este laboratório **antes** da teórica de terça. Os conceitos que reencontrar aqui voltam amanhã no diagnóstico da turma — você chega com a experiência na mão.
+> **P11 (segunda):** você faz este laboratório **antes** da teórica de terça (28/07), conforme o horário emitido em 25/07 — o agrupamento das duas práticas nessa aula está em confirmação na secretaria. Os conceitos que reencontrar aqui voltam no diagnóstico da turma; você chega com a experiência na mão.
 > **P12 (quinta):** se você já teve a teórica de terça, vai reconhecer aqui pelo menos um dos princípios que discutimos lá, vivo e mordendo. Repare em qual.
 
 <aside class="au-antes">
@@ -322,8 +322,8 @@ Enquanto a sala responde, eu monto o quadro no projetor: uma linha por camada, d
 > Repare no formato das três perguntas: **sintoma → teste → camada**, nunca "qual era o erro". É o mesmo roteiro de um *post-mortem* de incidente em produção, e pela mesma razão: a equipe que só registra a correção repete a falha, porque não guardou o caminho. O que se documenta é o raciocínio, não o conserto.
 
 > [!NOTE] 📌 P11, isto aqui é o seu adiantamento
-> A aula de terça (28/07) é o contrato completo — cronograma, notas, acordos de sala votados pela turma, política de IA. **P11: você viu a prática antes da teoria**, então leve o essencial hoje: laboratório vale ponto na hora (`Completion ≥ 80%`), duplas são rotativas, toda prática tem quebra deliberada a partir da S02, toda aula abre com recuperação e fecha com exit ticket. **Datas travadas: Prova N1 em 22/09 · Prova N2 em 01/12.**
-> **P12:** você já viu tudo isso na terça; aqui é só a confirmação de que a prática cumpre o combinado.
+> A aula de terça (28/07) é o contrato completo — cronograma, notas, acordos de sala votados pela turma, política de IA. Ela está publicada no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato), então nada depende de você estar lá. **P11: você viu a prática antes da teoria**, então leve o essencial hoje: laboratório vale ponto na hora (`Completion ≥ 80%`), duplas são rotativas, toda prática tem quebra deliberada a partir da S02, toda aula abre com recuperação e fecha com exit ticket. **Datas travadas: Prova N1 em 22/09 · Prova N2 em 01/12.**
+> **P12:** se você já teve a teórica, aqui é só a confirmação de que a prática cumpre o combinado.
 
 ---
 

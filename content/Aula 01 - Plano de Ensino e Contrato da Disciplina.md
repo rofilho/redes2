@@ -14,7 +14,7 @@ tags: [redes2, 2026-2, contrato, apresentacao]
 
 # 🟢 Aula 01 — Apresentação, Diagnóstico e Contrato
 
-**Disciplina:** Redes de Computadores II (49309) · Ciência da Computação — Uniube
+**Disciplina:** Redes de Computadores II (49309) — Uniube
 **Professor:** Romualdo Mathias Filho
 **Semana:** 1 · **Terça, 28/07/2026** · VIA203 · 📘 Teórica (75 min)
 **Documento de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — é lá que mora tudo o que esta aula apresenta.
@@ -96,7 +96,7 @@ Cinco termos que aparecem o semestre inteiro e que decidem nota:
 
 **Segunda chamada (substitutiva)** — a segunda chance de quem **faltou** à prova. Pede-se pelo **SAE no AVA, em até 3 dias úteis**.
 
-**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Não se pede: o direito nasce da nota.
+**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Os requisitos estão no bloco 3.4 do plano; data, horário e a forma de acesso eu confirmo com a coordenação e publico no AVA.
 
 **AIAS** — *AI Assessment Scale*, a escala **de 1 a 5** que declara **quanto** de IA é permitido em cada instrumento. Nesta disciplina vai de 1 (nenhuma) a 3 (colaboração declarada).
 
@@ -161,7 +161,7 @@ O texto completo — calendário das três turmas semana a semana, tabelas, requ
 - 4 labs + Uniube+: 22 (prova) + **4** (labs) + 5 (Uniube+) = **31**
 - 6 labs, sem Uniube+: 22 (prova) + **5** (fez seis, mas o teto é cinco) + 0 = **27**
 
-Quem fez **dois laboratórios a mais** ficou atrás, porque o sexto laboratório não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ custam menos esforço do que um único laboratório e valem o mesmo que cinco deles.
+Quem fez **dois laboratórios a mais** ficou atrás, porque o sexto laboratório não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ valem o mesmo que cinco laboratórios.
 
 **A lição de gestão:** antes de correr atrás do ponto caro, garanta o barato. Vale para nota e vale para prioridade de trabalho.
 
@@ -181,7 +181,7 @@ A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente
 > Não é regra minha, é institucional — e o curso indefere fora do prazo. Se você guardar uma única coisa desta aula, que seja esta: **atestado vai no SAE, em 3 dias úteis.**
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
-> A rede da faculdade não aguenta a turma inteira baixando o Packet Tracer ao mesmo tempo. **Instale em casa, hoje.**
+> Não conte com baixar o Packet Tracer no laboratório. **Instale em casa, hoje.**
 > **P12 (quinta):** você tem até 30/07 — chegar sem o simulador é passar o laboratório olhando a tela do colega, e o Lab 0 vale ponto. **P11 (segunda):** o seu Lab 0 foi ontem; se você não conseguiu instalar a tempo, me procure hoje que a gente resolve antes que vire nota perdida.
 
 ---
@@ -192,7 +192,7 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 
 **Hoje a turma propõe e vota 4 a 5 acordos.** Entro com quatro na mesa; vocês cortam, mudam e acrescentam:
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). Proibição total não se sustenta na evidência; distração, sim (Ravizza et al., 2017).
+1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
 2. **Pergunta errada é matéria-prima.** O distrator de um ConcepTest sai de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
@@ -265,7 +265,7 @@ QR projetado no slide final, ou [vevox.app](https://vevox.app/) com o ID de sess
 
 Esta aula é de contrato e diagnóstico: as regras vêm do documento institucional; o formato, da evidência abaixo. A bibliografia completa da disciplina está no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato).
 
-- UNIVERSIDADE DE UBERABA. **Avaliações de Segunda Chamada e Recuperação de Aprendizagem — Cursos: Engenharias, Gestão e Tecnologia da Informação, 2026/2.** Campus Uberlândia, 2026. <span class="au-pag">itens 1 a 11 — aprovação, distribuição dos 100 pontos, prazos, segunda chamada (item 9) e recuperação (item 11)</span> — **fonte das regras do Tópico 2.**
+- UNIVERSIDADE DE UBERABA. **Avaliações de Segunda Chamada e Recuperação de Aprendizagem — Cursos: Engenharias, Gestão e Tecnologia da Informação, 2026/2.** Campus Uberlândia, 2026. <span class="au-pag">documento disponibilizado pela coordenação — consulte a versão oficial no AVA</span> — **fonte das regras do Tópico 2.**
 - CORNELL CENTER FOR TEACHING INNOVATION. **Establishing Community Agreements and Classroom Norms.** Cornell University. Disponível em: https://teaching.cornell.edu/resource/establishing-community-agreements-and-classroom-norms. <span class="au-pag">seç. "Facilitating the process"</span> — base do slot de votação.
 - RAVIZZA, S. M.; UITVLUGT, M. G.; FENN, K. M. Logged in and zoned out: how laptop internet use relates to classroom learning. **Psychological Science**, v. 28, n. 2, 2017. <span class="au-pag">p. 171–180</span> — base da proposta 1 (celular agendado).
 - KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 4.3 — IP e endereçamento; seç. 6.4.3 — comutadores de camada de enlace, p. 491–497</span> — base das questões de diagnóstico e da demonstração.

@@ -12,7 +12,7 @@ tags: [redes2, 2026-2, plano-de-ensino, cronograma, contrato]
 
 # 📘 Plano de Ensino e Contrato — Redes de Computadores II
 
-**Disciplina:** Redes de Computadores II (49309) · Ciência da Computação — Uniube
+**Disciplina:** Redes de Computadores II (49309) — Uniube
 **Professor:** Romualdo Mathias Filho
 **Semestre:** 2026-2 · Teórica: terça, VIA203 · Práticas: P11 segunda (VIA215) · P12 quinta (VIA216)
 
@@ -28,6 +28,9 @@ tags: [redes2, 2026-2, plano-de-ensino, cronograma, contrato]
 ### 1.1 O que você vai saber fazer em dezembro
 
 **Redes I ensinou a rede a funcionar. Redes II ensina a rede a não cair** — e a não deixar o problema de um setor derrubar os outros.
+
+> [!NOTE] 📌 Este recorte é proposta, não ementa homologada
+> A **ementa oficial de 49309 ainda não foi confirmada no AVA**. Os objetivos e o conteúdo desta página são o recorte que eu proponho, alinhado à progressão CCNA (SRWE). Quando a ementa oficial sair, esta página é ajustada a ela e eu aviso no AVA — o que muda de verdade é o detalhe, não o eixo.
 
 Ao fim do semestre você deve ser capaz de:
 
@@ -105,7 +108,9 @@ Três turmas, três calendários. **T** = teórica de terça (VIA203) · **P11**
 **Em negrito, os laboratórios que valem ponto** (Lab 0 a 5). Os marcados *(formativo)* são obrigatórios e registrados, mas **não valem nota** — o porquê está no bloco 3.1.
 
 > [!WARNING] ⚠️ Sujeito a confirmação da secretaria
-> A terça reúne as turmas 11 e 12 na VIA203 conforme o horário publicado em 25/07, e o conteúdo acima segue a ementa da disciplina. **Sala, agrupamento e ementa só se tornam definitivos após a confirmação institucional** — qualquer ajuste sai no AVA, não no boca a boca. As datas das provas (22/09 e 01/12) e a distribuição de pontos não mudam.
+> O horário publicado em 25/07 traz um único slot teórico na terça, na VIA203; **que ele reúna as turmas 11 e 12 é leitura minha** e está em confirmação na secretaria. O conteúdo acima é o **recorte que eu proponho**, alinhado ao CCNA SRWE, enquanto a ementa oficial de 49309 não é confirmada no AVA. Qualquer ajuste sai no AVA, não no boca a boca.
+>
+> A **distribuição de pontos** não muda. As provas ficam dentro das janelas institucionais; as datas de **22/09 e 01/12 dependem da confirmação do agrupamento da terça** e, se mudarem, saem no AVA.
 >
 > Há sábados de reposição no calendário acadêmico (29/08, 12/09, 03/10, 24/10, 07/11), mas **qual dia da semana cada um repõe ainda não está confirmado.** Não assuma que o seu sábado é o seu dia.
 
@@ -132,7 +137,7 @@ Cinco termos que aparecem o semestre inteiro e que decidem nota:
 
 **Segunda chamada (substitutiva)** — a segunda chance de quem **faltou** à prova. Pede-se pelo **SAE no AVA, em até 3 dias úteis**.
 
-**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Não se pede: o direito nasce da nota. As duas são coisas diferentes, com regras diferentes (bloco 3.4).
+**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Os requisitos estão no bloco 3.4; data, horário e a forma de acesso eu confirmo com a coordenação e publico no AVA. As duas são coisas diferentes, com regras diferentes.
 
 **AIAS** — *AI Assessment Scale*, a escala de 1 a 5 que declara **quanto** de IA é permitido em cada instrumento. Nesta disciplina vai de 1 (nenhuma) a 3 (colaboração declarada).
 
@@ -156,7 +161,7 @@ Aprovação: **≥ 60 pontos** e **frequência ≥ 75%**.
 > [!IMPORTANT] 🎯 O ponto barato vence o ponto caro
 > Um exemplo com os números da tabela: 22 na prova + 4 labs + Uniube+ em dia = 22 + 4 + 5 = **31**. Os mesmos 22 na prova + os **seis** labs + Uniube+ zerado = 22 + 5 (teto) + 0 = **27**.
 >
-> Quem fez dois laboratórios a mais ficou atrás, porque o sexto lab não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ custam menos esforço do que um único laboratório e valem o mesmo que cinco deles. **Antes de correr atrás do ponto caro, garanta o barato.**
+> Quem fez dois laboratórios a mais ficou atrás, porque o sexto lab não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ valem o mesmo que cinco laboratórios. **Antes de correr atrás do ponto caro, garanta o barato.**
 
 ### 3.2 A prova em duas etapas
 
@@ -211,7 +216,7 @@ São dois mecanismos diferentes, com regras diferentes. Confundi-los custa o pra
 > [!NOTE] 📐 Como a recuperação recompõe a nota
 > Um exemplo: aluno que fez as duas provas e somou 18 nelas, tem 30 na continuada e tira 33 de 55 na recuperação. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos das provas**, põe os 33 no lugar, e a nota final **trava em 60**. Passa, com o mínimo.
 >
-> Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório fecham antes de setembro e custam menos que qualquer prova; quem os pega quase nunca cai na faixa dos 40–59 — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
+> Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório fecham antes de setembro e custam menos que qualquer prova; com eles garantidos, sobram 80 pontos de prova e projeto para chegar aos 60 — a faixa dos 40–59 fica bem mais longe — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
 
 ### 3.5 Política de IA — declarar, não caçar
 
@@ -241,7 +246,7 @@ A régua é a escala AIAS, declarada por instrumento:
 | Entregas e Uniube+ | **AVA Uniube On-line** | — | Institucional — entregas, Uniube+ e o vídeo de 6 min de cada semana |
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
-> A rede da faculdade não aguenta a turma inteira baixando o Packet Tracer ao mesmo tempo. **Instale em casa, na primeira semana.** Chegar ao laboratório sem o simulador é passar a aula olhando a tela do colega — e o Lab 0 vale ponto.
+> Não conte com baixar o Packet Tracer no laboratório. **Instale em casa, na primeira semana.** Chegar ao laboratório sem o simulador é passar a aula olhando a tela do colega — e o Lab 0 vale ponto.
 
 ---
 
@@ -264,7 +269,7 @@ O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sent
 
 Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. Normas coconstruídas geram menos violação do que normas impostas, e o Center for Teaching Innovation de Cornell trata isso como prática padrão de primeira aula. Estas quatro entraram como **proposta** na Aula 01 e foram a voto — manter, mudar ou cortar —, com espaço para a turma acrescentar as suas:
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). Proibição total não se sustenta na evidência; distração, sim (Ravizza et al., 2017).
+1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
 2. **Pergunta errada é matéria-prima.** O distrator de um ConcepTest sai de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
@@ -297,7 +302,7 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 
 **Documento institucional — fonte das regras do Tópico 3:**
 
-- UNIVERSIDADE DE UBERABA. **Avaliações de Segunda Chamada e Recuperação de Aprendizagem — Cursos: Engenharias, Gestão e Tecnologia da Informação, 2026/2.** Campus Uberlândia, 2026. <span class="au-pag">itens 1 a 11 — aprovação, distribuição dos 100 pontos, prazos, segunda chamada (item 9) e recuperação (item 11)</span>
+- UNIVERSIDADE DE UBERABA. **Avaliações de Segunda Chamada e Recuperação de Aprendizagem — Cursos: Engenharias, Gestão e Tecnologia da Informação, 2026/2.** Campus Uberlândia, 2026. <span class="au-pag">documento disponibilizado pela coordenação — consulte a versão oficial no AVA</span>
 
 Em qualquer divergência entre esta página e esse documento, **vale o documento**. Casos omissos vão para a coordenação do curso.
 
