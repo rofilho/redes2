@@ -15,6 +15,20 @@ Esta página é o **guia vivo** da plataforma: cada bloco que uma aula pode ter 
 
 ---
 
+## 0. Cabeçalho da aula
+
+**Vem logo depois do `# Título`, antes de qualquer bloco.** Diz de quem é a aula, de quando é e para onde ir atrás do documento.
+
+**Disciplina:** 49304 — Redes de Computadores I · Sistemas de Informação — Uniube<br>
+**Professor:** Romualdo Mathias Filho<br>
+**Semana:** 3 · Terça, 11/08/2026 · VIA203 · 📘 Teórica (75 min)<br>
+**Página de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato)
+
+> [!WARNING] ⚠️ Cada linha termina em `<br>`, menos a última
+> Markdown junta linhas consecutivas num parágrafo só. Sem a quebra dura, este bloco vira **uma linha corrida** no portal — e o Obsidian não denuncia, porque ele respeita a quebra simples. O erro só aparece publicado. O linter `validar_anatomia_aula.ps1` cobra isso (regra "cabeçalho colapsa").
+
+---
+
 ## 1. Nosso caminho até aqui
 
 **Abre toda aula.** É o único bloco obrigatório em 100% delas.
