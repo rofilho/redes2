@@ -72,13 +72,20 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > - O método de diagnóstico **de baixo para cima** — a sequência de perguntas que transforma "não funciona" em "está quebrado *aqui*".
 > - Como usar o `ping` para **dividir o problema em dois** em vez de sair mexendo em configuração.
 > - O ambiente do semestre inteiro no ar: conta NetAcad + Packet Tracer rodando na sua máquina.
-> - **1 ponto da Atividade N1**, apurado na tela, antes de você sair da sala.
+> - **1 ponto da Atividade N1** pelo Lab 0 — apurado na tela, no Packet Tracer, na prática em que o cenário entrar (ver o aviso logo abaixo).
 >
 > **📂 Recursos**
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — a referência do semestre: calendário das três turmas, nota, prazos e regras
 > - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis, obrigatório, **instale antes de vir**. Sem ele você faz o laboratório na tela do colega, e ele vale ponto.
-> - `lab00_resgate.pka` — o cenário de hoje, entregue em sala
+> - `lab00_resgate.pka` — o cenário do Lab 0 (ver o aviso abaixo sobre quando ele entra)
 > - [Vevox](https://vevox.app/) — exit ticket, anônimo e sem cadastro
+
+> [!IMPORTANT] 📌 Como esta primeira prática funciona
+> **Hoje é ambiente e método.** A prioridade é sair daqui com a conta NetAcad criada e o Packet Tracer rodando na sua máquina — sem isso, nenhuma aula prática do semestre funciona. E eu conduzo os **quatro defeitos** no projetor: você vê o sintoma, responde o que verificaria primeiro, e só depois eu revelo.
+>
+> **O `lab00_resgate.pka` valendo 1 ponto entra na próxima prática**, igual para P11 e P12 — laboratório novo só cai em semana em que as duas turmas se encontram, e essa regra vale desde a primeira. **Você não perde ponto nenhum:** são seis labs valendo e contam os cinco melhores.
+>
+> Traga o notebook com o Packet Tracer **já instalado** se conseguir. O download na rede da sala, com a turma inteira baixando junto, é o gargalo previsível da noite.
 
 ### ⏱️ Os 75 minutos de hoje
 
@@ -289,8 +296,8 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 >
 > O cenário compara o seu resultado com a rede correta: **remendo derruba o seu percentual.** Se um valor parece errado, pergunte antes *"qual dos dois lados é que está errado?"*. Na dúvida, o errado é quase sempre o **host** — foi ele que alguém configurou às pressas, não a infraestrutura.
 
-> [!TIP] ✅ Como o ponto de hoje é apurado
-> **Este laboratório vale 1 ponto da Atividade N1, e o ponto sai para quem fechar `Completion ≥ 80%`** — na tela, durante a aula. Você sai da sala sabendo a sua nota; não existe "depois eu corrijo".
+> [!TIP] ✅ Como o ponto deste laboratório é apurado
+> **O Lab 0 vale 1 ponto da Atividade N1, e o ponto sai para quem fechar `Completion ≥ 80%`** — na tela, durante a aula em que o cenário entrar. Você sai da sala sabendo a sua nota; não existe "depois eu corrijo".
 >
 > São seis laboratórios valendo ponto no semestre (Lab 0 a Lab 5) e contam **os cinco melhores** — o sexto é a sua margem para um dia ruim.
 
@@ -359,7 +366,7 @@ O que você responder aqui **abre a aula da semana que vem** — os pontos mais 
 | **O que "o ping passou" prova** | Que passou. **Não** por onde: rota indireta e ICMP redirect fazem rede torta parecer rede boa. |
 | **Ler ping no Packet Tracer** | O 1º pacote costuma cair por ARP. Julgue pelas 4 linhas e pela estatística, nunca pela primeira. |
 | **Critério de pronto do lab** | Os 4 PCs pingam `192.168.30.10` **e** abrem `http://portal.uniube.local` **pelo nome**. |
-| **Nota de hoje** | 1 pt da Atividade N1, por `Completion ≥ 80%` (8 de 10 itens), na tela, em sala. |
+| **Nota do Lab 0** | 1 pt da Atividade N1, por `Completion ≥ 80%` (8 de 10 itens), na tela, em sala — na prática em que o cenário entrar. |
 | **Regra de ouro do remendo** | Mudar a infraestrutura para caber no host errado **derruba** o seu percentual. |
 | **Um defeito por vez** | Corrigir dois e o ping voltar não diz qual dos dois era. |
 | **Pendência** | Conta NetAcad + Packet Tracer instalados **antes da S02** — não há bloco de setup na próxima. |
