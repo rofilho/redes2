@@ -286,6 +286,17 @@ article h1 {
   fill: var(--au-tx);
 }
 
+/* Terceiro seletor, mesma causa raiz — descoberto na Aula 01 do redes1.
+   O `article h1` ja tinha remendo proprio e o `h3` tem cor propria (--au-ac),
+   mas h2/h4/h5/h6 seguiam herdando o `color: var(--dark)` que o base.scss
+   declara para toda a familia de titulos. No escuro, --dark e quase branco e o
+   .au-leitura mantem fundo claro de proposito: o titulo de topico sumia. Um
+   remendo so no h1 resolvia o cabecalho e deixava os topicos invisiveis. */
+:root[saved-theme="dark"] .au-leitura :is(h2, h4, h5, h6),
+:root[saved-theme="dark"] .au-leitura :is(h2, h4, h5, h6) a[role="anchor"] {
+  color: var(--au-tx);
+}
+
 article h2 {
   font-size: var(--au-t-2);
   font-weight: 700;
