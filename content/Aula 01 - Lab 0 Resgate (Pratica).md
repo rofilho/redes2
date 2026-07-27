@@ -26,7 +26,7 @@ tags: [redes2, 2026-2, lab, packet-tracer, diagnostico, troubleshooting]
 
 Esta é a primeira prática de Redes II, então o "até aqui" é **Redes I**. Nenhum defeito do laboratório de hoje exige algo que você ainda não viu — é de propósito: o objetivo de hoje não é conteúdo novo, é **método**.
 
-Responda **antes** de abrir. O que você errar aqui é o que vai te custar tempo na caça, daqui a vinte minutos.
+Responda **antes** de abrir. O que você errar aqui é o que vai te custar tempo na hora de diagnosticar.
 
 <details>
 <summary>Você pinga o gateway com sucesso. O que isso <i>prova</i>, e o que não prova?</summary>
@@ -76,9 +76,9 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 >
 > **📂 Recursos**
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — a referência do semestre: calendário das três turmas, nota, prazos e regras
-> - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis, obrigatório, **instale antes de vir**. Sem ele você faz o laboratório na tela do colega, e ele vale ponto.
-> - `lab00_resgate.pka` — o cenário do Lab 0 (ver o aviso abaixo sobre quando ele entra)
-> - [Vevox](https://vevox.app/) — exit ticket, anônimo e sem cadastro
+> - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis, obrigatório, **instale antes de vir**. Sem o simulador na sua máquina nenhuma prática do semestre funciona.
+> - `lab00_resgate.pka` — o cenário do Lab 0. **Ainda não distribuído:** quando entrar, o link aparece aqui e eu aviso no AVA
+> - Meia folha de papel — bilhete de saída, anônimo, recolhido na porta
 
 > [!IMPORTANT] 📌 Como esta primeira prática funciona
 > **Hoje é ambiente e método.** A prioridade é sair daqui com a conta NetAcad criada e o Packet Tracer rodando na sua máquina — sem isso, nenhuma aula prática do semestre funciona. E eu conduzo os **quatro defeitos** no projetor: você vê o sintoma, responde o que verificaria primeiro, e só depois eu revelo.
@@ -91,15 +91,12 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 
 | Min | Bloco | Onde está nesta página |
 | :-- | :--- | :--- |
-| 0–5 | Entrada, chamada, distribuição do cenário | — |
-| 5–13 | **Nosso caminho até aqui** — 3 questões de Redes I, sem nota | bloco de abertura |
-| 13–23 | **Setup** — NetAcad e Packet Tracer funcionando na sua máquina | Tópico 1 |
-| 23–30 | **Worked example** — a sequência de diagnóstico, narrada no projetor | Tópico 2 |
-| 30–33 | **Briefing** do cenário e das regras da caça | Tópico 3 |
-| 33–57 | **Lab 0 em duplas** — a caça | Prática |
-| 57–67 | **Debrief coletivo** — o que a sala achou, na ordem das camadas | Debrief |
-| 67–70 | Reflexão + exit ticket | Fechamento |
-| **70–75** | **Folga** — máquina que não instala, dúvida longa | — |
+| 0–7 | Entrada, chamada e **Nosso caminho até aqui** — 3 questões de Redes I, sem nota | bloco de abertura |
+| 7–27 | **O contrato do semestre** — nota, datas, laboratórios, regras de sala | callout do contrato |
+| 27–42 | **Instalação** — NetAcad e Packet Tracer funcionando na sua máquina | Tópico 1 |
+| 42–65 | **Exemplo resolvido: os quatro defeitos, no projetor** — você diz o que verificaria primeiro, eu revelo depois | Tópicos 2 e 3 |
+| 65–72 | **Como o semestre funciona** — duplas, quebra deliberada, o laboratório que vale ponto | Revisão |
+| **72–75** | Reflexão + bilhete de saída | Fechamento |
 
 > [!NOTE] 🧭 P11 e P12 — a ordem é diferente para vocês, e isso é intencional
 > **P11 (segunda):** você faz este laboratório **antes** da teórica de terça (28/07), conforme o horário emitido em 25/07 — o agrupamento das duas práticas nessa aula está em confirmação na secretaria. Os conceitos que reencontrar aqui voltam no diagnóstico da turma; você chega com a experiência na mão.
@@ -110,29 +107,29 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 >
 > - **Aprovação:** ≥ **60 pontos** *e* ≥ **75% de frequência**. As duas juntas — falta reprova com nota boa.
 > - **Os 100 pontos:** N1 = 35 (25 prova + 5 labs + 5 Uniube+) · N2 = 50 (30 prova + 6 projeto + 4 defesa + 10 Uniube+) · Institucional = 15.
-> - **Datas travadas:** prova **N1 em 22/09** · prova **N2 em 01/12** · vistas em **29/09** e **08/12**. A prova tem duas etapas: 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
-> - **Laboratórios que valem nota:** Lab 0 a 5, **1 ponto cada**, Completion ≥ 80%, contam os **5 melhores**. Os labs 6 a 10 são formativos, sem nota.
+> - **Datas de prova:** N1 em **22/09** · N2 em **01/12** · vistas em **29/09** e **08/12** — dependem da confirmação do agrupamento da terça, e se mudarem o aviso sai no AVA. A prova tem duas etapas: 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
+> - **Laboratórios que valem nota:** Lab 0 a 5, **1 ponto cada**, 80% de acerto, contam os **5 melhores**. Os labs 6 a 10 são formativos, sem nota.
 > - **Faltou à prova?** Pedido de segunda chamada pelo **SAE no AVA, em até 3 dias úteis**, com o atestado anexado no SAE — **não na minha mão**. O prazo é institucional; fora dele o curso indefere.
-> - **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas da N1 e da N2 — 55 pontos — e vale por elas**, e a nota final trava em 60.
+> - **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**; laboratórios, Uniube+ e os 15 da Institucional ficam onde estão, e a nota final trava em 60.
 > - **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11. A **P11 perde quatro segundas**, a P12 nenhuma — por isso laboratório novo só cai em semana em que as duas práticas se encontram.
 > - **Regras de sala:** propostas por mim, **votadas pela turma** na teórica de terça. O texto aprovado é publicado no plano — o contrato não fica no quadro.
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
-**Worked example (exemplo resolvido)** — uma solução completa, narrada passo a passo por quem já sabe, estudada *antes* de você tentar sozinho. Não é "o professor fazendo por você": é o andaime que libera memória de trabalho para você formar o método em vez de gastá-la procurando às cegas.
+**Exemplo resolvido** — eu resolvo um problema inteiro no projetor, em voz alta, antes de você tentar sozinho. Você vê o caminho completo, não só a resposta. Depois é a sua vez.
 
-**Completion** — o percentual que o arquivo `.pka` calcula sozinho e mostra na tela, comparando a sua rede com a rede correta. É a nota do laboratório, apurada em sala.
+**Porcentagem de acerto** — o arquivo do Packet Tracer compara a sua rede com a rede correta e mostra na tela quanto você acertou. É a nota do laboratório, e ela sai em sala. Na tela do programa esse número aparece em inglês, com o nome `Completion`.
 
-**Quebra deliberada** — eu derrubo algo na sua topologia sem avisar o quê, e você descobre. A partir da S02 isso ocupa os últimos 20 minutos de toda prática. Hoje é aperitivo.
+**Quebra deliberada** — eu derrubo alguma coisa na sua topologia sem dizer o quê, e você descobre. A partir da semana 2 isso ocupa os últimos 20 minutos de toda prática. Hoje é só um aperitivo.
 
-**Remendo** — mudar a infraestrutura para caber no host errado, em vez de corrigir o host. Funciona na aparência e **derruba** o seu Completion. Tem seção própria mais abaixo.
+**Remendo** — mudar a rede para caber no aparelho errado, em vez de consertar o aparelho. Parece que funcionou e **derruba a sua porcentagem**. Tem uma seção só sobre isso mais abaixo.
 
 </aside>
 
 ---
 
-## 📌 1. Ambiente pronto: NetAcad + Packet Tracer [Hands-on ⏳ 10 min]
+## 📌 1. Ambiente pronto: NetAcad + Packet Tracer [Mão na massa ⏳ 10 min]
 
 O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratuito, roda em Windows, macOS e Linux, e exige uma conta gratuita na Cisco Networking Academy — **a conta é a parte que demora**, não o download.
 
@@ -153,7 +150,7 @@ O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratui
 
 ---
 
-## 📌 2. O método: um defeito resolvido no projetor [Worked example ⏳ 7 min]
+## 📌 2. O método: um defeito resolvido no projetor [Exemplo resolvido ⏳ 7 min]
 
 Antes de você caçar, eu caço **um** — narrando cada pergunta em voz alta. Não é para você decorar a resposta: é para você copiar **a sequência de perguntas**.
 
@@ -227,10 +224,10 @@ E aqui vem a parte que confunde: o roteador **pode** encaminhar esse tráfego de
 
 </details>
 
-> [!TIP] 💡 Dica de produção
-> Este exemplo resolvido no projetor não é enfeite: é **worked example**, e a pesquisa de carga cognitiva é bem estabelecida no ponto — quem é iniciante num domínio aprende mais estudando uma solução narrada do que tentando resolver do zero, porque a busca às cegas consome a memória de trabalho que deveria estar formando o esquema (Sweller, Ayres & Kalyuga, 2011).
+> [!TIP] 💡 Por que eu resolvo antes de você tentar
+> No começo, ver alguém resolver por inteiro ensina mais do que tentar do zero. Quando você ainda não tem repertório, tentar às cegas gasta toda a sua atenção na procura, e não sobra atenção para aprender o caminho.
 >
-> E o inverso também é verdade: conforme você ganha repertório, o exemplo pronto passa a **atrapalhar** — é o *expertise reversal effect* (Kalyuga et al., 2003). Por isso o andaime desta disciplina encolhe de propósito: até a S08 você tem exemplo completo; a partir da S11, só pedaços; da S16 em diante, o problema aberto direto. Se em novembro você achar que "o professor parou de explicar", é isso acontecendo, e é deliberado.
+> **Isso muda no meio do semestre, e é de propósito.** Conforme você ganha traquejo, o exemplo pronto começa a atrapalhar — vira resposta antes da pergunta. Por isso a ajuda diminui: até a semana 8 você tem o exemplo completo; da 11 em diante, só pedaços; da 16 em diante, o problema direto, sem exemplo. Se em novembro você achar que "o professor parou de explicar", é isso, e é planejado.
 
 > [!NOTE] 💼 Pergunta de entrevista
 > *"Um usuário liga dizendo que a internet caiu. Qual é a sua primeira pergunta?"*
@@ -239,7 +236,7 @@ E aqui vem a parte que confunde: o roteador **pode** encaminhar esse tráfego de
 
 ---
 
-## 📌 3. O cenário: uma rede de campus com quatro defeitos [Briefing ⏳ 3 min]
+## 📌 3. O cenário: uma rede de campus com quatro defeitos [Apresentação ⏳ 3 min]
 
 Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento, sem VLAN, sem nada que você ainda não tenha visto — **roteamento dinâmico é a S11, VLAN é a S03.** Hoje é tudo Redes I.
 
@@ -284,15 +281,18 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 ---
 
 <div class="au-pratica">
-<b>Lab 0 "Resgate" — 24 min, em duplas</b>
+<b>Os quatro defeitos — 23 min, no projetor</b>
 
-1. Abra o arquivo `lab00_resgate.pka` no Packet Tracer.
-2. **Antes de tocar em qualquer configuração**, rode o fluxo do bloco 2.1 em **um** host de cada sub-rede e anote o sintoma de cada um. Diagnóstico primeiro, correção depois.
-3. Para cada sintoma, **nomeie a camada** antes de abrir a tela de configuração. Diga em voz alta para a sua dupla: *"isto é camada 1"*, *"isto é camada 3 local"*.
-4. Corrija **um** defeito por vez e reteste. Corrigir dois de uma vez e o ping voltar não te diz qual dos dois era.
-5. Clique em **`Check Results`** depois de cada correção e acompanhe o Completion subir.
+Eu abro o cenário no projetor e mostro **um sintoma por vez**. Para cada um, antes de eu revelar qualquer coisa:
 
-**As regras da caça:**
+1. **Nomeie a camada** — em voz alta, para quem senta do lado: *"isto é camada 1"*, *"isto é camada 3 local"*.
+2. **Diga o que você verificaria primeiro** — qual comando, em qual máquina. O fluxo do bloco 2.1 é a ordem.
+3. Só então eu abro a tela. Se você errou a camada, é aqui que se aprende — errar em voz alta hoje custa zero.
+4. Corrigimos **um** defeito por vez e retestamos. Corrigir dois de uma vez e o ping voltar não diz qual dos dois era.
+
+**O que já está certo, e não vale gastar tempo:** o **R-CAMPUS** está correto nas três interfaces; o **SRV-PORTAL** está correto, com DNS e HTTP no ar.
+
+**As regras da caça — valem quando o cenário entrar, na próxima prática:**
 
 | Regra | Detalhe |
 | :--- | :--- |
@@ -300,7 +300,7 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 | **Não adicione nem remova equipamento** | Trocar cabo, se for o caso, pode. |
 | **O que já está certo** | O **R-CAMPUS** está correto nas três interfaces. O **SRV-PORTAL** está correto, com DNS e HTTP no ar. Não gaste tempo neles. |
 
-<p class="au-pronto"><b>Critério de pronto:</b> os quatro PCs <b>(1)</b> pingam <code>192.168.30.10</code> e <b>(2)</b> abrem <code>http://portal.uniube.local</code> <b>pelo nome</b>, no navegador — e o <code>Check Results</code> mostra <b>Completion ≥ 80%</b>. O cenário apura os valores corrigidos nos hosts <b>e</b> dois testes de conectividade de ponta a ponta; os testes existem justamente para impedir o "consertei o campo e não testei", e um deles só fecha se o acesso funcionar <b>pelo nome</b>, não pelo IP.</p>
+<p class="au-pronto"><b>Critério de pronto, quando o cenário entrar:</b> os quatro PCs <b>(1)</b> pingam <code>192.168.30.10</code> e <b>(2)</b> abrem <code>http://portal.uniube.local</code> <b>pelo nome</b>, no navegador — e o <code>Check Results</code> mostra <b>80% de acerto</b>. O cenário apura os valores corrigidos nos hosts <b>e</b> dois testes de conectividade de ponta a ponta; os testes existem justamente para impedir o "consertei o campo e não testei", e um deles só fecha se o acesso funcionar <b>pelo nome</b>, não pelo IP.</p>
 </div>
 
 > [!WARNING] ⚠️ Gotcha — o erro que faz a nota **cair**
@@ -309,7 +309,7 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 > O cenário compara o seu resultado com a rede correta: **remendo derruba o seu percentual.** Se um valor parece errado, pergunte antes *"qual dos dois lados é que está errado?"*. Na dúvida, o errado é quase sempre o **host** — foi ele que alguém configurou às pressas, não a infraestrutura.
 
 > [!TIP] ✅ Como o ponto deste laboratório é apurado
-> **O Lab 0 vale 1 ponto da Atividade N1, e o ponto sai para quem fechar `Completion ≥ 80%`** — na tela, durante a aula em que o cenário entrar. Você sai da sala sabendo a sua nota; não existe "depois eu corrijo".
+> **O Lab 0 vale 1 ponto da Atividade N1, e o ponto sai para quem fechar `80% de acerto`** — na tela, durante a aula em que o cenário entrar. Você sai da sala sabendo a sua nota; não existe "depois eu corrijo".
 >
 > São seis laboratórios valendo ponto no semestre (Lab 0 a Lab 5) e contam **os cinco melhores** — o sexto é a sua margem para um dia ruim.
 
@@ -323,9 +323,9 @@ Não é castigo por ser rápido: é o formato dos laboratórios a partir da S02,
 
 ---
 
-## 🧭 Debrief coletivo — de baixo para cima (10 min)
+## 🧭 Revisão com a sala — de baixo para cima (10 min)
 
-O debrief é **ao vivo, com a sala**, e a ordem em que a gente revisa **é** a lição. Não vamos do mais fácil ao mais difícil: subimos as camadas, porque é assim que se diagnostica. Esta página não adianta as respostas de propósito — se você chegar sabendo o que está quebrado, você não diagnosticou nada, só digitou.
+A revisão é **ao vivo, com a sala**. Eu não vou do mais fácil ao mais difícil: subo as camadas, porque é assim que se diagnostica. Esta página não adianta as respostas — se você chegar sabendo o que está quebrado, você não diagnosticou nada, só digitou.
 
 Cada dupla vai responder, na sua vez, três perguntas sobre **um** dos defeitos que encontrou:
 
@@ -341,24 +341,24 @@ Enquanto a sala responde, eu monto o quadro no projetor: uma linha por camada, d
 > Repare no formato das três perguntas: **sintoma → teste → camada**, nunca "qual era o erro". É o mesmo roteiro de um *post-mortem* de incidente em produção, e pela mesma razão: a equipe que só registra a correção repete a falha, porque não guardou o caminho. O que se documenta é o raciocínio, não o conserto.
 
 > [!NOTE] 📌 P11, isto aqui é o seu adiantamento
-> A aula de terça (28/07) é o contrato completo — cronograma, notas, acordos de sala votados pela turma, política de IA. Ela está publicada no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato), então nada depende de você estar lá. **P11: você viu a prática antes da teoria**, então leve o essencial hoje: laboratório vale ponto na hora (`Completion ≥ 80%`), duplas são rotativas, toda prática tem quebra deliberada a partir da S02, toda aula abre com recuperação e fecha com exit ticket. **Datas travadas: Prova N1 em 22/09 · Prova N2 em 01/12.**
+> A aula de terça (28/07) é o contrato completo — cronograma, notas, acordos de sala votados pela turma, política de IA. Ela está publicada no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato), então nada depende de você estar lá. **P11: você viu a prática antes da teoria**, então leve o essencial hoje: laboratório vale ponto na hora (80% de acerto), duplas são rotativas, toda prática tem quebra deliberada a partir da semana 2, toda aula abre com perguntas sobre o que já foi visto e fecha com bilhete de saída. **Datas de prova: N1 em 22/09 · N2 em 01/12** — confirmo no AVA se mudarem.
 > **P12:** se você já teve a teórica, aqui é só a confirmação de que a prática cumpre o combinado.
 
 ---
 
 <div class="au-slot">
-<div class="au-slot-h"><b>Interativo</b> · Vevox · 3 min</div>
+<div class="au-slot-h"><b>Interativo</b> · Bilhete de saída · 3 min</div>
 <div class="au-slot-c">
 
-**Exit ticket.** Abra **vevox.app** e entre com o ID de sessão que está no projetor. Duas perguntas anônimas, sem nota:
+**Bilhete de saída.** Meia folha de papel, recolhida na porta — sem nome. Duas perguntas, sem nota:
 
 1. *Qual assunto de Redes I você sente que mais esqueceu?*
 2. *Qual foi o ponto mais confuso da aula de hoje?*
 
-O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados entram no retrieval de abertura. É por este canal que a turma dirige o ritmo da disciplina.
+O que você responder aqui **abre a aula da semana que vem** — os assuntos mais citados viram as primeiras perguntas da próxima aula.
 
 </div>
-<p class="au-slot-b"><b>Plano B:</b> sem rede na sala, as mesmas duas perguntas vão em meia folha de papel, recolhida na porta. Anônima do mesmo jeito, e eu leio antes de terça. O exit ticket nunca é cortado — ele é a entrada da próxima aula.</p>
+<p class="au-slot-b"><b>Quando o bilhete passar para o <a href="https://vevox.app/">Vevox</a></b>, eu projeto o código de acesso e aviso aqui — anônimo do mesmo jeito. O bilhete nunca é cortado: ele é a entrada da próxima aula.</p>
 </div>
 
 ---
@@ -378,7 +378,7 @@ O que você responder aqui **abre a aula da semana que vem** — os pontos mais 
 | **O que "o ping passou" prova** | Que passou. **Não** por onde: rota indireta e ICMP redirect fazem rede torta parecer rede boa. |
 | **Ler ping no Packet Tracer** | O 1º pacote costuma cair por ARP. Julgue pelas 4 linhas e pela estatística, nunca pela primeira. |
 | **Critério de pronto do lab** | Os 4 PCs pingam `192.168.30.10` **e** abrem `http://portal.uniube.local` **pelo nome**. |
-| **Nota do Lab 0** | 1 pt da Atividade N1, por `Completion ≥ 80%` (8 de 10 itens), na tela, em sala — na prática em que o cenário entrar. |
+| **Nota do Lab 0** | 1 pt da Atividade N1, por `80% de acerto` (8 de 10 itens), na tela, em sala — na prática em que o cenário entrar. |
 | **Regra de ouro do remendo** | Mudar a infraestrutura para caber no host errado **derruba** o seu percentual. |
 | **Um defeito por vez** | Corrigir dois e o ping voltar não diz qual dos dois era. |
 | **Pendência** | Conta NetAcad + Packet Tracer instalados **antes da S02** — não há bloco de setup na próxima. |
@@ -410,7 +410,7 @@ O que você responder aqui **abre a aula da semana que vem** — os pontos mais 
 - TANENBAUM, A. S.; FEAMSTER, N.; WETHERALL, D. J. **Redes de Computadores.** 6. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 1, seç. 1.4 — modelos de referência; cap. 4, seç. 4.8 — comutação na camada de enlace</span>
 - CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems, 2026. Disponível em: https://www.netacad.com/. <span class="au-pag">módulo 1 — configuração básica e verificação de conectividade</span>
 
-**Evidência que sustenta o formato desta aula:**
+**De onde vem o formato desta aula:**
 
 - SWELLER, J.; AYRES, P.; KALYUGA, S. **Cognitive Load Theory.** New York: Springer, 2011. <span class="au-pag">cap. 8 — The worked example effect</span>
 - KALYUGA, S.; AYRES, P.; CHANDLER, P.; SWELLER, J. The expertise reversal effect. **Educational Psychologist**, v. 38, n. 1, 2003. <span class="au-pag">p. 23–31</span>

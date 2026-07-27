@@ -26,7 +26,7 @@ tags: [redes2, 2026-2, contrato, apresentacao]
 
 Esta é a primeira aula de Redes II, então o "até aqui" é **Redes I** — a disciplina não recomeça, ela continua. Responda **antes** de abrir cada resposta.
 
-As mesmas três questões vão nos cartões Plickers daqui a pouco, **sem nota e sem registro**: elas me mostram onde a turma está antes de eu acelerar.
+As mesmas três questões voltam em votação na sala daqui a pouco, **sem nota e sem registro**.
 
 <details>
 <summary>Dois hosts têm o IP 192.168.10.20/24 e 192.168.10.200/26. Eles se enxergam?</summary>
@@ -57,54 +57,54 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 </div>
 
 > [!INFO] 🎯 Visão geral e recursos
-> Hoje a gente faz três coisas: **diagnóstico** de onde a turma está (Plickers), o **contrato** do semestre — datas, nota, regras — e uma **demonstração** que deixa em aberto a pergunta que o semestre inteiro responde. O documento completo — calendário das três turmas, tabelas de nota, política de IA, ferramentas, bibliografia — é a página [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato): esta aula apresenta, aquela página guarda.
+> Hoje são três coisas: **diagnóstico** de onde a turma está, o **contrato** do semestre — datas, nota, regras — e uma **demonstração** que deixa em aberto a pergunta que o semestre inteiro responde. O documento completo — calendário das três turmas, tabelas de nota, política de IA, ferramentas, bibliografia — é a página [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato): esta aula apresenta, aquela página guarda.
 >
 > **O que você leva desta aula**
 > - Onde os **100 pontos** são ganhos — e por que o ponto barato vence o caro.
-> - As datas travadas: **N1 em 22/09**, **N2 em 01/12**, vistas nas semanas seguintes.
+> - As datas de prova: **N1 em 22/09**, **N2 em 01/12**, vistas nas semanas seguintes.
 > - O prazo de **3 dias úteis** do SAE para a segunda chamada.
 > - Os **acordos de sala**, votados — não decretados.
 >
 > **📂 Recursos**
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — a referência do semestre
-> - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis; **resolver esta semana**, o Lab 0 vale ponto
-> - AVA Uniube On-line — entregas, Uniube+ e o vídeo de 6 min de cada semana
+> - [Cisco Packet Tracer + conta NetAcad](https://www.netacad.com/) — grátis; **resolver esta semana**: sem o simulador na sua máquina nenhuma prática do semestre funciona
+> - AVA Uniube On-line — entregas e Uniube+. Quando uma semana tiver pré-trabalho, ele é curto (vídeo de até 6 min com 4 questões) e sai avisado no AVA — não é toda semana
 
 ### ⏱️ Os 75 minutos de hoje
 
 | Min | Bloco | Onde está |
 | :-- | :--- | :--- |
 | 0–5 | Entrada, chamada, projetor | — |
-| 5–13 | **Nosso caminho até aqui** — 3 questões de Redes I no Plickers, sem nota | bloco de abertura |
+| 5–13 | **Nosso caminho até aqui** — 3 questões de Redes I, sem nota | bloco de abertura |
 | 13–26 | **A disciplina** — o mapa do semestre e demonstração ao vivo | Tópico 1 |
-| 26–34 | **ConcepTest #1** no Plickers — vota, discute, revota | Tópico 1 |
-| 34–44 | **O calendário** — datas travadas, feriados, as três turmas | Tópico 2 |
+| 26–34 | **Pergunta de votação #1** — vote, discuta com o vizinho, vote de novo | Tópico 1 |
+| 34–44 | **O calendário** — datas de prova, feriados, as três turmas | Tópico 2 |
 | 44–56 | **Nota e segundas chances** — os 100 pontos, SAE, recuperação | Tópico 2 |
-| 56–58 | Pausa procedural (estreia do ritual) | Tópico 2 |
+| 56–58 | Pausa de 2 min — daqui em diante, em toda aula | Tópico 2 |
 | 58–67 | **Regras de sala** — propostas e votação | Slot interativo |
-| 67–70 | Reflexão + exit ticket | Fechamento |
+| 67–70 | Reflexão + bilhete de saída | Fechamento |
 | **70–75** | **Folga** — máquina que não liga, dúvida longa, sala trocada | — |
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
-Cinco termos que aparecem o semestre inteiro e que decidem nota:
+Cinco palavras que voltam o semestre inteiro. Todas decidem nota.
 
-**Completion** — o percentual que o arquivo `.pka` do Packet Tracer calcula sozinho e mostra na tela. É assim que o laboratório vira nota, na hora, sem espera.
+**Porcentagem de acerto** — o arquivo do Packet Tracer confere a sua rede sozinho e mostra na tela quanto você acertou. É assim que o laboratório vira nota na hora, sem esperar correção. Na tela do programa esse número aparece em inglês, com o nome `Completion`.
 
-**Prova em duas etapas** — a prova tem uma parte individual e uma em grupo, no mesmo dia. As duas **compõem** o valor da prova.
+**Prova em duas etapas** — no mesmo dia você faz uma parte sozinho e uma parte em grupo. As duas somadas dão a nota da prova.
 
-**Segunda chamada (substitutiva)** — a segunda chance de quem **faltou** à prova. Pede-se pelo **SAE no AVA, em até 3 dias úteis**.
+**Segunda chamada** — é para quem **faltou** à prova. Você pede pelo SAE, dentro do AVA, em até **3 dias úteis**.
 
-**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Os requisitos estão no bloco 3.4 do plano; data, horário e a forma de acesso eu confirmo com a coordenação e publico no AVA.
+**Recuperação** — é para quem **fez** as provas e terminou com **40 a 59** pontos. Não se pede: o direito vem da nota. A data eu publico no AVA.
 
-**AIAS** — *AI Assessment Scale*, a escala **de 1 a 5** que declara **quanto** de IA é permitido em cada instrumento. Nesta disciplina vai de 1 (nenhuma) a 3 (colaboração declarada).
+**Escala de uso de IA** — de 1 a 5, diz quanto de inteligência artificial é permitido em cada atividade. Aqui vai de **1** (nenhuma) a **3** (pode usar, desde que você declare).
 
 </aside>
 
 ---
 
-## 📌 1. A disciplina em 13 minutos [Teoria + demonstração ⏳ 13 min + 8 de ConcepTest]
+## 📌 1. A disciplina em 13 minutos [Teoria + demonstração ⏳ 13 min + 8 de votação]
 
 Não vou ler o programa em voz alta — ele está inteiro no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato). O que cabe aqui é o mapa e uma demonstração.
 
@@ -138,15 +138,15 @@ Não vou ler o programa em voz alta — ele está inteiro no [Plano de Ensino e 
 <text x="615" y="149" text-anchor="middle" font-size="10" fill="#00aa9f" font-family="monospace" font-weight="bold">HOST B</text>
 <text x="615" y="105" text-anchor="middle" font-size="11" fill="#00aa9f" font-family="monospace">ping?</text>
 </svg>
-<figcaption class="au-legenda">O cenário da demonstração: quarenta hosts num único domínio de broadcast. A placa defeituosa (laranja) fica de um lado da sala; os hosts A e B (verde), do outro, sem nenhuma relação com ela. O ConcepTest pergunta exatamente sobre o ping entre A e B — e a resposta é o motivo de a S03 existir.</figcaption>
+<figcaption class="au-legenda">O cenário da demonstração: quarenta hosts num único domínio de broadcast. A placa defeituosa (laranja) fica de um lado da sala; os hosts A e B (verde), do outro, sem nenhuma relação com ela.</figcaption>
 </figure>
 
 Um problema real montado ao vivo no Packet Tracer: **quarenta hosts pendurados num único switch, sem nenhuma divisão.** Cada broadcast que qualquer máquina emite chega a todas as outras. Basta um laço acidental de cabo, ou uma placa defeituosa repetindo quadros, para o tráfego se multiplicar até que ninguém mais consiga transmitir. A rede não é invadida nem desligada — ela **se afoga sozinha**.
 
-> [!NOTE] 🃏 ConcepTest Plickers #1
+> [!NOTE] 🃏 Pergunta de votação #1
 > **Durante a demonstração, antes de eu apertar o botão:** o que acontece com o *ping* entre dois hosts que estão do outro lado da sala, sem nenhuma relação com a máquina defeituosa?
 >
-> Vote, discuta com o vizinho, vote de novo. A resposta é a razão de existir a semana S03.
+> Vote, discuta com o vizinho, vote de novo.
 
 A pergunta que essa demonstração deixa em aberto — *"como impedir que o problema de um setor afogue os outros?"* — é literalmente a primeira frase da aula de VLANs, daqui a duas semanas.
 
@@ -154,7 +154,7 @@ A pergunta que essa demonstração deixa em aberto — *"como impedir que o prob
 
 ## 📌 2. O contrato: datas, nota e segundas chances [Teoria ⏳ 22 min + 2 de pausa]
 
-O texto completo — calendário das três turmas semana a semana, tabelas, requisitos, política de IA — está nos [Tópicos 2 e 3 do plano](./Plano-de-Ensino-e-Contrato). Mas antes de qualquer tabela, uma aposta — **ela vai ao Plickers como pergunta de A/B, antes de eu mostrar qualquer número**:
+O texto completo — calendário das três turmas semana a semana, tabelas, requisitos, política de IA — está nos [Tópicos 2 e 3 do plano](./Plano-de-Ensino-e-Contrato). Mas antes de qualquer tabela, uma aposta — **responda de cabeça antes de abrir**:
 
 <details class="au-aposta">
 <summary>Aposte antes de ver: quem fecha melhor a N1 — quem tira 22 na prova, faz 4 dos 6 labs e cumpre o Uniube+, ou quem tira os mesmos 22, faz os 6 labs e zera o Uniube+?</summary>
@@ -174,10 +174,10 @@ A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente
 
 1. **Aprovação = ≥ 60 pontos E ≥ 75% de frequência.** As duas juntas.
 2. **Os 100 pontos:** N1 = 35 (25 prova + 5 labs + 5 Uniube+) · N2 = 50 (30 prova + 6 projeto + 4 defesa + 10 Uniube+) · Institucional = 15.
-3. **Datas travadas:** prova N1 **22/09** · prova N2 **01/12** · vistas **29/09** e **08/12**. Prova em **duas etapas** — 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
-4. **Labs que valem nota:** Lab 0 a 5 (S01–S08), 1 pt cada, **Completion ≥ 80%**, contam os **5 melhores**. Labs 6–10 são formativos, sem nota.
+3. **Datas de prova:** N1 **22/09** · N2 **01/12** · vistas **29/09** e **08/12**. Estão dentro das janelas institucionais e dependem da confirmação do agrupamento da terça — se mudarem, o aviso sai no AVA. Prova em **duas etapas** — 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
+4. **Labs que valem nota:** Lab 0 a 5 (S01–S08), 1 pt cada, **80% de acerto**, contam os **5 melhores**. Labs 6–10 são formativos, sem nota.
 5. **Faltou à prova?** SAE no AVA em **até 3 dias úteis**, atestado anexado no SAE — **não na minha mão**. Segunda chamada de 14 a 16/12.
-6. **Ficou entre 40 e 59?** Recuperação em **17 ou 18/12** (confirmo no AVA) — se todas as provas foram feitas e o Uniube+ não está zerado. Ela **zera as notas da N1 e da N2 (55 pontos) e vale por elas**, e a nota final **trava em 60**.
+6. **Ficou entre 40 e 59?** Recuperação em **17 ou 18/12** (confirmo no AVA) — se todas as provas foram feitas e o Uniube+ não está zerado. Ela **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**; laboratórios, Uniube+ e os 15 da Institucional ficam onde estão, e a nota final **trava em 60**.
 7. **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11 — a P11 perde quatro aulas, a P12 nenhuma, e **a teórica de terça perde 13/10**, a perda que atinge todo mundo. A regra da assimetria (lab novo só quando as duas práticas se encontram) está no plano.
 
 > [!WARNING] ⚠️ O prazo de 3 dias úteis é institucional
@@ -185,28 +185,28 @@ A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
 > Não conte com baixar o Packet Tracer no laboratório. **Instale em casa, hoje.**
-> **P12 (quinta):** você tem até 30/07 — chegar sem o simulador é passar o laboratório olhando a tela do colega, e o Lab 0 vale ponto. **P11 (segunda):** o seu Lab 0 foi ontem; se você não conseguiu instalar a tempo, me procure hoje que a gente resolve antes que vire nota perdida.
+> **P12 (quinta):** traga o Packet Tracer já instalado — quinta é ambiente e método, e sem o simulador na sua máquina nenhuma prática do semestre funciona. **P11 (segunda):** você já fez a sua; se não conseguiu instalar, me procure hoje. **O laboratório valendo 1 ponto entra na próxima prática, igual para as duas turmas** — ninguém perde ponto.
 
 ---
 
 ## 🗳️ Slot interativo — as regras de sala [Discussão e votação ⏳ 9 min]
 
-Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. Normas coconstruídas geram menos violação do que normas impostas, e o Center for Teaching Innovation de Cornell trata isso como prática padrão de primeira aula.
+Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. É por isso que estas não são impostas: vocês votam.
 
 **Hoje a turma propõe e vota 4 a 5 acordos.** Entro com quatro na mesa; vocês cortam, mudam e acrescentam:
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). O uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
-2. **Pergunta errada é matéria-prima.** O distrator de um ConcepTest sai de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
+1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (votação em sala, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). Celular aberto no que não é a aula derruba o seu rendimento e o de quem senta do lado. Ainda assim eu não proíbo: prefiro combinar quando ele entra e quando ele fica de tela para baixo.
+2. **Pergunta errada é matéria-prima.** As opções erradas das perguntas de votação saem de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
 
 ---
 
 <div class="au-slot">
-<div class="au-slot-h"><b>Interativo</b> · Vevox · 9 min</div>
+<div class="au-slot-h"><b>Interativo</b> · Votação em sala · 9 min</div>
 <div class="au-slot-c">
 
-**Votação dos acordos de sala.** Abra **vevox.app** e entre com o ID de sessão que está no projetor.
+**Votação dos acordos de sala.** Proposta a proposta, mão levantada: **manter, mudar ou cortar.**
 
 1. As quatro propostas acima aparecem uma a uma: **manter, mudar ou cortar.**
 2. Campo aberto para **acrescentar** um acordo que ninguém propôs.
@@ -215,7 +215,7 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 
 </div>
-<p class="au-slot-b"><b>Plano B:</b> se a rede cair, a votação vai nos cartões <b>Plickers</b> — cada proposta é uma pergunta de A/B/C, e o acordo extra vai em meia folha de papel recolhida na saída. Mesmo conteúdo, mesmos 9 minutos, zero dependência de internet.</p>
+<p class="au-slot-b"><b>O acordo que ninguém propôs em voz alta</b> vai em meia folha de papel, recolhida na saída — vale o mesmo na apuração. Nove minutos, sem depender de internet.</p>
 </div>
 
 ---
@@ -229,12 +229,12 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 | **Conteúdo** | Bloco 1 (S02–S08): comutar e segmentar · Bloco 2 (S11–S17): rotear e proteger · Projeto (S18–S19) |
 | **Aprovação** | ≥ 60 pontos **e** ≥ 75% de frequência |
 | **Distribuição** | N1 = 35 · N2 = 50 · Institucional = 15 |
-| **Datas travadas** | Prova N1 **22/09** · Prova N2 **01/12** · Vistas **29/09** e **08/12** |
+| **Datas de prova** | N1 **22/09** · N2 **01/12** · Vistas **29/09** e **08/12** — dependem da confirmação do agrupamento da terça |
 | **Formato da prova** | Duas etapas — 50 min individual + 18 min em grupo nas 4 questões mais difíceis |
 | **Segunda chamada** | Faltou → **SAE no AVA em 3 dias úteis**. Aplicação de **14 a 16/12**. Atestado vai no SAE, não comigo |
-| **Recuperação** | Nota **40–59** + todas as provas feitas + Uniube+ não zerado. **17 ou 18/12** (confirmo no AVA), **zera as notas da N1 e da N2 (55 pontos) e vale por elas**, **teto 60** |
-| **Labs que valem nota** | Lab 0 a 5, 1 pt cada, **Completion ≥ 80%**, contam os **5 melhores** |
-| **Política de IA** | Declarar por instrumento (AIAS 1 a 3). Sem detector de IA — detalhe no plano |
+| **Recuperação** | Nota **40–59** + todas as provas feitas + Uniube+ não zerado. **17 ou 18/12** (confirmo no AVA), **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**, **teto 60** |
+| **Labs que valem nota** | Lab 0 a 5, 1 pt cada, **80% de acerto**, contam os **5 melhores** |
+| **Política de IA** | Declarar por instrumento (escala de IA, 1 a 3). Sem detector de IA — detalhe no plano |
 | **Regras de sala** | Votadas hoje — o texto aprovado vai para o plano publicado até sexta |
 | **Pendência da semana** | Conta NetAcad + Packet Tracer instalados em casa |
 
@@ -247,32 +247,30 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 
 ---
 
-## 🎬 Fechamento — exit ticket (3 min)
+## 🎬 Fechamento — bilhete de saída (3 min)
 
-Toda aula termina do mesmo jeito: duas perguntas anônimas, sem nota, no **Vevox**. O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados como confusos entram no retrieval de abertura.
+Toda aula termina do mesmo jeito: duas perguntas anônimas, sem nota, em **meia folha de papel** recolhida na porta. O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados como confusos são a primeira coisa que eu retomo.
 
 **Hoje:** *(1)* O que mais te preocupa nesta disciplina? *(2)* Qual foi o ponto mais confuso da aula de hoje?
 
-QR projetado no slide final, ou [vevox.app](https://vevox.app/) com o ID de sessão da tela. Sem sinal? Meia folha de papel na saída resolve.
+Meia folha de papel, recolhida na saída — sem nome, sem cadastro, sem depender de rede. Quando o bilhete passar para o [Vevox](https://vevox.app/), eu projeto o código de acesso e aviso aqui.
 
 <div class="au-reflexao">
 <b>Para pensar até a próxima aula</b>
 
 <p>Hoje você votou nos acordos que vão reger esta sala por 20 semanas. Um deles vai ser quebrado antes de setembro — provavelmente por alguém que votou a favor dele.</p>
 
-<p>A pergunta não é <i>qual</i>. É esta: <b>quem deveria cobrar o acordo quando isso acontecer — eu, ou a turma?</b> E se a sua resposta for "a turma", o que precisa ser verdade sobre a regra para que isso seja possível?</p>
+<p>A pergunta não é <i>qual</i>. É esta: <b>quem deveria cobrar o acordo quando isso acontecer — eu, ou a turma?</b> E se a sua resposta for "a turma", pegue o acordo do atraso: o que ele precisa ter escrito para um colega conseguir cobrar o outro sem virar discussão?</p>
 </div>
 
 <div class="au-refs">
 <b>De onde vem o que eu disse hoje</b>
 
-Esta aula é de contrato e diagnóstico. Vale você separar o que é livro, o que é pesquisa e o que sou eu explicando a norma da casa.
+Esta aula é de contrato e diagnóstico.
 
-**Livro e pesquisa, que você pode abrir hoje mesmo:**
+**Livro, que você pode abrir hoje mesmo:**
 
-- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 4.3 — IP e endereçamento; seç. 6.4.3 — comutadores de camada de enlace, p. 491–497</span> — base das questões de diagnóstico e da demonstração.
-- CORNELL CENTER FOR TEACHING INNOVATION. **Establishing Community Agreements and Classroom Norms.** Cornell University. Disponível em: https://teaching.cornell.edu/resource/establishing-community-agreements-and-classroom-norms. <span class="au-pag">seç. "Facilitating the process"</span> — base do slot de votação.
-- RAVIZZA, S. M.; UITVLUGT, M. G.; FENN, K. M. Logged in and zoned out: how laptop internet use relates to classroom learning. **Psychological Science**, v. 28, n. 2, 2017. <span class="au-pag">p. 171–180</span> — base da proposta 1 (celular agendado).
+- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 4.3 — IP e endereçamento; seç. 6.4.3 — comutadores de camada de enlace</span> — base das questões de diagnóstico e da demonstração.
 
 **Eu explicando, e onde você confere:**
 

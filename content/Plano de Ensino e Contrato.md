@@ -89,7 +89,7 @@ Três turmas, três calendários. **T** = teórica de terça (VIA203) · **P11**
 | **06** | 01/09 | 🚫 31/08 | 03/09 | STP: por que um loop de camada 2 derruba a rede | P12: desafio broadcast storm |
 | **07** | 08/09 | 🚫 07/09 | 10/09 | EtherChannel + redundância de gateway (FHRP) | P12: desafio EtherChannel |
 | **08** | 15/09 | 14/09 | 17/09 | DHCPv4 · SLAAC/DHCPv6 · **revisão N1** | **Lab 5** — DHCP + revisão de STP (a compensação da P11) |
-| **09** | 🎯 **22/09 — PROVA N1** | 21/09 | 24/09 | Prova em duas etapas | Troubleshooting integrador |
+| **09** | 🎯 **22/09 — PROVA N1** | 21/09 | 24/09 | Prova em duas etapas | Diagnóstico integrador |
 | **10** | 29/09 | 28/09 | 01/10 | **Vista da N1** — devolutiva por erro · **consolidação** | Refazer os cenários da prova |
 | **11** | 06/10 | 05/10 | 08/10 | Roteamento dinâmico + OSPF: introdução | Lab 6 *(formativo)* — OSPF área única |
 | **12** | 🚫 13/10 | 🚫 12/10 | 15/10 | (feriados) | P12: prática espiral de OSPF |
@@ -129,17 +129,17 @@ A **S12 é o caso extremo**: ali caem **os dois feriados juntos**, 12/10 e 13/10
 
 ## 📌 3. Nota e recuperação
 
-Cinco termos que aparecem o semestre inteiro e que decidem nota:
+Cinco palavras que voltam o semestre inteiro. Todas decidem nota.
 
-**Completion** — o percentual que o arquivo `.pka` do Packet Tracer calcula sozinho e mostra na tela. É assim que o laboratório vira nota, na hora, sem espera.
+**Porcentagem de acerto** — o arquivo do Packet Tracer confere a sua rede sozinho e mostra na tela quanto você acertou. É assim que o laboratório vira nota na hora, sem esperar correção. Na tela do programa esse número aparece em inglês, com o nome `Completion`.
 
-**Prova em duas etapas** — a prova tem uma parte individual e uma em grupo, no mesmo dia. As duas **compõem** o valor da prova (bloco 3.2).
+**Prova em duas etapas** — no mesmo dia você faz uma parte sozinho e uma parte em grupo. As duas somadas dão a nota da prova. Detalhe no bloco 3.2.
 
-**Segunda chamada (substitutiva)** — a segunda chance de quem **faltou** à prova. Pede-se pelo **SAE no AVA, em até 3 dias úteis**.
+**Segunda chamada** — é para quem **faltou** à prova. Você pede pelo SAE, dentro do AVA, em até **3 dias úteis**.
 
-**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Os requisitos estão no bloco 3.4; data, horário e a forma de acesso eu confirmo com a coordenação e publico no AVA. As duas são coisas diferentes, com regras diferentes.
+**Recuperação** — é para quem **fez** as provas e terminou com **40 a 59** pontos. Não se pede: o direito vem da nota. Os requisitos estão no bloco 3.4; a data eu publico no AVA. São coisas diferentes da segunda chamada, com regras diferentes.
 
-**AIAS** — *AI Assessment Scale*, a escala de 1 a 5 que declara **quanto** de IA é permitido em cada instrumento. Nesta disciplina vai de 1 (nenhuma) a 3 (colaboração declarada).
+**Escala de uso de IA** — de 1 a 5, diz quanto de inteligência artificial é permitido em cada atividade. Aqui vai de **1** (nenhuma) a **3** (pode usar, desde que você declare).
 
 ### 3.1 Onde estão os 100 pontos
 
@@ -147,12 +147,12 @@ Aprovação: **≥ 60 pontos** e **frequência ≥ 75%**.
 
 | Etapa | Total | Prova | Atividade | Uniube+ |
 | :--- | :-: | :-- | :-- | :-: |
-| **N1** — fecha na S09/S10 | **35** | 25 — prova de 22/09 | 5 — labs `.pka` (Lab 0 a 5, 1 pt cada, contam os **5 melhores**) | 5 |
+| **N1** — fecha na S09/S10 | **35** | 25 — prova de 22/09 | 5 — laboratórios no Packet Tracer (Lab 0 a 5, 1 pt cada, contam os **5 melhores**) | 5 |
 | **N2** — fecha na S19/S20 | **50** | 30 — prova de 01/12 | 6 — projeto integrador (dupla)<br/>4 — defesa oral (individual) | 10 |
 | **Institucional** | **15** | 15 — data definida pela instituição | — | — |
 
 > [!TIP] ✅ Como o ponto do laboratório é apurado — leia isto uma vez e nunca mais tenha dúvida
-> O arquivo `.pka` carrega os testes dentro dele e mostra o seu **Completion** na própria tela, durante a aula. **Vale o ponto quem fecha com Completion ≥ 80%.** Você sai da aula sabendo a nota; não existe espera nem "depois eu corrijo".
+> A régua é sempre a mesma: **dez itens verificados, oito deles = o ponto (80% de acerto).** Quando o cenário vier em arquivo `.pka`, o próprio Packet Tracer confere e mostra a sua porcentagem na tela, e você sai da aula sabendo a nota. Quando não vier, eu confiro os dez itens na sua tela, na hora. A régua é a lista de dez itens, não a ferramenta que a lê.
 >
 > São **seis** laboratórios valendo (Lab 0 a Lab 5) e contam **os cinco melhores** — o sexto é a sua margem para uma falta, uma internet que caiu ou um dia ruim. O teto continua sendo 5 pontos: fazer os seis não dá 6.
 
@@ -181,11 +181,11 @@ Os 75 minutos da terça de prova funcionam assim:
 | **N1** (22/09) | 21 | 4 | **25** |
 | **N2** (01/12) | 26 | 4 | **30** |
 
-Por que assim: a discussão acontece no pico de ativação da memória — você acabou de sofrer com a questão, e o erro é descoberto em cinco minutos, não em duas semanas.
+Por que assim: você acabou de sofrer com a questão e discute enquanto ela está fresca. O erro aparece em cinco minutos, não em duas semanas.
 
-**O que a evidência realmente diz** (e vale saber onde ela para): num estudo com pré e pós-teste, o ganho de retenção do formato apareceu em **23 dias**, não em 9 — e no prazo curto só os alunos de desempenho intermediário se beneficiaram (Cooke; Weir; Clarkston, 2019). Ou seja: o efeito é de **médio prazo**, que é exatamente o que interessa para uma N2 que cobra espiral da N1. Já a redução de ansiedade e a preferência pelo formato são **percepção relatada pelos próprios alunos**, e num preprint (Callaghan et al., 2025) — trato isso como expectativa razoável, não como resultado firme.
+O ganho desse formato aparece semanas depois da prova, não no dia seguinte. É por isso que ele importa aqui: o que caiu na N1 volta na N2.
 
-**Toda prova nasce de uma matriz de especificação**, e cada uma gera três formas paralelas: **A** (prova), **B** (substituta) e **C** (recuperação). Muda o cenário e os valores; a matriz é a mesma. Você não é avaliado por sorte de tema.
+**Antes de escrever a prova eu defino o que ela vai cobrar** — e daí saem três versões: **A** (prova), **B** (substituta) e **C** (recuperação). Muda o cenário e os valores. O que a questão cobra é o mesmo. Você não é avaliado por sorte de tema.
 
 ### 3.3 A vista de prova — e por que ela é aula, não formalidade
 
@@ -216,20 +216,20 @@ São dois mecanismos diferentes, com regras diferentes. Confundi-los custa o pra
 > [!NOTE] 📐 Como a recuperação recompõe a nota
 > Um exemplo: aluno que fez a N1 e a N2 e somou **18** nelas, tem **30** na continuada e ainda está com **0** na Institucional — 48 no total, dentro da faixa 40–59. Na recuperação ele tira **33 de 55**. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos da N1 e da N2**, põe os 33 no lugar, e a nota final **trava em 60**. Passa, com o mínimo.
 >
-> Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório fecham antes de setembro e custam menos que qualquer prova; com eles garantidos, sobram 80 pontos de prova e projeto para chegar aos 60 — a faixa dos 40–59 fica bem mais longe — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
+> Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório custam menos que qualquer prova, e fecham antes de setembro. Com eles garantidos, sobram 80 pontos de prova e projeto para chegar aos 60. A faixa dos 40–59 fica bem mais longe — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
 
 ### 3.5 Política de IA — declarar, não caçar
 
-A régua é a escala AIAS, declarada por instrumento:
+A régua é a escala de uso de IA, de 1 a 5, declarada por atividade:
 
 | Instrumento | Nível | Na prática |
 | :--- | :-- | :--- |
 | Provas N1, N2 e Institucional | **1 — Sem IA** | Em sala, sem dispositivos |
-| Laboratórios `.pka` | **2 — IA no planejamento** | Pode pesquisar e perguntar; a configuração é sua e o `.pka` valida |
+| Laboratórios no Packet Tracer | **2 — IA no planejamento** | Pode pesquisar e perguntar; a configuração é sua, e é ela que eu confiro |
 | Projeto integrador | **3 — Colaboração** | Uso livre **com declaração de 3 linhas**: o que pediu, o que aproveitou, o que corrigiu |
 | Defesa oral | **1 — Sem IA** | 3 minutos explicando as suas decisões |
 
-**Detector de IA não é usado nem aceito como evidência nesta disciplina.** O motivo é técnico: essas ferramentas produzem falso positivo em taxa alta contra quem não escreve em inglês nativo — a Universidade Vanderbilt desativou o detector do Turnitin exatamente por isso (Vanderbilt University, Center for Teaching, 2023). Declarar o uso não desconta nota. **Não declarar um uso que aparecer na defesa, desconta** — e o que se perde são os 4 pontos da defesa oral, não os 6 do projeto: são instrumentos diferentes, e a defesa mede se você entende o que entregou.
+**Detector de IA não é usado nem aceito como evidência nesta disciplina.** O motivo é técnico: essas ferramentas dão falso positivo demais. Elas acusam de IA um texto escrito por aluno, e erram ainda mais com quem não escreve em inglês nativo. Declarar o uso não desconta nota. **Não declarar um uso que aparecer na defesa, desconta** — e o que se perde são os 4 pontos da defesa oral, não os 6 do projeto: são instrumentos diferentes, e a defesa mede se você entende o que entregou.
 
 ---
 
@@ -238,15 +238,15 @@ A régua é a escala AIAS, declarada por instrumento:
 | Momento | Ferramenta | Custo | Precisa de conta? |
 | :--- | :--- | :-- | :--- |
 | Laboratórios | **[Cisco Packet Tracer](https://www.netacad.com/)** | Grátis | **Sim** — conta NetAcad, resolver na S01 |
-| Votação em aula | **Plickers** | Grátis | **Não** — é cartão de papel, sem celular |
-| Exit ticket | **[Vevox](https://vevox.app/)** | Grátis | **Não** — anônimo, por QR |
+| Votação em aula | **Mão levantada** (cartões de resposta quando eu levar) | — | **Não** — nada de celular |
+| Bilhete de saída | **Meia folha de papel** (passa para o [Vevox](https://vevox.app/) quando eu avisar) | Grátis | **Não** — anônimo |
 | Análise de tráfego | **[Wireshark](https://www.wireshark.org/download.html)** | Grátis | Não |
-| Revisão pré-prova | **Gemini Notebook** | Grátis | Opcional — o áudio sai publicado no AVA |
+| Revisão em áudio | **Gemini Notebook** | Grátis | Opcional — **quando houver**, o áudio fica no bloco de podcast da própria página da aula, aqui no portal |
 | Material das aulas | **Este portal** | — | Não |
-| Entregas e Uniube+ | **AVA Uniube On-line** | — | Institucional — entregas, Uniube+ e o vídeo de 6 min de cada semana |
+| Entregas e Uniube+ | **AVA Uniube On-line** | — | Institucional — entregas e Uniube+. Quando uma semana tiver pré-trabalho, ele é curto (vídeo de até 6 min com 4 questões) e sai avisado no AVA; **não é toda semana** |
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
-> Não conte com baixar o Packet Tracer no laboratório. **Instale em casa, na primeira semana.** Chegar ao laboratório sem o simulador é passar a aula olhando a tela do colega — e o Lab 0 vale ponto.
+> Não conte com baixar o Packet Tracer no laboratório. **Instale em casa, na primeira semana.** Chegar ao laboratório sem o simulador é passar a aula olhando a tela do colega. Nesta primeira semana ninguém perde ponto por isso — dupla resolve, e o laboratório valendo 1 ponto entra na prática seguinte. **Até lá, resolva a conta NetAcad e a instalação:** da S02 em diante não há bloco de instalação na aula.
 
 ---
 
@@ -257,25 +257,25 @@ A régua é a escala AIAS, declarada por instrumento:
 | **Nosso caminho até aqui** | 3 a 4 questões de recuperação — as recentes mais **uma antiga**, em espiral. Sem nota. | 6–8 min |
 | **Gancho** | Uma história real de rede que caiu, terminando numa pergunta. | 2 min |
 | **Exposição em blocos** | Nunca mais de 15 min seguidos falando. | — |
-| **Pausa procedural** | "Comparem anotações com o colega. Eu fico calado." | 2 min |
-| **ConcepTest** | Você vota → discute com o vizinho → vota de novo. | 8 min |
-| **Exit ticket** | "O que ficou mais confuso hoje?" — e isso **abre** a aula seguinte. | 3 min |
+| **Pausa de 2 minutos** | "Comparem anotações com o colega. Eu fico calado." | 2 min |
+| **Pergunta de votação** | Você vota → discute com o vizinho → vota de novo. | 8 min |
+| **Bilhete de saída** | "O que ficou mais confuso hoje?" — e isso **abre** a aula seguinte. | 3 min |
 
-O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sentir que está aprendendo menos**. Não é impressão — é resultado medido. Alunos numa aula ativa aprendem mais e avaliam a própria aprendizagem como pior que a de uma aula expositiva excelente (Deslauriers et al., 2019); no agregado, aula ativa derruba a reprovação de 33,8% para 21,8% (Freeman et al., 2014). Digo isso na primeira semana de propósito, e vou lembrar em novembro: sem esse combinado, o método vira reclamação em vez de virar nota.
+O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sentir que está aprendendo menos**. Não é impressão — é resultado medido. Quem passa por uma aula assim aprende mais e ainda sai achando que aprendeu menos. O desconforto faz parte do formato; não é sinal de que você está indo mal. Por isso eu digo isto na primeira semana, e não em novembro, quando já seria tarde: **esse desconforto é o combinado, não o defeito.** Se em outubro você sentir que trabalha demais e aprende de menos, volte a este parágrafo — e me cobre o resultado na nota, que é onde ele aparece.
 
 ---
 
 ## 📌 6. As regras da nossa sala
 
-Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. Normas coconstruídas geram menos violação do que normas impostas, e o Center for Teaching Innovation de Cornell trata isso como prática padrão de primeira aula. Estas quatro entraram como **proposta** na Aula 01 e foram a voto — manter, mudar ou cortar —, com espaço para a turma acrescentar as suas:
+Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. É por isso que estas não são impostas: vocês votam. Estas quatro entram como **proposta** na Aula 01 e vão a voto em **28/07** — manter, mudar ou cortar —, com espaço para a turma acrescentar as suas:
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). O uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
-2. **Pergunta errada é matéria-prima.** O distrator de um ConcepTest sai de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
+1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (votação em sala, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). Celular aberto no que não é a aula derruba o seu rendimento e o de quem senta do lado. Ainda assim eu não proíbo: prefiro combinar quando ele entra e quando ele fica de tela para baixo.
+2. **Pergunta errada é matéria-prima.** As opções erradas das perguntas de votação saem de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
 
 > [!NOTE] 🗳️ Status da votação
-> **Aguardando a votação da Aula 01 (28/07).** Os acordos que passarem de 60% entram na versão final, e esta seção é substituída pelo texto votado — com os cortes, as mudanças e os acordos acrescentados. O contrato não fica no quadro; fica publicado aqui.
+> **Aguardando a votação da Aula 01 (28/07).** A votação é regra por regra, na mão levantada: **acordo com maioria simples da sala presente entra na versão final**, e esta seção é substituída pelo texto votado — com os cortes, as mudanças e os acordos acrescentados. O contrato não fica no quadro; fica publicado aqui.
 
 ---
 
@@ -286,7 +286,7 @@ Esta é uma página administrativa, e você tem o direito de saber o que aqui é
 
 **1. Os livros que eu adoto**, todos na biblioteca virtual da Uniube:
 
-- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 6.4.3 — comutadores de camada de enlace, p. 491–497; seç. 6.4.4 — VLANs, p. 497 em diante; seç. 5.3 — roteamento intra-AS com OSPF; seç. 4.3 — IP e endereçamento; seç. 7.3 — LANs sem fio</span>
+- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 6.4.3 — comutadores de camada de enlace; seç. 6.4.4 — VLANs; seç. 5.3 — roteamento intra-AS com OSPF; seç. 4.3 — IP e endereçamento; seç. 7.3 — LANs sem fio</span>
 - TANENBAUM, A. S.; FEAMSTER, N.; WETHERALL, D. J. **Redes de Computadores.** 6. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 4 — subcamada de acesso ao meio: comutação, spanning tree e VLANs; cap. 5 — camada de rede e roteamento</span>
 - LACERDA, P. S. P. et al. **Projeto de Redes de Computadores.** Porto Alegre: Sagah, 2021. <span class="au-pag">cap. 1 e 2 — projeto e documentação de rede (base direta do projeto integrador)</span>
 - ROHLING, L. J. **Segurança de redes de computadores.** Curitiba: Contentus, 2020. <span class="au-pag">cap. 3 — controle de acesso (apoio às S15–S16)</span>
@@ -297,8 +297,8 @@ Esta é uma página administrativa, e você tem o direito de saber o que aqui é
 - FREEMAN, S. et al. Active learning increases student performance in science, engineering, and mathematics. **PNAS**, v. 111, n. 23, 2014. <span class="au-pag">p. 8410–8415</span>
 - DESLAURIERS, L. et al. Measuring actual learning versus feeling of learning in response to being actively engaged in the classroom. **PNAS**, v. 116, n. 39, 2019. <span class="au-pag">p. 19251–19257</span>
 - RAVIZZA, S. M.; UITVLUGT, M. G.; FENN, K. M. Logged in and zoned out: how laptop internet use relates to classroom learning. **Psychological Science**, v. 28, n. 2, 2017. <span class="au-pag">p. 171–180</span>
-- CORNELL CENTER FOR TEACHING INNOVATION. **Establishing Community Agreements and Classroom Norms.** Cornell University. Disponível em: https://teaching.cornell.edu/resource/establishing-community-agreements-and-classroom-norms. <span class="au-pag">seç. "Facilitating the process"</span>
-- COOKE, J. E.; WEIR, L.; CLARKSTON, B. Retention following two-stage collaborative exams depends on timing and student performance. **CBE — Life Sciences Education**, v. 18, n. 2, 2019. <span class="au-pag">art. ar12, seç. "Results" — ganho de retenção aos 23 dias; aos 9 dias, só nos alunos de desempenho intermediário</span>
+- CORNELL CENTER FOR TEACHING INNOVATION. **Establishing Community Agreements and Classroom Norms.** Cornell University. Disponível em: https://teaching.cornell.edu/resource/establishing-community-agreements-and-classroom-norms. <span class="au-pag">seç. "Implement Classroom Norms"</span>
+- COOKE, J. E.; WEIR, L.; CLARKSTON, B. Retention following two-stage collaborative exams depends on timing and student performance. **CBE — Life Sciences Education**, v. 18, n. 2, 2019. <span class="au-pag">art. ar12 — retenção do formato de duas etapas ao longo do tempo</span>
 - CALLAGHAN, K.; MILBOURNE, T.; KLALES, A.; KESTIN, G.; ARGUELLES, C.; McCARTY, L.; DESLAURIERS, L. **Two-stage final exams: an assessment strategy for enhanced collaborative learning and reduced student stress.** Preprint, arXiv:2504.04281, 2025. <span class="au-pag">seç. "Results" — aprendizagem, ansiedade e preferência **autorrelatadas**</span> ⚠️ *Preprint, sem revisão por pares — citado aqui como indício, não como resultado firme.*
 - VANDERBILT UNIVERSITY, CENTER FOR TEACHING. **Guidance on AI detection and why we're disabling Turnitin's AI detector.** 2023. Disponível em: https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/. <span class="au-pag">seç. "Why we disabled it"</span>
 

@@ -224,6 +224,69 @@ article p {
   margin: 0 0 var(--au-s-4);
 }
 
+/* ---------------------------------------------------------------------
+   Prosa justificada, com hifenização.
+
+   Justificar SEM hifenizar abre rios de espaço branco no meio do
+   parágrafo — fica pior que a margem irregular. Os dois andam juntos, e
+   o `lang="pt"` que o Quartz emite no <html> é o que dá ao navegador o
+   dicionário de separação silábica. Sem ele, `hyphens: auto` não faz nada.
+
+   Vale só para PROSA. O que fica de fora, e por quê:
+   - célula de tabela: coluna estreita justificada vira coluna de buracos;
+   - legenda, paginação de referência, cabeçalho de slot, etiqueta de
+     card, chip: são rótulos curtos — justificar uma linha só desalinha;
+   - código, terminal e teclas: espaçamento é significado, não estética;
+   - título: `text-wrap: balance` já distribui melhor que justificar.
+
+   Em tela estreita a medida da linha fica curta demais para justificar
+   sem estragar: abaixo de 34rem volta a margem irregular.
+   --------------------------------------------------------------------- */
+article :is(p, li) {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+
+/* Parágrafo com quebra dura dentro (o cabeçalho de metadados é o caso
+   típico: cada linha termina em <br>). Justificar aqui é o pior cenário
+   possível — cada linha curta é esticada até a margem, e o bloco vira
+   uma grade de buracos. Medido: 59% de vão na linha mais curta. */
+article p:has(br),
+/* Referências são citação, não prosa: o vão de uma linha que termina
+   antes da paginação chegava a 57%. */
+article .au-refs :is(p, li),
+article :is(td, th) :is(p, li),
+article :is(td, th),
+article figcaption,
+article .au-legenda,
+article .au-pag,
+article .au-slot-h,
+article .au-slot-b,
+article .au-nota-t,
+article .au-cap,
+article .au-chip,
+article .au-pronto,
+article :is(pre, code, kbd, samp) :is(p, li) {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+article :is(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+@media (max-width: 34rem) {
+  article :is(p, li) {
+    text-align: left;
+  }
+}
+
 article ul,
 article ol {
   padding-left: var(--au-s-5);
