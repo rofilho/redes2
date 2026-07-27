@@ -17,7 +17,7 @@ tags: [redes2, 2026-2, contrato, apresentacao]
 **Disciplina:** Redes de Computadores II (49309) — Uniube
 **Professor:** Romualdo Mathias Filho
 **Semana:** 1 · **Terça, 28/07/2026** · VIA203 · 📘 Teórica (75 min)
-**Documento de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — é lá que mora tudo o que esta aula apresenta.
+**Página de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — é lá que mora tudo o que esta aula apresenta.
 
 ---
 
@@ -106,7 +106,10 @@ Cinco termos que aparecem o semestre inteiro e que decidem nota:
 
 ## 📌 1. A disciplina em 13 minutos [Teoria + demonstração ⏳ 13 min + 8 de ConcepTest]
 
-Não vou ler o plano de ensino em voz alta — ele está publicado, íntegro, no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato). O que cabe aqui é o mapa e uma demonstração.
+Não vou ler o programa em voz alta — ele está inteiro no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato). O que cabe aqui é o mapa e uma demonstração.
+
+> [!NOTE] 📋 O conteúdo semana a semana é proposta minha
+> A ementa oficial de 49309 ainda não saiu no AVA. Até lá, o que está publicado é a **minha proposta**, alinhada ao CCNA *Switching, Routing and Wireless Essentials*. Quando a oficial sair, eu ajusto e aviso o que mudou. **O que já está travado é a nota e as datas de prova** — isso não depende da ementa.
 
 ### 1.1 O mapa
 
@@ -174,7 +177,7 @@ A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente
 3. **Datas travadas:** prova N1 **22/09** · prova N2 **01/12** · vistas **29/09** e **08/12**. Prova em **duas etapas** — 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
 4. **Labs que valem nota:** Lab 0 a 5 (S01–S08), 1 pt cada, **Completion ≥ 80%**, contam os **5 melhores**. Labs 6–10 são formativos, sem nota.
 5. **Faltou à prova?** SAE no AVA em **até 3 dias úteis**, atestado anexado no SAE — **não na minha mão**. Segunda chamada de 14 a 16/12.
-6. **Ficou entre 40 e 59?** Recuperação em **17 ou 18/12** (confirmo no AVA) — se todas as provas foram feitas e o Uniube+ não está zerado. Ela **zera as provas** e a nota final **trava em 60**.
+6. **Ficou entre 40 e 59?** Recuperação em **17 ou 18/12** (confirmo no AVA) — se todas as provas foram feitas e o Uniube+ não está zerado. Ela **zera as notas da N1 e da N2 (55 pontos) e vale por elas**, e a nota final **trava em 60**.
 7. **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11 — a P11 perde quatro aulas, a P12 nenhuma, e **a teórica de terça perde 13/10**, a perda que atinge todo mundo. A regra da assimetria (lab novo só quando as duas práticas se encontram) está no plano.
 
 > [!WARNING] ⚠️ O prazo de 3 dias úteis é institucional
@@ -192,7 +195,7 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 
 **Hoje a turma propõe e vota 4 a 5 acordos.** Entro com quatro na mesa; vocês cortam, mudam e acrescentam:
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
+1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). O uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
 2. **Pergunta errada é matéria-prima.** O distrator de um ConcepTest sai de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
@@ -229,7 +232,7 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 | **Datas travadas** | Prova N1 **22/09** · Prova N2 **01/12** · Vistas **29/09** e **08/12** |
 | **Formato da prova** | Duas etapas — 50 min individual + 18 min em grupo nas 4 questões mais difíceis |
 | **Segunda chamada** | Faltou → **SAE no AVA em 3 dias úteis**. Aplicação de **14 a 16/12**. Atestado vai no SAE, não comigo |
-| **Recuperação** | Nota **40–59** + todas as provas feitas + Uniube+ não zerado. **17 ou 18/12** (confirmo no AVA), **zera** as provas, **teto 60** |
+| **Recuperação** | Nota **40–59** + todas as provas feitas + Uniube+ não zerado. **17 ou 18/12** (confirmo no AVA), **zera as notas da N1 e da N2 (55 pontos) e vale por elas**, **teto 60** |
 | **Labs que valem nota** | Lab 0 a 5, 1 pt cada, **Completion ≥ 80%**, contam os **5 melhores** |
 | **Política de IA** | Declarar por instrumento (AIAS 1 a 3). Sem detector de IA — detalhe no plano |
 | **Regras de sala** | Votadas hoje — o texto aprovado vai para o plano publicado até sexta |
@@ -261,16 +264,21 @@ QR projetado no slide final, ou [vevox.app](https://vevox.app/) com o ID de sess
 </div>
 
 <div class="au-refs">
-<b>Referências desta aula</b>
+<b>De onde vem o que eu disse hoje</b>
 
-Esta aula é de contrato e diagnóstico: as regras vêm do documento institucional; o formato, da evidência abaixo. A bibliografia completa da disciplina está no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato).
+Esta aula é de contrato e diagnóstico. Vale você separar o que é livro, o que é pesquisa e o que sou eu explicando a norma da casa.
 
-- UNIVERSIDADE DE UBERABA. **Avaliações de Segunda Chamada e Recuperação de Aprendizagem — Cursos: Engenharias, Gestão e Tecnologia da Informação, 2026/2.** Campus Uberlândia, 2026. <span class="au-pag">documento disponibilizado pela coordenação — consulte a versão oficial no AVA</span> — **fonte das regras do Tópico 2.**
+**Livro e pesquisa, que você pode abrir hoje mesmo:**
+
+- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 4.3 — IP e endereçamento; seç. 6.4.3 — comutadores de camada de enlace, p. 491–497</span> — base das questões de diagnóstico e da demonstração.
 - CORNELL CENTER FOR TEACHING INNOVATION. **Establishing Community Agreements and Classroom Norms.** Cornell University. Disponível em: https://teaching.cornell.edu/resource/establishing-community-agreements-and-classroom-norms. <span class="au-pag">seç. "Facilitating the process"</span> — base do slot de votação.
 - RAVIZZA, S. M.; UITVLUGT, M. G.; FENN, K. M. Logged in and zoned out: how laptop internet use relates to classroom learning. **Psychological Science**, v. 28, n. 2, 2017. <span class="au-pag">p. 171–180</span> — base da proposta 1 (celular agendado).
-- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 4.3 — IP e endereçamento; seç. 6.4.3 — comutadores de camada de enlace, p. 491–497</span> — base das questões de diagnóstico e da demonstração.
 
-Em qualquer divergência entre esta página e o documento institucional, **vale o documento**.
+**Eu explicando, e onde você confere:**
+
+As regras de **aprovação, segunda chamada e recuperação** do Tópico 2 são as que a coordenação definiu para Engenharias, Gestão e Tecnologia da Informação neste semestre. Não são minhas e eu não posso mudá-las; trago para cá porque decidem nota e prazo, e porque ninguém lê norma por conta própria em julho. **O texto que vale é o publicado no AVA.**
+
+**Divergiu do AVA? Vale o AVA — e me avise, no início da aula ou pelo AVA, que eu corrijo esta página no mesmo dia.** A bibliografia completa da disciplina está no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato).
 
 </div>
 
@@ -282,7 +290,7 @@ Em qualquer divergência entre esta página e o documento institucional, **vale 
 
 ---
 
-*Última atualização: 27/07/2026 · As regras de nota, segunda chamada e recuperação seguem o documento institucional 2026/2. Sala, agrupamento das turmas e sábados de reposição aguardam confirmação da secretaria — ver o [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato).*
+*Última atualização: 27/07/2026 · As regras de nota, segunda chamada e recuperação são as da coordenação para 2026/2 — o texto oficial está no AVA. A ementa e o conteúdo semana a semana são proposta minha até a oficial de 49309 sair. Sala, agrupamento das turmas e sábados de reposição aguardam confirmação da secretaria — ver o [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato).*
 
 **◀ [Voltar ao índice da disciplina](./)**
 

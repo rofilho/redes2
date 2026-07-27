@@ -102,7 +102,7 @@ Três turmas, três calendários. **T** = teórica de terça (VIA203) · **P11**
 | **19** | 🎯 **01/12 — PROVA N2** | 30/11 | 03/12 | Prova em duas etapas | Defesas orais restantes |
 | **20** | 08/12 | 07/12 | 10/12 | **Vista da N2** + fechamento | — |
 
-**Depois da S20:** segunda chamada de **14 a 16/12** · lançamento das notas da N2 até **18/12** · encerramento do semestre em **19/12** — essas três são datas institucionais. A **recuperação**, pela norma, tem data definida pelo professor, e **eu marquei para 17 ou 18/12** (só pode ser depois da segunda chamada); confirmo no AVA junto com o resultado da N2. As notas da N1 são lançadas até **12/10**.
+**Depois da S20:** segunda chamada de **14 a 16/12** · lançamento das notas da N2 até **18/12** · encerramento do semestre em **19/12**. Essas três datas não são minhas, são do calendário da universidade — **confira no AVA antes de contar com elas**, e se divergir, o AVA vence. A **recuperação** é a única em que a data é minha: só pode ser depois da segunda chamada, e **eu marquei para 17 ou 18/12**; confirmo no AVA junto com o resultado da N2. As notas da N1 são lançadas até **12/10**.
 
 🚫 = feriado. 07/09, 12/10 e 02/11 são feriados nacionais; **31/08 e 13/10 seguem o calendário acadêmico da Uniube** (13/10 é emenda de 12/10) — confiro na secretaria junto com os sábados de reposição. **Feriados que atingem a disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11.
 **Em negrito, os laboratórios que valem ponto** (Lab 0 a 5). Os marcados *(formativo)* são obrigatórios e registrados, mas **não valem nota** — o porquê está no bloco 3.1.
@@ -203,7 +203,7 @@ São dois mecanismos diferentes, com regras diferentes. Confundi-los custa o pra
 | O que aplica | Forma **B** — mesma matriz da prova perdida | Forma **C** — 55 pontos, todo o semestre |
 | Como solicitar | **SAE no AVA, em até 3 dias úteis** da prova perdida, com justificativa | Não se solicita: o direito nasce da nota |
 | Data | **14 a 16/12** | Entre **17 e 18/12** — divulgo no AVA junto com o resultado da N2 |
-| Como a nota entra | Substitui a nota daquela prova | **Zera** as notas das duas provas e entra no lugar delas |
+| Como a nota entra | Substitui a nota daquela prova | **Zera** as notas da N1 e da N2 — 25 + 30 = **55 pontos** — e entra no lugar delas. Os 15 da Institucional ficam onde estão |
 | Teto | Nenhum | **Nota final não passa de 60** |
 
 **Os três requisitos da recuperação — precisam valer juntos:** ter feito **todas** as provas do semestre; estar com **40 a 59** pontos; e **não** estar com Uniube+ / AVA zerados. Faltando um, não há recuperação.
@@ -214,7 +214,7 @@ São dois mecanismos diferentes, com regras diferentes. Confundi-los custa o pra
 > **Não me entregue atestado**, nem em papel nem por e-mail: pela norma, o atestado é anexado ao SAE e quem analisa é a coordenação. Documento entregue na mão não conta como pedido.
 
 > [!NOTE] 📐 Como a recuperação recompõe a nota
-> Um exemplo: aluno que fez as duas provas e somou 18 nelas, tem 30 na continuada e tira 33 de 55 na recuperação. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos das provas**, põe os 33 no lugar, e a nota final **trava em 60**. Passa, com o mínimo.
+> Um exemplo: aluno que fez a N1 e a N2 e somou **18** nelas, tem **30** na continuada e ainda está com **0** na Institucional — 48 no total, dentro da faixa 40–59. Na recuperação ele tira **33 de 55**. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos da N1 e da N2**, põe os 33 no lugar, e a nota final **trava em 60**. Passa, com o mínimo.
 >
 > Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório fecham antes de setembro e custam menos que qualquer prova; com eles garantidos, sobram 80 pontos de prova e projeto para chegar aos 60 — a faixa dos 40–59 fica bem mais longe — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
 
@@ -269,7 +269,7 @@ O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sent
 
 Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. Normas coconstruídas geram menos violação do que normas impostas, e o Center for Teaching Innovation de Cornell trata isso como prática padrão de primeira aula. Estas quatro entraram como **proposta** na Aula 01 e foram a voto — manter, mudar ou cortar —, com espaço para a turma acrescentar as suas:
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
+1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (Vevox, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). O uso não acadêmico do dispositivo em aula está associado a pior desempenho (Ravizza et al., 2017); não proibir é decisão minha.
 2. **Pergunta errada é matéria-prima.** O distrator de um ConcepTest sai de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
 3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
 4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
@@ -280,17 +280,19 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 ---
 
 <div class="au-refs">
-<b>Fontes desta página</b>
+<b>De onde vem cada coisa desta página</b>
 
-**Bibliografia da disciplina** — biblioteca virtual da Uniube:
+Esta é uma página administrativa, e você tem o direito de saber o que aqui é livro, o que é pesquisa, o que é norma da casa e o que sou eu organizando o semestre para vocês.
+
+**1. Os livros que eu adoto**, todos na biblioteca virtual da Uniube:
 
 - KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">seç. 6.4.3 — comutadores de camada de enlace, p. 491–497; seç. 6.4.4 — VLANs, p. 497 em diante; seç. 5.3 — roteamento intra-AS com OSPF; seç. 4.3 — IP e endereçamento; seç. 7.3 — LANs sem fio</span>
-- TANENBAUM, A. S.; FEAMSTER, N.; WETHERALL, D. J. **Redes de Computadores.** 6. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 4 — subcamada de acesso ao meio: comutação, spanning tree e VLANs; cap. 5 — camada de rede e roteamento `[páginas a confirmar na edição da biblioteca virtual]`</span>
+- TANENBAUM, A. S.; FEAMSTER, N.; WETHERALL, D. J. **Redes de Computadores.** 6. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 4 — subcamada de acesso ao meio: comutação, spanning tree e VLANs; cap. 5 — camada de rede e roteamento</span>
 - LACERDA, P. S. P. et al. **Projeto de Redes de Computadores.** Porto Alegre: Sagah, 2021. <span class="au-pag">cap. 1 e 2 — projeto e documentação de rede (base direta do projeto integrador)</span>
 - ROHLING, L. J. **Segurança de redes de computadores.** Curitiba: Contentus, 2020. <span class="au-pag">cap. 3 — controle de acesso (apoio às S15–S16)</span>
 - CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems, 2026. Disponível em: https://www.netacad.com/. <span class="au-pag">módulos 1 a 16 — espinha dorsal do conteúdo do semestre</span>
 
-**Evidência que sustenta o formato desta disciplina:**
+**2. Evidência que sustenta o formato desta disciplina:**
 
 - FREEMAN, S. et al. Active learning increases student performance in science, engineering, and mathematics. **PNAS**, v. 111, n. 23, 2014. <span class="au-pag">p. 8410–8415</span>
 - DESLAURIERS, L. et al. Measuring actual learning versus feeling of learning in response to being actively engaged in the classroom. **PNAS**, v. 116, n. 39, 2019. <span class="au-pag">p. 19251–19257</span>
@@ -300,17 +302,17 @@ Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a tur
 - CALLAGHAN, K.; MILBOURNE, T.; KLALES, A.; KESTIN, G.; ARGUELLES, C.; McCARTY, L.; DESLAURIERS, L. **Two-stage final exams: an assessment strategy for enhanced collaborative learning and reduced student stress.** Preprint, arXiv:2504.04281, 2025. <span class="au-pag">seç. "Results" — aprendizagem, ansiedade e preferência **autorrelatadas**</span> ⚠️ *Preprint, sem revisão por pares — citado aqui como indício, não como resultado firme.*
 - VANDERBILT UNIVERSITY, CENTER FOR TEACHING. **Guidance on AI detection and why we're disabling Turnitin's AI detector.** 2023. Disponível em: https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/. <span class="au-pag">seç. "Why we disabled it"</span>
 
-**Documento institucional — fonte das regras do Tópico 3:**
+**3. Eu explicando a norma da casa** — todo o Tópico 3. As regras de aprovação, segunda chamada e recuperação são as que a coordenação definiu para Engenharias, Gestão e Tecnologia da Informação em 2026/2. Elas não são minhas e eu não posso mudá-las; trago para cá porque decidem nota e prazo, e porque norma não se lê sozinha. **O texto que vale é o publicado no AVA.**
 
-- UNIVERSIDADE DE UBERABA. **Avaliações de Segunda Chamada e Recuperação de Aprendizagem — Cursos: Engenharias, Gestão e Tecnologia da Informação, 2026/2.** Campus Uberlândia, 2026. <span class="au-pag">documento disponibilizado pela coordenação — consulte a versão oficial no AVA</span>
+**4. Eu organizando o semestre** — o Tópico 2 e o conteúdo semana a semana. As datas travadas (janelas de prova, feriados, lançamento de notas, encerramento) não são minhas: são do calendário da universidade, e o AVA é onde elas ficam publicadas. **Qual assunto cai em qual semana é decisão minha** — e, enquanto a ementa oficial de 49309 não sai, o próprio conteúdo é proposta minha. Mudou, eu aviso aqui e no AVA.
 
-Em qualquer divergência entre esta página e esse documento, **vale o documento**. Casos omissos vão para a coordenação do curso.
+> **Achou divergência entre esta página e o AVA? Vale o AVA — e me avise, no início da aula ou pelo AVA, que eu corrijo aqui no mesmo dia.** Casos omissos vão para a coordenação do curso.
 
 </div>
 
 ---
 
-*Última atualização: 27/07/2026 · Regras de nota, segunda chamada e recuperação seguem o documento institucional 2026/2. Sala, agrupamento das turmas e sábados de reposição aguardam confirmação da secretaria — ver o aviso no Tópico 2.*
+*Última atualização: 27/07/2026 · Regras de nota, segunda chamada e recuperação são as da coordenação para 2026/2 — o texto oficial está no AVA. Sala, agrupamento das turmas e sábados de reposição aguardam confirmação da secretaria — ver o aviso no Tópico 2.*
 
 **◀ [Voltar ao índice da disciplina](./)**
 
