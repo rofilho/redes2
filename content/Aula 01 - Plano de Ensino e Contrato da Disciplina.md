@@ -14,9 +14,9 @@ tags: [redes2, 2026-2, contrato, apresentacao]
 
 # 🟢 Aula 01 — Apresentação, Diagnóstico e Contrato
 
-**Disciplina:** Redes de Computadores II (49309) — Uniube
-**Professor:** Romualdo Mathias Filho
-**Semana:** 1 · **Terça, 28/07/2026** · VIA203 · 📘 Teórica (75 min)
+**Disciplina:** Redes de Computadores II (49309) — Uniube<br>
+**Professor:** Romualdo Mathias Filho<br>
+**Semana:** 1 · **Terça, 28/07/2026** · VIA203 · 📘 Teórica (75 min)<br>
 **Página de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — é lá que mora tudo o que esta aula apresenta.
 
 ---

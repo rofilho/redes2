@@ -12,8 +12,8 @@ tags: [redes2, 2026-2, plano-de-ensino, cronograma, contrato]
 
 # 📘 Plano de Ensino e Contrato — Redes de Computadores II
 
-**Disciplina:** Redes de Computadores II (49309) — Uniube
-**Professor:** Romualdo Mathias Filho
+**Disciplina:** Redes de Computadores II (49309) — Uniube<br>
+**Professor:** Romualdo Mathias Filho<br>
 **Semestre:** 2026-2 · Teórica: terça, VIA203 · Práticas: P11 segunda (VIA215) · P12 quinta (VIA216)
 
 > [!INFO] 🎯 O que esta página é

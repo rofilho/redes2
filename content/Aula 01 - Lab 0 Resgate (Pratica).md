@@ -14,9 +14,9 @@ tags: [redes2, 2026-2, lab, packet-tracer, diagnostico, troubleshooting]
 
 # 🟢 Aula 01 — Lab 0: Resgate
 
-**Disciplina:** Redes de Computadores II (49309) — Uniube
-**Professor:** Romualdo Mathias Filho
-**Semana:** 1 · 🛠️ Prática (75 min)
+**Disciplina:** Redes de Computadores II (49309) — Uniube<br>
+**Professor:** Romualdo Mathias Filho<br>
+**Semana:** 1 · 🛠️ Prática (75 min)<br>
 **P11:** segunda, 27/07/2026 · VIA215 — **P12:** quinta, 30/07/2026 · VIA216
 
 ---
