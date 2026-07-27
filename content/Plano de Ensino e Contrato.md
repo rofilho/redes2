@@ -154,9 +154,9 @@ Aprovação: **≥ 60 pontos** e **frequência ≥ 75%**.
 **Os laboratórios 6 a 10 (S11–S17) não valem nota.** Isso é decisão de projeto, não descuido: o ponto da N2 está no projeto integrador, que cobra exatamente as mesmas habilidades (OSPF, NAT, ACL). Laboratório sem nota é laboratório em que dá para errar de propósito — e é errando de propósito que se aprende diagnóstico.
 
 > [!IMPORTANT] 🎯 O ponto barato vence o ponto caro
-> Marina tirou 22 na prova, fez 4 dos 6 labs e cumpriu o Uniube+: 22 + 4 + 5 = **31**. Beatriz tirou 22, fez os **seis** labs e zerou o Uniube+: 22 + 5 (teto) + 0 = **27**.
+> Um exemplo com os números da tabela: 22 na prova + 4 labs + Uniube+ em dia = 22 + 4 + 5 = **31**. Os mesmos 22 na prova + os **seis** labs + Uniube+ zerado = 22 + 5 (teto) + 0 = **27**.
 >
-> Beatriz fez dois laboratórios a mais e ficou atrás, porque o sexto lab não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ custam menos esforço do que um único laboratório e valem o mesmo que cinco deles. **Antes de correr atrás do ponto caro, garanta o barato.**
+> Quem fez dois laboratórios a mais ficou atrás, porque o sexto lab não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ custam menos esforço do que um único laboratório e valem o mesmo que cinco deles. **Antes de correr atrás do ponto caro, garanta o barato.**
 
 ### 3.2 A prova em duas etapas
 
@@ -203,13 +203,13 @@ São dois mecanismos diferentes, com regras diferentes. Confundi-los custa o pra
 
 **Os três requisitos da recuperação — precisam valer juntos:** ter feito **todas** as provas do semestre; estar com **40 a 59** pontos; e **não** estar com Uniube+ / AVA zerados. Faltando um, não há recuperação.
 
-> [!WARNING] ⚠️ O prazo de 3 dias úteis é o que mais reprova gente
-> Faltou à prova? **Abra o SAE no AVA em até 3 dias úteis.** Passou disso, o curso indefere — e não há a quem recorrer, porque o prazo não é meu, é institucional.
+> [!WARNING] ⚠️ O prazo de 3 dias úteis é institucional
+> Faltou à prova? **Abra o SAE no AVA em até 3 dias úteis.** Passado o prazo, o curso indefere — o prazo não é meu, é da norma institucional.
 >
-> **Não me entregue atestado**, nem em papel nem por e-mail: eu não posso recebê-lo. O atestado é anexado ao SAE e quem analisa é a coordenação. Me entregar o documento na mão é a maneira mais comum de perder o prazo achando que resolveu.
+> **Não me entregue atestado**, nem em papel nem por e-mail: pela norma, o atestado é anexado ao SAE e quem analisa é a coordenação. Documento entregue na mão não conta como pedido.
 
 > [!NOTE] 📐 Como a recuperação recompõe a nota
-> Rafael fez as duas provas, somou 18 nelas, tem 30 na continuada e tira 33 de 55 na recuperação. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos das provas**, põe os 33 no lugar, e a nota final **trava em 60**. Ele passa, com o mínimo.
+> Um exemplo: aluno que fez as duas provas e somou 18 nelas, tem 30 na continuada e tira 33 de 55 na recuperação. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos das provas**, põe os 33 no lugar, e a nota final **trava em 60**. Passa, com o mínimo.
 >
 > Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório fecham antes de setembro e custam menos que qualquer prova; quem os pega quase nunca cai na faixa dos 40–59 — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
 

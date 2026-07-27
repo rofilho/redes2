@@ -62,7 +62,7 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 > **O que você leva desta aula**
 > - Onde os **100 pontos** são ganhos — e por que o ponto barato vence o caro.
 > - As datas travadas: **N1 em 22/09**, **N2 em 01/12**, vistas nas semanas seguintes.
-> - O prazo de **3 dias úteis** do SAE, que é o que mais reprova gente.
+> - O prazo de **3 dias úteis** do SAE para a segunda chamada.
 > - Os **acordos de sala**, votados — não decretados.
 >
 > **📂 Recursos**
@@ -154,20 +154,20 @@ A pergunta que essa demonstração deixa em aberto — *"como impedir que o prob
 O texto completo — calendário das três turmas semana a semana, tabelas, requisitos, política de IA — está nos [Tópicos 2 e 3 do plano](./Plano-de-Ensino-e-Contrato). Mas antes de qualquer tabela, uma aposta — **ela vai ao Plickers como pergunta de A/B, antes de eu mostrar qualquer número**:
 
 <details class="au-aposta">
-<summary>Aposte antes de ver: Marina tirou 22 na prova, fez 4 dos 6 labs e cumpriu o Uniube+. Beatriz tirou 22, fez os 6 labs e zerou o Uniube+. Quem fechou melhor a N1?</summary>
+<summary>Aposte antes de ver: quem fecha melhor a N1 — quem tira 22 na prova, faz 4 dos 6 labs e cumpre o Uniube+, ou quem tira os mesmos 22, faz os 6 labs e zera o Uniube+?</summary>
 
-**Marina, por 4 pontos — e a distância vem do lugar mais barato do semestre.**
+**O primeiro, por 4 pontos — e a distância vem do lugar mais barato do semestre.**
 
-- Marina: 22 (prova) + **4** (fez quatro labs, soma quatro) + 5 (Uniube+) = **31**
-- Beatriz: 22 (prova) + **5** (fez seis, mas o teto é cinco) + 0 = **27**
+- 4 labs + Uniube+: 22 (prova) + **4** (labs) + 5 (Uniube+) = **31**
+- 6 labs, sem Uniube+: 22 (prova) + **5** (fez seis, mas o teto é cinco) + 0 = **27**
 
-Beatriz fez **dois laboratórios a mais** que Marina e mesmo assim ficou atrás, porque o sexto laboratório não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ custam menos esforço do que um único laboratório e valem o mesmo que cinco deles.
+Quem fez **dois laboratórios a mais** ficou atrás, porque o sexto laboratório não eleva o teto — ele é margem, não bônus. Os 5 pontos do Uniube+ custam menos esforço do que um único laboratório e valem o mesmo que cinco deles.
 
 **A lição de gestão:** antes de correr atrás do ponto caro, garanta o barato. Vale para nota e vale para prioridade de trabalho.
 
 </details>
 
-A maioria das turmas vota Beatriz — *ela fez mais labs*. O erro que a sala acabou de cometer em público é exatamente o que a lista abaixo explica:
+A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente o que a lista abaixo explica:
 
 1. **Aprovação = ≥ 60 pontos E ≥ 75% de frequência.** As duas juntas.
 2. **Os 100 pontos:** N1 = 35 (25 prova + 5 labs + 5 Uniube+) · N2 = 50 (30 prova + 6 projeto + 4 defesa + 10 Uniube+) · Institucional = 15.
@@ -177,7 +177,7 @@ A maioria das turmas vota Beatriz — *ela fez mais labs*. O erro que a sala aca
 6. **Ficou entre 40 e 59?** Recuperação em **17 ou 18/12** (confirmo no AVA) — se todas as provas foram feitas e o Uniube+ não está zerado. Ela **zera as provas** e a nota final **trava em 60**.
 7. **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11 — a P11 perde quatro aulas, a P12 nenhuma, e **a teórica de terça perde 13/10**, a perda que atinge todo mundo. A regra da assimetria (lab novo só quando as duas práticas se encontram) está no plano.
 
-> [!WARNING] ⚠️ O prazo de 3 dias úteis é o que mais reprova gente
+> [!WARNING] ⚠️ O prazo de 3 dias úteis é institucional
 > Não é regra minha, é institucional — e o curso indefere fora do prazo. Se você guardar uma única coisa desta aula, que seja esta: **atestado vai no SAE, em 3 dias úteis.**
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
