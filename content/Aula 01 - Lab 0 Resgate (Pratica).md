@@ -105,6 +105,18 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > **P11 (segunda):** você faz este laboratório **antes** da teórica de terça (28/07), conforme o horário emitido em 25/07 — o agrupamento das duas práticas nessa aula está em confirmação na secretaria. Os conceitos que reencontrar aqui voltam no diagnóstico da turma; você chega com a experiência na mão.
 > **P12 (quinta):** se você já teve a teórica de terça, vai reconhecer aqui pelo menos um dos princípios que discutimos lá, vivo e mordendo. Repare em qual.
 
+> [!IMPORTANT] 📋 O contrato do semestre — o resumo, para quem só vem ao laboratório
+> Isto é apresentado por extenso na **teórica**, e mora por extenso no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato). Fica aqui em resumo porque ninguém pode terminar a primeira semana sem saber quando é a prova.
+>
+> - **Aprovação:** ≥ **60 pontos** *e* ≥ **75% de frequência**. As duas juntas — falta reprova com nota boa.
+> - **Os 100 pontos:** N1 = 35 (25 prova + 5 labs + 5 Uniube+) · N2 = 50 (30 prova + 6 projeto + 4 defesa + 10 Uniube+) · Institucional = 15.
+> - **Datas travadas:** prova **N1 em 22/09** · prova **N2 em 01/12** · vistas em **29/09** e **08/12**. A prova tem duas etapas: 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
+> - **Laboratórios que valem nota:** Lab 0 a 5, **1 ponto cada**, Completion ≥ 80%, contam os **5 melhores**. Os labs 6 a 10 são formativos, sem nota.
+> - **Faltou à prova?** Pedido de segunda chamada pelo **SAE no AVA, em até 3 dias úteis**, com o atestado anexado no SAE — **não na minha mão**. O prazo é institucional; fora dele o curso indefere.
+> - **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas da N1 e da N2 — 55 pontos — e vale por elas**, e a nota final trava em 60.
+> - **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11. A **P11 perde quatro segundas**, a P12 nenhuma — por isso laboratório novo só cai em semana em que as duas práticas se encontram.
+> - **Regras de sala:** propostas por mim, **votadas pela turma** na teórica de terça. O texto aprovado é publicado no plano — o contrato não fica no quadro.
+
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
