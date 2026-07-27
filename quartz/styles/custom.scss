@@ -262,6 +262,30 @@ article h1 {
   color: var(--au-tx);
 }
 
+/* Guard de texto corrido no tema escuro — generaliza os remendos pontuais que
+   já existem neste arquivo (article h1, .au-resumo>b, .au-reflexao).
+
+   POR QUE: o Quartz declara `p, tr, td, li, ol, ul { color: var(--darkgray) }`.
+   É declaração DIRETA no elemento, e declaração direta vence HERANÇA
+   independente de especificidade — então a `color` que o `.au-leitura` define
+   no contêiner nunca chega ao texto. No tema escuro `--darkgray` vira #e2e5ef,
+   enquanto o `.au-leitura` fixa fundo claro de propósito (polaridade positiva,
+   Piepenbrock 2013/2014). Resultado: fundo claro + texto claro = ilegível.
+
+   O `.au-term` não é atingido: o conteúdo dele é span/div, não p/li/td — o
+   terminal segue claro sobre fundo escuro, como deve.
+
+   Mesma mecânica, segundo seletor: o Quartz também declara
+   `.page article p > strong { color: var(--dark) }`, e `--dark` no tema escuro é
+   quase branco — o negrito de dentro do parágrafo desaparecia mesmo com o
+   parágrafo já corrigido. Precisa vir junto, senão o guard resolve metade. */
+:root[saved-theme="dark"] .au-leitura :is(p, tr, td, th, li, ol, ul,
+                                          blockquote, summary, dt, dd, figcaption),
+:root[saved-theme="dark"] .au-leitura :is(p, li, td, th) > :is(strong, b, em, i) {
+  color: var(--au-tx);
+  fill: var(--au-tx);
+}
+
 article h2 {
   font-size: var(--au-t-2);
   font-weight: 700;
