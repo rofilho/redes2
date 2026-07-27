@@ -85,23 +85,6 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 
 > Os Tópicos 4 (Ferramentas e acesso) e 5 (Organização das aulas) não são falados hoje — o tempo de terça está inteiro nos blocos acima. São leitura de referência para o semestre.
 
-<aside class="au-antes">
-<b class="au-nota-t">Antes de começar</b>
-
-Cinco termos que aparecem o semestre inteiro e que você precisa entender **hoje**, porque todos eles decidem nota:
-
-**Completion** — o percentual que o arquivo `.pka` do Packet Tracer calcula sozinho e mostra na tela. É assim que o laboratório vira nota, na hora, sem espera.
-
-**Prova em duas etapas** — a prova tem uma parte individual e uma em grupo, no mesmo dia. As duas **compõem** o valor da prova (detalhe no bloco 3.2).
-
-**Segunda chamada (substitutiva)** — a segunda chance de quem **faltou** à prova. Pede-se pelo **SAE no AVA, em até 3 dias úteis**.
-
-**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Não se pede: o direito nasce da nota. As duas são coisas diferentes, com regras diferentes (bloco 3.4).
-
-**AIAS** — *AI Assessment Scale*, a escala de 1 a 5 que declara **quanto** de IA é permitido em cada instrumento. Nesta disciplina vai de 1 (nenhuma) a 3 (colaboração declarada).
-
-</aside>
-
 ---
 
 ## 📌 1. A disciplina: o que Redes II cobre [Teoria + demonstração ⏳ 13 min + 8 de ConcepTest]
@@ -215,6 +198,23 @@ A **S12 é o caso extremo**: ali caem **os dois feriados juntos**, 12/10 e 13/10
 ---
 
 ## 📌 3. Nota e recuperação [Teoria ⏳ 12 min + 2 de pausa]
+
+<aside class="au-antes">
+<b class="au-nota-t">Antes de continuar</b>
+
+Cinco termos que aparecem o semestre inteiro e que você precisa entender **agora**, porque todos eles decidem nota:
+
+**Completion** — o percentual que o arquivo `.pka` do Packet Tracer calcula sozinho e mostra na tela. É assim que o laboratório vira nota, na hora, sem espera.
+
+**Prova em duas etapas** — a prova tem uma parte individual e uma em grupo, no mesmo dia. As duas **compõem** o valor da prova (detalhe no bloco 3.2).
+
+**Segunda chamada (substitutiva)** — a segunda chance de quem **faltou** à prova. Pede-se pelo **SAE no AVA, em até 3 dias úteis**.
+
+**Recuperação** — a segunda chance de quem **fez** as provas e fechou entre **40 e 59** pontos. Não se pede: o direito nasce da nota. As duas são coisas diferentes, com regras diferentes (bloco 3.4).
+
+**AIAS** — *AI Assessment Scale*, a escala de 1 a 5 que declara **quanto** de IA é permitido em cada instrumento. Nesta disciplina vai de 1 (nenhuma) a 3 (colaboração declarada).
+
+</aside>
 
 ### 3.1 Onde estão os 100 pontos
 
