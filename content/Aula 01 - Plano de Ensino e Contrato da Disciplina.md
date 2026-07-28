@@ -63,7 +63,7 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 > - Onde os **100 pontos** são ganhos — e por que o ponto barato vence o caro.
 > - As datas de prova: **N1 em 22/09**, **N2 em 01/12**, vistas nas semanas seguintes.
 > - O prazo de **3 dias úteis** do SAE para a segunda chamada.
-> - Os **acordos de sala**, votados — não decretados.
+> - As **regras desta sala** — e o porquê de cada uma.
 >
 > **📂 Recursos**
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — a referência do semestre
@@ -81,8 +81,8 @@ Por que importa aqui: **sintoma não é diagnóstico** — o princípio de toda 
 | 34–44 | **O calendário** — datas de prova, feriados, as três turmas | Tópico 2 |
 | 44–56 | **Nota e segundas chances** — os 100 pontos, SAE, recuperação | Tópico 2 |
 | 56–58 | Pausa de 2 min — daqui em diante, em toda aula | Tópico 2 |
-| 58–67 | **Regras de sala** — propostas e votação | Slot interativo |
-| 67–70 | Reflexão + bilhete de saída | Fechamento |
+| 58–64 | **As regras desta sala** — as cinco, com o porquê de cada uma | Tópico 3 |
+| 64–70 | **Bilhete anônimo** — o que te preocupa · o que ficou confuso | Slot interativo |
 | **70–75** | **Folga** — máquina que não liga, dúvida longa, sala trocada | — |
 
 <aside class="au-antes">
@@ -189,33 +189,34 @@ A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente
 
 ---
 
-## 🗳️ Slot interativo — as regras de sala [Discussão e votação ⏳ 9 min]
+## 📌 3. As regras desta sala [⏳ 6 min]
 
-Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. É por isso que estas não são impostas: vocês votam.
+Estas regras são minhas. Não são proposta e não vão a voto — e eu não abro exceção individual, porque abrir para um é desfazer para todos. Digo o porquê de cada uma, porque regra sem motivo só dura enquanto eu estiver olhando.
 
-**Hoje a turma propõe e vota 4 a 5 acordos.** Entro com quatro na mesa; vocês cortam, mudam e acrescentam:
+1. **Celular e fone de ouvido são proibidos em sala.** Quem precisar usar, sai da sala e volta depois. Não é moralismo: o aparelho aberto derruba o seu rendimento e o de quem senta do lado, e sair é a alternativa honesta a fingir que está acompanhando.
+2. **A chamada fecha 15 minutos depois do início da aula.** Depois disso eu não abro a lista de novo. Frequência é requisito de aprovação junto com a nota, e a régua é a mesma para todos.
+3. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
+4. **Assunto de disciplina não se resolve no corredor.** Nota, avaliação, falta, prazo — nada disso no caminho da sala. No corredor eu não tenho o diário nem o AVA na frente, e qualquer resposta que eu der ali vira problema seu.
+5. **Eu não respondo WhatsApp.** Comunicação é pelo **AVA** ou por **romualdo.filho@uniube.br**. Os dois ficam registrados e eu consigo achar depois.
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (votação em sala, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). Celular aberto no que não é a aula derruba o seu rendimento e o de quem senta do lado. Ainda assim eu não proíbo: prefiro combinar quando ele entra e quando ele fica de tela para baixo.
-2. **Pergunta errada é matéria-prima.** As opções erradas das perguntas de votação saem de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
-3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
-4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
+> [!TIP] 🤖 Sobre inteligência artificial
+> Eu **incentivo** o uso, e em algumas aulas entrego os prompts prontos. Não tenho interesse em caçar ninguém. A linha é uma só: **a IA ajuda, a IA não cria.** Ela pode explicar, revisar, sugerir caminho, destravar — o que ela não pode é ser a autora do que você entrega. O teste é direto: se eu apontar para uma linha da sua entrega e perguntar por que está assim, você precisa saber responder. Não sabendo, aquilo não é seu — e o que não é seu não vale ponto. A defesa oral de 3 minutos do projeto existe exatamente para isso.
 
 ---
 
 <div class="au-slot">
-<div class="au-slot-h"><b>Interativo</b> · Votação em sala · 9 min</div>
+<div class="au-slot-h"><b>Interativo</b> · Bilhete de saída · 6 min</div>
 <div class="au-slot-c">
 
-**Votação dos acordos de sala.** Proposta a proposta, mão levantada: **manter, mudar ou cortar.**
+**O que mais te preocupa nesta disciplina?** Meia folha de papel, sem nome, recolhida na saída.
 
-1. As quatro propostas acima aparecem uma a uma: **manter, mudar ou cortar.**
-2. Campo aberto para **acrescentar** um acordo que ninguém propôs.
-3. Os acordos que passarem de 60% entram na versão final — e o **[Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) é atualizado até sexta** com o texto votado. O contrato não fica no quadro; fica publicado.
+1. Uma frase sobre **o que mais te preocupa** no semestre que começa hoje.
+2. Uma frase sobre **o que ficou mais confuso** na aula de hoje.
 
-Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
+Não é coleta decorativa: o que aparecer duas vezes ou mais eu trago de volta na abertura da próxima aula. É assim que eu descubro onde a explicação falhou — e é mais rápido do que esperar a prova me contar.
 
 </div>
-<p class="au-slot-b"><b>O acordo que ninguém propôs em voz alta</b> vai em meia folha de papel, recolhida na saída — vale o mesmo na apuração. Nove minutos, sem depender de internet.</p>
+<p class="au-slot-b"><b>Sem papel?</b> As mesmas duas perguntas entram por e-mail até a meia-noite. Seis minutos, sem depender de internet.</p>
 </div>
 
 ---
@@ -235,7 +236,7 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 | **Recuperação** | Nota **40–59** + todas as provas feitas + Uniube+ não zerado. **17 ou 18/12** (confirmo no AVA), **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**, **teto 60** |
 | **Labs que valem nota** | Lab 0 a 5, 1 pt cada, **80% de acerto**, contam os **5 melhores** |
 | **Política de IA** | Declarar por instrumento (escala de IA, 1 a 3). Sem detector de IA — detalhe no plano |
-| **Regras de sala** | Votadas hoje — o texto aprovado vai para o plano publicado até sexta |
+| **Regras de sala** | Celular e fone proibidos · chamada fecha 15 min após o início · atraso entra em silêncio · corredor não · WhatsApp não |
 | **Pendência da semana** | Conta NetAcad + Packet Tracer instalados em casa |
 
 </div>
@@ -247,20 +248,16 @@ Anônimo, sem cadastro. A votação é da turma, não minha: eu não desempato.
 
 ---
 
-## 🎬 Fechamento — bilhete de saída (3 min)
+## 🎬 Fechamento
 
-Toda aula termina do mesmo jeito: duas perguntas anônimas, sem nota, em **meia folha de papel** recolhida na porta. O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados como confusos são a primeira coisa que eu retomo.
-
-**Hoje:** *(1)* O que mais te preocupa nesta disciplina? *(2)* Qual foi o ponto mais confuso da aula de hoje?
-
-Meia folha de papel, recolhida na saída — sem nome, sem cadastro, sem depender de rede. Quando o bilhete passar para o [Vevox](https://vevox.app/), eu projeto o código de acesso e aviso aqui.
+Toda aula termina do mesmo jeito: o **bilhete de saída** que você acabou de responder — duas perguntas anônimas, sem nota, sem cadastro, sem depender de rede. Não é só hoje: é o formato de todas as semanas. Quando ele passar para o [Vevox](https://vevox.app/), eu projeto o código de acesso e aviso aqui.
 
 <div class="au-reflexao">
 <b>Para pensar até a próxima aula</b>
 
-<p>Hoje você votou nos acordos que vão reger esta sala por 20 semanas. Um deles vai ser quebrado antes de setembro — provavelmente por alguém que votou a favor dele.</p>
+<p>Você ouviu hoje as cinco regras desta sala e o motivo de cada uma. Uma delas vai ser quebrada antes de setembro — e quase sempre não é por rebeldia, é porque o motivo não colou.</p>
 
-<p>A pergunta não é <i>qual</i>. É esta: <b>quem deveria cobrar o acordo quando isso acontecer — eu, ou a turma?</b> E se a sua resposta for "a turma", pegue o acordo do atraso: o que ele precisa ter escrito para um colega conseguir cobrar o outro sem virar discussão?</p>
+<p>A pergunta é esta: <b>qual das cinco você acha que vai ser a mais difícil de cumprir no seu caso</b> — e o que teria que ser verdade sobre o seu semestre para ela deixar de ser difícil? Não me responda; responda para você, e reveja em setembro.</p>
 </div>
 
 <div class="au-refs">
@@ -283,7 +280,7 @@ As regras de **aprovação, segunda chamada e recuperação** do Tópico 2 são 
 <div class="au-proxima">
 <b>Na próxima aula</b>
 
-<p>Hoje você viu quarenta máquinas se afogarem no próprio broadcast e eu não expliquei por quê. Na próxima, a gente abre o switch e descobre <b>como ele decide para onde mandar cada quadro</b> — e por que essa decisão, sozinha, cria o problema que o semestre inteiro vai passar consertando.</p>
+<p>Hoje você viu quarenta máquinas se afogarem no próprio broadcast e eu não expliquei por quê. Na próxima, eu abro o switch e descobre <b>como ele decide para onde mandar cada quadro</b> — e por que essa decisão, sozinha, cria o problema que o semestre inteiro vai passar consertando.</p>
 </div>
 
 ---

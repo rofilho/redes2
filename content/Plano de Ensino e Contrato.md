@@ -216,7 +216,7 @@ São dois mecanismos diferentes, com regras diferentes. Confundi-los custa o pra
 > [!NOTE] 📐 Como a recuperação recompõe a nota
 > Um exemplo: aluno que fez a N1 e a N2 e somou **18** nelas, tem **30** na continuada e ainda está com **0** na Institucional — 48 no total, dentro da faixa 40–59. Na recuperação ele tira **33 de 55**. A conta bruta seria 30 + 33 = 63 — mas a recuperação **não soma**: ela **zera os 18 pontos da N1 e da N2**, põe os 33 no lugar, e a nota final **trava em 60**. Passa, com o mínimo.
 >
-> Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório custam menos que qualquer prova, e fecham antes de setembro. Com eles garantidos, sobram 80 pontos de prova e projeto para chegar aos 60. A faixa dos 40–59 fica bem mais longe — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
+> Ao contrário também vale: quem foi **bem nas provas** e mal na continuada não se beneficia — jogaria fora justamente a parte boa. A recuperação é desenhada para quem tem provas fracas e continuada de pé. **A conclusão prática:** os 15 pontos de Uniube+ e os 5 de laboratório custam menos que qualquer prova, e os laboratórios fecham já na primeira metade do semestre. Com eles garantidos, sobram 80 pontos de prova e projeto para chegar aos 60. A faixa dos 40–59 fica bem mais longe — e quem chega lá com o AVA zerado **nem direito à recuperação tem**.
 
 ### 3.5 Política de IA — declarar, não caçar
 
@@ -254,7 +254,7 @@ A régua é a escala de uso de IA, de 1 a 5, declarada por atividade:
 
 | Momento | O que acontece | Quanto dura |
 | :--- | :--- | :--- |
-| **Nosso caminho até aqui** | 3 a 4 questões de recuperação — as recentes mais **uma antiga**, em espiral. Sem nota. | 6–8 min |
+| **Nosso caminho até aqui** | 3 a 4 questões de retomada — as recentes mais **uma antiga**, em espiral. Sem nota. | 6–8 min |
 | **Gancho** | Uma história real de rede que caiu, terminando numa pergunta. | 2 min |
 | **Exposição em blocos** | Nunca mais de 15 min seguidos falando. | — |
 | **Pausa de 2 minutos** | "Comparem anotações com o colega. Eu fico calado." | 2 min |
@@ -267,15 +267,16 @@ O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sent
 
 ## 📌 6. As regras da nossa sala
 
-Regra que o professor decreta, o aluno obedece. Regra que a turma escreve, a turma cobra. É por isso que estas não são impostas: vocês votam. Estas quatro entram como **proposta** na Aula 01 e vão a voto em **28/07** — manter, mudar ou cortar —, com espaço para a turma acrescentar as suas:
+Estas regras são minhas. Não são proposta e não vão a voto — e eu não abro exceção individual, porque abrir para um é desfazer para todos.
 
-1. **Celular é agendado, não proibido.** Há janelas em que o celular *é* a ferramenta (votação em sala, consultar documentação) e janelas de tela para baixo (recuperação, prova, defesa). Celular aberto no que não é a aula derruba o seu rendimento e o de quem senta do lado. Ainda assim eu não proíbo: prefiro combinar quando ele entra e quando ele fica de tela para baixo.
-2. **Pergunta errada é matéria-prima.** As opções erradas das perguntas de votação saem de erro real cometido nesta sala. Errar em voz alta acelera a turma inteira.
-3. **Dupla é rotativa.** Ninguém passa o semestre com o mesmo par — e ninguém carrega o outro no laboratório.
-4. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
+1. **Celular e fone de ouvido são proibidos em sala.** Quem precisar usar, sai da sala e volta depois. Não é moralismo: o aparelho aberto derruba o seu rendimento e o de quem senta do lado, e sair é a alternativa honesta a fingir que está acompanhando.
+2. **A chamada fecha 15 minutos depois do início da aula.** Depois disso eu não abro a lista de novo. Frequência é requisito de aprovação junto com a nota, e a régua é a mesma para todos.
+3. **Quem chega atrasado entra em silêncio.** A abertura é curta e é onde eu digo o que muda na semana.
+4. **Assunto de disciplina não se resolve no corredor.** Nota, avaliação, falta, prazo — nada disso no caminho da sala. No corredor eu não tenho o diário nem o AVA na frente, e qualquer resposta que eu der ali vira problema seu.
+5. **Eu não respondo WhatsApp.** Comunicação é pelo **AVA** ou por **romualdo.filho@uniube.br**. Os dois ficam registrados e eu consigo achar depois.
 
-> [!NOTE] 🗳️ Status da votação
-> **Aguardando a votação da Aula 01 (28/07).** A votação é regra por regra, na mão levantada: **acordo com maioria simples da sala presente entra na versão final**, e esta seção é substituída pelo texto votado — com os cortes, as mudanças e os acordos acrescentados. O contrato não fica no quadro; fica publicado aqui.
+> [!TIP] 🤖 Sobre inteligência artificial
+> Eu **incentivo** o uso, e em algumas aulas entrego os prompts prontos. Não tenho interesse em caçar ninguém. A linha é uma só: **a IA ajuda, a IA não cria.** Ela pode explicar, revisar, sugerir caminho, destravar — o que ela não pode é ser a autora do que você entrega. O teste é direto: se eu apontar para uma linha da sua entrega e perguntar por que está assim, você precisa saber responder. Não sabendo, aquilo não é seu — e o que não é seu não vale ponto.
 
 ---
 

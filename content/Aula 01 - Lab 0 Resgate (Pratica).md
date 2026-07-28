@@ -112,7 +112,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > - **Faltou à prova?** Pedido de segunda chamada pelo **SAE no AVA, em até 3 dias úteis**, com o atestado anexado no SAE — **não na minha mão**. O prazo é institucional; fora dele o curso indefere.
 > - **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**; laboratórios, Uniube+ e os 15 da Institucional ficam onde estão, e a nota final trava em 60.
 > - **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11. A **P11 perde quatro segundas**, a P12 nenhuma — por isso laboratório novo só cai em semana em que as duas práticas se encontram.
-> - **Regras de sala:** propostas por mim, **votadas pela turma** na teórica de terça. O texto aprovado é publicado no plano — o contrato não fica no quadro.
+> - **Regras de sala:** celular e fone proibidos em sala · a chamada fecha 15 min depois do início · quem chega atrasado entra em silêncio · assunto de disciplina não se resolve no corredor · eu não respondo WhatsApp, é AVA ou e-mail. Estão publicadas no plano — o contrato não fica no quadro.
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
@@ -129,7 +129,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 
 ---
 
-## 📌 1. Ambiente pronto: NetAcad + Packet Tracer [Mão na massa ⏳ 10 min]
+## 📌 1. Ambiente pronto: NetAcad + Packet Tracer [Mão na massa ⏳ 15 min]
 
 O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratuito, roda em Windows, macOS e Linux, e exige uma conta gratuita na Cisco Networking Academy — **a conta é a parte que demora**, não o download.
 
@@ -141,7 +141,7 @@ O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratui
 
 > [!WARNING] ⚠️ Gotcha de infraestrutura
 > **A rede da sala não aguenta a turma inteira baixando ~250 MB ao mesmo tempo.** Se todo mundo baixar agora, ninguém baixa.
-> Quem já instalou: levante a mão e **ajude o vizinho** — a sala termina este bloco 100% funcional, e essa é a meta real dos 10 minutos.
+> Quem já instalou: levante a mão e **ajude o vizinho** — a sala termina este bloco 100% funcional, e essa é a meta real dos 15 minutos.
 > Quem não conseguiu: sente com quem conseguiu. **Dupla resolve hoje**; até a próxima prática, resolva o seu.
 > Falhou por política da máquina (notebook corporativo, sem permissão de administrador)? Me procure no fim da aula — existe caminho, mas ele é individual.
 
@@ -150,7 +150,7 @@ O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratui
 
 ---
 
-## 📌 2. O método: um defeito resolvido no projetor [Exemplo resolvido ⏳ 7 min]
+## 📌 2. O método: um defeito resolvido no projetor [Exemplo resolvido ⏳ 8 min]
 
 Antes de você caçar, eu caço **um** — narrando cada pergunta em voz alta. Não é para você decorar a resposta: é para você copiar **a sequência de perguntas**.
 
@@ -236,7 +236,7 @@ E aqui vem a parte que confunde: o roteador **pode** encaminhar esse tráfego de
 
 ---
 
-## 📌 3. O cenário: uma rede de campus com quatro defeitos [Apresentação ⏳ 3 min]
+## 📌 3. O cenário: uma rede de campus com quatro defeitos [Exemplo resolvido ⏳ 15 min]
 
 Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento, sem VLAN, sem nada que você ainda não tenha visto — **roteamento dinâmico é a S11, VLAN é a S03.** Hoje é tudo Redes I.
 
@@ -273,7 +273,7 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 <text x="330" y="273" text-anchor="middle" font-size="12" fill="#2778c4" font-family="monospace" font-weight="bold">SERVIDORES · 192.168.30.0/24</text>
 <text x="330" y="288" text-anchor="middle" font-size="10" fill="#8a8f98" font-family="monospace">SRV-PORTAL 192.168.30.10 · DNS + HTTP · portal.uniube.local</text>
 </svg>
-<figcaption class="au-legenda">O verde marca o que já está correto e não deve ser tocado: o R-CAMPUS nas três interfaces e o SRV-PORTAL. Tudo o que está em azul é território de caça — os defeitos estão nos hosts, não na infraestrutura.</figcaption>
+<figcaption class="au-legenda">Topologia do cenário: ADMINISTRAÇÃO e LABORATÓRIO ligadas pelo R-CAMPUS, e a rede de servidores logo abaixo dele. O R-CAMPUS, em destaque, já está correto nas três interfaces — e o SRV-PORTAL também, com DNS e HTTP no ar. O território de caça são os hosts e as pontas, não a infraestrutura.</figcaption>
 </figure>
 
 **Existem quatro defeitos.** Cada um é **um valor trocado** — nunca dois no mesmo lugar — e cada um produz um sintoma **diferente**. Nenhum é pegadinha: os quatro são conteúdo de Redes I.
@@ -281,7 +281,7 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 ---
 
 <div class="au-pratica">
-<b>Os quatro defeitos — 23 min, no projetor</b>
+<b>Os quatro defeitos — 15 min, no projetor</b>
 
 Eu abro o cenário no projetor e mostro **um sintoma por vez**. Para cada um, antes de eu revelar qualquer coisa:
 
@@ -298,7 +298,6 @@ Eu abro o cenário no projetor e mostro **um sintoma por vez**. Para cada um, an
 | :--- | :--- |
 | **Em dupla, falando alto** | Digam um ao outro o que vão testar **antes** de testar. Diagnóstico silencioso não se aprende. |
 | **Não adicione nem remova equipamento** | Trocar cabo, se for o caso, pode. |
-| **O que já está certo** | O **R-CAMPUS** está correto nas três interfaces. O **SRV-PORTAL** está correto, com DNS e HTTP no ar. Não gaste tempo neles. |
 
 <p class="au-pronto"><b>Critério de pronto, quando o cenário entrar:</b> os quatro PCs <b>(1)</b> pingam <code>192.168.30.10</code> e <b>(2)</b> abrem <code>http://portal.uniube.local</code> <b>pelo nome</b>, no navegador — e o <code>Check Results</code> mostra <b>80% de acerto</b>. O cenário apura os valores corrigidos nos hosts <b>e</b> dois testes de conectividade de ponta a ponta; os testes existem justamente para impedir o "consertei o campo e não testei", e um deles só fecha se o acesso funcionar <b>pelo nome</b>, não pelo IP.</p>
 </div>
@@ -315,15 +314,15 @@ Eu abro o cenário no projetor e mostro **um sintoma por vez**. Para cada um, an
 
 ### Terminou antes? A quebra deliberada
 
-Se a sua dupla fechar 100% antes do tempo, eu vou até a sua máquina, derrubo alguma coisa no roteador e digo só isto:
+Nos laboratórios com cenário na máquina, quando a sua dupla fechar 100% antes do tempo, eu vou até ela, derrubo alguma coisa no roteador e digo só isto:
 
 > *"Acabei de derrubar uma coisa. Você tem dois minutos para me dizer **qual** e **como descobriu**."*
 
-Não é castigo por ser rápido: é o formato dos laboratórios a partir da S02, em que a quebra deliberada ocupa os últimos 20 minutos. Hoje ela é um aperitivo — **e o "como descobriu" vale mais do que o "qual".**
+Não é castigo por ser rápido: é o formato dos laboratórios a partir da S02, em que a quebra deliberada ocupa os últimos 20 minutos — **e o "como descobriu" vale mais do que o "qual".**
 
 ---
 
-## 🧭 Revisão com a sala — de baixo para cima (10 min)
+## 🧭 Revisão com a sala — de baixo para cima (7 min)
 
 A revisão é **ao vivo, com a sala**. Eu não vou do mais fácil ao mais difícil: subo as camadas, porque é assim que se diagnostica. Esta página não adianta as respostas — se você chegar sabendo o que está quebrado, você não diagnosticou nada, só digitou.
 
@@ -341,7 +340,7 @@ Enquanto a sala responde, eu monto o quadro no projetor: uma linha por camada, d
 > Repare no formato das três perguntas: **sintoma → teste → camada**, nunca "qual era o erro". É o mesmo roteiro de um *post-mortem* de incidente em produção, e pela mesma razão: a equipe que só registra a correção repete a falha, porque não guardou o caminho. O que se documenta é o raciocínio, não o conserto.
 
 > [!NOTE] 📌 P11, isto aqui é o seu adiantamento
-> A aula de terça (28/07) é o contrato completo — cronograma, notas, acordos de sala votados pela turma, política de IA. Ela está publicada no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato), então nada depende de você estar lá. **P11: você viu a prática antes da teoria**, então leve o essencial hoje: laboratório vale ponto na hora (80% de acerto), duplas são rotativas, toda prática tem quebra deliberada a partir da semana 2, toda aula abre com perguntas sobre o que já foi visto e fecha com bilhete de saída. **Datas de prova: N1 em 22/09 · N2 em 01/12** — confirmo no AVA se mudarem.
+> A aula de terça (28/07) é o contrato completo — cronograma, notas, regras de sala, política de IA. Ela está publicada no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato), então nada depende de você estar lá. **P11: você viu a prática antes da teoria**, então leve o essencial hoje: laboratório vale ponto na hora (80% de acerto), toda prática tem quebra deliberada a partir da semana 2, toda aula abre com perguntas sobre o que já foi visto e fecha com bilhete de saída. **Datas de prova: N1 em 22/09 · N2 em 01/12** — confirmo no AVA se mudarem.
 > **P12:** se você já teve a teórica, aqui é só a confirmação de que a prática cumpre o combinado.
 
 ---
@@ -428,7 +427,7 @@ O que você responder aqui **abre a aula da semana que vem** — os assuntos mai
 
 ---
 
-*Última atualização: 26/07/2026 · Sujeito à confirmação institucional (ver aviso na aula teórica).*
+*Última atualização: 27/07/2026 · Sujeito à confirmação institucional (ver aviso na aula teórica).*
 
 **◀ [Voltar ao índice da disciplina](./)**
 
