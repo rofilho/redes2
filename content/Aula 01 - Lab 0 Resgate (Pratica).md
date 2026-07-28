@@ -332,7 +332,11 @@ Cada dupla vai responder, na sua vez, três perguntas sobre **um** dos defeitos 
 2. **Qual teste te levou até ele, e o que esse teste eliminou?**
 3. **Que camada era, e como você soube antes de abrir a configuração?**
 
-Enquanto a sala responde, eu monto o quadro no projetor: uma linha por camada, do fio ao nome. **No fim, a coluna que interessa não é "o que estava errado" — é "que semana deste semestre vai cobrar isso de você de novo".** Adianto só o eixo: tudo o que você caçou hoje reaparece entre a S03 e a S05, quando cada VLAN virar uma sub-rede e cada sub-rede precisar do seu próprio gateway.
+Enquanto a sala responde, eu monto o quadro no projetor: uma linha por camada, do fio ao nome.
+
+No fim, a coluna que interessa não é *"o que estava errado"*. É **"que semana deste semestre vai cobrar isso de você de novo"**.
+
+Adianto só o eixo. Tudo o que você caçou hoje reaparece entre a **S03 e a S05** — quando cada VLAN virar uma sub-rede, e cada sub-rede precisar do seu próprio gateway.
 
 **A frase que abre o semestre:** a pergunta de Redes II é sempre *"isso quebrou na camada 2 ou na 3?"* — e hoje você respondeu isso quatro vezes, antes de a disciplina começar.
 

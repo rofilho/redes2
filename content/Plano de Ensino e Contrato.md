@@ -134,13 +134,22 @@ Destes, 07/09, 12/10 e 02/11 são nacionais. **31/08 e 13/10 vêm do calendário
 
 ### 2.1 A assimetria — e por que ela não te prejudica
 
-Repare na coluna da segunda: **a P11 perde quatro aulas em feriado; a P12 não perde nenhuma.** Se cada prática seguisse o próprio ritmo, em novembro as turmas estariam a quatro laboratórios de distância.
+Repare na coluna da segunda: **a P11 perde quatro aulas em feriado; a P12 não perde nenhuma.** Sem nenhuma providência, em novembro as turmas estariam a quatro laboratórios de distância.
 
-A regra do cronograma resolve isso: **laboratório novo só cai em semana em que as duas práticas se encontram.**
+> **A regra do cronograma:** laboratório novo só cai em semana em que **as duas práticas se encontram.**
 
-Nas semanas em que só a P12 tem aula — S06, S07, S12 e S15 — ela recebe aprofundamento sem nota: desafio, diagnóstico extra. O conteúdo novo fica na teórica de terça, que todo mundo assiste.
+São **quatro semanas** em que só a P12 tem aula. Nelas, ela não anda para a frente:
 
-A **S12 é o caso extremo**: ali caem **os dois feriados juntos**, 12/10 e 13/10, então nem a P11 nem a teórica acontecem. Só a P12 tem aula naquela semana, e por isso ela não recebe conteúdo novo nenhum — recebe prática **espiral** de OSPF, revisão do que a S11 já deu a todo mundo. Nenhuma turma sai na frente porque, na S12, ninguém anda.
+| Semana | Quem tem aula | A P12 recebe |
+| :-: | :--- | :--- |
+| **S06** | só P12 | aprofundamento sem nota — desafio de broadcast storm |
+| **S07** | só P12 | aprofundamento sem nota — desafio de EtherChannel |
+| **S12** | **só P12** — caem 12/10 **e** 13/10 | prática **espiral** de OSPF: revisão do que a S11 já deu |
+| **S15** | só P12 | aprofundamento sem nota — exercícios de ACL |
+
+O conteúdo novo dessas semanas fica na **teórica de terça, que todo mundo assiste**.
+
+A **S12 é o caso extremo**: com os dois feriados juntos, nem a P11 nem a teórica acontecem. Nenhuma turma sai na frente porque, na S12, ninguém anda.
 
 > [!WARNING] ⚠️ Gotcha de calendário
 > A P11 perde 31/08 e 07/09, que são justamente as semanas de STP e EtherChannel. **Isso não significa que o assunto não cai na prova** — cai, pela teórica de terça, que é conjunta. O que muda é o *nível cognitivo* cobrado: **explicar e analisar, nunca configurar**, porque configurar isso só a P12 praticou. Quem tratar essas duas semanas como "matéria que pulei" chega à N1 devendo duas questões.

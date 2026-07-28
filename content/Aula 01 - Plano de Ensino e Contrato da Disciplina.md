@@ -57,7 +57,16 @@ Ela pode ajudar. O que ela **não** pode é criar por você. Nesta disciplina is
 
 **Redes I ensinou a rede a funcionar. Redes II ensina a rede a não cair** — e a não deixar o problema de um setor derrubar os outros.
 
-Ao fim do semestre você deve conseguir segmentar uma rede em VLANs e justificar a divisão, interligá-las com roteamento, proteger a topologia de camada 2 contra loop e porta indevida, rotear dinamicamente com OSPF, conectar a rede à internet com NAT/PAT, aplicar política de acesso com ACL — e **diagnosticar de baixo para cima**, camada por camada, que é a habilidade que atravessa tudo.
+Ao fim do semestre você deve conseguir:
+
+1. **Segmentar** uma rede em VLANs, e justificar a divisão.
+2. **Interligar** as VLANs com roteamento.
+3. **Proteger** a camada 2 contra loop e contra porta indevida.
+4. **Rotear** dinamicamente com OSPF.
+5. **Conectar** a rede à internet com NAT/PAT.
+6. **Aplicar** política de acesso com ACL.
+
+E, atravessando todas elas: **diagnosticar de baixo para cima**, camada por camada.
 
 > [!WARNING] ⚠️ O conteúdo abaixo é proposta minha, não ementa homologada
 > **A ementa oficial de 49309 ainda não foi confirmada no AVA.** O que está aqui é o recorte que eu proponho, alinhado à progressão CCNA (SRWE). Quando a oficial sair, eu ajusto esta página e aviso o que mudou.
@@ -92,7 +101,9 @@ O projeto não é um bloco novo: ele cobra o que veio antes.
 
 A P11 perde quatro aulas em feriado; a P12 não perde nenhuma. Se cada prática seguisse o próprio ritmo, em novembro as turmas estariam a **quatro laboratórios de distância**.
 
-A regra que resolve isso: **laboratório novo só cai em semana em que as duas práticas se encontram.** Nas semanas em que só a P12 tem aula — **S06, S07, S12 e S15** — ela recebe aprofundamento **sem nota**, e o conteúdo novo fica na **teórica de terça, que todo mundo assiste**.
+> **A regra que resolve isso:** laboratório novo só cai em semana em que **as duas práticas se encontram.**
+
+São quatro as semanas em que só a P12 tem aula: **S06, S07, S12 e S15**. Nelas ela recebe aprofundamento sem nota, e o conteúdo novo fica na teórica de terça — que todo mundo assiste.
 
 > [!WARNING] ⚠️ P11: o gotcha que custa duas questões na N1
 > Você perde **31/08 e 07/09**, que são justamente as semanas de **STP e EtherChannel**. Isso **não** significa que o assunto não cai na prova — cai, pela teórica de terça. O que muda é o nível cobrado: **explicar e analisar, nunca configurar**, porque configurar isso só a P12 praticou. Quem tratar essas duas semanas como "matéria que pulei" chega à N1 devendo duas questões.
