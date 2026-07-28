@@ -191,16 +191,14 @@ A aposta vai a voto antes de eu abrir os números — e a resposta é exatamente
 
 ## 📌 3. As regras desta sala [⏳ 6 min]
 
-Estas regras são minhas. Não são proposta e não vão a voto — e eu não abro exceção individual, porque abrir para um é desfazer para todos. Digo o porquê de cada uma, porque regra sem motivo só dura enquanto eu estiver olhando.
-
-1. **Celular e fone de ouvido são proibidos em sala.** Quem precisar usar, sai da sala e volta depois. Não é moralismo: o aparelho aberto derruba o seu rendimento e o de quem senta do lado, e sair é a alternativa honesta a fingir que está acompanhando.
-2. **A chamada fecha 15 minutos depois do início da aula.** Depois disso eu não abro a lista de novo. Frequência é requisito de aprovação junto com a nota, e a régua é a mesma para todos.
-3. **Quem chega atrasado entra em silêncio.** A abertura é curta e é a parte que mais rende; ela não para.
-4. **Assunto de disciplina não se resolve no corredor.** Nota, avaliação, falta, prazo — nada disso no caminho da sala. No corredor eu não tenho o diário nem o AVA na frente, e qualquer resposta que eu der ali vira problema seu.
-5. **Eu não respondo WhatsApp.** Comunicação é pelo **AVA** ou por **romualdo.filho@uniube.br**. Os dois ficam registrados e eu consigo achar depois.
+1. **Celular e fone de ouvido são proibidos em sala.** Quem quiser usar, sai da sala.
+2. **A chamada tem hora limite: 15 minutos depois do início.**
+3. **Quem chega atrasado entra em silêncio.**
+4. **Não abordar o professor nos corredores** com problemas de disciplina, avaliações e afins.
+5. **O professor não responde WhatsApp.** A comunicação é pelo **AVA** ou por **romualdo.filho@uniube.br**.
 
 > [!TIP] 🤖 Sobre inteligência artificial
-> Eu **incentivo** o uso, e em algumas aulas entrego os prompts prontos. Não tenho interesse em caçar ninguém. A linha é uma só: **a IA ajuda, a IA não cria.** Ela pode explicar, revisar, sugerir caminho, destravar — o que ela não pode é ser a autora do que você entrega. O teste é direto: se eu apontar para uma linha da sua entrega e perguntar por que está assim, você precisa saber responder. Não sabendo, aquilo não é seu — e o que não é seu não vale ponto. A defesa oral de 3 minutos do projeto existe exatamente para isso.
+> Eu **incentivo** o uso — inclusive em algumas aulas vamos entregar prompts prontos para vocês. A linha é uma só: **a IA ajuda, a IA não cria.**
 
 ---
 
@@ -208,15 +206,15 @@ Estas regras são minhas. Não são proposta e não vão a voto — e eu não ab
 <div class="au-slot-h"><b>Interativo</b> · Bilhete de saída · 6 min</div>
 <div class="au-slot-c">
 
-**O que mais te preocupa nesta disciplina?** Meia folha de papel, sem nome, recolhida na saída.
+**Duas perguntas anônimas**, em meia folha de papel recolhida na saída:
 
-1. Uma frase sobre **o que mais te preocupa** no semestre que começa hoje.
-2. Uma frase sobre **o que ficou mais confuso** na aula de hoje.
+1. O que mais te preocupa nesta disciplina?
+2. Qual foi o ponto mais confuso da aula de hoje?
 
-Não é coleta decorativa: o que aparecer duas vezes ou mais eu trago de volta na abertura da próxima aula. É assim que eu descubro onde a explicação falhou — e é mais rápido do que esperar a prova me contar.
+O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados como confusos são a primeira coisa que eu retomo.
 
 </div>
-<p class="au-slot-b"><b>Sem papel?</b> As mesmas duas perguntas entram por e-mail até a meia-noite. Seis minutos, sem depender de internet.</p>
+<p class="au-slot-b">Meia folha de papel, sem nome, sem cadastro, sem depender de rede.</p>
 </div>
 
 ---
@@ -236,7 +234,7 @@ Não é coleta decorativa: o que aparecer duas vezes ou mais eu trago de volta n
 | **Recuperação** | Nota **40–59** + todas as provas feitas + Uniube+ não zerado. **17 ou 18/12** (confirmo no AVA), **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**, **teto 60** |
 | **Labs que valem nota** | Lab 0 a 5, 1 pt cada, **80% de acerto**, contam os **5 melhores** |
 | **Política de IA** | Declarar por instrumento (escala de IA, 1 a 3). Sem detector de IA — detalhe no plano |
-| **Regras de sala** | Celular e fone proibidos · chamada fecha 15 min após o início · atraso entra em silêncio · corredor não · WhatsApp não |
+| **Regras de sala** | Celular e fone proibidos · chamada com hora limite de 15 min · atraso entra em silêncio · não abordar o professor nos corredores · o professor não responde WhatsApp |
 | **Pendência da semana** | Conta NetAcad + Packet Tracer instalados em casa |
 
 </div>
@@ -255,9 +253,9 @@ Toda aula termina do mesmo jeito: o **bilhete de saída** que você acabou de re
 <div class="au-reflexao">
 <b>Para pensar até a próxima aula</b>
 
-<p>Você ouviu hoje as cinco regras desta sala e o motivo de cada uma. Uma delas vai ser quebrada antes de setembro — e quase sempre não é por rebeldia, é porque o motivo não colou.</p>
+<p>A recuperação vale 55 pontos, <b>zera as notas das duas provas</b> e tem teto de 60. Ela troca, não soma.</p>
 
-<p>A pergunta é esta: <b>qual das cinco você acha que vai ser a mais difícil de cumprir no seu caso</b> — e o que teria que ser verdade sobre o seu semestre para ela deixar de ser difícil? Não me responda; responda para você, e reveja em setembro.</p>
+<p>Com os números desta página: <b>em que situação fazer a recuperação deixaria você pior do que já estava?</b> A resposta sai da tabela de pontos — mas ela não está escrita aqui.</p>
 </div>
 
 <div class="au-refs">

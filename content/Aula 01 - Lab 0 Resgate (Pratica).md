@@ -112,7 +112,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > - **Faltou à prova?** Pedido de segunda chamada pelo **SAE no AVA, em até 3 dias úteis**, com o atestado anexado no SAE — **não na minha mão**. O prazo é institucional; fora dele o curso indefere.
 > - **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**; laboratórios, Uniube+ e os 15 da Institucional ficam onde estão, e a nota final trava em 60.
 > - **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11. A **P11 perde quatro segundas**, a P12 nenhuma — por isso laboratório novo só cai em semana em que as duas práticas se encontram.
-> - **Regras de sala:** celular e fone proibidos em sala · a chamada fecha 15 min depois do início · quem chega atrasado entra em silêncio · assunto de disciplina não se resolve no corredor · eu não respondo WhatsApp, é AVA ou e-mail. Estão publicadas no plano — o contrato não fica no quadro.
+> - **Regras de sala:** celular e fone proibidos · chamada com hora limite de 15 min · atraso entra em silêncio · não abordar o professor nos corredores · o professor não responde WhatsApp (AVA ou e-mail). Estão publicadas no plano.
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>

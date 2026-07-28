@@ -267,16 +267,14 @@ O aviso: você vai trabalhar mais aqui do que numa aula expositiva, e vai **sent
 
 ## 📌 6. As regras da nossa sala
 
-Estas regras são minhas. Não são proposta e não vão a voto — e eu não abro exceção individual, porque abrir para um é desfazer para todos.
-
-1. **Celular e fone de ouvido são proibidos em sala.** Quem precisar usar, sai da sala e volta depois. Não é moralismo: o aparelho aberto derruba o seu rendimento e o de quem senta do lado, e sair é a alternativa honesta a fingir que está acompanhando.
-2. **A chamada fecha 15 minutos depois do início da aula.** Depois disso eu não abro a lista de novo. Frequência é requisito de aprovação junto com a nota, e a régua é a mesma para todos.
-3. **Quem chega atrasado entra em silêncio.** A abertura é curta e é onde eu digo o que muda na semana.
-4. **Assunto de disciplina não se resolve no corredor.** Nota, avaliação, falta, prazo — nada disso no caminho da sala. No corredor eu não tenho o diário nem o AVA na frente, e qualquer resposta que eu der ali vira problema seu.
-5. **Eu não respondo WhatsApp.** Comunicação é pelo **AVA** ou por **romualdo.filho@uniube.br**. Os dois ficam registrados e eu consigo achar depois.
+1. **Celular e fone de ouvido são proibidos em sala.** Quem quiser usar, sai da sala.
+2. **A chamada tem hora limite: 15 minutos depois do início.**
+3. **Quem chega atrasado entra em silêncio.**
+4. **Não abordar o professor nos corredores** com problemas de disciplina, avaliações e afins.
+5. **O professor não responde WhatsApp.** A comunicação é pelo **AVA** ou por **romualdo.filho@uniube.br**.
 
 > [!TIP] 🤖 Sobre inteligência artificial
-> Eu **incentivo** o uso, e em algumas aulas entrego os prompts prontos. Não tenho interesse em caçar ninguém. A linha é uma só: **a IA ajuda, a IA não cria.** Ela pode explicar, revisar, sugerir caminho, destravar — o que ela não pode é ser a autora do que você entrega. O teste é direto: se eu apontar para uma linha da sua entrega e perguntar por que está assim, você precisa saber responder. Não sabendo, aquilo não é seu — e o que não é seu não vale ponto.
+> Eu **incentivo** o uso — inclusive em algumas aulas vamos entregar prompts prontos para vocês. A linha é uma só: **a IA ajuda, a IA não cria.**
 
 ---
 
