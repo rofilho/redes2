@@ -41,7 +41,7 @@ Começo por aqui porque é o que vale a partir de agora.
 
 ### Sobre inteligência artificial
 
-Eu incentivo o uso — inclusive em algumas aulas vamos entregar prompts prontos para vocês.
+Eu incentivo o uso.
 
 > **A IA ajuda. A IA não cria.**
 
@@ -208,7 +208,7 @@ Se você guardar uma única coisa desta aula, que seja esta.
 
 Os **três requisitos valem juntos**: ter feito todas as provas · estar entre 40 e 59 pontos · não estar com Uniube+/AVA zerados. Faltando um, não há recuperação.
 
-A consequência é contraintuitiva e vale entender agora, não em dezembro: **quem foi bem nas provas e mal na nota contínua não se beneficia** — jogaria fora justamente a parte boa. Ela foi desenhada para quem tem provas fracas e continuada de pé. Com o teto de 60, ninguém sai da recuperação com mais do que o mínimo de aprovação.
+A consequência é contraintuitiva e vale entender agora, não em dezembro: **quem foi bem nas provas e mal na nota contínua não se beneficia** — jogaria fora justamente a parte boa. Com o teto de 60, ninguém sai da recuperação com mais do que o mínimo de aprovação.
 
 **A leitura prática:** os 15 pontos de Uniube+ e os 5 de laboratório custam menos que qualquer prova, e os laboratórios fecham já na primeira metade do semestre. Com eles garantidos, a faixa dos 40–59 fica bem mais longe.
 
