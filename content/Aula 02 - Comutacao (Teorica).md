@@ -52,7 +52,7 @@ Naquele dia isso era só um ruído a ignorar na leitura do resultado. Hoje ele v
 <details>
 <summary>No diagnóstico de terça: 40 hosts num switch só, e o broadcast de qualquer máquina chega a todas as outras. Trocar por um switch melhor resolve?</summary>
 
-**Não** — e essa foi a questão que mais dividiu a sala.
+**Não.**
 
 Um switch melhor comuta mais rápido, tem mais portas e mais memória. Nada disso muda a regra: **encaminhar broadcast é o que um switch faz**, por definição, e não um defeito que um modelo superior corrige.
 
@@ -110,6 +110,8 @@ Esta é a primeira aula de conteúdo da disciplina. Nada aqui é cobrado como "v
 
 **Sub-rede** — o conjunto de endereços IP que conversam entre si sem precisar de roteador. Nesta aula, as estações estão todas na mesma.
 
+**ARP** — o pedido que uma estação faz para descobrir o endereço MAC de quem tem um determinado IP. Sai em broadcast, porque ela ainda não sabe para quem perguntar. É o motivo de o primeiro `ping` de uma conversa costumar falhar, e é o primeiro quadro que a maioria das estações transmite.
+
 **Hub** — o equipamento que o switch substituiu. Ele não decide nada: tudo que entra por uma porta sai por todas as outras, sempre. Aparece aqui como termo de comparação.
 
 **Full-duplex** — os dois lados de um enlace transmitem ao mesmo tempo, por pares diferentes do cabo, sem esperar a vez. É o padrão entre switch e estação hoje.
@@ -128,6 +130,8 @@ Esta é a primeira aula de conteúdo da disciplina. Nada aqui é cobrado como "v
 
 **VLAN** — a divisão de um switch em redes separadas por configuração, sem trocar o equipamento. É o que corta o domínio de broadcast, e é a aula da S03. Hoje basta saber que "sem VLAN" quer dizer que o switch inteiro é uma rede só.
 
+**VLAN 1** — toda porta de um switch Cisco já nasce numa VLAN, e por padrão é a de número 1. É por isso que a coluna `Vlan` da tabela mostra `1` em todas as linhas mesmo quando ninguém configurou nada: **"sem VLAN configurada" não quer dizer "sem VLAN nenhuma"**, quer dizer que todas as portas continuam na mesma — e por isso o switch inteiro é um domínio de broadcast só.
+
 **Segmentar** — cortar uma rede grande em pedaços menores, para que o broadcast de um não chegue nos outros. A VLAN é a forma de fazer isso dentro do switch.
 
 **Loop de camada 2** — caminho fechado entre switches que faz o mesmo quadro circular para sempre. É assunto da S06, e aqui aparece só como contraste.
@@ -142,17 +146,19 @@ Esta é a primeira aula de conteúdo da disciplina. Nada aqui é cobrado como "v
 
 Eu resolvo este inteiro no projetor, narrando cada passo. Não é para você decorar o resultado: é para você conseguir refazer a sequência sozinho, com outros endereços.
 
-O cenário é o mínimo possível. Um switch **recém-ligado**, tabela vazia, e duas estações: PC-A na `Fa0/1`, PC-B na `Fa0/2`.
+O cenário é o mínimo possível. Um switch **recém-ligado**, tabela vazia, e duas estações: PC-1 na `Fa0/1`, PC-2 na `Fa0/2`.
+
+`Fa0/1` é o nome que o switch dá à porta: `Fa` de *FastEthernet*, `0/1` de primeira porta do primeiro grupo. É assim que ele se refere a cada tomada do painel, e é assim que a porta aparece na tabela.
 
 ### 1.1 A sequência, quadro a quadro
 
 | Passo | O que acontece | O que a tabela ganha |
 | :-: | :--- | :--- |
-| **1** | Um quadro de A chega na porta `Fa0/1` | o switch lê o **MAC de origem** e grava `PC-A ↔ Fa0/1` |
-| **2** | Ele procura o **MAC de destino** (PC-B) na tabela | nada — PC-B ainda não está lá |
-| **3** | Sem saber onde B está, ele **inunda** o quadro | nada |
-| **4** | B responde; a resposta entra pela `Fa0/2` | grava `PC-B ↔ Fa0/2` |
-| **5** | O próximo quadro de A para B | sai **só** pela `Fa0/2` |
+| **1** | Um quadro do PC-1 chega na porta `Fa0/1` | o switch lê o **MAC de origem** e grava `PC-1 ↔ Fa0/1` |
+| **2** | Ele procura o **MAC de destino** (PC-2) na tabela | nada — o PC-2 ainda não está lá |
+| **3** | Sem saber onde o PC-2 está, ele **inunda** o quadro | nada |
+| **4** | O PC-2 responde; a resposta entra pela `Fa0/2` | grava `PC-2 ↔ Fa0/2` |
+| **5** | O próximo quadro do PC-1 para o PC-2 | sai **só** pela `Fa0/2` |
 
 O switch aprendeu duas coisas em dois quadros, e não perguntou nada a ninguém.
 
@@ -233,13 +239,13 @@ O switch toma exatamente quatro decisões, e duas delas produzem o mesmo efeito 
 | é `FFFF.FFFF.FFFF` | replica em todas as portas, menos a de entrada | **broadcast** |
 
 <details class="au-aposta">
-<summary>Aposte antes de ver: PC-A pinga PC-B pela primeira vez, mesmo switch, tabela vazia. Quantas portas veem esse primeiro quadro?</summary>
+<summary>Aposte antes de ver: o PC-1 pinga o PC-2 pela primeira vez, mesmo switch, tabela vazia. Quantas portas veem esse primeiro quadro?</summary>
 
 **Todas** — e por dois motivos empilhados, não um.
 
-O primeiro quadro nem é o `ping`. É o **pedido do ARP**, que sai em broadcast porque o PC-A ainda não conhece o MAC do PC-B. Broadcast vai para todo mundo, por definição.
+O primeiro quadro nem é o `ping`. É o **pedido do ARP**, que sai em broadcast porque o PC-1 ainda não conhece o MAC do PC-2. Broadcast vai para todo mundo, por definição.
 
-A **resposta** do ARP já é diferente. Ela é unicast, vem do PC-B, e quando chega ao switch ele já aprendeu as duas pontas: a origem A no quadro anterior, e agora a origem B. Então ela sai por uma porta só.
+A **resposta** do ARP já é diferente. Ela é unicast, vem do PC-2, e quando chega ao switch ele já aprendeu as duas pontas: a origem PC-1 no quadro anterior, e agora a origem PC-2. Então ela sai por uma porta só.
 
 **O que isso te dá:** a rede "abre o leque" no começo de cada conversa e fecha logo depois. Se ela **continua** aberta, alguma coisa está impedindo o switch de aprender — e aí você tem um problema de verdade para investigar.
 
@@ -263,11 +269,32 @@ A **resposta** do ARP já é diferente. Ela é unicast, vem do PC-B, e quando ch
 
 Os dois nomes têm "domínio" e a semelhança para aí. Um deles é sobre **disputar o meio** para conseguir transmitir; o outro é sobre **receber o que não é seu**. Confundir os dois é o que faz alguém comprar equipamento para resolver um problema de topologia.
 
+<div class="au-slot">
+<div class="au-slot-h"><b>Interativo</b> · votação por dedos · 4 min</div>
+<div class="au-slot-c">
+
+**Vote antes de eu explicar.** Um switch de 48 portas, com 30 estações ligadas e nenhuma VLAN configurada.
+
+Quantos domínios de colisão e quantos domínios de broadcast existem nesse equipamento?
+
+1. 1 de colisão e 1 de broadcast
+2. 30 de colisão e 1 de broadcast
+3. 48 de colisão e 48 de broadcast
+4. 30 de colisão e 30 de broadcast
+
+Dedos levantados ao mesmo tempo, no três — 1 a 4. Se a sala se dividir, vocês discutem em dupla por um minuto e votam de novo. **A segunda votação é a que interessa.**
+
+</div>
+<p class="au-slot-b"><b>Plano B:</b> em sala cheia, onde eu não consigo ler os dedos do fundo, cada um escreve o número na meia folha de papel e levanta. Mesma pergunta, mesmo tempo, mesma discussão em dupla.</p>
+</div>
+
+A tabela abaixo é a resposta — e ela só faz sentido depois que você apostou.
+
 | | Domínio de colisão | Domínio de broadcast |
 | :--- | :--- | :--- |
 | **O que reúne** | quem disputa o mesmo meio para transmitir | quem recebe um quadro de broadcast |
 | **Num hub** | o hub inteiro é **um só** | o hub inteiro é um só |
-| **Num switch** | **cada porta é um domínio** | o switch inteiro é **um só** |
+| **Num switch** | **cada porta ativa é um domínio** | o switch inteiro é **um só** |
 | **Quem corta** | o switch — e em full-duplex a disputa deixa de existir | o roteador, ou a **VLAN** (S03) |
 
 A linha que importa é a última da coluna da direita. **O switch resolveu completamente um dos dois problemas e não encostou no outro.**
@@ -302,25 +329,11 @@ A linha que importa é a última da coluna da direita. **O switch resolveu compl
 <figcaption class="au-legenda">Quatro contornos <b>tracejados</b>, um por enlace: o switch criou quatro domínios de colisão onde um hub teria um só. O contorno <b>contínuo</b> em volta de tudo é o domínio de broadcast — e ele continua sendo <b>um</b>, por mais portas que o equipamento tenha. Comprar um switch maior desenha mais tracejados e não mexe no contínuo.</figcaption>
 </figure>
 
-<div class="au-slot">
-<div class="au-slot-h"><b>Interativo</b> · Plickers · 3 min</div>
-<div class="au-slot-c">
-
-**Levante o cartão.** Duas perguntas, sem nota, respondidas com os cartões impressos — ninguém precisa de celular.
-
-1. Um switch de 48 portas, com 30 estações ligadas e sem VLAN, tem quantos domínios de colisão e quantos de broadcast?
-2. Se eu ligar um segundo switch neste, por um cabo, o número de domínios de **broadcast** aumenta?
-
-Na pergunta em que a sala se dividir, vocês discutem em dupla por um minuto e votam de novo. A segunda votação é a que interessa.
-
-</div>
-<p class="au-slot-b"><b>Plano B:</b> se o escaneamento dos cartões falhar em VIA203, as mesmas duas perguntas vão na votação por dedos — 1 a 5, levantados ao mesmo tempo, no três. Mesma pergunta, mesmo tempo, mesma discussão em dupla.</p>
-</div>
 
 > [!NOTE] 💼 Pergunta de entrevista
-> *"Um switch de 48 portas, sem nenhuma VLAN configurada: quantos domínios de colisão e quantos de broadcast?"*
+> *"Você liga dois switches um no outro, por um cabo. O que acontece com o número de domínios de colisão, e o que acontece com o número de domínios de broadcast?"*
 >
-> **Resposta esperada:** um domínio de colisão por porta ativa, e **um** domínio de broadcast para o equipamento inteiro. Candidato que responde "48 e 48" está confundindo os dois conceitos; quem responde "1 e 1" ainda está pensando em hub. A resposta certa é a única que mostra que a pessoa sabe **o que o switch resolveu e o que ele deixou de pé**.
+> **Resposta esperada:** os domínios de colisão **aumentam** — o cabo entre os dois é mais um enlace, e portanto mais um domínio. Os de broadcast **continuam sendo um**: os dois switches passam a formar um domínio só, maior que antes. Candidato que responde "dois domínios de broadcast, um por switch" está contando equipamento em vez de contar alcance do broadcast.
 
 > [!TIP] 💡 Dica de produção
 > Num enlace moderno entre switch e estação, em full-duplex, o domínio de colisão tem dois participantes e nenhuma disputa: cada lado transmite quando quer, por pares diferentes do cabo. A colisão simplesmente não acontece.
@@ -334,15 +347,16 @@ Na pergunta em que a sala se dividir, vocês discutem em dupla por um minuto e v
 
 Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e montar faz parte.
 
-1. No Packet Tracer, ponha **um switch 2960** e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
+1. No Packet Tracer, ponha **um switch 2960** — é um modelo de switch de rede local da Cisco, e o que o simulador oferece por padrão — e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
 2. Endereços: `192.168.1.11`, `192.168.1.12` e `192.168.1.13`, todos com máscara `255.255.255.0`. Sem gateway — hoje ninguém sai da rede.
-3. No switch, aba `CLI`, digite `enable` — é o comando que sai do modo de consulta e entra no modo em que dá para administrar o equipamento; o sinal de que funcionou é o `#` no fim do prompt. Rode `show mac address-table`. **Anote quantas entradas dinâmicas aparecem.**
-4. Do PC-1, `ping 192.168.1.12`. Espere terminar.
-5. Rode `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
-6. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu? Por quê?
-7. Agora, do PC-2, `ping 192.168.1.13`. Rode o comando mais uma vez e confira o que mudou.
+3. **Espere o link ficar verde.** Ao ligar o cabo, a ponta fica **âmbar por cerca de 30 segundos** antes de ficar verde. É o switch decidindo se aquela porta pode encaminhar; ele faz isso em toda porta que acende. `ping` antes disso falha, e não é defeito seu — é o mesmo tipo de espera que o `Request timed out` do ARP no Lab 0. O nome disso é assunto da S06.
+4. No switch, aba `CLI`, digite `enable` — é o comando que sai do modo de consulta e entra no modo em que dá para administrar o equipamento; o sinal de que funcionou é o `#` no fim do prompt. Rode `show mac address-table`. **Anote quantas entradas dinâmicas aparecem.**
+5. Do PC-1, `ping 192.168.1.12`. Espere terminar.
+6. Rode `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
+7. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu? Por quê?
+8. Agora, do PC-2, `ping 192.168.1.13`. Rode o comando mais uma vez e confira o que mudou.
 
-<p class="au-pronto"><b>Critério de pronto:</b> depois do passo 5 a tabela mostra <b>duas</b> entradas dinâmicas — PC-1 e PC-2 — e o PC-3 <b>não</b> está lá; depois do passo 7 ele aparece. E você consegue dizer, em voz alta para a sua dupla, <b>o que mudou para o PC-3 entre um momento e outro</b>. A resposta tem quatro palavras: ele passou a transmitir.</p>
+<p class="au-pronto"><b>Critério de pronto:</b> depois do passo 6 a tabela mostra <b>duas</b> entradas dinâmicas — PC-1 e PC-2 — e o PC-3 <b>não</b> está lá; depois do passo 8 ele aparece. E você consegue dizer, em voz alta para a sua dupla, <b>o que mudou para o PC-3 entre um momento e outro</b>. A resposta tem quatro palavras: ele passou a transmitir.</p>
 </div>
 
 > [!IMPORTANT] 📌 O laboratório desta semana
@@ -368,7 +382,7 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 | **Inundação** | Destino **não** está na tabela: replica em todas as portas, menos a de entrada. |
 | **Broadcast** | Destino `FFFF.FFFF.FFFF`: replica em todas as portas, menos a de entrada. |
 | **Inundação ≠ broadcast** | Mesmo efeito visível, causas diferentes. Confundir manda você caçar loop onde havia tabela vazia. |
-| **Domínio de colisão** | Quem disputa o mesmo meio. No switch, **um por porta**; em full-duplex, sem disputa. |
+| **Domínio de colisão** | Quem disputa o mesmo meio. No switch, **um por porta ativa**; em full-duplex, sem disputa. |
 | **Domínio de broadcast** | Quem recebe o broadcast. Um switch sem VLAN é **um domínio só**. |
 | **O que o switch corta** | Colisão, completamente. Broadcast, **nada**. |
 | **Quem corta broadcast** | O roteador — ou a VLAN, que é a próxima aula. |
@@ -385,6 +399,21 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 <p>Hoje isso foi conveniente: a rede se organizou sozinha, sem ninguém configurar nada. Mas convém a quem?</p>
 
 <p><b>O que impede uma estação de afirmar que é outra?</b> E se nada impede, o que muda na tabela do switch quando ela faz isso — e quem passa a receber o tráfego que não era dele?</p>
+</div>
+
+<div class="au-slot">
+<div class="au-slot-h"><b>Interativo</b> · Bilhete de saída · 3 min</div>
+<div class="au-slot-c">
+
+**Bilhete de saída.** Meia folha de papel, recolhida na porta — sem nome. Duas perguntas, sem nota:
+
+1. *Com suas palavras, em uma frase: por que uma estação ligada e funcionando pode não aparecer na tabela MAC?*
+2. *Qual foi o ponto mais confuso da aula de hoje?*
+
+O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados viram as primeiras perguntas da próxima aula.
+
+</div>
+<p class="au-slot-b"><b>Se faltar papel</b>, as duas perguntas vão no quadro e cada um responde no próprio caderno — eu passo recolhendo na porta do mesmo jeito. O bilhete nunca é cortado: ele é a entrada da próxima aula.</p>
 </div>
 
 ## ✍️ Questões estilo Enade
@@ -464,11 +493,11 @@ METCALFE, R. M.; BOGGS, D. R. Ethernet: distributed packet switching for local c
 **Bibliografia da disciplina** — biblioteca virtual da Uniube:
 
 - KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 6, seç. 6.4.3 — comutadores de camada de enlace: filtragem, encaminhamento e autoaprendizagem</span>
-- CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems, 2026. Disponível em: https://www.netacad.com/. <span class="au-pag">módulo 2 — conceitos de comutação: encaminhamento de quadros, tabela de endereços MAC e domínios de colisão e broadcast</span>
+- CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems, 2026. Disponível em: https://www.netacad.com/. Acesso em: 30 jul. 2026. <span class="au-pag">módulo 2 — conceitos de comutação: encaminhamento de quadros, tabela de endereços MAC e domínios de colisão e broadcast</span>
 
 **De onde vem o formato desta aula:**
 
-- SWELLER, J.; AYRES, P.; KALYUGA, S. **Cognitive Load Theory.** New York: Springer, 2011. <span class="au-pag">cap. 8 — The worked example effect</span>
+- SWELLER, J.; AYRES, P.; KALYUGA, S. **Cognitive Load Theory.** New York: Springer, 2011.
 
 </div>
 
