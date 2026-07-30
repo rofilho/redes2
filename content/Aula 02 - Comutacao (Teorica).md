@@ -360,9 +360,12 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 </div>
 
 > [!IMPORTANT] 📌 O laboratório desta semana
-> A prática acontece **segunda 03/08 (P11)** e **quinta 06/08 (P12)**. As duas turmas se encontram nesta semana, então o laboratório vale ponto e é **o mesmo para todo mundo** — é a regra que impede que os feriados de segunda deixem a P11 para trás.
+> As duas turmas fazem coisas diferentes nesta semana, e vale a pena saber por quê.
 >
-> **A régua é a de sempre:** 1 ponto da Atividade N1, apurado por **80% de acerto** na tela, durante a aula. São seis laboratórios valendo no semestre e contam os **cinco melhores**.
+> - **Segunda 03/08 (P11):** o **Lab 0 — Resgate**, que a P12 já fez. Setup do NetAcad e do Packet Tracer, e uma rede de campus com quatro defeitos para consertar. **Vale 1 ponto** da Atividade N1.
+> - **Quinta 06/08 (P12):** aprofundamento **sem nota** — a P12 já fez o Lab 0 e não repete. É a regra que impede que a P11 fique para trás por causa dos feriados de segunda: turma nenhuma ganha ponto que a outra não teve chance de ganhar.
+>
+> **A régua do lab que vale:** 1 ponto, apurado por **80% de acerto** na tela, durante a aula. São **cinco laboratórios valendo** no semestre, e os **cinco contam** — não há descarte.
 >
 > **O cenário é avisado no AVA** antes da sua prática.
 
