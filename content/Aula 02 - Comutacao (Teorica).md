@@ -144,7 +144,7 @@ Esta é a primeira aula de conteúdo da disciplina. Nada aqui é cobrado como "v
 
 ## 📌 1. O switch aprende sozinho [Exemplo resolvido ⏳ 14 min]
 
-Eu resolvo este inteiro no projetor, narrando cada passo. Não é para você decorar o resultado: é para você conseguir refazer a sequência sozinho, com outros endereços.
+Este é um **exemplo resolvido**: a sequência inteira, passo a passo, do primeiro quadro até a tabela preenchida. O objetivo não é decorar este resultado — é você conseguir refazer a sequência sozinho, com outros endereços.
 
 O cenário é o mínimo possível. Um switch **recém-ligado**, tabela vazia, e duas estações: PC-1 na `Fa0/1`, PC-2 na `Fa0/2`.
 
