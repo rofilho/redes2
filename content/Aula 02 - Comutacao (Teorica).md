@@ -92,7 +92,29 @@ O Tópico 3 fecha essa conta. E a resposta — segmentar — é a aula da semana
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
+Esta é a primeira aula de conteúdo da disciplina. Nada aqui é cobrado como "você já devia saber": leia a lista antes da aula e volte nela sempre que uma palavra travar a leitura.
+
+<b class="au-nota-t">O vocabulário de base</b>
+
+**Endereço MAC** — o número gravado de fábrica na placa de rede, com 12 dígitos hexadecimais, escrito como `0001.6440.a1b2`. Identifica **a placa**, não o computador e não a pessoa. É o endereço com que esta aula inteira trabalha.
+
+**Camada de enlace** — o nível da rede que entrega dados entre equipamentos ligados no mesmo trecho, usando endereço MAC. É onde o switch vive. O nível de cima, que usa IP e liga redes diferentes, é onde vive o roteador.
+
 **Quadro** — o pacote de dados como ele trafega na camada de enlace, com endereço MAC de origem e de destino. O switch trabalha nele; o roteador trabalha no que vai dentro.
+
+**Enlace** — um trecho de ligação entre dois equipamentos. O cabo entre o switch e um PC é um enlace.
+
+**Unicast** — quadro endereçado a **uma** estação.
+
+**Broadcast** — quadro endereçado a **todas** as estações da rede, com destino `FFFF.FFFF.FFFF`.
+
+**Sub-rede** — o conjunto de endereços IP que conversam entre si sem precisar de roteador. Nesta aula, as estações estão todas na mesma.
+
+**Hub** — o equipamento que o switch substituiu. Ele não decide nada: tudo que entra por uma porta sai por todas as outras, sempre. Aparece aqui como termo de comparação.
+
+**Full-duplex** — os dois lados de um enlace transmitem ao mesmo tempo, por pares diferentes do cabo, sem esperar a vez. É o padrão entre switch e estação hoje.
+
+<b class="au-nota-t">Novo hoje</b>
 
 **Tabela MAC** — a lista que o switch mantém na memória ligando cada endereço MAC à porta em que ele foi visto. Também chamada de tabela de comutação.
 
@@ -101,6 +123,16 @@ O Tópico 3 fecha essa conta. E a resposta — segmentar — é a aula da semana
 **Domínio de colisão** — o conjunto de equipamentos que disputam o mesmo meio para transmitir.
 
 **Domínio de broadcast** — o conjunto de portas que recebe um quadro de broadcast. Guarde este: é o conceito que organiza as próximas quatro semanas.
+
+<b class="au-nota-t">Você vai ouvir hoje, mas é de semanas à frente</b>
+
+**VLAN** — a divisão de um switch em redes separadas por configuração, sem trocar o equipamento. É o que corta o domínio de broadcast, e é a aula da S03. Hoje basta saber que "sem VLAN" quer dizer que o switch inteiro é uma rede só.
+
+**Segmentar** — cortar uma rede grande em pedaços menores, para que o broadcast de um não chegue nos outros. A VLAN é a forma de fazer isso dentro do switch.
+
+**Loop de camada 2** — caminho fechado entre switches que faz o mesmo quadro circular para sempre. É assunto da S06, e aqui aparece só como contraste.
+
+**CSMA/CD** — a regra que as estações usavam para revezar um cabo compartilhado: escutar antes de falar, e recomeçar se duas falassem juntas. O switch tornou isso desnecessário.
 
 </aside>
 
@@ -183,9 +215,9 @@ A linha marcada diz três coisas de uma vez: qual endereço, em qual porta, e �
 > É o erro mais comum desta aula, e ele não fica parado: quem acredita que o switch "procura" o host vai errar de novo em VLAN, na S03, e em roteamento entre VLANs, na S05. A tabela não é uma busca. É um registro do que já passou.
 
 > [!NOTE] 💼 Pergunta de entrevista
-> *"Por que a tabela MAC de um switch de acesso costuma estar vazia às 8h da manhã, com o equipamento ligado a noite inteira?"*
+> *"Por que a tabela MAC de um switch costuma estar vazia às 8h da manhã, com o equipamento ligado a noite inteira?"*
 >
-> **Resposta esperada:** porque entrada dinâmica **expira por inatividade** — no IOS, 300 segundos por padrão. Com as estações desligadas, ninguém transmite, e a tabela se esvazia sozinha. Não é defeito: é a diferença entre **configuração**, que persiste, e **estado aprendido**, que tem prazo de validade.
+> **Resposta esperada:** porque entrada dinâmica **expira por inatividade** — no IOS, o sistema que roda nos equipamentos Cisco, são 300 segundos por padrão. Com as estações desligadas, ninguém transmite, e a tabela se esvazia sozinha. Não é defeito: é a diferença entre **configuração**, que persiste, e **estado aprendido**, que tem prazo de validade.
 
 ---
 
@@ -223,7 +255,7 @@ A **resposta** do ARP já é diferente. Ela é unicast, vem do PC-B, e quando ch
 > [!TIP] 💡 Dica de produção
 > Inundação constante numa rede estável é sintoma, não normalidade. Vale investigar quando o tráfego de retorno some da tabela antes de a conversa terminar.
 >
-> A pista prática: se o `show mac address-table` de um switch de acesso movimentado mostra pouquíssimas entradas dinâmicas, ele está inundando muito mais do que deveria — e todas as portas estão pagando essa conta.
+> A pista prática: se o `show mac address-table` de um switch movimentado mostra pouquíssimas entradas dinâmicas, ele está inundando muito mais do que deveria — e todas as portas estão pagando essa conta.
 
 ---
 
@@ -286,7 +318,7 @@ Na pergunta em que a sala se dividir, vocês discutem em dupla por um minuto e v
 </div>
 
 > [!NOTE] 💼 Pergunta de entrevista
-> *"Um switch gerenciável de 48 portas, sem nenhuma VLAN configurada: quantos domínios de colisão e quantos de broadcast?"*
+> *"Um switch de 48 portas, sem nenhuma VLAN configurada: quantos domínios de colisão e quantos de broadcast?"*
 >
 > **Resposta esperada:** um domínio de colisão por porta ativa, e **um** domínio de broadcast para o equipamento inteiro. Candidato que responde "48 e 48" está confundindo os dois conceitos; quem responde "1 e 1" ainda está pensando em hub. A resposta certa é a única que mostra que a pessoa sabe **o que o switch resolveu e o que ele deixou de pé**.
 
@@ -304,7 +336,7 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 
 1. No Packet Tracer, ponha **um switch 2960** e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
 2. Endereços: `192.168.1.11`, `192.168.1.12` e `192.168.1.13`, todos com máscara `255.255.255.0`. Sem gateway — hoje ninguém sai da rede.
-3. No switch, aba `CLI`, entre em modo privilegiado com `enable` e rode `show mac address-table`. **Anote quantas entradas dinâmicas aparecem.**
+3. No switch, aba `CLI`, digite `enable` — é o comando que sai do modo de consulta e entra no modo em que dá para administrar o equipamento; o sinal de que funcionou é o `#` no fim do prompt. Rode `show mac address-table`. **Anote quantas entradas dinâmicas aparecem.**
 4. Do PC-1, `ping 192.168.1.12`. Espere terminar.
 5. Rode `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
 6. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu? Por quê?
@@ -329,7 +361,7 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 | :--- | :--- |
 | **Como o switch aprende** | Lendo o **MAC de origem** de cada quadro que chega, e gravando o par endereço ↔ porta. Nunca pelo destino. |
 | **O que a tabela é** | **Estado aprendido**, não configuração. Ninguém digita, e ela expira sozinha. |
-| **Envelhecimento** | Entrada dinâmica expira por inatividade — no IOS, **300 s** por padrão. Tabela vazia de manhã não é defeito. |
+| **Envelhecimento** | Entrada dinâmica expira por inatividade — no IOS (Cisco), **300 s** por padrão. Tabela vazia de manhã não é defeito. |
 | **Quem entra na tabela** | Só quem **transmitiu**. Estação ligada que nunca falou não aparece. |
 | **Encaminhamento** | Destino na tabela, porta diferente da de entrada: manda só por aquela porta. |
 | **Filtragem** | Destino na tabela, na **mesma** porta de entrada: descarta. |
@@ -410,12 +442,12 @@ Quantos domínios de colisão e quantos domínios de broadcast existem nessa red
 
 ### Questão 3
 
-Uma empresa tem 60 estações distribuídas em dois switches gerenciáveis, sem nenhuma segmentação. Os usuários reclamam de lentidão nos horários de pico. A medição aponta volume elevado de tráfego de broadcast. O fornecedor propõe substituir os dois equipamentos por um único modelo de maior capacidade de comutação.
+Uma empresa tem 60 estações distribuídas em dois switches, sem nenhuma VLAN configurada. Os usuários reclamam de lentidão nos horários de pico. A medição aponta volume elevado de tráfego de broadcast. O fornecedor propõe substituir os dois equipamentos por um único modelo de maior capacidade de comutação.
 
 Avalie a proposta do fornecedor.
 
 - **A)** Resolve: switches de maior capacidade filtram broadcast por padrão.
-- **B)** Resolve: o gargalo está na matriz de comutação, que o modelo superior elimina.
+- **B)** Resolve: o gargalo está na velocidade de comutação, que o modelo superior elimina.
 - **C)** Não resolve: encaminhar broadcast é comportamento definido do switch e independe da capacidade do equipamento; reduzir o domínio exige segmentação por VLAN ou um roteador entre os segmentos.
 - **D)** Não resolve: apenas a migração do cabeamento para fibra reduziria o broadcast.
 - **E)** Resolve parcialmente: o volume de broadcast cai pela metade a cada switch acrescentado.
