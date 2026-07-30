@@ -81,7 +81,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > - Meia folha de papel — bilhete de saída, anônimo, recolhido na porta
 
 > [!IMPORTANT] 📌 Como esta primeira prática funciona
-> **Hoje é ambiente e método.** A prioridade é sair daqui com a conta NetAcad criada e o Packet Tracer rodando na sua máquina — sem isso, nenhuma aula prática do semestre funciona. E eu conduzo os **quatro defeitos** no projetor: você vê o sintoma, responde o que verificaria primeiro, e só depois eu revelo.
+> **Hoje é ambiente e método.** A prioridade é sair daqui com a conta NetAcad criada e o Packet Tracer rodando na sua máquina — sem isso, nenhuma aula prática do semestre funciona. E os **quatro defeitos** passam no projetor, um a um: você vê o sintoma, responde o que verificaria primeiro, e a resposta só aparece depois disso.
 >
 > **O `lab00_resgate.pka` valendo 1 ponto entra na próxima prática**, igual para P11 e P12 — laboratório novo só cai em semana em que as duas turmas se encontram, e essa regra vale desde a primeira. **Você não perde ponto nenhum:** são seis labs valendo e contam os cinco melhores.
 >
@@ -94,7 +94,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 | 0–7 | Entrada, chamada e **Nosso caminho até aqui** — 3 questões de Redes I, sem nota | bloco de abertura |
 | 7–27 | **O contrato do semestre** — nota, datas, laboratórios, regras de sala | callout do contrato |
 | 27–42 | **Instalação** — NetAcad e Packet Tracer funcionando na sua máquina | Tópico 1 |
-| 42–65 | **Exemplo resolvido: os quatro defeitos, no projetor** — você diz o que verificaria primeiro, eu revelo depois | Tópicos 2 e 3 |
+| 42–65 | **Exemplo resolvido: os quatro defeitos, no projetor** — você diz o que verificaria primeiro; a resposta vem depois | Tópicos 2 e 3 |
 | 65–72 | **Como o semestre funciona** — duplas, quebra deliberada, o laboratório que vale ponto | Revisão |
 | **72–75** | Reflexão + bilhete de saída | Fechamento |
 
@@ -117,7 +117,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
-**Exemplo resolvido** — eu resolvo um problema inteiro no projetor, em voz alta, antes de você tentar sozinho. Você vê o caminho completo, não só a resposta. Depois é a sua vez.
+**Exemplo resolvido** — um problema inteiro, resolvido no projetor passo a passo e em voz alta, antes de você tentar sozinho. Você vê o caminho completo, não só a resposta. Depois é a sua vez.
 
 **Porcentagem de acerto** — o arquivo do Packet Tracer compara a sua rede com a rede correta e mostra na tela quanto você acertou. É a nota do laboratório, e ela sai em sala. Na tela do programa esse número aparece em inglês, com o nome `Completion`.
 
@@ -152,7 +152,7 @@ O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratui
 
 ## 📌 2. O método: um defeito resolvido no projetor [Exemplo resolvido ⏳ 8 min]
 
-Antes de você caçar, eu caço **um** — narrando cada pergunta em voz alta. Não é para você decorar a resposta: é para você copiar **a sequência de perguntas**.
+Antes de você caçar, você vê **um** defeito ser caçado na sua frente, com cada pergunta dita em voz alta. Não é para você decorar a resposta: é para você copiar **a sequência de perguntas**.
 
 ### 2.1 A sequência
 
@@ -224,7 +224,7 @@ E aqui vem a parte que confunde: o roteador **pode** encaminhar esse tráfego de
 
 </details>
 
-> [!TIP] 💡 Por que eu resolvo antes de você tentar
+> [!TIP] 💡 Por que o exemplo vem antes da sua vez
 > No começo, ver alguém resolver por inteiro ensina mais do que tentar do zero. Quando você ainda não tem repertório, tentar às cegas gasta toda a sua atenção na procura, e não sobra atenção para aprender o caminho.
 >
 > **Isso muda no meio do semestre, e é de propósito.** Conforme você ganha traquejo, o exemplo pronto começa a atrapalhar — vira resposta antes da pergunta. Por isso a ajuda diminui: até a semana 8 você tem o exemplo completo; da 11 em diante, só pedaços; da 16 em diante, o problema direto, sem exemplo. Se em novembro você achar que "o professor parou de explicar", é isso, e é planejado.
@@ -361,7 +361,7 @@ Adianto só o eixo. Tudo o que você caçou hoje reaparece entre a **S03 e a S05
 O que você responder aqui **abre a aula da semana que vem** — os assuntos mais citados viram as primeiras perguntas da próxima aula.
 
 </div>
-<p class="au-slot-b"><b>Quando o bilhete passar para o <a href="https://vevox.app/">Vevox</a></b>, eu projeto o código de acesso e aviso aqui — anônimo do mesmo jeito. O bilhete nunca é cortado: ele é a entrada da próxima aula.</p>
+<p class="au-slot-b"><b>Quando o bilhete passar para o <a href="https://vevox.app/">Vevox</a></b>, o código de acesso vai para o projetor e o aviso aparece aqui — anônimo do mesmo jeito. O bilhete nunca é cortado: ele é a entrada da próxima aula.</p>
 </div>
 
 ---
