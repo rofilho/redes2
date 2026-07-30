@@ -25,32 +25,32 @@ tags: [redes2, 2026-2, comutacao, tabela-mac, dominio-de-broadcast]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Responda **antes** de abrir. As três perguntas são do Lab 0, e as três respostas são usadas hoje — se você errar uma, acabou de descobrir o que prestar atenção nos próximos 70 minutos.
+Esta é a primeira aula de conteúdo, então não há semana anterior para retomar — a Aula 01 foi o contrato da disciplina. As três perguntas abaixo não cobram memória: cobram **palpite**. Responda cada uma **antes** de abrir a resposta. Se você errar, acabou de descobrir o que prestar atenção nos próximos 70 minutos.
 
 <details>
 <summary>Você pinga o PC ao lado e funciona. O que o switch entre vocês fez?</summary>
 
 Ele **encaminhou o quadro nas duas direções** — e ninguém configurou nada nele para isso. Você tirou o switch da caixa, ligou os cabos, e ele já sabia por qual porta mandar cada coisa.
 
-Repare no tamanho dessa afirmação. O roteador do Lab 0 precisou de endereço em cada interface, digitado por alguém. O switch não precisou de nada.
+Repare no tamanho dessa afirmação. Um roteador precisa de endereço em cada interface, digitado por alguém. O switch não precisou de nada.
 
 **A pergunta de hoje é como.** Ele não adivinha e não pergunta a ninguém: ele observa. O Tópico 1 mostra o mecanismo inteiro, em dois quadros.
 
 </details>
 
 <details>
-<summary>No Lab 0, o primeiro <code>ping</code> quase sempre dava <code>Request timed out</code>. Por quê?</summary>
+<summary>Você liga dois PCs novos num switch e dá <code>ping</code>. O primeiro quase sempre volta <code>Request timed out</code>. Por quê?</summary>
 
 **ARP.** Antes de enviar o primeiro pacote, o host precisa descobrir o endereço MAC correspondente ao IP de destino — e o pedido do ARP é enviado em **broadcast**, para todo mundo. O primeiro pacote do `ping` morre esperando essa resposta.
 
-Naquele dia isso era só um ruído a ignorar na leitura do resultado. Hoje ele vira conteúdo.
+É fácil ler isso como erro de configuração. Não é: é o preço da primeira pergunta.
 
 **Por que importa agora:** esse broadcast do ARP é o primeiro quadro que a maioria das estações transmite. É ele que enche a tabela do switch. Sem ARP, a tabela nasceria e ficaria vazia.
 
 </details>
 
 <details>
-<summary>No diagnóstico de terça: 40 hosts num switch só, e o broadcast de qualquer máquina chega a todas as outras. Trocar por um switch melhor resolve?</summary>
+<summary>Quarenta estações num switch só, e o broadcast de qualquer uma chega a todas as outras. Trocar por um switch melhor resolve?</summary>
 
 **Não.**
 
@@ -62,7 +62,7 @@ O Tópico 3 fecha essa conta. E a resposta — segmentar — é a aula da semana
 </div>
 
 > [!INFO] 🎯 Visão geral e recursos
-> No Lab 0 você consertou uma rede inteira sem nunca perguntar como o switch decidia para onde mandar cada quadro. Não precisou: ele acertou sozinho, o tempo todo. Hoje você abre essa caixa.
+> Um switch funciona sem que ninguém o configure: tira da caixa, liga os cabos, e ele acerta para onde mandar cada quadro — o tempo todo, sem que ninguém tenha digitado nada nele. Hoje você abre essa caixa.
 >
 > **O que você leva desta aula**
 > - Como a tabela MAC se preenche — e por que ela é **estado aprendido**, não configuração.
@@ -72,8 +72,8 @@ O Tópico 3 fecha essa conta. E a resposta — segmentar — é a aula da semana
 >
 > **📂 Recursos**
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — calendário das três turmas, notas, prazos e regras
-> - [Aula 01 — Lab 0: Resgate](./Aula-01---Lab-0-Resgate-(Pratica)) — o método de diagnóstico que continua valendo
-> - **Packet Tracer** já instalado, na sua máquina — usamos nos últimos 15 minutos
+> - [Aula 01 — Lab 0: Resgate](./Aula-01---Lab-0-Resgate-(Pratica)) — o roteiro do primeiro laboratório
+> - **Packet Tracer**, na sua máquina — usamos nos últimos 15 minutos desta aula
 > - Meia folha de papel — bilhete de saída, anônimo, recolhido na porta
 
 ### ⏱️ Os 75 minutos de hoje
@@ -81,7 +81,7 @@ O Tópico 3 fecha essa conta. E a resposta — segmentar — é a aula da semana
 | Min | Bloco | Onde está nesta página |
 | :-- | :--- | :--- |
 | 0–5 | Entrada, chamada e projetor | — |
-| 5–12 | **Nosso caminho até aqui** — 3 perguntas do Lab 0 | bloco de abertura |
+| 5–12 | **Nosso caminho até aqui** — 3 apostas antes de começar | bloco de abertura |
 | 12–26 | **Como o switch aprende** — exemplo resolvido no projetor | Tópico 1 |
 | 26–38 | **O que ele faz quando não sabe** | Tópico 2 |
 | 38–50 | **Colisão e broadcast** — o que o switch corta | Tópico 3 |
@@ -349,7 +349,7 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 
 1. No Packet Tracer, ponha **um switch 2960** — é um modelo de switch de rede local da Cisco, e o que o simulador oferece por padrão — e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
 2. Endereços: `192.168.1.11`, `192.168.1.12` e `192.168.1.13`, todos com máscara `255.255.255.0`. Sem gateway — hoje ninguém sai da rede.
-3. **Espere o link ficar verde.** Ao ligar o cabo, a ponta fica **âmbar por cerca de 30 segundos** antes de ficar verde. É o switch decidindo se aquela porta pode encaminhar; ele faz isso em toda porta que acende. `ping` antes disso falha, e não é defeito seu — é o mesmo tipo de espera que o `Request timed out` do ARP no Lab 0. O nome disso é assunto da S06.
+3. **Espere o link ficar verde.** Ao ligar o cabo, a ponta fica **âmbar por cerca de 30 segundos** antes de ficar verde. É o switch decidindo se aquela porta pode encaminhar; ele faz isso em toda porta que acende. `ping` antes disso falha, e não é defeito seu — é o mesmo tipo de espera que o `Request timed out` do ARP. O nome disso é assunto da S06.
 4. No switch, aba `CLI`, digite `enable` — é o comando que sai do modo de consulta e entra no modo em que dá para administrar o equipamento; o sinal de que funcionou é o `#` no fim do prompt. Rode `show mac address-table`. **Anote quantas entradas dinâmicas aparecem.**
 5. Do PC-1, `ping 192.168.1.12`. Espere terminar.
 6. Rode `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
@@ -364,7 +364,7 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 >
 > **A régua é a de sempre:** 1 ponto da Atividade N1, apurado por **80% de acerto** na tela, durante a aula. São seis laboratórios valendo no semestre e contam os **cinco melhores**.
 >
-> **O cenário é avisado no AVA** antes da sua prática. Chegue com o Packet Tracer já instalado — não existe bloco de instalação nesta semana.
+> **O cenário é avisado no AVA** antes da sua prática.
 
 ---
 
