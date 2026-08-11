@@ -5,7 +5,6 @@ codigo: "49309"
 aula: 2
 tipo: teorica
 turma: T (P11 + P12)
-semana: 3
 date: 2026-08-11
 tags: [redes2, 2026-2, comutacao, endereco-mac, arp, tabela-mac, dominio-de-broadcast]
 ---
@@ -15,7 +14,7 @@ tags: [redes2, 2026-2, comutacao, endereco-mac, arp, tabela-mac, dominio-de-broa
 
 **Disciplina:** 49309 — Redes de Computadores II — Uniube<br>
 **Professor:** Romualdo Mathias Filho · **romualdo.filho@uniube.br**<br>
-**Semana:** 3 · Terça, 11/08/2026 · **VIA203** · 📘 Teórica (75 min)<br>
+**Data:** Terça, 11/08/2026 · **VIA203** · 📘 Teórica (75 min)<br>
 **Turmas práticas:** P11 segunda · VIA215 — P12 quinta · VIA216<br>
 **Página de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato)
 
@@ -34,7 +33,7 @@ Porque o IP não é o único endereço que uma máquina tem. Existe um segundo, 
 </details>
 
 <details>
-<summary>Você liga dois PCs novos num switch e dá <code>ping</code>. O primeiro quase sempre volta <code>Request timed out</code>. Por quê?</summary>
+<summary>Você liga dois PCs novos num switch, no Packet Tracer, e dá <code>ping</code>. O primeiro quase sempre volta <code>Request timed out</code>. Por quê?</summary>
 
 Porque antes do primeiro pacote a máquina precisa **descobrir** um endereço que ela ainda não tem, e essa descoberta demora. O primeiro `ping` morre esperando. Não é erro de configuração: é o preço da primeira pergunta, e ele se paga uma vez só.
 
@@ -74,6 +73,18 @@ Uma pergunta só, feita três vezes. Cada resposta cria a pergunta seguinte.
 Lista de consulta, não de leitura corrida: passe os olhos antes da aula e volte aqui sempre que uma palavra travar. Nada nesta página é cobrado como "você já devia saber".
 
 <b class="au-nota-t">O vocabulário de base</b>
+
+**Switch** — o equipamento que liga as máquinas de uma rede local e decide, para cada mensagem, por qual tomada ela sai. É o assunto desta aula. **Comutação** é o nome dessa decisão.
+
+**Protocolo** — o conjunto de regras que dois equipamentos combinam para se entender: o que cada um manda, em que ordem, e o que significa cada resposta.
+
+**Ethernet** — o padrão de rede local com fio que praticamente todo escritório usa. Define o formato do quadro e o endereço MAC.
+
+**Topologia** — o desenho de como os equipamentos estão ligados entre si.
+
+**Banda** — a capacidade de transmissão de um enlace. Consumir banda com mensagem inútil é o problema do fim desta aula.
+
+**Máscara de rede** — o número que acompanha o IP (`255.255.255.0`, por exemplo) e diz quais máquinas estão na mesma sub-rede.
 
 **Bit** — a menor unidade de informação: vale 0 ou 1. "48 bits" quer dizer uma sequência de 48 zeros e uns.
 
@@ -127,7 +138,7 @@ Lista de consulta, não de leitura corrida: passe os olhos antes da aula e volte
 
 **Domínio de colisão** — o conjunto de equipamentos que disputam o mesmo meio para transmitir.
 
-**Domínio de broadcast** — o conjunto de portas que recebe um quadro de broadcast. Guarde este: é o conceito que organiza as próximas semanas.
+**Domínio de broadcast** — o conjunto de portas que recebe um quadro de broadcast. É o conceito que organiza as próximas semanas.
 
 <b class="au-nota-t">Você vai ouvir hoje, mas é de semanas à frente</b>
 
@@ -147,18 +158,18 @@ Lista de consulta, não de leitura corrida: passe os olhos antes da aula e volte
 
 ## 📌 1. Toda placa de rede já nasce com um endereço, e é com ele que a máquina fala antes de ter IP [Conceito ⏳ 10 min]
 
-Uma máquina recém-ligada não tem IP. Para conseguir um, precisa falar com o servidor de DHCP, que está do outro lado do cabo. Falar com quem, se ela ainda não tem endereço?
-
-Toda placa de rede — de cabo ou de Wi-Fi — sai da fábrica com um endereço já gravado. Nada a configurar: ele existe desde antes de a placa ser vendida.
-
-### 1.1 São 48 bits: 6 dígitos para o fabricante e 6 para a placa
-
-| Metade | Dígitos | O que identifica |
+| Metade do endereço | Dígitos | O que identifica |
 | :--- | :-: | :--- |
 | **OUI** — a primeira | 6 | o **fabricante** da placa |
 | a segunda | 6 | **aquela placa**, entre todas as que o fabricante produziu |
 
-Cada dígito hexadecimal vale 4 bits, então 48 bits cabem em 12 dígitos. Cada fabricante recebe um bloco de OUI só dele e se responsabiliza por não repetir número dentro do próprio bloco. É isso que torna o endereço único no mundo.
+Uma máquina recém-ligada não tem IP. Para conseguir um, precisa falar com o servidor de DHCP, que está do outro lado do cabo. Falar com quem, se ela ainda não tem endereço?
+
+Toda placa de rede — de cabo ou de Wi-Fi — sai da fábrica com o endereço acima já gravado. Nada a configurar: ele existe desde antes de a placa ser vendida.
+
+### 1.1 São 48 bits, escritos em 12 dígitos hexadecimais
+
+Cada dígito hexadecimal vale 4 bits, então 48 bits cabem em 12 dígitos. Cada fabricante recebe do **IEEE** um bloco de OUI só dele e se responsabiliza por não repetir número dentro do próprio bloco. É isso que torna o endereço único no mundo.
 
 ### 1.2 O mesmo endereço aparece escrito de duas maneiras diferentes
 
@@ -168,11 +179,11 @@ Cada dígito hexadecimal vale 4 bits, então 48 bits cabem em 12 dígitos. Cada 
 >
 > **É o mesmo endereço:** os 12 dígitos são os mesmos, na mesma ordem. Muda só onde caem os separadores e se as letras estão em maiúscula. Quem não sabe disso acha que a saída do switch mostra uma máquina diferente da que configurou.
 
-### 1.3 O cenário: três máquinas num switch de oito portas
+### 1.3 O A sabe o IP do C e não sabe o MAC dele
 
 <figure class="au-fig">
 <img src="assets/aula02_rede_do_exemplo.svg" alt="Switch SW-ACESSO-01 de oito portas. O computador A, com IP 10.0.0.1, esta na porta 1; o B, com IP 10.0.0.4, na porta 4; o C, com IP 10.0.0.8, na porta 8. Cada um mostra tambem o seu endereco MAC">
-<figcaption class="au-legenda">O <b>A</b> quer falar com o <b>C</b>. Sabe o IP do C, porque foi você que digitou. Não sabe o MAC do C — e é isso que trava tudo. Os três MACs são fictícios e terminam em <code>A0</code>, <code>A3</code> e <code>A7</code>; guarde só que o do <b>A acaba em zero</b>.</figcaption>
+<figcaption class="au-legenda">Três máquinas num switch de oito portas: o <b>A</b> na porta 1, o <b>B</b> na 4, o <b>C</b> na 8. O A sabe o IP do C porque foi você que digitou. Os três MACs são fictícios e terminam em <code>A0</code>, <code>A3</code> e <code>A7</code>.</figcaption>
 </figure>
 
 > [!TIP] 💡 Dica de produção
@@ -188,7 +199,7 @@ Cada dígito hexadecimal vale 4 bits, então 48 bits cabem em 12 dígitos. Cada 
 
 <figure class="au-fig">
 <img src="assets/aula02_quadro_campo_vazio.svg" alt="O quadro que o computador A precisa montar. IP de origem 10.0.0.1, IP de destino 10.0.0.8, MAC de origem AA-AA-AA-AA-AA-A0 e os dados estao preenchidos. O campo MAC de destino esta vazio, marcado com pontos de interrogacao e destacado">
-<figcaption class="au-legenda">Quatro campos o A preenche sozinho: os dois IPs (o dele, e o que <b>você</b> digitou) e o MAC de origem, que está na própria placa dele. O quinto, não — e enquanto ele estiver em branco, <b>o quadro não sai</b>.</figcaption>
+<figcaption class="au-legenda">Quatro campos o A preenche sozinho: os dois IPs (o dele, e o que <b>você</b> digitou), o MAC de origem — que está na própria placa dele — e os dados. O quinto, não. E enquanto ele estiver em branco, <b>o quadro não sai</b>. Repare que os dois IPs estão num retângulo à parte: eles são o <b>pacote</b>, que viaja dentro do quadro.</figcaption>
 </figure>
 
 O A não tem como saber o MAC do C. Esse endereço está gravado numa placa do outro lado do cabo, e ninguém o escreveu em lugar nenhum.
@@ -214,14 +225,25 @@ O quadro 1 é o **ARP Request**; o quadro 2 é o **ARP Reply**. O **B** recebeu 
 
 ### 2.3 A pergunta se paga uma vez: a resposta fica guardada no cache
 
-O sistema operacional guarda a resposta numa lista própria, o **cache ARP** — IP de um lado, MAC do outro. O comando `arp -a` mostra essa lista. A entrada some sozinha depois de alguns minutos sem conversa com aquele host, e some também quando a máquina é desligada ou o cabo é desconectado.
+<div class="au-term">
+<div class="au-term-h"><b>A · 10.0.0.1</b> <span>· logo depois do ARP Reply</span></div>
+<div class="au-term-b"><span class="cm">! o que o A guardou da conversa</span>
+<span class="ps">C:\&gt;</span> <span class="kw">arp -a</span>
+
+Interface: 10.0.0.1 --- 0x4
+  Endereco IP           Endereco fisico       Tipo
+<span class="mark">  10.0.0.8              aa-aa-aa-aa-aa-a7     dinamico</span>
+  10.0.0.255            ff-ff-ff-ff-ff-ff     estatico</div>
+</div>
+
+O sistema operacional guardou a resposta numa lista própria, o **cache ARP** — IP de um lado, MAC do outro. A entrada some sozinha depois de alguns minutos sem conversa com aquele host, e some também quando a máquina é desligada ou o cabo é desconectado.
 
 <details class="au-aposta">
-<summary>Aposte antes de ver: o A dá <code>ping 10.0.0.8 -n 1000</code> — mil pacotes seguidos. Quantos ARP Requests ele manda?</summary>
+<summary>Aposte antes de ver: o A dá <code>ping 10.0.0.8 -n 100</code> — cem pacotes seguidos. Quantos ARP Requests em broadcast ele manda?</summary>
 
-**Um.** O primeiro pacote paga a pergunta; os outros 999 saem direto, porque o MAC do C já está no cache.
+**Um.** O primeiro pacote paga a pergunta; os outros 99 saem direto, porque o MAC do C já está na lista acima.
 
-Por isso o `Request timed out` costuma aparecer **no primeiro** `ping` e não nos seguintes. Se o primeiro falha e os demais passam, é normal. Se **todos** falham, o problema é outro.
+Por isso, **no Packet Tracer**, o `Request timed out` costuma aparecer no primeiro `ping` e não nos seguintes. Se o primeiro falha e os demais passam, é normal. Se **todos** falham, o problema é outro.
 
 </details>
 
@@ -246,7 +268,7 @@ O ARP Reply saiu do C e chegou **só** no A: o switch entregou por uma porta, n�
 | **2 · Procura** | Procura na tabela o **MAC de destino**, para descobrir a porta de saída. |
 | **3 · Decide** | **Achou:** manda só por aquela porta. **Não achou** — ou o destino é `FF:FF:FF:FF:FF:FF` — replica em todas as portas, menos na de entrada. |
 
-Refazendo o Tópico 2 com essa regra:
+Os dois quadros do ARP, relidos por essa regra:
 
 | Quadro | Passo 1 — aprende | Passo 2 — procura | Passo 3 — decide |
 | :--- | :--- | :--- | :--- |
@@ -271,7 +293,7 @@ Vlan    Mac Address       Type        Ports
 <span class="cm">! o B esta ligado, com cabo bom, e nao aparece.</span></div>
 </div>
 
-A linha marcada diz três coisas: qual endereço, em qual porta, e — em `DYNAMIC` — que ninguém digitou aquilo.
+`DYNAMIC` quer dizer que ninguém digitou aquela linha.
 
 O B recebeu a pergunta do ARP e ficou quieto. Uma tabela MAC não é a lista de quem está conectado: é a lista de **quem transmitiu**.
 
@@ -327,7 +349,7 @@ Um switch de 48 portas, com 30 estações ligadas e nenhuma VLAN configurada.
 Escolha um número **antes** de rolar a página.
 
 </div>
-<p class="au-slot-b"><b>Se você está lendo fora da aula:</b> anote o número escolhido num canto do caderno antes de continuar. Comparar a sua resposta com a certa vale mais do que ler a certa duas vezes.</p>
+<p class="au-slot-b"><b>Se você está lendo fora da aula:</b> anote o número escolhido num canto do caderno antes de continuar.</p>
 </div>
 
 | | Domínio de colisão | Domínio de broadcast |
@@ -337,12 +359,14 @@ Escolha um número **antes** de rolar a página.
 | **Num switch** | **cada porta ativa é um domínio** | o switch inteiro é **um só** |
 | **Quem corta** | o switch — e em full-duplex a disputa deixa de existir | o roteador, ou a **VLAN** |
 
+**A resposta é a 2: 30 domínios de colisão e 1 de broadcast.** São 30 porque só as portas **ativas** contam — as 18 portas vazias não são domínio de nada. E é 1 de broadcast porque, sem VLAN, o switch inteiro é um domínio só, tenha ele 48 portas ou 4.
+
 <figure class="au-fig">
 <img src="assets/aula02_dominios_colisao_broadcast.svg" alt="Um switch sem VLAN com quatro computadores. Cada enlace entre o switch e um computador esta cercado por um contorno tracejado, indicando quatro dominios de colisao separados. Um contorno continuo envolve o conjunto inteiro, indicando um unico dominio de broadcast">
 <figcaption class="au-legenda">Quatro contornos <b>tracejados</b>, um por enlace: o switch criou quatro domínios de colisão onde um hub teria um só. O contorno <b>contínuo</b> em volta de tudo é o domínio de broadcast, e ele continua sendo <b>um</b> por mais portas que o equipamento tenha. Um switch maior desenha mais tracejados e não mexe no contínuo.</figcaption>
 </figure>
 
-**A conta fecha no Tópico 2.** Cada estação precisa perguntar o MAC de cada máquina com quem vai falar, e cada pergunta dessas é um broadcast. Num trecho com muitas estações isso vira um fluxo constante de perguntas que todas recebem, leem e quase sempre descartam. É banda consumida sem ninguém ser servido.
+**Cada ARP Request é um broadcast.** Cada estação precisa perguntar o MAC de cada máquina com quem vai falar. Num trecho com muitas estações isso vira um fluxo constante de perguntas que todas recebem, leem e quase sempre descartam. É banda consumida sem ninguém ser servido.
 
 Não é falha do ARP — é falha de **tamanho**. E tamanho não se resolve com equipamento melhor: resolve-se cortando o trecho em pedaços.
 
@@ -359,33 +383,26 @@ Não é falha do ARP — é falha de **tamanho**. E tamanho não se resolve com 
 ---
 
 <div class="au-pratica">
-<b>Faça agora — no Packet Tracer</b>
-
-Os três tópicos acontecem na sua tela em poucos cliques.
+<b>Faça agora — no Packet Tracer · 12 min</b>
 
 1. Ponha **um switch 2960** — o modelo de switch de rede local que o simulador oferece por padrão — e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
 2. Clique no PC-1 → aba `Desktop` → `IP Configuration`. Marque `Static` e preencha `192.168.1.11`, máscara `255.255.255.0`, **gateway em branco** — hoje ninguém sai da rede. Repita no PC-2 com `.12` e no PC-3 com `.13`.
 3. **Espere o link ficar verde.** Ao ligar o cabo a ponta fica **âmbar por cerca de 30 segundos** antes de ficar verde: é o switch decidindo se aquela porta pode encaminhar. `ping` antes disso falha, e não é defeito seu.
-4. No PC-1, aba `Desktop` → `Command Prompt`.
-5. Rode `ipconfig /all` e **anote o endereço físico** — é o MAC do Tópico 1, na sua tela.
-6. Rode `arp -a` **antes de qualquer ping**. Anote o que aparece.
-7. Clique no switch → aba `CLI`. Digite `enable`, que sai do modo de consulta e entra no de administração; o sinal de que funcionou é o `#` no fim do prompt.
-8. Rode `show mac address-table` e **anote quantas entradas dinâmicas aparecem**.
-9. Volte ao PC-1 e rode `ping 192.168.1.12`. **Repare em qual dos quatro pacotes falhou.**
-10. Rode `arp -a` de novo. **O que apareceu, e de onde veio essa informação?**
-11. No switch, `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
-12. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu na tabela do switch? Por quê?
-13. Do PC-2, `ping 192.168.1.13`. Rode o comando do passo 11 mais uma vez e veja o que mudou.
+4. Clique no switch → aba `CLI`. Digite `enable`, que sai do modo de consulta e entra no de administração; o sinal de que funcionou é o `#` no fim do prompt. Rode `show mac address-table` e **anote quantas entradas dinâmicas aparecem**.
+5. No PC-1, aba `Desktop` → `Command Prompt`. Rode `ping 192.168.1.12`. **Repare em qual dos quatro pacotes falhou.**
+6. Ainda no PC-1, rode `arp -a`. **O que apareceu, e de onde veio essa informação?**
+7. No switch, `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
+8. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu na tabela do switch? Por quê?
 
-<p class="au-pronto"><b>Critério de pronto:</b> depois do passo 11 a tabela do switch mostra <b>duas</b> entradas dinâmicas — PC-1 e PC-2 — e o PC-3 <b>não</b> está lá; depois do passo 13 ele aparece. O <code>arp -a</code> do PC-1 mostra <b>uma</b> entrada, a do PC-2. E você consegue explicar, com suas palavras, <b>por que essas duas listas não têm o mesmo tamanho</b> — sendo que as duas se preencheram sozinhas, na mesma rede, nos mesmos segundos.</p>
+<p class="au-pronto"><b>Critério de pronto:</b> no passo 7 a tabela do switch mostra <b>duas</b> entradas dinâmicas — PC-1 e PC-2 — e o PC-3 <b>não</b> está lá. O <code>arp -a</code> do PC-1 mostra <b>uma</b> entrada, a do PC-2. E você consegue explicar, com suas palavras, <b>por que essas duas listas não têm o mesmo tamanho</b> — sendo que as duas se preencheram sozinhas, na mesma rede, nos mesmos segundos.</p>
+
+<p><b>Se sobrar tempo:</b> do PC-2, <code>ping 192.168.1.13</code>, e rode o comando do passo 7 mais uma vez para ver o PC-3 entrar na tabela.</p>
 </div>
 
-> [!IMPORTANT] 📌 Como o ponto do laboratório é apurado
-> A régua está no contrato da disciplina: **dez itens verificados, oito deles = o ponto (80% de acerto)**, apurado na sua tela durante a aula.
+> [!IMPORTANT] 📌 Este exercício não vale ponto
+> O que você acabou de fazer é demonstração de aula teórica. **O laboratório com nota é o da sua turma prática** — P11 na segunda, VIA215; P12 na quinta, VIA216 — e **o cenário é avisado no AVA** antes dela.
 >
-> São **seis** laboratórios valendo — Lab 0 a Lab 5, 1 ponto cada — e contam os **cinco melhores**. O sexto é a sua margem para uma falta, uma internet que caiu ou um dia ruim. O teto continua sendo 5 pontos: fazer os seis não dá 6.
->
-> **O cenário é avisado no AVA** antes da sua prática.
+> A régua da correção está no contrato: **dez itens verificados, oito deles = o ponto (80% de acerto)**, apurado na sua tela durante a aula.
 
 ---
 
@@ -445,7 +462,7 @@ Assinale a alternativa que descreve corretamente os dois primeiros quadros dessa
 
 ### Questão 2
 
-Três estações estão ligadas ao `SW-ACESSO-01`: PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`. As três estão ligadas, na mesma sub-rede, e nenhuma VLAN foi criada. Logo após um `ping` bem-sucedido do PC-1 para o PC-2, o técnico executa:
+Três estações estão ligadas ao `SW-ACESSO-01`: PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`. As três estão ligadas, na mesma sub-rede, nenhuma VLAN foi criada e **nenhuma porta foi desativada**. Logo após um `ping` bem-sucedido do PC-1 para o PC-2, o técnico executa:
 
 ```text
 SW-ACESSO-01#show mac address-table
@@ -457,7 +474,7 @@ Vlan    Mac Address       Type        Ports
    1    000a.f3c1.7d09    DYNAMIC     Fa0/2
 ```
 
-O PC-3 está ligado e operante, mas não consta na tabela. Assinale a alternativa que explica corretamente a ausência.
+O PC-3 está ligado e operante, nenhuma porta do switch foi desativada, e mesmo assim ele não consta na tabela. Assinale a alternativa que explica corretamente a ausência.
 
 - **A)** O PC-3 está em outra VLAN e, por isso, não é aprendido pelo switch.
 - **B)** O switch registra apenas endereços de estações que transmitiram um quadro; o PC-3 recebeu o ARP Request em broadcast, mas não respondeu, então nunca foi origem de nada.
@@ -471,11 +488,11 @@ Uma empresa tem 60 estações distribuídas em dois switches, sem nenhuma VLAN c
 
 Avalie a proposta do fornecedor.
 
-- **A)** Resolve: switches de maior capacidade filtram broadcast por padrão.
-- **B)** Resolve: o gargalo está na velocidade de comutação, que o modelo superior elimina.
-- **C)** Não resolve: encaminhar broadcast é comportamento definido do switch e independe da capacidade do equipamento; reduzir o domínio exige segmentação por VLAN ou um roteador entre os segmentos.
-- **D)** Não resolve: apenas a migração do cabeamento para fibra reduziria o broadcast.
-- **E)** Resolve parcialmente: o volume de broadcast cai pela metade a cada switch acrescentado.
+- **A)** Resolve: switches de maior capacidade de comutação filtram tráfego de broadcast por padrão, sem necessidade de configuração adicional.
+- **B)** Resolve: o gargalo relatado está na velocidade de comutação dos equipamentos atuais, que o modelo superior elimina.
+- **C)** Não resolve: encaminhar broadcast é comportamento definido do switch e independe da capacidade; reduzir o domínio exige VLAN ou roteador.
+- **D)** Não resolve: só a migração do cabeamento de cobre para fibra óptica reduziria o volume de tráfego de broadcast na rede.
+- **E)** Resolve parcialmente: o volume de broadcast recebido por estação cai pela metade a cada switch acrescentado à topologia.
 
 ### 🔬 Para ir além
 

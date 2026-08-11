@@ -1,38 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 280" role="img"
-     aria-label="O quadro que o computador A precisa montar para falar com o C. Quatro campos estao preenchidos: IP de origem, IP de destino, MAC de origem e os dados. O campo MAC de destino esta vazio, marcado com pontos de interrogacao">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 312" role="img"
+     aria-label="O quadro que o computador A precisa montar para falar com o C. O quadro tem o MAC de destino, que esta vazio e marcado com pontos de interrogacao, o MAC de origem, e dentro dele um retangulo menor rotulado pacote, contendo o IP de origem, o IP de destino e os dados">
 
   <text x="24" y="26" font-family="monospace" font-size="13" font-weight="bold" fill="#00aa9f">O QUADRO QUE O A PRECISA MONTAR PARA FALAR COM O C</text>
 
   <!-- moldura do quadro -->
-  <rect x="24" y="42" width="632" height="180" rx="8" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <rect x="24" y="42" width="632" height="222" rx="8" fill="none" stroke="#8a8f98" stroke-width="2"/>
 
-  <!-- linhas -->
+  <!-- A SINALIZACAO: a linha que falta, primeiro campo do quadro -->
+  <rect x="34" y="56" width="612" height="30" rx="5" fill="none" stroke="#d9702a" stroke-width="2.5"/>
   <g font-family="monospace" font-size="13">
-    <text x="46" y="72" fill="#8a8f98">IP de origem</text>
-    <text x="330" y="72" fill="#2778c4">10.0.0.1</text>
-    <text x="600" y="72" fill="#00aa9f">sei</text>
-
-    <text x="46" y="104" fill="#8a8f98">IP de destino</text>
-    <text x="330" y="104" fill="#2778c4">10.0.0.8</text>
-    <text x="600" y="104" fill="#00aa9f">sei</text>
-
-    <text x="46" y="136" fill="#8a8f98">MAC de origem</text>
-    <text x="330" y="136" fill="#2778c4">AA:AA:AA:AA:AA:A0</text>
-    <text x="600" y="136" fill="#00aa9f">sei</text>
-
-    <text x="46" y="200" fill="#8a8f98">Dados</text>
-    <text x="330" y="200" fill="#2778c4">(a mensagem)</text>
-    <text x="600" y="200" fill="#00aa9f">sei</text>
+    <text x="46" y="76" fill="#d9702a">MAC de destino</text>
+    <text x="330" y="76" font-weight="bold" fill="#d9702a">? ? ? ? ? ?</text>
+    <text x="580" y="76" fill="#d9702a">NAO SEI</text>
   </g>
 
-  <!-- A SINALIZACAO: a linha que falta -->
-  <rect x="34" y="150" width="612" height="30" rx="5" fill="none" stroke="#d9702a" stroke-width="2.5"/>
   <g font-family="monospace" font-size="13">
-    <text x="46" y="170" fill="#d9702a">MAC de destino</text>
-    <text x="330" y="170" font-weight="bold" fill="#d9702a">? ? ? ? ? ?</text>
-    <text x="580" y="170" fill="#d9702a">NAO SEI</text>
+    <text x="46" y="110" fill="#8a8f98">MAC de origem</text>
+    <text x="330" y="110" fill="#2778c4">AA:AA:AA:AA:AA:A0</text>
+    <text x="600" y="110" fill="#00aa9f">sei</text>
   </g>
 
-  <text x="24" y="252" font-family="monospace" font-size="12" fill="#d9702a">quatro campos ele preenche sozinho. um, nao.</text>
-  <text x="24" y="270" font-family="monospace" font-size="12" fill="#8a8f98">e sem esse campo o quadro nao sai da placa de rede.</text>
+  <!-- o PACOTE: viaja dentro do quadro -->
+  <rect x="40" y="124" width="600" height="126" rx="6" fill="none" stroke="#2778c4" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="52" y="143" font-family="monospace" font-size="11" fill="#2778c4">o pacote — viaja dentro do quadro</text>
+
+  <g font-family="monospace" font-size="13">
+    <text x="58" y="176" fill="#8a8f98">IP de origem</text>
+    <text x="330" y="176" fill="#2778c4">10.0.0.1</text>
+    <text x="600" y="176" fill="#00aa9f">sei</text>
+
+    <text x="58" y="208" fill="#8a8f98">IP de destino</text>
+    <text x="330" y="208" fill="#2778c4">10.0.0.8</text>
+    <text x="600" y="208" fill="#00aa9f">sei</text>
+
+    <text x="58" y="240" fill="#8a8f98">Dados</text>
+    <text x="330" y="240" fill="#2778c4">(a mensagem)</text>
+    <text x="600" y="240" fill="#00aa9f">sei</text>
+  </g>
+
+  <text x="24" y="290" font-family="monospace" font-size="12" fill="#d9702a">quatro campos ele preenche sozinho. um, nao.</text>
+  <text x="24" y="308" font-family="monospace" font-size="12" fill="#8a8f98">e sem esse campo o quadro nao sai da placa de rede.</text>
 </svg>
