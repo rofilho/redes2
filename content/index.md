@@ -49,16 +49,18 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S02</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Comutação: tabela MAC e domínios de broadcast</b><span>04/08 · Lab 1</span></div>
+<li class="au-card">
+  <a href="./Aula-02---Comutacao-(Teorica)" data-spa>
+    <div class="au-thumb">S02</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Comutação: do endereço MAC à tabela do switch</b><span>Teórica · 11/08</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S03</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>VLANs: conceito, criação e portas de acesso</b><span>11/08 · Lab 2</span></div>
+  <div class="au-cap"><b>VLANs: conceito, criação e portas de acesso</b><span>data no AVA</span></div>
 </li>
 
 <li class="au-card au-espera">
@@ -183,7 +185,7 @@ title: "🌐 Redes de Computadores II"
 </div>
 
 <div style="padding:0 1.5rem 1.5rem;font-family:var(--au-mono);font-size:var(--au-t--2);color:var(--au-tx3)">
-  Prof. Romualdo Mathias Filho · Uniube · atualizado em 26/07/2026
+  Prof. Romualdo Mathias Filho · Uniube · atualizado em 11/08/2026
 </div>
 
 </div>

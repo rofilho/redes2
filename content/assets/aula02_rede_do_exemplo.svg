@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img"
+     aria-label="Um switch de oito portas com tres computadores ligados: A na porta 1, B na porta 4 e C na porta 8. Cada computador mostra o seu endereco IP e o seu endereco MAC">
+  <!-- Fundo TRANSPARENTE: o mesmo arquivo serve aos tres modos.
+       Nenhum traco e preto — preto sumiria no modo escuro. -->
+
+  <!-- o switch -->
+  <rect x="180" y="24" width="320" height="44" rx="7" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="340" y="52" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#00aa9f">SW-ACESSO-01</text>
+
+  <!-- as oito portas -->
+  <g fill="none" stroke="#8a8f98" stroke-width="1.5">
+    <rect x="192" y="68" width="22" height="9" rx="2"/>
+    <rect x="230" y="68" width="22" height="9" rx="2"/>
+    <rect x="268" y="68" width="22" height="9" rx="2"/>
+    <rect x="306" y="68" width="22" height="9" rx="2"/>
+    <rect x="344" y="68" width="22" height="9" rx="2"/>
+    <rect x="382" y="68" width="22" height="9" rx="2"/>
+    <rect x="420" y="68" width="22" height="9" rx="2"/>
+    <rect x="458" y="68" width="22" height="9" rx="2"/>
+  </g>
+  <!-- portas livres: cinza. portas usadas: deslocadas para o lado do cabo,
+       na cor do host, senao o proprio cabo cobre o numero -->
+  <g font-family="monospace" font-size="10" fill="#8a8f98" text-anchor="middle">
+    <text x="241" y="92">2</text>
+    <text x="279" y="92">3</text>
+    <text x="355" y="92">5</text>
+    <text x="393" y="92">6</text>
+    <text x="431" y="92">7</text>
+  </g>
+  <g font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">
+    <text x="188" y="92" fill="#2778c4">1</text>
+    <text x="302" y="92" fill="#8a8f98">4</text>
+    <text x="484" y="92" fill="#d9702a">8</text>
+  </g>
+
+  <!-- enlaces -->
+  <path d="M203 77 L203 112 L110 112 L110 152" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <path d="M317 77 L317 112 L340 112 L340 152" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <path d="M469 77 L469 112 L570 112 L570 152" fill="none" stroke="#d9702a" stroke-width="2"/>
+
+  <!-- host A — quem quer falar -->
+  <rect x="30" y="152" width="160" height="86" rx="6" fill="none" stroke="#2778c4" stroke-width="2.5"/>
+  <text x="110" y="174" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#2778c4">A</text>
+  <text x="42" y="198" font-family="monospace" font-size="11" fill="#2778c4">IP  10.0.0.1</text>
+  <text x="42" y="220" font-family="monospace" font-size="11" fill="#2778c4">MAC ..:..:A0</text>
+
+  <!-- host B — ouve e nao responde -->
+  <rect x="260" y="152" width="160" height="86" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="340" y="174" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">B</text>
+  <text x="272" y="198" font-family="monospace" font-size="11" fill="#8a8f98">IP  10.0.0.4</text>
+  <text x="272" y="220" font-family="monospace" font-size="11" fill="#8a8f98">MAC ..:..:A3</text>
+
+  <!-- host C — o destino -->
+  <rect x="490" y="152" width="160" height="86" rx="6" fill="none" stroke="#d9702a" stroke-width="2.5"/>
+  <text x="570" y="174" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#d9702a">C</text>
+  <text x="502" y="198" font-family="monospace" font-size="11" fill="#d9702a">IP  10.0.0.8</text>
+  <text x="502" y="220" font-family="monospace" font-size="11" fill="#d9702a">MAC ..:..:A7</text>
+
+  <!-- A SINALIZACAO: um destaque so por figura -->
+  <text x="340" y="266" text-anchor="middle" font-family="monospace" font-size="12" fill="#d9702a">o A quer falar com o C — e nao sabe o MAC dele</text>
+  <text x="340" y="286" text-anchor="middle" font-family="monospace" font-size="10" fill="#8a8f98">MAC completo: AA:AA:AA:AA:AA:A0 / ..A3 / ..A7 — enderecos ficticios, escolhidos para a aula</text>
+</svg>

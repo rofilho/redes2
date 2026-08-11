@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 250" role="img"
+     aria-label="Um switch sem VLAN com quatro computadores. Cada enlace entre o switch e um computador esta cercado por um contorno tracejado, indicando quatro dominios de colisao separados. Um contorno continuo envolve o conjunto inteiro, indicando um unico dominio de broadcast">
+
+  <!-- o contorno CONTINUO: um dominio de broadcast so -->
+  <rect x="12" y="16" width="656" height="214" rx="10" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="28" y="222" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">1 dominio de broadcast — contorno continuo</text>
+
+  <rect x="70" y="32" width="540" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="340" y="54" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">SW-ACESSO-01 · sem VLAN</text>
+
+  <!-- os quatro contornos TRACEJADOS: um dominio de colisao por enlace -->
+  <g font-family="monospace">
+    <rect x="34" y="74" width="130" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="99" y1="66" x2="99" y2="110" stroke="#8a8f98" stroke-width="2"/>
+    <rect x="46" y="110" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="99" y="129" text-anchor="middle" font-size="12" fill="#2778c4">PC-1</text>
+    <text x="99" y="172" text-anchor="middle" font-size="11" fill="#d9702a">colisao</text>
+
+    <rect x="196" y="74" width="130" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="261" y1="66" x2="261" y2="110" stroke="#8a8f98" stroke-width="2"/>
+    <rect x="208" y="110" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="261" y="129" text-anchor="middle" font-size="12" fill="#2778c4">PC-2</text>
+    <text x="261" y="172" text-anchor="middle" font-size="11" fill="#d9702a">colisao</text>
+
+    <rect x="358" y="74" width="130" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="423" y1="66" x2="423" y2="110" stroke="#8a8f98" stroke-width="2"/>
+    <rect x="370" y="110" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="423" y="129" text-anchor="middle" font-size="12" fill="#2778c4">PC-3</text>
+    <text x="423" y="172" text-anchor="middle" font-size="11" fill="#d9702a">colisao</text>
+
+    <rect x="520" y="74" width="130" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="585" y1="66" x2="585" y2="110" stroke="#8a8f98" stroke-width="2"/>
+    <rect x="532" y="110" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="585" y="129" text-anchor="middle" font-size="12" fill="#2778c4">PC-4</text>
+    <text x="585" y="172" text-anchor="middle" font-size="11" fill="#d9702a">colisao</text>
+  </g>
+</svg>

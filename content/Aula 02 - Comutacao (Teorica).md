@@ -1,23 +1,22 @@
 ---
-title: "Aula 02 — Comutação: a tabela MAC e os domínios"
+title: "Aula 02 — Comutação: do endereço MAC à tabela do switch"
 disciplina: Redes de Computadores II
 codigo: "49309"
 aula: 2
 tipo: teorica
 turma: T (P11 + P12)
-semana: 2
-date: 2026-08-04
-tags: [redes2, 2026-2, comutacao, tabela-mac, dominio-de-broadcast]
+semana: 3
+date: 2026-08-11
+tags: [redes2, 2026-2, comutacao, endereco-mac, arp, tabela-mac, dominio-de-broadcast]
 ---
-
 <div class="au-leitura" data-aula="s02">
 
-# 🟢 Aula 02 — Comutação: a tabela MAC e os domínios
+# 🟢 Aula 02 — Comutação: do endereço MAC à tabela do switch
 
 **Disciplina:** 49309 — Redes de Computadores II — Uniube<br>
 **Professor:** Romualdo Mathias Filho · **romualdo.filho@uniube.br**<br>
-**Semana:** 2 · Terça, 04/08/2026 · **VIA203** · 📘 Teórica (75 min)<br>
-**Práticas da semana:** P11 segunda, 03/08 · VIA215 — P12 quinta, 06/08 · VIA216<br>
+**Semana:** 3 · Terça, 11/08/2026 · **VIA203** · 📘 Teórica (75 min)<br>
+**Turmas práticas:** P11 segunda · VIA215 — P12 quinta · VIA216<br>
 **Página de referência:** [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato)
 
 ---
@@ -25,179 +24,238 @@ tags: [redes2, 2026-2, comutacao, tabela-mac, dominio-de-broadcast]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Esta é a primeira aula de conteúdo, então não há semana anterior para retomar — a Aula 01 foi o contrato da disciplina. As três perguntas abaixo não cobram memória: cobram **palpite**. Responda cada uma **antes** de abrir a resposta. Se você errar, acabou de descobrir o que prestar atenção nos próximos 70 minutos.
+Primeira aula de conteúdo: não há semana anterior para retomar. As três perguntas abaixo não cobram memória, cobram **palpite**. Responda cada uma **antes** de abrir a resposta.
 
 <details>
-<summary>Você pinga o PC ao lado e funciona. O que o switch entre vocês fez?</summary>
+<summary>Seu computador pede um endereço IP ao servidor da rede. Mas para <i>conversar</i> com esse servidor ele já precisaria ter um endereço. Como ele consegue?</summary>
 
-Ele **encaminhou o quadro nas duas direções** — e ninguém configurou nada nele para isso. Você tirou o switch da caixa, ligou os cabos, e ele já sabia por qual porta mandar cada coisa.
-
-Repare no tamanho dessa afirmação. Um roteador precisa de endereço em cada interface, digitado por alguém. O switch não precisou de nada.
-
-**A pergunta de hoje é como.** Ele não adivinha e não pergunta a ninguém: ele observa. O Tópico 1 mostra o mecanismo inteiro, em dois quadros.
+Porque o IP não é o único endereço que uma máquina tem. Existe um segundo, gravado na placa de rede pelo fabricante, que já está lá quando você tira o computador da caixa.
 
 </details>
 
 <details>
 <summary>Você liga dois PCs novos num switch e dá <code>ping</code>. O primeiro quase sempre volta <code>Request timed out</code>. Por quê?</summary>
 
-**ARP.** Antes de enviar o primeiro pacote, o host precisa descobrir o endereço MAC correspondente ao IP de destino — e o pedido do ARP é enviado em **broadcast**, para todo mundo. O primeiro pacote do `ping` morre esperando essa resposta.
-
-É fácil ler isso como erro de configuração. Não é: é o preço da primeira pergunta.
-
-**Por que importa agora:** esse broadcast do ARP é o primeiro quadro que a maioria das estações transmite. É ele que enche a tabela do switch. Sem ARP, a tabela nasceria e ficaria vazia.
+Porque antes do primeiro pacote a máquina precisa **descobrir** um endereço que ela ainda não tem, e essa descoberta demora. O primeiro `ping` morre esperando. Não é erro de configuração: é o preço da primeira pergunta, e ele se paga uma vez só.
 
 </details>
 
 <details>
-<summary>Quarenta estações num switch só, e o broadcast de qualquer uma chega a todas as outras. Trocar por um switch melhor resolve?</summary>
+<summary>Quarenta estações num switch só, e o que uma manda para "todo mundo" chega em todas as outras. Trocar por um switch melhor resolve?</summary>
 
-**Não.**
-
-Um switch melhor comuta mais rápido, tem mais portas e mais memória. Nada disso muda a regra: **encaminhar broadcast é o que um switch faz**, por definição, e não um defeito que um modelo superior corrige.
-
-O Tópico 3 fecha essa conta. E a resposta — segmentar — é a aula da semana que vem.
+Não. Um switch melhor comuta mais rápido e tem mais portas. Nada disso muda a regra: mandar para todos aquilo que é endereçado a todos **é o que um switch faz**, por definição.
 
 </details>
 </div>
 
-> [!INFO] 🎯 Visão geral e recursos
-> Um switch funciona sem que ninguém o configure: tira da caixa, liga os cabos, e ele acerta para onde mandar cada quadro — o tempo todo, sem que ninguém tenha digitado nada nele. Hoje você abre essa caixa.
->
-> **O que você leva desta aula**
-> - Como a tabela MAC se preenche — e por que ela é **estado aprendido**, não configuração.
-> - O que o switch faz quando **não sabe** onde está o destino, e por que isso parece broadcast sem ser.
-> - A diferença entre **domínio de colisão** e **domínio de broadcast**, e qual dos dois o switch corta.
-> - O motivo técnico de a segmentação existir — que é a aula da S03.
+> [!INFO] 🎯 O que você leva desta aula
+> - Que existe um **segundo endereço**, de fábrica, e por que sem ele nada começa.
+> - Como uma máquina descobre o endereço da outra — o **ARP**.
+> - Como a **tabela MAC** do switch se preenche sozinha.
+> - Qual dos dois problemas da rede local o switch resolve, e qual ele não encosta.
 >
 > **📂 Recursos**
-> - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — calendário das três turmas, notas, prazos e regras
-> - [Aula 01 — Lab 0: Resgate](./Aula-01---Lab-0-Resgate-(Pratica)) — o roteiro do primeiro laboratório
-> - **Packet Tracer**, na sua máquina — usamos nos últimos 15 minutos desta aula
-> - Meia folha de papel — bilhete de saída, anônimo, recolhido na porta
+> - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — calendário, notas, prazos e regras
+> - **Packet Tracer** — o simulador de redes da Cisco em que você monta a topologia sem equipamento físico. Usamos no bloco de prática desta aula.
 
-### ⏱️ Os 75 minutos de hoje
+### 🧭 O caminho de hoje
 
-| Min | Bloco | Onde está nesta página |
-| :-- | :--- | :--- |
-| 0–5 | Entrada, chamada e projetor | — |
-| 5–12 | **Nosso caminho até aqui** — 3 apostas antes de começar | bloco de abertura |
-| 12–26 | **Como o switch aprende** — exemplo resolvido no projetor | Tópico 1 |
-| 26–38 | **O que ele faz quando não sabe** | Tópico 2 |
-| 38–50 | **Colisão e broadcast** — o que o switch corta | Tópico 3 |
-| 50–65 | **Mão na massa** — ler a tabela MAC no Packet Tracer | Prática |
-| 65–70 | Resumo, reflexão e bilhete de saída | Fechamento |
-| **70–75** | Folga — máquina que não liga, dúvida longa | — |
+Uma pergunta só, feita três vezes. Cada resposta cria a pergunta seguinte.
+
+| | A pergunta | A resposta |
+| :-: | :--- | :--- |
+| **1** | Como uma máquina se comunica se ainda **não tem endereço IP**? | Ela tem um segundo endereço, de fábrica: o **MAC**. |
+| **2** | Ela tem o endereço dela. Mas como descobre **o do outro**? | Perguntando para todos: o **ARP**. |
+| **3** | E o switch no meio — quem ensinou a ele **por onde mandar**? | Ninguém. Ele aprendeu escutando. |
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
-Esta é a primeira aula de conteúdo da disciplina. Nada aqui é cobrado como "você já devia saber": leia a lista antes da aula e volte nela sempre que uma palavra travar a leitura.
+Lista de consulta, não de leitura corrida: passe os olhos antes da aula e volte aqui sempre que uma palavra travar. Nada nesta página é cobrado como "você já devia saber".
 
 <b class="au-nota-t">O vocabulário de base</b>
 
-**Endereço MAC** — o número gravado de fábrica na placa de rede, com 12 dígitos hexadecimais, escrito como `0001.6440.a1b2`. Identifica **a placa**, não o computador e não a pessoa. É o endereço com que esta aula inteira trabalha.
+**Bit** — a menor unidade de informação: vale 0 ou 1. "48 bits" quer dizer uma sequência de 48 zeros e uns.
+
+**Hexadecimal** — forma de escrever números com 16 símbolos em vez de 10: `0` a `9`, depois `A`, `B`, `C`, `D`, `E`, `F`. Cada símbolo vale exatamente 4 bits — por isso 48 bits cabem em 12 símbolos.
+
+**Endereço IP** — o endereço que o administrador configura em cada máquina, como `10.0.0.1`. Identifica a máquina **dentro da rede** e pode mudar.
+
+**Endereço MAC** — o outro endereço, gravado de fábrica na placa de rede. Identifica **a placa**, não o computador e não a pessoa.
+
+**Host** — qualquer máquina ligada à rede que tenha endereço próprio: um PC, um servidor, uma impressora.
+
+**DHCP** — o serviço que entrega endereços IP automaticamente, para ninguém configurar um por um.
 
 **Camada de enlace** — o nível da rede que entrega dados entre equipamentos ligados no mesmo trecho, usando endereço MAC. É onde o switch vive. O nível de cima, que usa IP e liga redes diferentes, é onde vive o roteador.
 
-**Quadro** — o pacote de dados como ele trafega na camada de enlace, com endereço MAC de origem e de destino. O switch trabalha nele; o roteador trabalha no que vai dentro.
+**Quadro** — a mensagem como ela trafega na camada de enlace: os dados, mais os endereços MAC de origem e de destino.
+
+**Pacote** — a mensagem no nível de cima, com endereços IP. O pacote viaja **dentro** do quadro. O switch lê o quadro; o roteador lê o pacote.
 
 **Enlace** — um trecho de ligação entre dois equipamentos. O cabo entre o switch e um PC é um enlace.
 
-**Unicast** — quadro endereçado a **uma** estação.
+**Unicast** — quadro endereçado a **uma** estação. **Broadcast** — quadro endereçado a **todas** as estações do trecho, com destino `FF:FF:FF:FF:FF:FF`.
 
-**Broadcast** — quadro endereçado a **todas** as estações da rede, com destino `FFFF.FFFF.FFFF`.
+**Sub-rede** — o conjunto de endereços IP que conversam entre si sem precisar de roteador. Nesta aula, todas as estações estão na mesma.
 
-**Sub-rede** — o conjunto de endereços IP que conversam entre si sem precisar de roteador. Nesta aula, as estações estão todas na mesma.
+**Gateway** — o endereço do roteador que a máquina usa para falar com quem está **fora** da sua sub-rede. Nesta aula ninguém sai, então ele fica vazio.
 
-**ARP** — o pedido que uma estação faz para descobrir o endereço MAC de quem tem um determinado IP. Sai em broadcast, porque ela ainda não sabe para quem perguntar. É o motivo de o primeiro `ping` de uma conversa costumar falhar, e é o primeiro quadro que a maioria das estações transmite.
+**`ping`** — o comando que testa se uma máquina alcança outra. Manda quatro pacotes e informa se cada um voltou. `Request timed out` significa que aquele pacote não teve resposta a tempo.
 
-**Hub** — o equipamento que o switch substituiu. Ele não decide nada: tudo que entra por uma porta sai por todas as outras, sempre. Aparece aqui como termo de comparação.
+**Hub** — o equipamento que o switch substituiu. Não decide nada: tudo que entra por uma porta sai por todas as outras, sempre. Aparece aqui como termo de comparação.
 
 **Full-duplex** — os dois lados de um enlace transmitem ao mesmo tempo, por pares diferentes do cabo, sem esperar a vez. É o padrão entre switch e estação hoje.
 
+**IOS** — o sistema operacional que roda dentro dos equipamentos Cisco. **CLI** é a tela de texto em que se digitam comandos para ele.
+
+**`Fa0/1`** — o nome que o switch dá a cada tomada do painel: `Fa` de *FastEthernet*, `0/1` de primeira porta do primeiro grupo. `Fa0/1` é a porta 1, `Fa0/8` é a porta 8.
+
+**Porta ativa** — porta com cabo ligado e link estabelecido. Porta vazia não conta em nada nesta aula.
+
 <b class="au-nota-t">Novo hoje</b>
 
-**Tabela MAC** — a lista que o switch mantém na memória ligando cada endereço MAC à porta em que ele foi visto. Também chamada de tabela de comutação.
+**OUI** — os 6 primeiros dígitos hexadecimais de um endereço MAC. Identificam o **fabricante** da placa. Os 6 últimos identificam **aquela placa** entre todas as que o fabricante produziu.
 
-**Inundação** — quando o switch replica um quadro em todas as portas, menos naquela por onde ele entrou. Em inglês aparece como `flooding`.
+**ARP** — o protocolo com que uma estação descobre o endereço MAC de quem tem um determinado IP. Pergunta em broadcast, porque ainda não sabe para quem perguntar.
+
+**Cache ARP** — a lista que o **sistema operacional da estação** guarda com as respostas de ARP já recebidas. Vive na máquina e casa IP com MAC.
+
+**Tabela MAC** — a lista que o **switch** mantém ligando cada endereço MAC à porta em que ele foi visto. Vive no equipamento e casa MAC com porta. **Não é a mesma coisa que o cache ARP.**
+
+**Inundação** — quando o switch replica um quadro em todas as portas, menos naquela por onde ele entrou. Em inglês, `flooding`.
 
 **Domínio de colisão** — o conjunto de equipamentos que disputam o mesmo meio para transmitir.
 
-**Domínio de broadcast** — o conjunto de portas que recebe um quadro de broadcast. Guarde este: é o conceito que organiza as próximas quatro semanas.
+**Domínio de broadcast** — o conjunto de portas que recebe um quadro de broadcast. Guarde este: é o conceito que organiza as próximas semanas.
 
 <b class="au-nota-t">Você vai ouvir hoje, mas é de semanas à frente</b>
 
-**VLAN** — a divisão de um switch em redes separadas por configuração, sem trocar o equipamento. É o que corta o domínio de broadcast, e é a aula da S03. Hoje basta saber que "sem VLAN" quer dizer que o switch inteiro é uma rede só.
+**VLAN** — a divisão de um switch em redes separadas por configuração, sem trocar o equipamento. É o que corta o domínio de broadcast, e é a próxima aula.
 
-**VLAN 1** — toda porta de um switch Cisco já nasce numa VLAN, e por padrão é a de número 1. É por isso que a coluna `Vlan` da tabela mostra `1` em todas as linhas mesmo quando ninguém configurou nada: **"sem VLAN configurada" não quer dizer "sem VLAN nenhuma"**, quer dizer que todas as portas continuam na mesma — e por isso o switch inteiro é um domínio de broadcast só.
+**VLAN 1** — toda porta de um switch Cisco já nasce numa VLAN, por padrão a de número 1. É por isso que a coluna `Vlan` da tabela mostra `1` em todas as linhas mesmo sem ninguém ter configurado nada: **"sem VLAN configurada" não quer dizer "sem VLAN nenhuma"**, quer dizer que todas as portas continuam na mesma.
 
-**Segmentar** — cortar uma rede grande em pedaços menores, para que o broadcast de um não chegue nos outros. A VLAN é a forma de fazer isso dentro do switch.
+**Segmentar** — cortar uma rede grande em pedaços menores, para que o broadcast de um não chegue nos outros.
 
-**Loop de camada 2** — caminho fechado entre switches que faz o mesmo quadro circular para sempre. É assunto da S06, e aqui aparece só como contraste.
+**Loop de camada 2** — caminho fechado entre switches que faz o mesmo quadro circular para sempre. Aparece aqui só como contraste.
 
-**CSMA/CD** — a regra que as estações usavam para revezar um cabo compartilhado: escutar antes de falar, e recomeçar se duas falassem juntas. O switch tornou isso desnecessário.
+**CSMA/CD** — a regra que as estações usavam para revezar um cabo compartilhado: escutar antes de falar, recomeçar se duas falassem juntas. O switch tornou isso desnecessário.
 
 </aside>
 
 ---
 
-## 📌 1. O switch aprende sozinho [Exemplo resolvido ⏳ 14 min]
+## 📌 1. Toda placa de rede já nasce com um endereço, e é com ele que a máquina fala antes de ter IP [Conceito ⏳ 10 min]
 
-Este é um **exemplo resolvido**: a sequência inteira, passo a passo, do primeiro quadro até a tabela preenchida. O objetivo não é decorar este resultado — é você conseguir refazer a sequência sozinho, com outros endereços.
+Uma máquina recém-ligada não tem IP. Para conseguir um, precisa falar com o servidor de DHCP, que está do outro lado do cabo. Falar com quem, se ela ainda não tem endereço?
 
-O cenário é o mínimo possível. Um switch **recém-ligado**, tabela vazia, e duas estações: PC-1 na `Fa0/1`, PC-2 na `Fa0/2`.
+Toda placa de rede — de cabo ou de Wi-Fi — sai da fábrica com um endereço já gravado. Nada a configurar: ele existe desde antes de a placa ser vendida.
 
-`Fa0/1` é o nome que o switch dá à porta: `Fa` de *FastEthernet*, `0/1` de primeira porta do primeiro grupo. É assim que ele se refere a cada tomada do painel, e é assim que a porta aparece na tabela.
+### 1.1 São 48 bits: 6 dígitos para o fabricante e 6 para a placa
 
-### 1.1 A sequência, quadro a quadro
+| Metade | Dígitos | O que identifica |
+| :--- | :-: | :--- |
+| **OUI** — a primeira | 6 | o **fabricante** da placa |
+| a segunda | 6 | **aquela placa**, entre todas as que o fabricante produziu |
 
-| Passo | O que acontece | O que a tabela ganha |
-| :-: | :--- | :--- |
-| **1** | Um quadro do PC-1 chega na porta `Fa0/1` | o switch lê o **MAC de origem** e grava `PC-1 ↔ Fa0/1` |
-| **2** | Ele procura o **MAC de destino** (PC-2) na tabela | nada — o PC-2 ainda não está lá |
-| **3** | Sem saber onde o PC-2 está, ele **inunda** o quadro | nada |
-| **4** | O PC-2 responde; a resposta entra pela `Fa0/2` | grava `PC-2 ↔ Fa0/2` |
-| **5** | O próximo quadro do PC-1 para o PC-2 | sai **só** pela `Fa0/2` |
+Cada dígito hexadecimal vale 4 bits, então 48 bits cabem em 12 dígitos. Cada fabricante recebe um bloco de OUI só dele e se responsabiliza por não repetir número dentro do próprio bloco. É isso que torna o endereço único no mundo.
 
-O switch aprendeu duas coisas em dois quadros, e não perguntou nada a ninguém.
+### 1.2 O mesmo endereço aparece escrito de duas maneiras diferentes
+
+> [!WARNING] ⚠️ Gotcha
+> - `AA:AA:AA:AA:AA:A0` — de dois em dois dígitos, com dois-pontos. É como o **Windows e o Linux** mostram.
+> - `aaaa.aaaa.aaa0` — de quatro em quatro, com ponto. É como o **IOS da Cisco** mostra.
+>
+> **É o mesmo endereço:** os 12 dígitos são os mesmos, na mesma ordem. Muda só onde caem os separadores e se as letras estão em maiúscula. Quem não sabe disso acha que a saída do switch mostra uma máquina diferente da que configurou.
+
+### 1.3 O cenário: três máquinas num switch de oito portas
 
 <figure class="au-fig">
-<svg viewBox="0 0 660 320" role="img" aria-label="Switch SW-ACESSO-01 com tres PCs conectados nas portas Fa0/1, Fa0/2 e Fa0/3. A tabela MAC abaixo mostra apenas duas entradas, dos PCs 1 e 2, porque o PC-3 nunca transmitiu">
-<rect x="250" y="16" width="170" height="34" rx="6" fill="none" stroke="#00aa9f" stroke-width="2.5"></rect>
-<text x="335" y="38" text-anchor="middle" font-size="13" style="fill:#00aa9f" font-family="monospace" font-weight="bold">SW-ACESSO-01</text>
-<line x1="290" y1="50" x2="90" y2="104" stroke="#2778c4" stroke-width="2"></line>
-<text x="196" y="70" font-size="10" style="fill:#8a8f98" font-family="monospace">Fa0/1</text>
-<line x1="335" y1="50" x2="335" y2="104" stroke="#2778c4" stroke-width="2"></line>
-<text x="343" y="80" font-size="10" style="fill:#8a8f98" font-family="monospace">Fa0/2</text>
-<line x1="380" y1="50" x2="575" y2="104" stroke="#8a8f98" stroke-width="2" stroke-dasharray="5 4"></line>
-<text x="470" y="70" font-size="10" style="fill:#8a8f98" font-family="monospace">Fa0/3</text>
-<rect x="25" y="104" width="130" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="90" y="124" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-1 · falou</text>
-<rect x="270" y="104" width="130" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="335" y="124" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-2 · falou</text>
-<rect x="510" y="104" width="130" height="30" rx="5" fill="none" stroke="#8a8f98" stroke-width="2" stroke-dasharray="5 4"></rect>
-<text x="575" y="124" text-anchor="middle" font-size="12" style="fill:#8a8f98" font-family="monospace">PC-3 · só ouviu</text>
-<line x1="40" y1="176" x2="620" y2="176" stroke="#8a8f98" stroke-width="1"></line>
-<text x="40" y="170" font-size="11" style="fill:#8a8f98" font-family="monospace">MAC APRENDIDO</text>
-<text x="330" y="170" font-size="11" style="fill:#8a8f98" font-family="monospace">PORTA</text>
-<text x="500" y="170" font-size="11" style="fill:#8a8f98" font-family="monospace">COMO</text>
-<text x="40" y="204" font-size="12" style="fill:#2778c4" font-family="monospace">0001.6440.a1b2</text>
-<text x="330" y="204" font-size="12" style="fill:#2778c4" font-family="monospace">Fa0/1</text>
-<text x="500" y="204" font-size="12" style="fill:#8a8f98" font-family="monospace">foi origem</text>
-<text x="40" y="232" font-size="12" style="fill:#2778c4" font-family="monospace">000a.f3c1.7d09</text>
-<text x="330" y="232" font-size="12" style="fill:#2778c4" font-family="monospace">Fa0/2</text>
-<text x="500" y="232" font-size="12" style="fill:#8a8f98" font-family="monospace">foi origem</text>
-<line x1="40" y1="248" x2="620" y2="248" stroke="#8a8f98" stroke-width="1" stroke-dasharray="4 4"></line>
-<text x="40" y="276" font-size="12" style="fill:#8a8f98" font-family="monospace">(PC-3)</text>
-<text x="330" y="276" font-size="12" style="fill:#8a8f98" font-family="monospace">—</text>
-<text x="500" y="276" font-size="12" style="fill:#8a8f98" font-family="monospace">nunca transmitiu</text>
-<text x="40" y="304" font-size="11" style="fill:#d9702a" font-family="monospace">o switch só aprende de quem fala, nunca de quem escuta</text>
-</svg>
-<figcaption class="au-legenda">Duas entradas para três estações ligadas. O PC-3 recebeu a inundação do passo 3 e ficou quieto — e o que o switch nunca vê como <b>origem</b>, ele nunca aprende. A tabela não é a lista de quem está conectado: é a lista de quem falou.</figcaption>
+<img src="assets/aula02_rede_do_exemplo.svg" alt="Switch SW-ACESSO-01 de oito portas. O computador A, com IP 10.0.0.1, esta na porta 1; o B, com IP 10.0.0.4, na porta 4; o C, com IP 10.0.0.8, na porta 8. Cada um mostra tambem o seu endereco MAC">
+<figcaption class="au-legenda">O <b>A</b> quer falar com o <b>C</b>. Sabe o IP do C, porque foi você que digitou. Não sabe o MAC do C — e é isso que trava tudo. Os três MACs são fictícios e terminam em <code>A0</code>, <code>A3</code> e <code>A7</code>; guarde só que o do <b>A acaba em zero</b>.</figcaption>
 </figure>
 
-### 1.2 O comando que mostra a tabela
+> [!TIP] 💡 Dica de produção
+> No Windows, `ipconfig /all` mostra o endereço MAC de cada placa na linha **Endereço Físico**. Abra no seu computador agora.
+>
+> Aparece **mais de um**: um notebook com placa de cabo e placa de Wi-Fi tem dois endereços MAC, um por placa. É o mesmo motivo pelo qual o MAC não identifica a **pessoa** — identifica a peça de hardware.
+
+---
+
+## 📌 2. Antes do primeiro pacote a máquina pergunta o endereço do destino, e pergunta para todos [Conceito ⏳ 13 min]
+
+### 2.1 Falta um campo no quadro, e sem ele nada sai da placa
+
+<figure class="au-fig">
+<img src="assets/aula02_quadro_campo_vazio.svg" alt="O quadro que o computador A precisa montar. IP de origem 10.0.0.1, IP de destino 10.0.0.8, MAC de origem AA-AA-AA-AA-AA-A0 e os dados estao preenchidos. O campo MAC de destino esta vazio, marcado com pontos de interrogacao e destacado">
+<figcaption class="au-legenda">Quatro campos o A preenche sozinho: os dois IPs (o dele, e o que <b>você</b> digitou) e o MAC de origem, que está na própria placa dele. O quinto, não — e enquanto ele estiver em branco, <b>o quadro não sai</b>.</figcaption>
+</figure>
+
+O A não tem como saber o MAC do C. Esse endereço está gravado numa placa do outro lado do cabo, e ninguém o escreveu em lugar nenhum.
+
+### 2.2 O ARP resolve em dois quadros: a pergunta vai para todos, a resposta volta só para quem perguntou
+
+<figure class="au-fig">
+<img src="assets/aula02_arp_pergunta_resposta.svg" alt="Duas cenas. Na primeira, o computador A envia um ARP Request com destino FF-FF-FF-FF-FF-FF e o switch replica a pergunta para os computadores B e C, mas nao de volta para o A. Na segunda, so o C responde, com um ARP Reply enderecado ao MAC do A, e o switch entrega por uma unica porta">
+<figcaption class="au-legenda">A pergunta vai para todos porque o A não sabe para quem perguntar. A resposta não precisa disso: o C já sabe quem perguntou, porque o endereço do A veio escrito no campo de origem da pergunta.</figcaption>
+</figure>
+
+| # | Quem manda | Destino do quadro | O que diz |
+| :-: | :--- | :--- | :--- |
+| **1** | A | `FF:FF:FF:FF:FF:FF` — **todos** | *"Quem tiver o IP `10.0.0.8`, conte o seu MAC para o `10.0.0.1`"* |
+| **2** | C | `AA:AA:AA:AA:AA:A0` — **só o A** | *"O `10.0.0.8` está em `AA:AA:AA:AA:AA:A7`"* |
+
+O quadro 1 é o **ARP Request**; o quadro 2 é o **ARP Reply**. O **B** recebeu a pergunta, leu, viu que o IP não é dele e ficou quieto — não existe resposta "não sou eu". Com o Reply na mão, o A preenche o campo que faltava.
+
+> [!WARNING] ⚠️ Gotcha — a resposta volta para quem perguntou
+> "O C responde" está certo. Mas o quadro de resposta é endereçado **ao A**: o C põe o próprio MAC na origem e o MAC do A no destino. Dizer "a resposta é destinada ao C" inverte a seta e desmonta o resto do raciocínio.
+>
+> **Origem é sempre quem está falando agora.** No Request quem fala é o A; no Reply, o C. Trocou de falante, trocaram os dois campos de lugar.
+
+### 2.3 A pergunta se paga uma vez: a resposta fica guardada no cache
+
+O sistema operacional guarda a resposta numa lista própria, o **cache ARP** — IP de um lado, MAC do outro. O comando `arp -a` mostra essa lista. A entrada some sozinha depois de alguns minutos sem conversa com aquele host, e some também quando a máquina é desligada ou o cabo é desconectado.
+
+<details class="au-aposta">
+<summary>Aposte antes de ver: o A dá <code>ping 10.0.0.8 -n 1000</code> — mil pacotes seguidos. Quantos ARP Requests ele manda?</summary>
+
+**Um.** O primeiro pacote paga a pergunta; os outros 999 saem direto, porque o MAC do C já está no cache.
+
+Por isso o `Request timed out` costuma aparecer **no primeiro** `ping` e não nos seguintes. Se o primeiro falha e os demais passam, é normal. Se **todos** falham, o problema é outro.
+
+</details>
+
+---
+
+## 📌 3. O switch aprende sozinho lendo quem falou, mas não corta o broadcast [Conceito ⏳ 19 min]
+
+O ARP Reply saiu do C e chegou **só** no A: o switch entregou por uma porta, não pelas oito. E ninguém configurou esse switch.
+
+### 3.1 Um quadro atravessou o switch, e a tabela ganhou uma linha
+
+<figure class="au-fig">
+<img src="assets/aula02_tabela_antes_depois.svg" alt="Duas versoes da tabela MAC do switch. A da esquerda, antes do primeiro quadro, esta vazia. A da direita, depois do quadro enviado pelo computador A, tem uma linha ligando a porta 1 ao endereco MAC do A">
+<figcaption class="au-legenda">Ninguém digitou essa linha. O switch leu o campo <b>MAC de origem</b> do quadro que passou e anotou a porta por onde ele entrou — a única coisa que ele sabe com certeza sobre onde aquela máquina está.</figcaption>
+</figure>
+
+### 3.2 Para todo quadro, o switch faz sempre os mesmos três passos
+
+| Passo | O que ele faz |
+| :-: | :--- |
+| **1 · Aprende** | Grava na tabela o **MAC de origem** do quadro, com a porta por onde ele entrou. |
+| **2 · Procura** | Procura na tabela o **MAC de destino**, para descobrir a porta de saída. |
+| **3 · Decide** | **Achou:** manda só por aquela porta. **Não achou** — ou o destino é `FF:FF:FF:FF:FF:FF` — replica em todas as portas, menos na de entrada. |
+
+Refazendo o Tópico 2 com essa regra:
+
+| Quadro | Passo 1 — aprende | Passo 2 — procura | Passo 3 — decide |
+| :--- | :--- | :--- | :--- |
+| **ARP Request** (A → todos) | grava `A ↔ Fa0/1` | destino é `FF:FF:FF:FF:FF:FF` | replica para B e C |
+| **ARP Reply** (C → A) | grava `C ↔ Fa0/8` | acha `A ↔ Fa0/1` | manda **só** pela `Fa0/1` |
+
+Duas pontas aprendidas em dois quadros, sem perguntar nada a ninguém.
+
+### 3.3 Quem nunca transmitiu não está na tabela
 
 <div class="au-term">
 <div class="au-term-h"><b>SW-ACESSO-01</b> <span>· depois do primeiro ping</span></div>
@@ -207,165 +265,125 @@ O switch aprendeu duas coisas em dois quadros, e não perguntou nada a ninguém.
 -------------------------------------------
 Vlan    Mac Address       Type        Ports
 ----    -----------       --------    -----
-<span class="mark">   1    0001.6440.a1b2    DYNAMIC     Fa0/1</span>
-   1    000a.f3c1.7d09    DYNAMIC     Fa0/2
+<span class="mark">   1    aaaa.aaaa.aaa0    DYNAMIC     Fa0/1</span>
+   1    aaaa.aaaa.aaa7    DYNAMIC     Fa0/8
 <span class="cm">!</span>
-<span class="cm">! o PC-3 esta ligado, com cabo bom, e nao aparece.</span></div>
+<span class="cm">! o B esta ligado, com cabo bom, e nao aparece.</span></div>
 </div>
 
-A linha marcada diz três coisas de uma vez: qual endereço, em qual porta, e — em `DYNAMIC` — que **ninguém digitou aquilo**. O switch aprendeu.
+A linha marcada diz três coisas: qual endereço, em qual porta, e — em `DYNAMIC` — que ninguém digitou aquilo.
+
+O B recebeu a pergunta do ARP e ficou quieto. Uma tabela MAC não é a lista de quem está conectado: é a lista de **quem transmitiu**.
 
 > [!WARNING] ⚠️ Gotcha — origem, nunca destino
-> O switch aprende lendo o endereço de **origem** do quadro. Nunca o de destino.
+> O switch aprende lendo o endereço de **origem**. Nunca o de destino.
 >
-> É o erro mais comum desta aula, e ele não fica parado: quem acredita que o switch "procura" o host vai errar de novo em VLAN, na S03, e em roteamento entre VLANs, na S05. A tabela não é uma busca. É um registro do que já passou.
+> Quem acredita que o switch "procura" o host erra de novo em VLAN e em roteamento entre VLANs, nas próximas semanas. A tabela não é uma busca: é um registro do que já passou.
+
+> [!WARNING] ⚠️ Gotcha — cache ARP e tabela MAC são coisas diferentes
+> | | Cache ARP | Tabela MAC |
+> | :--- | :--- | :--- |
+> | **Onde vive** | na **estação**, no sistema operacional | no **switch** |
+> | **O que casa** | IP ↔ MAC | MAC ↔ porta |
+> | **Para que serve** | preencher o campo de destino do quadro | escolher por qual porta mandar |
+> | **Como se vê** | `arp -a` | `show mac address-table` |
+>
+> Regra de bolso: **quem tem IP na cabeça é a estação; quem tem porta na cabeça é o switch.**
+
+### 3.4 Quando ele não sabe onde está o destino, replica — e isso não é broadcast
+
+| MAC de destino do quadro | O que o switch faz | Nome |
+| :--- | :--- | :--- |
+| **está** na tabela, em porta diferente da de entrada | manda só por aquela porta | encaminhamento |
+| **está** na tabela, na **mesma** porta de entrada | descarta | filtragem |
+| **não está** na tabela | replica em todas as portas, menos a de entrada | **inundação** |
+| é `FF:FF:FF:FF:FF:FF` | replica em todas as portas, menos a de entrada | **broadcast** |
+
+> [!WARNING] ⚠️ Gotcha — inundação não é broadcast
+> Os dois enchem todas as portas, e as causas não têm relação. No **broadcast**, o quadro é endereçado a todos: replicar é o comportamento correto. Na **inundação**, o quadro tem destino único e o switch é que não sabe onde ele está.
+>
+> Trocar um pelo outro custa caro no diagnóstico: você vai caçar loop de camada 2 quando o problema era uma tabela que não conseguiu aprender.
 
 > [!NOTE] 💼 Pergunta de entrevista
 > *"Por que a tabela MAC de um switch costuma estar vazia às 8h da manhã, com o equipamento ligado a noite inteira?"*
 >
-> **Resposta esperada:** porque entrada dinâmica **expira por inatividade** — no IOS, o sistema que roda nos equipamentos Cisco, são 300 segundos por padrão. Com as estações desligadas, ninguém transmite, e a tabela se esvazia sozinha. Não é defeito: é a diferença entre **configuração**, que persiste, e **estado aprendido**, que tem prazo de validade.
+> **Resposta esperada:** entrada dinâmica **expira por inatividade** — no IOS, 300 segundos por padrão. Com as estações desligadas ninguém transmite, e a tabela se esvazia sozinha. É a diferença entre **configuração**, que persiste, e **estado aprendido**, que tem prazo de validade.
 
----
-
-## 📌 2. O que ele faz quando não sabe [Conceito ⏳ 12 min]
-
-O switch toma exatamente quatro decisões, e duas delas produzem o mesmo efeito visível de fora. É aí que o diagnóstico costuma escorregar.
-
-| MAC de destino do quadro | O que o switch faz | Nome |
-| :--- | :--- | :--- |
-| **está** na tabela, numa porta diferente da de entrada | manda só por aquela porta | encaminhamento |
-| **está** na tabela, na **mesma** porta de entrada | descarta | filtragem |
-| **não está** na tabela | replica em todas as portas do domínio, menos a de entrada | **inundação** |
-| é `FFFF.FFFF.FFFF` | replica em todas as portas, menos a de entrada | **broadcast** |
-
-<details class="au-aposta">
-<summary>Aposte antes de ver: o PC-1 pinga o PC-2 pela primeira vez, mesmo switch, tabela vazia. Quantas portas veem esse primeiro quadro?</summary>
-
-**Todas** — e por dois motivos empilhados, não um.
-
-O primeiro quadro nem é o `ping`. É o **pedido do ARP**, que sai em broadcast porque o PC-1 ainda não conhece o MAC do PC-2. Broadcast vai para todo mundo, por definição.
-
-A **resposta** do ARP já é diferente. Ela é unicast, vem do PC-2, e quando chega ao switch ele já aprendeu as duas pontas: a origem PC-1 no quadro anterior, e agora a origem PC-2. Então ela sai por uma porta só.
-
-**O que isso te dá:** a rede "abre o leque" no começo de cada conversa e fecha logo depois. Se ela **continua** aberta, alguma coisa está impedindo o switch de aprender — e aí você tem um problema de verdade para investigar.
-
-</details>
-
-> [!WARNING] ⚠️ Gotcha — inundação não é broadcast
-> Os dois enchem todas as portas. As causas não têm nada a ver uma com a outra.
->
-> No **broadcast**, o quadro é endereçado a todos: replicar é o comportamento correto. Na **inundação**, o quadro tem um destino único e o switch é que não sabe onde ele está.
->
-> Trocar um pelo outro no diagnóstico custa caro: você vai caçar loop de camada 2 — assunto da S06 — quando o problema era uma tabela que não conseguiu aprender.
-
-> [!TIP] 💡 Dica de produção
-> Inundação constante numa rede estável é sintoma, não normalidade. Vale investigar quando o tráfego de retorno some da tabela antes de a conversa terminar.
->
-> A pista prática: se o `show mac address-table` de um switch movimentado mostra pouquíssimas entradas dinâmicas, ele está inundando muito mais do que deveria — e todas as portas estão pagando essa conta.
-
----
-
-## 📌 3. Colisão e broadcast: o que o switch corta [Conceito ⏳ 12 min]
-
-Os dois nomes têm "domínio" e a semelhança para aí. Um deles é sobre **disputar o meio** para conseguir transmitir; o outro é sobre **receber o que não é seu**. Confundir os dois é o que faz alguém comprar equipamento para resolver um problema de topologia.
+### 3.5 O switch corta a colisão inteira e não encosta no broadcast
 
 <div class="au-slot">
-<div class="au-slot-h"><b>Interativo</b> · votação por dedos · 4 min</div>
+<div class="au-slot-h"><b>Pare e responda</b> · antes de continuar a leitura</div>
 <div class="au-slot-c">
 
-**Vote antes de eu explicar.** Um switch de 48 portas, com 30 estações ligadas e nenhuma VLAN configurada.
+Um switch de 48 portas, com 30 estações ligadas e nenhuma VLAN configurada.
 
-Quantos domínios de colisão e quantos domínios de broadcast existem nesse equipamento?
+**Quantos domínios de colisão e quantos domínios de broadcast existem nesse equipamento?**
 
 1. 1 de colisão e 1 de broadcast
 2. 30 de colisão e 1 de broadcast
 3. 48 de colisão e 48 de broadcast
 4. 30 de colisão e 30 de broadcast
 
-Dedos levantados ao mesmo tempo, no três — 1 a 4. Se a sala se dividir, vocês discutem em dupla por um minuto e votam de novo. **A segunda votação é a que interessa.**
+Escolha um número **antes** de rolar a página.
 
 </div>
-<p class="au-slot-b"><b>Plano B:</b> em sala cheia, onde eu não consigo ler os dedos do fundo, cada um escreve o número na meia folha de papel e levanta. Mesma pergunta, mesmo tempo, mesma discussão em dupla.</p>
+<p class="au-slot-b"><b>Se você está lendo fora da aula:</b> anote o número escolhido num canto do caderno antes de continuar. Comparar a sua resposta com a certa vale mais do que ler a certa duas vezes.</p>
 </div>
-
-A tabela abaixo é a resposta — e ela só faz sentido depois que você apostou.
 
 | | Domínio de colisão | Domínio de broadcast |
 | :--- | :--- | :--- |
 | **O que reúne** | quem disputa o mesmo meio para transmitir | quem recebe um quadro de broadcast |
 | **Num hub** | o hub inteiro é **um só** | o hub inteiro é um só |
 | **Num switch** | **cada porta ativa é um domínio** | o switch inteiro é **um só** |
-| **Quem corta** | o switch — e em full-duplex a disputa deixa de existir | o roteador, ou a **VLAN** (S03) |
-
-A linha que importa é a última da coluna da direita. **O switch resolveu completamente um dos dois problemas e não encostou no outro.**
+| **Quem corta** | o switch — e em full-duplex a disputa deixa de existir | o roteador, ou a **VLAN** |
 
 <figure class="au-fig">
-<svg viewBox="0 0 660 250" role="img" aria-label="Um switch sem VLAN com quatro PCs. Cada enlace switch-PC esta cercado por um contorno tracejado, indicando quatro dominios de colisao separados. Um contorno continuo envolve tudo, indicando um unico dominio de broadcast">
-<rect x="12" y="16" width="636" height="214" rx="10" fill="none" stroke="#00aa9f" stroke-width="2.5"></rect>
-<text x="26" y="222" font-size="12" style="fill:#00aa9f" font-family="monospace" font-weight="bold">1 domínio de broadcast — contorno contínuo</text>
-<rect x="60" y="32" width="540" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"></rect>
-<text x="330" y="54" text-anchor="middle" font-size="13" style="fill:#8a8f98" font-family="monospace" font-weight="bold">SW-ACESSO-01 · sem VLAN</text>
-<rect x="28" y="74" width="124" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"></rect>
-<line x1="90" y1="66" x2="90" y2="110" stroke="#8a8f98" stroke-width="2"></line>
-<rect x="38" y="110" width="104" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="90" y="129" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-1</text>
-<text x="90" y="172" text-anchor="middle" font-size="11" style="fill:#d9702a" font-family="monospace">colisão</text>
-<rect x="188" y="74" width="124" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"></rect>
-<line x1="250" y1="66" x2="250" y2="110" stroke="#8a8f98" stroke-width="2"></line>
-<rect x="198" y="110" width="104" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="250" y="129" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-2</text>
-<text x="250" y="172" text-anchor="middle" font-size="11" style="fill:#d9702a" font-family="monospace">colisão</text>
-<rect x="348" y="74" width="124" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"></rect>
-<line x1="410" y1="66" x2="410" y2="110" stroke="#8a8f98" stroke-width="2"></line>
-<rect x="358" y="110" width="104" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="410" y="129" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-3</text>
-<text x="410" y="172" text-anchor="middle" font-size="11" style="fill:#d9702a" font-family="monospace">colisão</text>
-<rect x="508" y="74" width="124" height="112" rx="8" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 4"></rect>
-<line x1="570" y1="66" x2="570" y2="110" stroke="#8a8f98" stroke-width="2"></line>
-<rect x="518" y="110" width="104" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="570" y="129" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-4</text>
-<text x="570" y="172" text-anchor="middle" font-size="11" style="fill:#d9702a" font-family="monospace">colisão</text>
-</svg>
-<figcaption class="au-legenda">Quatro contornos <b>tracejados</b>, um por enlace: o switch criou quatro domínios de colisão onde um hub teria um só. O contorno <b>contínuo</b> em volta de tudo é o domínio de broadcast — e ele continua sendo <b>um</b>, por mais portas que o equipamento tenha. Comprar um switch maior desenha mais tracejados e não mexe no contínuo.</figcaption>
+<img src="assets/aula02_dominios_colisao_broadcast.svg" alt="Um switch sem VLAN com quatro computadores. Cada enlace entre o switch e um computador esta cercado por um contorno tracejado, indicando quatro dominios de colisao separados. Um contorno continuo envolve o conjunto inteiro, indicando um unico dominio de broadcast">
+<figcaption class="au-legenda">Quatro contornos <b>tracejados</b>, um por enlace: o switch criou quatro domínios de colisão onde um hub teria um só. O contorno <b>contínuo</b> em volta de tudo é o domínio de broadcast, e ele continua sendo <b>um</b> por mais portas que o equipamento tenha. Um switch maior desenha mais tracejados e não mexe no contínuo.</figcaption>
 </figure>
 
+**A conta fecha no Tópico 2.** Cada estação precisa perguntar o MAC de cada máquina com quem vai falar, e cada pergunta dessas é um broadcast. Num trecho com muitas estações isso vira um fluxo constante de perguntas que todas recebem, leem e quase sempre descartam. É banda consumida sem ninguém ser servido.
+
+Não é falha do ARP — é falha de **tamanho**. E tamanho não se resolve com equipamento melhor: resolve-se cortando o trecho em pedaços.
 
 > [!NOTE] 💼 Pergunta de entrevista
 > *"Você liga dois switches um no outro, por um cabo. O que acontece com o número de domínios de colisão, e o que acontece com o número de domínios de broadcast?"*
 >
-> **Resposta esperada:** os domínios de colisão **aumentam** — o cabo entre os dois é mais um enlace, e portanto mais um domínio. Os de broadcast **continuam sendo um**: os dois switches passam a formar um domínio só, maior que antes. Candidato que responde "dois domínios de broadcast, um por switch" está contando equipamento em vez de contar alcance do broadcast.
+> **Resposta esperada:** os domínios de colisão **aumentam** — o cabo entre os dois é mais um enlace, logo mais um domínio. Os de broadcast **se fundem**: eram dois, um por switch, e passam a ser **um só, maior**. Candidato que responde "continuam dois, um por switch" está contando equipamento em vez de contar alcance do broadcast.
 
 > [!TIP] 💡 Dica de produção
 > Num enlace moderno entre switch e estação, em full-duplex, o domínio de colisão tem dois participantes e nenhuma disputa: cada lado transmite quando quer, por pares diferentes do cabo. A colisão simplesmente não acontece.
 >
-> Isso não torna o conceito obsoleto — torna-o **histórico**, e vale saber por quê. É exatamente o que a leitura recomendada no fim desta página mostra: o problema que o switch eliminou era tão sério que o Ethernet nasceu construído em volta dele.
+> Mesmo assim a contagem continua sendo cobrada em prova e em certificação, e com razão: o domínio de colisão continua existindo como **unidade de topologia** — é ele que você conta para saber quantos segmentos independentes a sua rede tem. O que sumiu foi o fenômeno, não a fronteira.
 
 ---
 
 <div class="au-pratica">
-<b>Mão na massa — 15 min, em duplas</b>
+<b>Faça agora — no Packet Tracer</b>
 
-Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e montar faz parte.
+Os três tópicos acontecem na sua tela em poucos cliques.
 
-1. No Packet Tracer, ponha **um switch 2960** — é um modelo de switch de rede local da Cisco, e o que o simulador oferece por padrão — e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
-2. Endereços: `192.168.1.11`, `192.168.1.12` e `192.168.1.13`, todos com máscara `255.255.255.0`. Sem gateway — hoje ninguém sai da rede.
-3. **Espere o link ficar verde.** Ao ligar o cabo, a ponta fica **âmbar por cerca de 30 segundos** antes de ficar verde. É o switch decidindo se aquela porta pode encaminhar; ele faz isso em toda porta que acende. `ping` antes disso falha, e não é defeito seu — é o mesmo tipo de espera que o `Request timed out` do ARP. O nome disso é assunto da S06.
-4. No switch, aba `CLI`, digite `enable` — é o comando que sai do modo de consulta e entra no modo em que dá para administrar o equipamento; o sinal de que funcionou é o `#` no fim do prompt. Rode `show mac address-table`. **Anote quantas entradas dinâmicas aparecem.**
-5. Do PC-1, `ping 192.168.1.12`. Espere terminar.
-6. Rode `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
-7. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu? Por quê?
-8. Agora, do PC-2, `ping 192.168.1.13`. Rode o comando mais uma vez e confira o que mudou.
+1. Ponha **um switch 2960** — o modelo de switch de rede local que o simulador oferece por padrão — e **três PCs**. Ligue PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`, com cabo de cobre direto.
+2. Clique no PC-1 → aba `Desktop` → `IP Configuration`. Marque `Static` e preencha `192.168.1.11`, máscara `255.255.255.0`, **gateway em branco** — hoje ninguém sai da rede. Repita no PC-2 com `.12` e no PC-3 com `.13`.
+3. **Espere o link ficar verde.** Ao ligar o cabo a ponta fica **âmbar por cerca de 30 segundos** antes de ficar verde: é o switch decidindo se aquela porta pode encaminhar. `ping` antes disso falha, e não é defeito seu.
+4. No PC-1, aba `Desktop` → `Command Prompt`.
+5. Rode `ipconfig /all` e **anote o endereço físico** — é o MAC do Tópico 1, na sua tela.
+6. Rode `arp -a` **antes de qualquer ping**. Anote o que aparece.
+7. Clique no switch → aba `CLI`. Digite `enable`, que sai do modo de consulta e entra no de administração; o sinal de que funcionou é o `#` no fim do prompt.
+8. Rode `show mac address-table` e **anote quantas entradas dinâmicas aparecem**.
+9. Volte ao PC-1 e rode `ping 192.168.1.12`. **Repare em qual dos quatro pacotes falhou.**
+10. Rode `arp -a` de novo. **O que apareceu, e de onde veio essa informação?**
+11. No switch, `show mac address-table` de novo. **Quantas entradas agora, e de quais estações?**
+12. **A pergunta que vale a aula:** o PC-3 está ligado, com cabo bom, na mesma rede. Ele apareceu na tabela do switch? Por quê?
+13. Do PC-2, `ping 192.168.1.13`. Rode o comando do passo 11 mais uma vez e veja o que mudou.
 
-<p class="au-pronto"><b>Critério de pronto:</b> depois do passo 6 a tabela mostra <b>duas</b> entradas dinâmicas — PC-1 e PC-2 — e o PC-3 <b>não</b> está lá; depois do passo 8 ele aparece. E você consegue dizer, em voz alta para a sua dupla, <b>o que mudou para o PC-3 entre um momento e outro</b>. A resposta tem quatro palavras: ele passou a transmitir.</p>
+<p class="au-pronto"><b>Critério de pronto:</b> depois do passo 11 a tabela do switch mostra <b>duas</b> entradas dinâmicas — PC-1 e PC-2 — e o PC-3 <b>não</b> está lá; depois do passo 13 ele aparece. O <code>arp -a</code> do PC-1 mostra <b>uma</b> entrada, a do PC-2. E você consegue explicar, com suas palavras, <b>por que essas duas listas não têm o mesmo tamanho</b> — sendo que as duas se preencheram sozinhas, na mesma rede, nos mesmos segundos.</p>
 </div>
 
-> [!IMPORTANT] 📌 O laboratório desta semana
-> As duas turmas fazem coisas diferentes nesta semana, e vale a pena saber por quê.
+> [!IMPORTANT] 📌 Como o ponto do laboratório é apurado
+> A régua está no contrato da disciplina: **dez itens verificados, oito deles = o ponto (80% de acerto)**, apurado na sua tela durante a aula.
 >
-> - **Segunda 03/08 (P11):** o **Lab 0 — Resgate**, que a P12 já fez. Setup do NetAcad e do Packet Tracer, e uma rede de campus com quatro defeitos para consertar. **Vale 1 ponto** da Atividade N1.
-> - **Quinta 06/08 (P12):** aprofundamento **sem nota** — a P12 já fez o Lab 0 e não repete. É a regra que impede que a P11 fique para trás por causa dos feriados de segunda: turma nenhuma ganha ponto que a outra não teve chance de ganhar.
->
-> **A régua do lab que vale:** 1 ponto, apurado por **80% de acerto** na tela, durante a aula. São **cinco laboratórios valendo** no semestre, e os **cinco contam** — não há descarte.
+> São **seis** laboratórios valendo — Lab 0 a Lab 5, 1 ponto cada — e contam os **cinco melhores**. O sexto é a sua margem para uma falta, uma internet que caiu ou um dia ruim. O teto continua sendo 5 pontos: fazer os seis não dá 6.
 >
 > **O cenário é avisado no AVA** antes da sua prática.
 
@@ -376,54 +394,56 @@ Agora você faz o Tópico 1 acontecer na sua tela. Monte do zero: é rápido, e 
 
 | Item | O que você precisa lembrar |
 | :--- | :--- |
-| **Como o switch aprende** | Lendo o **MAC de origem** de cada quadro que chega, e gravando o par endereço ↔ porta. Nunca pelo destino. |
-| **O que a tabela é** | **Estado aprendido**, não configuração. Ninguém digita, e ela expira sozinha. |
-| **Envelhecimento** | Entrada dinâmica expira por inatividade — no IOS (Cisco), **300 s** por padrão. Tabela vazia de manhã não é defeito. |
+| **Por que o MAC existe** | A máquina precisa falar **antes** de ter um IP — inclusive para pedir o IP. |
+| **O que é o MAC** | 48 bits, escritos em **12 dígitos hexadecimais**, gravados na placa pelo fabricante. |
+| **As duas metades** | Os 6 primeiros dígitos são o **OUI**, o fabricante. Os 6 últimos, a placa. |
+| **Duas notações** | `AA:AA:AA:AA:AA:A0` no Windows e no Linux, `aaaa.aaaa.aaa0` no IOS. **Mesmo endereço.** |
+| **O MAC é da placa** | Não da máquina, não da pessoa. Duas placas, dois endereços. |
+| **O problema do ARP** | O host sabe o IP do destino e **não** sabe o MAC — e sem o MAC o quadro não sai. |
+| **ARP Request** | Vai em **broadcast** (`FF:FF:FF:FF:FF:FF`), porque ele não sabe para quem perguntar. |
+| **ARP Reply** | Vai em **unicast**, de quem tem o IP **para quem perguntou**. Quem não é, não responde. |
+| **Cache ARP** | Na estação, casa **IP ↔ MAC**, some por inatividade. Comando: `arp -a`. |
+| **Tabela MAC** | No switch, casa **MAC ↔ porta**, expira em **300 s** no IOS. Comando: `show mac address-table`. |
+| **Como o switch aprende** | Lendo o **MAC de origem** de cada quadro. Nunca o destino. |
+| **Os três passos** | Aprende a origem → procura o destino → encaminha, ou replica se não achou. |
 | **Quem entra na tabela** | Só quem **transmitiu**. Estação ligada que nunca falou não aparece. |
-| **Encaminhamento** | Destino na tabela, porta diferente da de entrada: manda só por aquela porta. |
 | **Filtragem** | Destino na tabela, na **mesma** porta de entrada: descarta. |
-| **Inundação** | Destino **não** está na tabela: replica em todas as portas, menos a de entrada. |
-| **Broadcast** | Destino `FFFF.FFFF.FFFF`: replica em todas as portas, menos a de entrada. |
-| **Inundação ≠ broadcast** | Mesmo efeito visível, causas diferentes. Confundir manda você caçar loop onde havia tabela vazia. |
-| **Domínio de colisão** | Quem disputa o mesmo meio. No switch, **um por porta ativa**; em full-duplex, sem disputa. |
+| **Inundação ≠ broadcast** | Mesmo efeito visível, causas diferentes. |
+| **Domínio de colisão** | Quem disputa o mesmo meio. No switch, **um por porta ativa**. |
 | **Domínio de broadcast** | Quem recebe o broadcast. Um switch sem VLAN é **um domínio só**. |
 | **O que o switch corta** | Colisão, completamente. Broadcast, **nada**. |
+| **Dois switches ligados** | Mais domínios de colisão; os de broadcast **se fundem em um**. |
 | **Quem corta broadcast** | O roteador — ou a VLAN, que é a próxima aula. |
-| **Comando do dia** | `show mac address-table` — endereço, porta e o tipo `DYNAMIC`, que denuncia o aprendizado. |
-| **Por que trocar o switch não resolve** | Encaminhar broadcast é comportamento definido, não limitação de capacidade. |
 
 </div>
 
 <div class="au-reflexao">
 <b>Para pensar até a próxima aula</b>
 
-<p>O switch aprende olhando o endereço de origem do quadro. Ele confia no que leu — <b>não confere se é verdade</b>, porque não tem como: quem escreve o campo de origem é a própria estação que enviou.</p>
+<p>Duas coisas se preencheram sozinhas hoje: o cache ARP da estação e a tabela MAC do switch. Nenhuma das duas confere se o que leu é verdade, e não teria como — quem escreve o campo de origem de um quadro é a própria máquina que o enviou, e quem responde um ARP Request é quem <i>diz</i> ter aquele IP.</p>
 
-<p>Hoje isso foi conveniente: a rede se organizou sozinha, sem ninguém configurar nada. Mas convém a quem?</p>
+<p>Hoje isso foi conveniente. Mas convém a quem?</p>
 
-<p><b>O que impede uma estação de afirmar que é outra?</b> E se nada impede, o que muda na tabela do switch quando ela faz isso — e quem passa a receber o tráfego que não era dele?</p>
-</div>
-
-<div class="au-slot">
-<div class="au-slot-h"><b>Interativo</b> · Bilhete de saída · 3 min</div>
-<div class="au-slot-c">
-
-**Bilhete de saída.** Meia folha de papel, recolhida na porta — sem nome. Duas perguntas, sem nota:
-
-1. *Com suas palavras, em uma frase: por que uma estação ligada e funcionando pode não aparecer na tabela MAC?*
-2. *Qual foi o ponto mais confuso da aula de hoje?*
-
-O que você responder aqui **abre a aula da semana que vem** — os pontos mais citados viram as primeiras perguntas da próxima aula.
-
-</div>
-<p class="au-slot-b"><b>Se faltar papel</b>, as duas perguntas vão no quadro e cada um responde no próprio caderno — eu passo recolhendo na porta do mesmo jeito. O bilhete nunca é cortado: ele é a entrada da próxima aula.</p>
+<p><b>O que impede uma máquina de afirmar que é outra?</b> E se nada impede, o que muda na tabela do switch — e no cache ARP dos vizinhos — quando ela faz isso? Quem passa a receber o tráfego que não era dele?</p>
 </div>
 
 ## ✍️ Questões estilo Enade
 
-Três questões no formato da prova, para você testar sozinho. **As respostas não ficam nesta página** — elas voltam na correção em sala, que é quando elas ensinam alguma coisa.
+Três questões no formato da prova. **As respostas não ficam nesta página** — elas voltam na correção em sala.
 
 ### Questão 1
+
+Numa rede local, a estação A (`10.0.0.1`, MAC `AA:AA:AA:AA:AA:A0`) vai se comunicar pela primeira vez com a estação C (`10.0.0.8`, MAC `AA:AA:AA:AA:AA:A7`). Ambas estão ligadas ao mesmo switch, junto com a estação B (`10.0.0.4`), e nenhuma VLAN foi configurada.
+
+Assinale a alternativa que descreve corretamente os dois primeiros quadros dessa comunicação.
+
+- **A)** Ambos são enviados em broadcast, porque nenhuma das duas estações conhece o endereço MAC da outra antes da troca.
+- **B)** O primeiro quadro é um ARP Request enviado por A com MAC de destino `FF:FF:FF:FF:FF:FF`; o segundo é um ARP Reply enviado por C com MAC de destino `AA:AA:AA:AA:AA:A0`.
+- **C)** O primeiro quadro é um ARP Request enviado por A com MAC de destino `FF:FF:FF:FF:FF:FF`; o segundo é um ARP Reply enviado por C com MAC de destino `AA:AA:AA:AA:AA:A7`.
+- **D)** O primeiro quadro é enviado diretamente a C em unicast, pois A obtém o MAC de destino a partir do endereço IP configurado.
+- **E)** As estações B e C respondem ao ARP Request; A descarta a resposta de B por não corresponder ao IP consultado.
+
+### Questão 2
 
 Três estações estão ligadas ao `SW-ACESSO-01`: PC-1 na `Fa0/1`, PC-2 na `Fa0/2` e PC-3 na `Fa0/3`. As três estão ligadas, na mesma sub-rede, e nenhuma VLAN foi criada. Logo após um `ping` bem-sucedido do PC-1 para o PC-2, o técnico executa:
 
@@ -440,37 +460,10 @@ Vlan    Mac Address       Type        Ports
 O PC-3 está ligado e operante, mas não consta na tabela. Assinale a alternativa que explica corretamente a ausência.
 
 - **A)** O PC-3 está em outra VLAN e, por isso, não é aprendido pelo switch.
-- **B)** O switch registra apenas endereços de estações que transmitiram um quadro; o PC-3 recebeu a inundação do ARP, mas não respondeu, então nunca foi origem de nada.
+- **B)** O switch registra apenas endereços de estações que transmitiram um quadro; o PC-3 recebeu o ARP Request em broadcast, mas não respondeu, então nunca foi origem de nada.
 - **C)** A porta `Fa0/3` está administrativamente desativada.
 - **D)** O switch aprende pelo endereço de destino dos quadros, e o PC-3 nunca foi destino.
 - **E)** A tabela armazena no máximo duas entradas dinâmicas por VLAN.
-
-### Questão 2
-
-Uma rede tem esta topologia:
-
-```text
-                    ┌──────────────┐
-                    │   ROTEADOR   │
-                    └──┬────────┬──┘
-                  G0/0 │        │ G0/1
-              ┌────────┴──┐  ┌──┴────────┐
-              │  SWITCH   │  │    HUB    │
-              │ 8 portas  │  │ 4 portas  │
-              └─┬─┬─┬─┬───┘  └─┬──┬──┬───┘
-                │ │ │ │        │  │  │
-              PC1 ... PC4     PC5 PC6 PC7
-```
-
-O switch usa 5 das 8 portas — quatro estações e o enlace ao roteador — todas em full-duplex. O hub usa as 4 portas: três estações e o enlace ao roteador. Nenhuma VLAN foi configurada.
-
-Quantos domínios de colisão e quantos domínios de broadcast existem nessa rede?
-
-- **A)** 6 domínios de colisão e 2 domínios de broadcast.
-- **B)** 2 domínios de colisão e 2 domínios de broadcast.
-- **C)** 8 domínios de colisão e 1 domínio de broadcast.
-- **D)** 6 domínios de colisão e 1 domínio de broadcast.
-- **E)** 1 domínio de colisão e 2 domínios de broadcast.
 
 ### Questão 3
 
@@ -488,31 +481,25 @@ Avalie a proposta do fornecedor.
 
 METCALFE, R. M.; BOGGS, D. R. Ethernet: distributed packet switching for local computer networks. **Communications of the ACM**, v. 19, n. 7, p. 395–404, 1976. DOI: [10.1145/360248.360253](https://doi.org/10.1145/360248.360253)
 
-**Por que ler:** é o artigo em que o domínio de colisão foi inventado — a rede em que todas as estações disputavam literalmente o mesmo cabo. Ler os autores descrevendo o problema deixa claro que o switch não "melhorou" o Ethernet: ele eliminou a razão de o CSMA/CD ter existido.
+**Por que ler:** é a descrição original do Ethernet, feita por quem o inventou, numa rede em que todas as estações disputavam literalmente o mesmo cabo. Ler os autores tratando essa disputa como o problema central deixa claro que o switch não "melhorou" o Ethernet — ele eliminou a razão de o CSMA/CD ter existido.
 
 <div class="au-refs">
 <b>Referências desta aula</b>
 
-**Bibliografia da disciplina** — biblioteca virtual da Uniube:
-
-- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 6, seç. 6.4.3 — comutadores de camada de enlace: filtragem, encaminhamento e autoaprendizagem</span>
-- CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems, 2026. Disponível em: https://www.netacad.com/. Acesso em: 30 jul. 2026. <span class="au-pag">módulo 2 — conceitos de comutação: encaminhamento de quadros, tabela de endereços MAC e domínios de colisão e broadcast</span>
-
-**De onde vem o formato desta aula:**
-
-- SWELLER, J.; AYRES, P.; KALYUGA, S. **Cognitive Load Theory.** New York: Springer, 2011.
+- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 8. ed. São Paulo: Pearson, 2021. <span class="au-pag">cap. 6, seç. 6.4.1 — endereçamento de camada de enlace e ARP; seç. 6.4.3 — comutadores: filtragem, encaminhamento e autoaprendizagem</span>
+- CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems. Disponível em: https://www.netacad.com/. Acesso em: 30 jul. 2026. <span class="au-pag">módulo 2 — conceitos de comutação: encaminhamento de quadros, tabela de endereços MAC e domínios de colisão e broadcast</span>
 
 </div>
 
 <div class="au-proxima">
 <b>Na próxima aula</b>
 
-<p>Hoje o switch inundou a rede inteira porque não sabia para onde mandar — e você viu que comprar um equipamento melhor não muda isso em nada. Na próxima aula você resolve o problema pelo outro lado: em vez de ensinar mais ao switch, você <b>corta o domínio em dois</b>, com uma linha de configuração. É a VLAN.</p>
+<p>A rede se organiza sozinha, e paga por isso mandando pergunta para todo mundo — e você viu que um equipamento melhor não muda nada nisso. Na próxima aula o problema é atacado pelo outro lado: em vez de ensinar mais ao switch, você <b>corta o domínio em dois</b>, com uma linha de configuração. É a VLAN.</p>
 </div>
 
 ---
 
-*Última atualização: 30/07/2026 · Sujeito à confirmação institucional (ver aviso na aula teórica da S01).*
+*Última atualização: 11/08/2026 · Sujeito à confirmação institucional (ver aviso na aula teórica da S01).*
 
 **◀ [Voltar ao índice da disciplina](./)**
 

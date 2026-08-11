@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 250" role="img"
+     aria-label="Duas versoes da tabela MAC do switch. A da esquerda, antes do primeiro quadro, esta vazia. A da direita, depois do quadro enviado pelo computador A, tem uma linha ligando a porta 1 ao endereco MAC do A">
+  <defs>
+    <marker id="setaMeio" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9702a"/>
+    </marker>
+  </defs>
+
+  <!-- ANTES -->
+  <text x="24" y="24" font-family="monospace" font-size="12" font-weight="bold" fill="#8a8f98">ANTES do primeiro quadro</text>
+  <rect x="24" y="34" width="270" height="146" rx="7" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="40" y="58" font-family="monospace" font-size="11" fill="#8a8f98">PORTA</text>
+  <text x="106" y="58" font-family="monospace" font-size="11" fill="#8a8f98">MAC</text>
+  <line x1="34" y1="68" x2="284" y2="68" stroke="#8a8f98" stroke-width="1"/>
+  <g stroke="#8a8f98" stroke-width="1" stroke-dasharray="3 5">
+    <line x1="34" y1="98" x2="284" y2="98"/>
+    <line x1="34" y1="128" x2="284" y2="128"/>
+    <line x1="34" y1="158" x2="284" y2="158"/>
+  </g>
+  <text x="159" y="120" text-anchor="middle" font-family="monospace" font-size="13" fill="#8a8f98">(vazia)</text>
+
+  <!-- a transicao -->
+  <path d="M306 107 L370 107" fill="none" stroke="#d9702a" stroke-width="2.5" marker-end="url(#setaMeio)"/>
+  <text x="338" y="96" text-anchor="middle" font-family="monospace" font-size="11" fill="#d9702a">1 quadro</text>
+
+  <!-- DEPOIS -->
+  <text x="386" y="24" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">DEPOIS do quadro que o A enviou</text>
+  <rect x="386" y="34" width="270" height="146" rx="7" fill="none" stroke="#00aa9f" stroke-width="2"/>
+  <text x="402" y="58" font-family="monospace" font-size="11" fill="#8a8f98">PORTA</text>
+  <text x="452" y="58" font-family="monospace" font-size="11" fill="#8a8f98">MAC</text>
+  <line x1="396" y1="68" x2="646" y2="68" stroke="#8a8f98" stroke-width="1"/>
+  <rect x="396" y="76" width="250" height="26" rx="4" fill="none" stroke="#d9702a" stroke-width="2"/>
+  <text x="402" y="94" font-family="monospace" font-size="12" fill="#d9702a">1</text>
+  <text x="452" y="94" font-family="monospace" font-size="12" fill="#d9702a">aaaa.aaaa.aaa0</text>
+  <g stroke="#8a8f98" stroke-width="1" stroke-dasharray="3 5">
+    <line x1="396" y1="128" x2="646" y2="128"/>
+    <line x1="396" y1="158" x2="646" y2="158"/>
+  </g>
+
+  <!-- A SINALIZACAO -->
+  <text x="24" y="212" font-family="monospace" font-size="12" fill="#d9702a">ninguem digitou essa linha.</text>
+  <text x="24" y="234" font-family="monospace" font-size="12" fill="#8a8f98">o switch leu o campo MAC DE ORIGEM e anotou a porta por onde o quadro entrou.</text>
+</svg>
