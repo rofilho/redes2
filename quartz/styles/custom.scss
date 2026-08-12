@@ -67,6 +67,16 @@
      (1180px), não um cap por bloco. Trocado em 30/07/2026. */
   --au-medida: 100%;
 
+  /* Teto de altura da figura raster. Sem ele, `width: 100%` numa foto de
+     produto de 1000px de largura rende ~900px de altura na coluna de 1180px:
+     uma tela inteira de rolagem por imagem. Apareceu ao migrar a Aula 03 de
+     Redes I em 12/08/2026 — oito figuras transformaram a aula num álbum, e o
+     defeito não existia antes só porque as páginas antigas quase não tinham
+     figura. 26rem cabe numa dobra sem competir com o texto ao redor.
+     NÃO se aplica a SVG: diagrama é desenhado para a largura da coluna e
+     encolher por altura o deixa ilegível. */
+  --au-fig-alt: 26rem;
+
   /* pares T568B — semântica fixa, saturação de LMS moderno */
   /* IDENTIDADE UNIUBE — extraída dos ativos oficiais em 26/07/2026, não
      escolhida por gosto: #1D2057 é o fill do logo_azul.svg; os demais são as
@@ -646,15 +656,35 @@ article a {
   gap: var(--au-s-2);
 }
 
-.au-fig > img,
-.au-fig > svg,
-.au-fig picture img {
+/* SVG: diagrama ocupa a coluna inteira. Foi desenhado para essa largura. */
+.au-fig > svg {
   display: block;
   width: 100%;
   height: auto;
   max-width: 100%;
   border-radius: var(--au-raio);
   margin: 0;
+}
+
+/* Raster: limitado pela ALTURA, não pela largura. `width: auto` deixa a
+   proporção mandar; o teto de --au-fig-alt impede a foto de tomar a tela.
+   Centralizado porque uma imagem estreita alinhada à esquerda debaixo de
+   texto justificado lê como erro de layout. */
+.au-fig > img,
+.au-fig picture img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: var(--au-fig-alt);
+  border-radius: var(--au-raio);
+  margin: 0 auto;
+}
+
+/* SVG servido como <img> segue a regra do diagrama, não a da foto. */
+.au-fig > img[src$=".svg"] {
+  width: 100%;
+  max-height: none;
 }
 
 .au-fig img[src$=".svg"] {
