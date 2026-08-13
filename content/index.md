@@ -57,6 +57,14 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
+<li class="au-card">
+  <a href="./Aula-03---Lab-1-Switching-Basico-(Pratica)" data-spa>
+    <div class="au-thumb">S03</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 1 — Switching básico: ver o switch aprender</b><span>Prática · P12 13/08 · P11 na segunda</span></div>
+  </a>
+</li>
+
 <li class="au-card au-espera">
   <div class="au-thumb">S03</div>
   <div class="au-pbar"><i style="width:0"></i></div>
