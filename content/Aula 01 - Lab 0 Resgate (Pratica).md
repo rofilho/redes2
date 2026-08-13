@@ -9,7 +9,6 @@ semana: 1
 date: 2026-07-27
 tags: [redes2, 2026-2, lab, packet-tracer, diagnostico, troubleshooting]
 ---
-
 <div class="au-leitura" data-aula="s01p">
 
 # 🟢 Aula 01 — Lab 0: Resgate
@@ -72,7 +71,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > - O método de diagnóstico **de baixo para cima** — a sequência de perguntas que transforma "não funciona" em "está quebrado *aqui*".
 > - Como usar o `ping` para **dividir o problema em dois** em vez de sair mexendo em configuração.
 > - O ambiente do semestre inteiro no ar: conta NetAcad + Packet Tracer rodando na sua máquina.
-> - **1 ponto da Atividade N1** pelo Lab 0 — apurado na tela, no Packet Tracer, na prática em que o cenário entrar (ver o aviso logo abaixo).
+> - O método de resgate que vale **1 ponto da Atividade N1** — o `lab00_resgate.pka` entra na próxima prática, e é lá que o ponto é apurado (ver o aviso logo abaixo).
 >
 > **📂 Recursos**
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — a referência do semestre: calendário das três turmas, nota, prazos e regras
@@ -83,7 +82,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 > [!IMPORTANT] 📌 Como esta primeira prática funciona
 > **Hoje é ambiente e método.** A prioridade é sair daqui com a conta NetAcad criada e o Packet Tracer rodando na sua máquina — sem isso, nenhuma aula prática do semestre funciona. E os **quatro defeitos** passam no projetor, um a um: você vê o sintoma, responde o que verificaria primeiro, e a resposta só aparece depois disso.
 >
-> **O `lab00_resgate.pka` valendo 1 ponto entra na próxima prática**, igual para P11 e P12 — laboratório novo só cai em semana em que as duas turmas se encontram, e essa regra vale desde a primeira. **Você não perde ponto nenhum:** são seis labs valendo e contam os cinco melhores.
+> **O `lab00_resgate.pka` valendo 1 ponto entra na próxima prática**, igual para P11 e P12 — laboratório novo só cai em semana em que as duas turmas se encontram, e essa regra vale desde a primeira. **Você não perde ponto nenhum:** nenhum laboratório valendo nota acontece antes de as duas turmas estarem no mesmo ponto.
 >
 > Traga o notebook com o Packet Tracer **já instalado** se conseguir. O download na rede da sala, com a turma inteira baixando junto, é o gargalo previsível da noite.
 
@@ -92,34 +91,45 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 | Min | Bloco | Onde está nesta página |
 | :-- | :--- | :--- |
 | 0–7 | Entrada, chamada e **Nosso caminho até aqui** — 3 questões de Redes I, sem nota | bloco de abertura |
-| 7–27 | **O contrato do semestre** — nota, datas, laboratórios, regras de sala | callout do contrato |
-| 27–42 | **Instalação** — NetAcad e Packet Tracer funcionando na sua máquina | Tópico 1 |
-| 42–65 | **Exemplo resolvido: os quatro defeitos, no projetor** — você diz o que verificaria primeiro; a resposta vem depois | Tópicos 2 e 3 |
-| 65–72 | **Como o semestre funciona** — duplas, quebra deliberada, o laboratório que vale ponto | Revisão |
-| **72–75** | Reflexão + bilhete de saída | Fechamento |
+| 7–15 | **O contrato, só o que decide nota** — aprovação, datas de prova, régua do laboratório | callout do contrato |
+| 15–37 | **Instalação** — NetAcad e Packet Tracer funcionando na sua máquina | Tópico 1 |
+| 37–60 | **Exemplo resolvido: os quatro defeitos, no projetor** — você diz o que verificaria primeiro; a resposta vem depois | Tópicos 2 e 3 |
+| 60–67 | **Como o semestre funciona** — duplas, quebra deliberada, o laboratório que vale ponto | Revisão |
+| 67–70 | Reflexão + bilhete de saída | Fechamento |
+| **70–75** | **Folga** — a instalação é o que estoura, e é para cá que ela estoura | — |
 
 > [!NOTE] 🧭 P11 e P12 — a ordem é diferente para vocês, e isso é intencional
-> **P11 (segunda):** você faz este laboratório **antes** da teórica de terça (28/07), conforme o horário emitido em 25/07 — o agrupamento das duas práticas nessa aula está em confirmação na secretaria. Os conceitos que reencontrar aqui voltam no diagnóstico da turma; você chega com a experiência na mão.
+> **P11 (segunda):** você faz este laboratório **antes** da teórica de terça (28/07), conforme o horário emitido em 25/07 — o agrupamento das turmas P11 e P12 no slot teórico da terça está em confirmação na secretaria. Os conceitos que reencontrar aqui voltam no diagnóstico da turma; você chega com a experiência na mão.
 > **P12 (quinta):** se você já teve a teórica de terça, vai reconhecer aqui pelo menos um dos princípios que discutimos lá, vivo e mordendo. Repare em qual.
 
-> [!IMPORTANT] 📋 O contrato do semestre — o resumo, para quem só vem ao laboratório
-> Isto é apresentado por extenso na **teórica**, e mora por extenso no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato). Fica aqui em resumo porque ninguém pode terminar a primeira semana sem saber quando é a prova.
+> [!IMPORTANT] 📋 O contrato — as três linhas que decidem nota
+> O contrato inteiro é apresentado na **teórica** e mora por extenso no [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato). Aqui ficam só as três coisas que ninguém pode terminar a primeira semana sem saber.
 >
 > - **Aprovação:** ≥ **60 pontos** *e* ≥ **75% de frequência**. As duas juntas — falta reprova com nota boa.
-> - **Os 100 pontos:** N1 = 35 (25 prova + 5 labs + 5 Uniube+) · N2 = 50 (30 prova + 6 projeto + 4 defesa + 10 Uniube+) · Institucional = 15.
-> - **Datas de prova:** N1 em **22/09** · N2 em **01/12** · vistas em **29/09** e **08/12** — dependem da confirmação do agrupamento da terça, e se mudarem o aviso sai no AVA. A prova tem duas etapas: 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
-> - **Laboratórios que valem nota:** Lab 0 a 5, **1 ponto cada**, 80% de acerto, contam os **5 melhores**. Os labs 6 a 10 são formativos, sem nota.
-> - **Faltou à prova?** Pedido de segunda chamada pelo **SAE no AVA, em até 3 dias úteis**, com o atestado anexado no SAE — **não na minha mão**. O prazo é institucional; fora dele o curso indefere.
-> - **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**; laboratórios, Uniube+ e os 15 da Institucional ficam onde estão, e a nota final trava em 60.
-> - **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11. A **P11 perde quatro segundas**, a P12 nenhuma — por isso laboratório novo só cai em semana em que as duas práticas se encontram.
-> - **Regras de sala:** celular e fone proibidos · chamada com hora limite de 15 min · atraso entra em silêncio · não abordar o professor nos corredores · o professor não responde WhatsApp (AVA ou e-mail). Estão publicadas no plano.
+> - **Datas de prova:** N1 em **22/09** · N2 em **01/12** · vistas em **29/09** e **08/12**. A prova tem duas etapas: 50 min individual + 18 min em grupo nas 4 questões mais difíceis.
+> - **A régua do laboratório:** **8 dos 10 itens** conferidos pelo arquivo, e o ponto é seu. É a mesma régua em todos os labs do semestre.
+
+<details class="au-caminho">
+<summary>📋 O resto do contrato — para ler em casa, com calma</summary>
+
+- **Os 100 pontos:** N1 = 35 (25 prova + 5 labs + 5 Uniube+) · N2 = 50 (30 prova + 6 projeto + 4 defesa + 10 Uniube+) · Institucional = 15.
+- **Faltou à prova?** Pedido de segunda chamada pelo **SAE no AVA, em até 3 dias úteis**, com o atestado anexado no SAE — **não na minha mão**. O prazo é institucional; fora dele o curso indefere.
+- **Fechou entre 40 e 59?** Recuperação em 17 ou 18/12 (confirmo no AVA). Ela **zera as notas das duas provas — 25 + 30 = 55 pontos — e vale por elas**; laboratórios, Uniube+ e os 15 da Institucional ficam onde estão, e a nota final trava em 60.
+- **Feriados da disciplina:** 31/08 · 07/09 · 12/10 · 13/10 · 02/11. A **P11 perde quatro segundas**, a P12 nenhuma — por isso laboratório novo só cai em semana em que as duas práticas se encontram.
+- **Regras de sala:** celular e fone proibidos · chamada com hora limite de 15 min · atraso entra em silêncio · não abordar o professor nos corredores · o professor não responde WhatsApp (AVA ou e-mail). Estão publicadas no plano.
+
+</details>
 
 <aside class="au-antes">
 <b class="au-nota-t">Antes de começar</b>
 
 **Exemplo resolvido** — um problema inteiro, resolvido no projetor passo a passo e em voz alta, antes de você tentar sozinho. Você vê o caminho completo, não só a resposta. Depois é a sua vez.
 
-**Porcentagem de acerto** — o arquivo do Packet Tracer compara a sua rede com a rede correta e mostra na tela quanto você acertou. É a nota do laboratório, e ela sai em sala. Na tela do programa esse número aparece em inglês, com o nome `Completion`.
+**Porcentagem de acerto** — o arquivo do Packet Tracer compara a sua rede com a rede correta e mostra na tela quanto você acertou. É a nota do laboratório, e ela sai em sala. O botão que abre essa lista chama-se `Check Results`, e a porcentagem aparece lá dentro com o nome `Completion`. São dois nomes da mesma coisa: o botão e o número.
+
+**ARP** — o protocolo que descobre o endereço da placa de rede a partir do endereço IP. A máquina sabe *para qual IP* quer falar, mas o quadro só sai se ela souber *para qual placa* — e é o ARP que preenche essa lacuna, perguntando à rede inteira. Ele leva alguns milissegundos, e é por isso que **a primeira tentativa de uma conversa nova pode falhar enquanto as seguintes passam**. Isso reaparece na aposta mais abaixo.
+
+**ICMP redirect** — quando um roteador percebe que você mandou o pacote para ele mas havia um caminho melhor, ele responde avisando *"da próxima vez, mande por ali"*. É um recado sobre o caminho, não uma resposta ao seu pedido.
 
 **Quebra deliberada** — eu derrubo alguma coisa na sua topologia sem dizer o quê, e você descobre. A partir da semana 2 isso ocupa os últimos 20 minutos de toda prática. Hoje é só um aperitivo.
 
@@ -236,7 +246,7 @@ E aqui vem a parte que confunde: o roteador **pode** encaminhar esse tráfego de
 
 ---
 
-## 📌 3. Quatro defeitos numa rede de campus, e nada aqui é conteúdo novo [Exemplo resolvido ⏳ 15 min]
+## 📌 3. Os quatro defeitos desta rede se resolvem com o que você já sabe de Redes I [Exemplo resolvido ⏳ 15 min]
 
 Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento, sem VLAN, sem nada que você ainda não tenha visto — **roteamento dinâmico é a S11, VLAN é a S03.** Hoje é tudo Redes I.
 
@@ -269,11 +279,15 @@ Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento
 <rect x="275" y="216" width="110" height="28" rx="5" fill="none" stroke="#8a8f98" stroke-width="2"></rect>
 <text x="330" y="235" text-anchor="middle" font-size="12" fill="#8a8f98" font-family="monospace">SW-SRV</text>
 <line x1="330" y1="244" x2="330" y2="258" stroke="#8a8f98" stroke-width="2"></line>
+<rect x="18" y="194" width="140" height="56" rx="6" fill="none" stroke="#d9702a" stroke-width="2" stroke-dasharray="5 3"></rect>
+<text x="88" y="212" text-anchor="middle" font-size="12" fill="#d9702a" font-family="monospace" font-weight="bold">4 DEFEITOS</text>
+<text x="88" y="228" text-anchor="middle" font-size="10" fill="#d9702a" font-family="monospace">1 valor trocado cada</text>
+<text x="88" y="242" text-anchor="middle" font-size="10" fill="#d9702a" font-family="monospace">todos nos 4 PCs</text>
 <rect x="145" y="256" width="370" height="40" rx="6" fill="none" stroke="#2778c4" stroke-width="2"></rect>
 <text x="330" y="273" text-anchor="middle" font-size="12" fill="#2778c4" font-family="monospace" font-weight="bold">SERVIDORES · 192.168.30.0/24</text>
 <text x="330" y="288" text-anchor="middle" font-size="10" fill="#8a8f98" font-family="monospace">SRV-PORTAL 192.168.30.10 · DNS + HTTP · portal.uniube.local</text>
 </svg>
-<figcaption class="au-legenda">Topologia do cenário: ADMINISTRAÇÃO e LABORATÓRIO ligadas pelo R-CAMPUS, e a rede de servidores logo abaixo dele. O R-CAMPUS, em destaque, já está correto nas três interfaces — e o SRV-PORTAL também, com DNS e HTTP no ar. O território de caça são os hosts e as pontas, não a infraestrutura.</figcaption>
+<figcaption class="au-legenda">Em laranja está o território de caça: os <b>quatro defeitos moram nos PCs</b>, um valor trocado em cada, e todos são conteúdo de Redes I — IP, máscara, gateway, DNS. A infraestrutura em cinza e verde já está provada correta: o R-CAMPUS nas três interfaces, e o SRV-PORTAL com DNS e HTTP no ar. Não procure defeito nela.</figcaption>
 </figure>
 
 **Existem quatro defeitos.** Cada um é **um valor trocado** — nunca dois no mesmo lugar — e cada um produz um sintoma **diferente**. Nenhum é pegadinha: os quatro são conteúdo de Redes I.
@@ -310,7 +324,7 @@ Eu abro o cenário no projetor e mostro **um sintoma por vez**. Para cada um, an
 > [!TIP] ✅ Como o ponto deste laboratório é apurado
 > **O Lab 0 vale 1 ponto da Atividade N1, e o ponto sai para quem fechar `80% de acerto`** — na tela, durante a aula em que o cenário entrar. Você sai da sala sabendo a sua nota; não existe "depois eu corrijo".
 >
-> São seis laboratórios valendo ponto no semestre (Lab 0 a Lab 5) e contam **os cinco melhores** — o sexto é a sua margem para um dia ruim.
+> A régua é a mesma em todos os laboratórios do semestre: **8 dos 10 itens** conferidos pelo arquivo, e o ponto é seu.
 
 ### Terminou antes? O que você leva não é o defeito, é como você o achou
 
@@ -367,25 +381,22 @@ O que você responder aqui **abre a aula da semana que vem** — os assuntos mai
 ---
 
 <div class="au-resumo">
-<b>Resumo da aula</b>
+<b>O que você viu acontecer hoje</b>
 
-| Item | O que você precisa lembrar |
+Seis coisas passaram na tela nesta aula. Tente responder o *porquê* antes de abrir — é o esforço de lembrar que fixa, não a releitura.
+
+| O que você viu acontecer | |
 | :--- | :--- |
-| **O método** | Link → ping local → ping externo → resolução de nome. Uma camada por vez, e só sobe quando a de baixo está provada. |
-| **O teste que divide o problema em dois** | Ping para alguém da **própria sub-rede**. Funcionou? O defeito está na saída. Falhou? Está antes dela. |
-| **Camada 1 — a pergunta** | Tem enlace, e o meio é o certo para este par de portas? **Ter cabo ≠ ter rede.** |
-| **Camada 3 — a pergunta local** | IP e máscara: você está na sub-rede em que deveria estar? A máscara define a fronteira sozinha. |
-| **Camada 3 — a pergunta de saída** | O gateway pertence à **sua** sub-rede? Se não, você não sai. |
-| **Camada 7 — a pergunta** | Pinga por IP e o nome não resolve? Então quebrou o DNS, não a rede. |
-| **O que "pinga o gateway" prova** | O caminho *até o gateway*, e que a sua máscara o inclui. Só isso — não é atestado de saúde da rede. |
-| **O que "o ping passou" prova** | Que passou. **Não** por onde: rota indireta e ICMP redirect fazem rede torta parecer rede boa. |
-| **Ler ping no Packet Tracer** | O 1º pacote costuma cair por ARP. Julgue pelas 4 linhas e pela estatística, nunca pela primeira. |
-| **Critério de pronto do lab** | Os 4 PCs pingam `192.168.30.10` **e** abrem `http://portal.uniube.local` **pelo nome**. |
-| **Nota do Lab 0** | 1 pt da Atividade N1, por `80% de acerto` (8 de 10 itens), na tela, em sala — na prática em que o cenário entrar. |
-| **Regra de ouro do remendo** | Mudar a infraestrutura para caber no host errado **derruba** o seu percentual. |
-| **Um defeito por vez** | Corrigir dois e o ping voltar não diz qual dos dois era. |
-| **Pendência** | Conta NetAcad + Packet Tracer instalados **antes da S02** — não há bloco de setup na próxima. |
-| **Ferramenta do semestre** | Packet Tracer 8.2+, salvo em pasta local (nunca em pasta sincronizada com nuvem). |
+| O cabo estava no lugar e mesmo assim não havia rede | <details><summary>por quê?</summary>Enlace é a pergunta da camada 1, e "tem cabo" não a responde: o meio precisa ser o certo para aquele par de portas. **Ter cabo ≠ ter rede.**</details> |
+| A máquina pingou o vizinho e não pingou a internet | <details><summary>por quê?</summary>Porque esse teste divide o problema em dois. Passou dentro da sub-rede? O defeito está na saída. Falhou? Está antes dela.</details> |
+| Dois PCs com IPs parecidos não se enxergavam | <details><summary>por quê?</summary>A máscara define a fronteira sozinha. IP parecido não é sub-rede igual — quem decide quem é vizinho de quem é ela.</details> |
+| O gateway não respondeu, e o endereço dele parecia certo | <details><summary>por quê?</summary>Ele precisa pertencer à **sua** sub-rede. Se a máscara não o inclui, ele não é alcançável — e você não sai.</details> |
+| O `ping` por IP passou e o nome não abriu | <details><summary>por quê?</summary>Quebrou o DNS, não a rede. É a camada 7 falhando sobre uma camada 3 sadia — e por isso se testa por último.</details> |
+| O primeiro pacote caiu e os três seguintes passaram | <details><summary>por quê?</summary>O ARP ainda estava resolvendo. Julgue pelas 4 linhas e pela estatística, nunca pela primeira — foi a aposta que você fez no meio da aula.</details> |
+
+**E duas armadilhas que você viu de perto:** "o ping passou" prova que passou, **não** por onde — rota indireta e ICMP redirect fazem rede torta parecer rede boa. E remendo, mudar a infraestrutura para caber no host errado, **derruba** o seu percentual.
+
+**Para a próxima:** conta NetAcad e Packet Tracer 8.2+ instalados **antes da S02**, em pasta local, nunca em pasta sincronizada com nuvem. Não há bloco de setup na próxima aula.
 
 </div>
 

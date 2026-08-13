@@ -57,9 +57,9 @@ Não. Um switch melhor comuta mais rápido e tem mais portas. Nada disso muda a 
 > - [Plano de Ensino e Contrato](./Plano-de-Ensino-e-Contrato) — calendário, notas, prazos e regras
 > - **Packet Tracer** — o simulador de redes da Cisco em que você monta a topologia sem equipamento físico. Usamos no bloco de prática desta aula.
 
-### 🧭 O caminho de hoje
+### 🧭 A aula inteira é uma pergunta só, feita três vezes
 
-Uma pergunta só, feita três vezes. Cada resposta cria a pergunta seguinte.
+Cada resposta cria a pergunta seguinte.
 
 | | A pergunta | A resposta |
 | :-: | :--- | :--- |
@@ -98,7 +98,9 @@ Lista de consulta, não de leitura corrida: passe os olhos antes da aula e volte
 
 **DHCP** — o serviço que entrega endereços IP automaticamente, para ninguém configurar um por um.
 
-**Camada de enlace** — o nível da rede que entrega dados entre equipamentos ligados no mesmo trecho, usando endereço MAC. É onde o switch vive. O nível de cima, que usa IP e liga redes diferentes, é onde vive o roteador.
+**Camada de enlace** — o nível da rede que entrega dados entre equipamentos ligados no mesmo trecho, usando endereço MAC. É onde o switch vive. O nível de cima, que usa IP e liga redes diferentes, é onde vive o roteador. Ela é a **segunda** camada do modelo, contando de baixo para cima — por isso você vai me ouvir dizer **"camada 2"** o tempo todo. São a mesma coisa.
+
+**IEEE** — o instituto internacional que padroniza engenharia elétrica e de computação. É ele que administra a lista de fabricantes de placa de rede do mundo inteiro e distribui os prefixos, e é por isso que dois fabricantes nunca recebem o mesmo. Lê-se "i-3-é".
 
 **Quadro** — a mensagem como ela trafega na camada de enlace: os dados, mais os endereços MAC de origem e de destino.
 
@@ -176,11 +178,12 @@ Toda placa de rede — de cabo ou de Wi-Fi — sai da fábrica com o endereço a
 
 O endereço é único no mundo, e ninguém precisou consultar ninguém para isso. Cada dígito hexadecimal carrega 4 bits, então 48 bits cabem em 12 dígitos — e o corte no meio separa quem fabricou de qual placa é.
 
-### 1.2 O mesmo endereço aparece escrito de duas maneiras diferentes
+### 1.2 O mesmo endereço aparece escrito de três maneiras diferentes
 
 | | Como se escreve | Onde você vê |
 | :--- | :--- | :--- |
-| **Dois-pontos** | `AA:AA:AA:AA:AA:A0` | Windows e Linux — `ipconfig`, `ip link` |
+| **Hífen** | `AA-AA-AA-AA-AA-A0` | Windows — `ipconfig /all`, `arp -a` |
+| **Dois-pontos** | `aa:aa:aa:aa:aa:a0` | Linux — `ip link` |
 | **Ponto** | `aaaa.aaaa.aaa0` | IOS da Cisco — `show mac address-table` |
 
 **É o mesmo endereço.** Os 12 dígitos são os mesmos, na mesma ordem; muda só onde caem os separadores e se as letras estão em maiúscula. Quem não sabe disso acha que a saída do switch mostra uma máquina diferente da que configurou — e vai caçar um defeito que não existe.
@@ -413,30 +416,20 @@ Não é falha do ARP — é falha de **tamanho**. E tamanho não se resolve com 
 ---
 
 <div class="au-resumo">
-<b>Resumo da aula</b>
+<b>O que você viu acontecer hoje</b>
 
-| Item | O que você precisa lembrar |
+Seis coisas passaram na tela nesta aula. Tente responder o *porquê* antes de abrir — é o esforço de lembrar que fixa, não a releitura.
+
+| O que você viu acontecer | |
 | :--- | :--- |
-| **Por que o MAC existe** | A máquina precisa falar **antes** de ter um IP — inclusive para pedir o IP. |
-| **O que é o MAC** | 48 bits, escritos em **12 dígitos hexadecimais**, gravados na placa pelo fabricante. |
-| **As duas metades** | Os 6 primeiros dígitos são o **OUI**, o fabricante. Os 6 últimos, a placa. |
-| **Duas notações** | `AA:AA:AA:AA:AA:A0` no Windows e no Linux, `aaaa.aaaa.aaa0` no IOS. **Mesmo endereço.** |
-| **O MAC é da placa** | Não da máquina, não da pessoa. Duas placas, dois endereços. |
-| **O problema do ARP** | O host sabe o IP do destino e **não** sabe o MAC — e sem o MAC o quadro não sai. |
-| **ARP Request** | Vai em **broadcast** (`FF:FF:FF:FF:FF:FF`), porque ele não sabe para quem perguntar. |
-| **ARP Reply** | Vai em **unicast**, de quem tem o IP **para quem perguntou**. Quem não é, não responde. |
-| **Cache ARP** | Na estação, casa **IP ↔ MAC**, some por inatividade. Comando: `arp -a`. |
-| **Tabela MAC** | No switch, casa **MAC ↔ porta**, expira em **300 s** no IOS. Comando: `show mac address-table`. |
-| **Como o switch aprende** | Lendo o **MAC de origem** de cada quadro. Nunca o destino. |
-| **Os três passos** | Aprende a origem → procura o destino → encaminha, ou replica se não achou. |
-| **Quem entra na tabela** | Só quem **transmitiu**. Estação ligada que nunca falou não aparece. |
-| **Filtragem** | Destino na tabela, na **mesma** porta de entrada: descarta. |
-| **Inundação ≠ broadcast** | Mesmo efeito visível, causas diferentes. |
-| **Domínio de colisão** | Quem disputa o mesmo meio. No switch, **um por porta ativa**. |
-| **Domínio de broadcast** | Quem recebe o broadcast. Um switch sem VLAN é **um domínio só**. |
-| **O que o switch corta** | Colisão, completamente. Broadcast, **nada**. |
-| **Dois switches ligados** | Mais domínios de colisão; os de broadcast **se fundem em um**. |
-| **Quem corta broadcast** | O roteador — ou a VLAN, que é a próxima aula. |
+| O primeiro `ping` falhou e os 99 seguintes passaram | <details><summary>por quê?</summary>O primeiro esperou o ARP resolver. O host sabia o IP do destino e **não** sabia o MAC — e sem o MAC o quadro não sai. Resolvido uma vez, fica no cache, e os seguintes saem direto.</details> |
+| A tabela do switch tinha 2 linhas, e a rede tem 3 PCs | <details><summary>por quê?</summary>O switch aprende lendo o **MAC de origem** de quem transmite. Quem nunca falou não está lá — a tabela MAC não é a lista de quem está conectado, é a lista de **quem transmitiu**.</details> |
+| O `arp -a` do PC-1 tinha 1 linha e o do switch tinha 2 | <details><summary>por quê?</summary>São tabelas diferentes. Quem tem **IP na cabeça** é a estação (cache ARP, casa IP ↔ MAC). Quem tem **porta na cabeça** é o switch (tabela MAC, casa MAC ↔ porta, expira em 300 s).</details> |
+| A pergunta do A chegou no B, e o B não respondeu | <details><summary>por quê?</summary>O ARP Request vai em **broadcast** (`FF:FF:FF:FF:FF:FF`), porque quem pergunta não sabe para quem perguntar. Chega em todo mundo — mas só responde quem tem aquele IP.</details> |
+| A resposta do C não chegou no B | <details><summary>por quê?</summary>O ARP Reply vai em **unicast**, de quem tem o IP direto para quem perguntou. E o switch já tinha aprendido a porta do A na ida, então não precisou replicar.</details> |
+| Votamos 30 contra 1, e as 18 portas vazias não contaram | <details><summary>por quê?</summary>Domínio de colisão é **por porta ativa** — porta sem nada ligado não disputa meio nenhum. Já o domínio de broadcast é **um só** no switch inteiro: ele corta colisão completamente e broadcast, nada.</details> |
+
+**O fio para a próxima aula:** quem corta broadcast é o roteador — ou a VLAN, que é exatamente o assunto da S03.
 
 </div>
 
@@ -524,7 +517,7 @@ METCALFE, R. M.; BOGGS, D. R. Ethernet: distributed packet switching for local c
 
 ---
 
-*Última atualização: 11/08/2026 · Sujeito à confirmação institucional (ver aviso na aula teórica da S01).*
+*Última atualização: 13/08/2026 · Sujeito à confirmação institucional (ver aviso na aula teórica da S01).*
 
 **◀ [Voltar ao índice da disciplina](./)**
 

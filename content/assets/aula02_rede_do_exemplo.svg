@@ -30,13 +30,13 @@
   <g font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">
     <text x="188" y="92" fill="#2778c4">1</text>
     <text x="302" y="92" fill="#8a8f98">4</text>
-    <text x="484" y="92" fill="#d9702a">8</text>
+    <text x="484" y="92" fill="#8a8f98">8</text>
   </g>
 
   <!-- enlaces -->
   <path d="M203 77 L203 112 L110 112 L110 152" fill="none" stroke="#2778c4" stroke-width="2"/>
   <path d="M317 77 L317 112 L340 112 L340 152" fill="none" stroke="#8a8f98" stroke-width="2"/>
-  <path d="M469 77 L469 112 L570 112 L570 152" fill="none" stroke="#d9702a" stroke-width="2"/>
+  <path d="M469 77 L469 112 L570 112 L570 152" fill="none" stroke="#8a8f98" stroke-width="2"/>
 
   <!-- host A — quem quer falar -->
   <rect x="30" y="152" width="160" height="86" rx="6" fill="none" stroke="#2778c4" stroke-width="2.5"/>
@@ -53,10 +53,10 @@
   <!-- host C — o destino -->
   <rect x="490" y="152" width="160" height="86" rx="6" fill="none" stroke="#d9702a" stroke-width="2.5"/>
   <text x="570" y="174" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#d9702a">C</text>
-  <text x="502" y="198" font-family="monospace" font-size="11" fill="#d9702a">IP  10.0.0.8</text>
-  <text x="502" y="220" font-family="monospace" font-size="11" fill="#d9702a">MAC ..:..:A7</text>
+  <text x="502" y="198" font-family="monospace" font-size="11" fill="#2b2e35">IP  10.0.0.8</text>
+  <text x="502" y="220" font-family="monospace" font-size="11" fill="#2b2e35">MAC ..:..:A7</text>
 
   <!-- A SINALIZACAO: um destaque so por figura -->
-  <text x="340" y="266" text-anchor="middle" font-family="monospace" font-size="12" fill="#d9702a">o A quer falar com o C — e nao sabe o MAC dele</text>
+  <text x="340" y="266" text-anchor="middle" font-family="monospace" font-size="12" fill="#8a8f98">o A quer falar com o C — e nao sabe o MAC dele</text>
   <text x="340" y="286" text-anchor="middle" font-family="monospace" font-size="10" fill="#8a8f98">MAC completo: AA:AA:AA:AA:AA:A0 / ..A3 / ..A7 — enderecos ficticios, escolhidos para a aula</text>
 </svg>
