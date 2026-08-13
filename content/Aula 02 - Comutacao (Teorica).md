@@ -169,15 +169,21 @@ Toda placa de rede — de cabo ou de Wi-Fi — sai da fábrica com o endereço a
 
 ### 1.1 São 48 bits, escritos em 12 dígitos hexadecimais
 
-Cada dígito hexadecimal vale 4 bits, então 48 bits cabem em 12 dígitos. Cada fabricante recebe do **IEEE** um bloco de OUI só dele e se responsabiliza por não repetir número dentro do próprio bloco. É isso que torna o endereço único no mundo.
+<figure class="au-fig">
+<img src="assets/aula02_anatomia_mac.svg" alt="Anatomia de um endereco MAC: os 12 digitos hexadecimais AA AA AA AA AA A0. Os seis primeiros formam o OUI, o bloco que o fabricante recebe do IEEE. Os seis ultimos sao o numero de serie da placa, que o fabricante nao repete dentro do bloco dele. Cada digito vale 4 bits, e 12 digitos vezes 4 bits somam 48 bits">
+<figcaption class="au-legenda">A unicidade no mundo inteiro não vem de um cadastro central de placas: vem de <b>dividir a responsabilidade em duas</b>. O IEEE garante que dois fabricantes não recebem o mesmo OUI; cada fabricante garante que não repete série dentro do bloco dele.</figcaption>
+</figure>
+
+O endereço é único no mundo, e ninguém precisou consultar ninguém para isso. Cada dígito hexadecimal carrega 4 bits, então 48 bits cabem em 12 dígitos — e o corte no meio separa quem fabricou de qual placa é.
 
 ### 1.2 O mesmo endereço aparece escrito de duas maneiras diferentes
 
-> [!WARNING] ⚠️ Gotcha
-> - `AA:AA:AA:AA:AA:A0` — de dois em dois dígitos, com dois-pontos. É como o **Windows e o Linux** mostram.
-> - `aaaa.aaaa.aaa0` — de quatro em quatro, com ponto. É como o **IOS da Cisco** mostra.
->
-> **É o mesmo endereço:** os 12 dígitos são os mesmos, na mesma ordem. Muda só onde caem os separadores e se as letras estão em maiúscula. Quem não sabe disso acha que a saída do switch mostra uma máquina diferente da que configurou.
+| | Como se escreve | Onde você vê |
+| :--- | :--- | :--- |
+| **Dois-pontos** | `AA:AA:AA:AA:AA:A0` | Windows e Linux — `ipconfig`, `ip link` |
+| **Ponto** | `aaaa.aaaa.aaa0` | IOS da Cisco — `show mac address-table` |
+
+**É o mesmo endereço.** Os 12 dígitos são os mesmos, na mesma ordem; muda só onde caem os separadores e se as letras estão em maiúscula. Quem não sabe disso acha que a saída do switch mostra uma máquina diferente da que configurou — e vai caçar um defeito que não existe.
 
 ### 1.3 O A sabe o IP do C e não sabe o MAC dele
 
@@ -433,6 +439,8 @@ Não é falha do ARP — é falha de **tamanho**. E tamanho não se resolve com 
 | **Quem corta broadcast** | O roteador — ou a VLAN, que é a próxima aula. |
 
 </div>
+
+<hr class="au-fim-aula">
 
 <div class="au-reflexao">
 <b>Para pensar até a próxima aula</b>

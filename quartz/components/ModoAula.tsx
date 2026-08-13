@@ -43,6 +43,13 @@ ModoAula.css = `
 }
 .au-botao-aula span { font-size: 0.7rem; }
 
+/* o marcador de fim de aula: daqui para baixo é material de estudo, não de sala */
+.au-fim-aula {
+  border: 0;
+  border-top: 1px dashed var(--au-bd, #e8e6e0);
+  margin: 2.75rem 0 2rem;
+}
+
 /* ── com o modo ligado, a página de leitura sai de cena ── */
 html.au-modo-aula,
 html.au-modo-aula body { overflow: hidden; height: 100%; }
@@ -90,6 +97,14 @@ html.au-modo-aula body > *:not(.au-palco):not(.au-hud) { display: none !importan
   border-left: 5px solid var(--au-par-laranja, #d9702a);
 }
 
+/* o divisor: um h2 que só anuncia a seção. Não é bloco sem prova — é
+   sinalização, que é o que dá ao aluno o mapa da organização do material. */
+.au-tela-divisor { justify-content: center; }
+.au-tela-divisor .au-tela-afirmacao {
+  font-size: clamp(2.2rem, 4.6vw, 4.4rem);
+  max-width: 20ch;
+}
+
 /* ── camada 2: a prova ── */
 .au-tela-prova {
   flex: 1;
@@ -119,6 +134,29 @@ html.au-modo-aula body > *:not(.au-palco):not(.au-hud) { display: none !importan
   max-width: 70ch;
   margin-inline: auto !important;
 }
+
+/* o Mermaid traz o próprio dimensionamento e entra pequeno demais na projeção:
+   aqui ele é forçado a ocupar a tela, que é o que uma prova visual deve fazer */
+.au-tela-prova pre {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+}
+/* code é inline por padrão, e largura não se aplica a elemento inline —
+   sem este display:block o diagrama fica minúsculo na projeção */
+.au-tela-prova pre > code.mermaid,
+.au-tela-prova .mermaid { display: block; width: 100%; }
+.au-tela-prova :is(pre, code.mermaid, .mermaid) > svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 66vh;
+}
+/* o botão de expandir do bloco de código não tem função projetado */
+.au-tela-prova .expand-button,
+.au-tela-prova .clipboard-button { display: none !important; }
 
 /* terminal e tabela: piso de legibilidade a distância */
 .au-tela-prova .au-term { font-size: clamp(0.95rem, 1.25vw, 1.45rem); }

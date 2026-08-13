@@ -129,7 +129,7 @@ Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há
 
 ---
 
-## 📌 1. Ambiente pronto: NetAcad + Packet Tracer [Mão na massa ⏳ 15 min]
+## 📌 1. A conta na Cisco é a parte que demora, não o download [Mão na massa ⏳ 15 min]
 
 O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratuito, roda em Windows, macOS e Linux, e exige uma conta gratuita na Cisco Networking Academy — **a conta é a parte que demora**, não o download.
 
@@ -150,11 +150,11 @@ O Packet Tracer é o laboratório desta disciplina por 20 semanas. Ele é gratui
 
 ---
 
-## 📌 2. O método: um defeito resolvido no projetor [Exemplo resolvido ⏳ 8 min]
+## 📌 2. Diagnosticar é subir uma camada por vez, e só subir quando a de baixo está provada [Exemplo resolvido ⏳ 8 min]
 
 Antes de você caçar, você vê **um** defeito ser caçado na sua frente, com cada pergunta dita em voz alta. Não é para você decorar a resposta: é para você copiar **a sequência de perguntas**.
 
-### 2.1 A sequência
+### 2.1 Cada resposta elimina um conjunto inteiro de causas
 
 A regra é subir uma camada por vez, e **só subir quando a de baixo estiver provada**. Cada resposta elimina um conjunto inteiro de causas — é isso que separa diagnóstico de tentativa e erro.
 
@@ -179,7 +179,7 @@ graph TD
 
 > Mesma convenção de cor de todos os diagramas do semestre: **laranja = camada física**, **azul = camada de rede**, **marrom = camada de aplicação**, **verde = resolvido**.
 
-### 2.2 O passo que quase todo mundo pula
+### 2.2 Pingar o vizinho antes da internet divide o problema em dois
 
 O passo mais valioso do fluxo é o segundo, e é o mais ignorado: **pingar alguém da própria sub-rede antes de pingar a internet.**
 
@@ -236,7 +236,7 @@ E aqui vem a parte que confunde: o roteador **pode** encaminhar esse tráfego de
 
 ---
 
-## 📌 3. O cenário: uma rede de campus com quatro defeitos [Exemplo resolvido ⏳ 15 min]
+## 📌 3. Quatro defeitos numa rede de campus, e nada aqui é conteúdo novo [Exemplo resolvido ⏳ 15 min]
 
 Três sub-redes diretamente conectadas num roteador. Sem protocolo de roteamento, sem VLAN, sem nada que você ainda não tenha visto — **roteamento dinâmico é a S11, VLAN é a S03.** Hoje é tudo Redes I.
 
@@ -312,7 +312,7 @@ Eu abro o cenário no projetor e mostro **um sintoma por vez**. Para cada um, an
 >
 > São seis laboratórios valendo ponto no semestre (Lab 0 a Lab 5) e contam **os cinco melhores** — o sexto é a sua margem para um dia ruim.
 
-### Terminou antes? A quebra deliberada
+### Terminou antes? O que você leva não é o defeito, é como você o achou
 
 Nos laboratórios com cenário na máquina, quando a sua dupla fechar 100% antes do tempo, eu vou até ela, derrubo alguma coisa no roteador e digo só isto:
 
@@ -322,7 +322,7 @@ Não é castigo por ser rápido: é o formato dos laboratórios a partir da S02,
 
 ---
 
-## 🧭 Revisão com a sala — de baixo para cima (7 min)
+## 🧭 A revisão sobe as camadas, porque é assim que se diagnostica (7 min)
 
 A revisão é **ao vivo, com a sala**. Eu não vou do mais fácil ao mais difícil: subo as camadas, porque é assim que se diagnostica. Esta página não adianta as respostas — se você chegar sabendo o que está quebrado, você não diagnosticou nada, só digitou.
 
@@ -389,6 +389,8 @@ O que você responder aqui **abre a aula da semana que vem** — os assuntos mai
 
 </div>
 
+<hr class="au-fim-aula">
+
 <div class="au-podcast">
 <p><b>🎧 Revisão em áudio (~10 min)</b> — gerada por IA a partir desta página, para ouvir no trajeto. O áudio complementa; a página é a fonte.</p>
 <p><i>Disponível em breve.</i></p>
@@ -436,3 +438,5 @@ O que você responder aqui **abre a aula da semana que vem** — os assuntos mai
 **◀ [Voltar ao índice da disciplina](./)**
 
 </div>
+
+---

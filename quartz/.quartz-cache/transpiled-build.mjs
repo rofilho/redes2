@@ -865,7 +865,7 @@ footer ul {
     text-align: left;
   }
 }
-`;var LessonNavigation_default=__name((()=>LessonNavigation),"default");var modoaula_inline_default='var p=["figure.au-fig",".au-term","table",".au-pratica",".au-resumo",".au-slot",".au-caminho","details.au-aposta"].join(","),h=[".au-antes",".au-refs",".au-proxima",".au-reflexao",".au-podcast",".au-aposta-nota"].join(",");function E(s){let o=[],t=null;for(let a of Array.from(s.children))if(!a.matches(h)){if(a.tagName==="H2"){t={titulo:a,nos:[]},o.push(t);continue}if(!t){a.matches(p)&&(t={titulo:null,nos:[a]},o.push(t),t=null);continue}if(a.tagName==="H3"){t={titulo:a,nos:[]},o.push(t);continue}a.matches(p)&&t.nos.push(a)}return o}function v(s){let o=document.createElement("div");return o.className="au-palco",s.forEach((t,a)=>{let l=document.createElement("section");if(l.className="au-tela",l.dataset.n=String(a+1),t.titulo){let e=document.createElement("div");e.className="au-tela-afirmacao";let r=t.titulo.cloneNode(!0);r.querySelectorAll("a[role=\'anchor\'], .au-selo").forEach(i=>i.remove()),e.textContent=(r.textContent??"").replace(/\\s*\\[[^\\]]*\\]\\s*$/,"").trim(),e.dataset.nivel=t.titulo.tagName,l.appendChild(e)}if(t.nos.length===0){let e=document.createElement("div");e.className="au-tela-vazia",e.textContent="Sem prova visual. Este bloco era narra\\xE7\\xE3o \\u2014 no padr\\xE3o, ele n\\xE3o sobe a t\\xEDtulo.",l.appendChild(e)}else{let e=document.createElement("div");e.className="au-tela-prova",t.nos.forEach(r=>e.appendChild(r.cloneNode(!0))),l.appendChild(e)}o.appendChild(l)}),o}document.addEventListener("nav",()=>{let s=document.querySelector(".au-leitura"),o=document.documentElement;if(document.querySelectorAll(".au-palco, .au-hud, .au-botao-aula").forEach(n=>n.remove()),o.classList.remove("au-modo-aula"),!s)return;let t=E(s);if(t.length===0)return;let a=0,l=null,e=null,r=()=>{!l||!e||(Array.from(l.children).forEach((n,u)=>n.classList.toggle("on",u===a)),e.querySelector(".au-hud-n").textContent=`${a+1} / ${t.length}`,e.querySelector(".au-hud-bar i").style.width=`${(a+1)/t.length*100}%`)},i=n=>{let u=a+n;u<0||u>=t.length||(a=u,r())},f=()=>{o.classList.remove("au-modo-aula"),l?.remove(),e?.remove(),l=null,e=null,document.removeEventListener("keydown",d)},d=n=>{if(o.classList.contains("au-modo-aula")){if(n.key==="Escape")return f();if(["ArrowRight","ArrowDown","PageDown"," "].includes(n.key))return n.preventDefault(),i(1);if(["ArrowLeft","ArrowUp","PageUp"].includes(n.key))return n.preventDefault(),i(-1)}},m=()=>{a=0,l=v(t),e=document.createElement("div"),e.className="au-hud",e.innerHTML=\'<span class="au-hud-n"></span><span class="au-hud-bar"><i></i></span><span class="au-hud-dica">\\u2190 \\u2192 navega \\xB7 Esc sai</span>\',document.body.appendChild(l),document.body.appendChild(e),o.classList.add("au-modo-aula"),document.addEventListener("keydown",d),r()},c=document.createElement("button");c.className="au-botao-aula",c.type="button",c.title="Modo Aula \\u2014 projetar (tecla A)",c.innerHTML="<span>\\u25B6</span> Modo Aula",c.addEventListener("click",m),s.parentElement?.insertBefore(c,s),document.addEventListener("keydown",n=>{if(o.classList.contains("au-modo-aula"))return;let u=n.target;u&&/^(INPUT|TEXTAREA|SELECT)$/.test(u.tagName)||(n.key==="a"||n.key==="A")&&m()})});\n';var ModoAula=__name(()=>null,"ModoAula");ModoAula.afterDOMLoaded=modoaula_inline_default;ModoAula.css=`
+`;var LessonNavigation_default=__name((()=>LessonNavigation),"default");var modoaula_inline_default='var f=["figure.au-fig",".au-term","table","pre","ol","blockquote:not(.callout)",".au-pratica",".au-resumo",".au-slot",".au-caminho","details.au-aposta"].join(","),h=[".au-antes",".au-refs",".au-proxima",".au-reflexao",".au-podcast",".au-aposta-nota"].join(",");function v(s){let a=[],e=null;for(let o of Array.from(s.children)){if(o.matches("hr.au-fim-aula"))break;if(!o.matches(h)){if(o.tagName==="H2"){e={titulo:o,nos:[],divisor:!1},a.push(e);continue}if(!e){o.matches(f)&&a.push({titulo:null,nos:[o],divisor:!1});continue}if(o.tagName==="H3"){e.titulo?.tagName==="H2"&&e.nos.length===0&&(e.divisor=!0),e={titulo:o,nos:[],divisor:!1},a.push(e);continue}o.matches(f)&&e.nos.push(o)}}return a}function E(s){let a=[];for(let e of s){if(e.nos.length===0){a.push({titulo:e.titulo,no:null,divisor:e.divisor});continue}for(let o of e.nos)a.push({titulo:e.titulo,no:o,divisor:!1})}return a}function L(s){let a=document.createElement("div");return a.className="au-palco",s.forEach((e,o)=>{let l=document.createElement("section");if(l.className=e.divisor?"au-tela au-tela-divisor":"au-tela",l.dataset.n=String(o+1),e.titulo){let t=document.createElement("div");t.className="au-tela-afirmacao";let i=e.titulo.cloneNode(!0);i.querySelectorAll("a[role=\'anchor\'], .au-selo").forEach(c=>c.remove()),t.textContent=(i.textContent??"").replace(/\\s*\\[[^\\]]*\\]\\s*$/,"").trim(),t.dataset.nivel=e.titulo.tagName,l.appendChild(t)}if(e.no){let t=document.createElement("div");t.className="au-tela-prova",t.appendChild(e.no.cloneNode(!0)),l.appendChild(t)}else if(!e.divisor){let t=document.createElement("div");t.className="au-tela-vazia",t.textContent="Sem prova visual. Este bloco era narra\\xE7\\xE3o \\u2014 no padr\\xE3o, ele n\\xE3o sobe a t\\xEDtulo.",l.appendChild(t)}a.appendChild(l)}),a}document.addEventListener("nav",()=>{let s=document.querySelector(".au-leitura"),a=document.documentElement;if(document.querySelectorAll(".au-palco, .au-hud, .au-botao-aula").forEach(n=>n.remove()),a.classList.remove("au-modo-aula"),!s)return;let e=E(v(s));if(e.length===0)return;let o=0,l=null,t=null,i=()=>{!l||!t||(Array.from(l.children).forEach((n,u)=>n.classList.toggle("on",u===o)),t.querySelector(".au-hud-n").textContent=`${o+1} / ${e.length}`,t.querySelector(".au-hud-bar i").style.width=`${(o+1)/e.length*100}%`)},c=n=>{let u=o+n;u<0||u>=e.length||(o=u,i())},p=()=>{a.classList.remove("au-modo-aula"),l?.remove(),t?.remove(),l=null,t=null,document.removeEventListener("keydown",d)},d=n=>{if(a.classList.contains("au-modo-aula")){if(n.key==="Escape")return p();if(["ArrowRight","ArrowDown","PageDown"," "].includes(n.key))return n.preventDefault(),c(1);if(["ArrowLeft","ArrowUp","PageUp"].includes(n.key))return n.preventDefault(),c(-1)}},m=()=>{o=0,l=L(e),t=document.createElement("div"),t.className="au-hud",t.innerHTML=\'<span class="au-hud-n"></span><span class="au-hud-bar"><i></i></span><span class="au-hud-dica">\\u2190 \\u2192 navega \\xB7 Esc sai</span>\',document.body.appendChild(l),document.body.appendChild(t),a.classList.add("au-modo-aula"),document.addEventListener("keydown",d),i()},r=document.createElement("button");r.className="au-botao-aula",r.type="button",r.title="Modo Aula \\u2014 projetar (tecla A)",r.innerHTML="<span>\\u25B6</span> Modo Aula",r.addEventListener("click",m),s.parentElement?.insertBefore(r,s),document.addEventListener("keydown",n=>{if(a.classList.contains("au-modo-aula"))return;let u=n.target;u&&/^(INPUT|TEXTAREA|SELECT)$/.test(u.tagName)||(n.key==="a"||n.key==="A")&&m()})});\n';var ModoAula=__name(()=>null,"ModoAula");ModoAula.afterDOMLoaded=modoaula_inline_default;ModoAula.css=`
 /* ==========================================================================
    MODO AULA \u2014 a p\xE1gina renderizada para proje\xE7\xE3o
    --------------------------------------------------------------------------
@@ -898,6 +898,13 @@ footer ul {
   transform: translateY(-1px);
 }
 .au-botao-aula span { font-size: 0.7rem; }
+
+/* o marcador de fim de aula: daqui para baixo \xE9 material de estudo, n\xE3o de sala */
+.au-fim-aula {
+  border: 0;
+  border-top: 1px dashed var(--au-bd, #e8e6e0);
+  margin: 2.75rem 0 2rem;
+}
 
 /* \u2500\u2500 com o modo ligado, a p\xE1gina de leitura sai de cena \u2500\u2500 */
 html.au-modo-aula,
@@ -946,6 +953,14 @@ html.au-modo-aula body > *:not(.au-palco):not(.au-hud) { display: none !importan
   border-left: 5px solid var(--au-par-laranja, #d9702a);
 }
 
+/* o divisor: um h2 que s\xF3 anuncia a se\xE7\xE3o. N\xE3o \xE9 bloco sem prova \u2014 \xE9
+   sinaliza\xE7\xE3o, que \xE9 o que d\xE1 ao aluno o mapa da organiza\xE7\xE3o do material. */
+.au-tela-divisor { justify-content: center; }
+.au-tela-divisor .au-tela-afirmacao {
+  font-size: clamp(2.2rem, 4.6vw, 4.4rem);
+  max-width: 20ch;
+}
+
 /* \u2500\u2500 camada 2: a prova \u2500\u2500 */
 .au-tela-prova {
   flex: 1;
@@ -975,6 +990,29 @@ html.au-modo-aula body > *:not(.au-palco):not(.au-hud) { display: none !importan
   max-width: 70ch;
   margin-inline: auto !important;
 }
+
+/* o Mermaid traz o pr\xF3prio dimensionamento e entra pequeno demais na proje\xE7\xE3o:
+   aqui ele \xE9 for\xE7ado a ocupar a tela, que \xE9 o que uma prova visual deve fazer */
+.au-tela-prova pre {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+}
+/* code \xE9 inline por padr\xE3o, e largura n\xE3o se aplica a elemento inline \u2014
+   sem este display:block o diagrama fica min\xFAsculo na proje\xE7\xE3o */
+.au-tela-prova pre > code.mermaid,
+.au-tela-prova .mermaid { display: block; width: 100%; }
+.au-tela-prova :is(pre, code.mermaid, .mermaid) > svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 66vh;
+}
+/* o bot\xE3o de expandir do bloco de c\xF3digo n\xE3o tem fun\xE7\xE3o projetado */
+.au-tela-prova .expand-button,
+.au-tela-prova .clipboard-button { display: none !important; }
 
 /* terminal e tabela: piso de legibilidade a dist\xE2ncia */
 .au-tela-prova .au-term { font-size: clamp(0.95rem, 1.25vw, 1.45rem); }

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img"
+     aria-label="Anatomia de um endereco MAC: os 12 digitos hexadecimais AA AA AA AA AA A0. Os seis primeiros formam o OUI, o bloco que o fabricante recebe do IEEE. Os seis ultimos sao o numero de serie da placa, que o fabricante nao repete dentro do bloco dele. Cada digito vale 4 bits, e 12 digitos vezes 4 bits somam 48 bits">
+  <!-- Fundo TRANSPARENTE: o mesmo arquivo serve aos tres modos.
+       Nenhum traco e preto — preto sumiria no modo escuro. -->
+
+  <!-- os 12 digitos -->
+  <g font-family="monospace" font-size="30" font-weight="bold" text-anchor="middle">
+    <text x="76"  y="80" fill="#2778c4">A</text>
+    <text x="118" y="80" fill="#2778c4">A</text>
+    <text x="160" y="80" fill="#2778c4">A</text>
+    <text x="202" y="80" fill="#2778c4">A</text>
+    <text x="244" y="80" fill="#2778c4">A</text>
+    <text x="286" y="80" fill="#2778c4">A</text>
+    <text x="370" y="80" fill="#8a8f98">A</text>
+    <text x="412" y="80" fill="#8a8f98">A</text>
+    <text x="454" y="80" fill="#8a8f98">A</text>
+    <text x="496" y="80" fill="#8a8f98">A</text>
+    <text x="538" y="80" fill="#8a8f98">A</text>
+    <text x="580" y="80" fill="#8a8f98">0</text>
+  </g>
+
+  <!-- as duas metades -->
+  <path d="M58 96 L58 112 L304 112 L304 96" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <path d="M352 96 L352 112 L598 112 L598 96" fill="none" stroke="#8a8f98" stroke-width="2"/>
+
+  <g font-family="monospace" text-anchor="middle">
+    <text x="181" y="134" font-size="14" font-weight="bold" fill="#2778c4">OUI · 6 digitos</text>
+    <text x="181" y="154" font-size="12" fill="#2778c4">quem fabricou a placa</text>
+    <text x="181" y="172" font-size="11" fill="#8a8f98">o bloco vem do IEEE</text>
+
+    <text x="475" y="134" font-size="14" font-weight="bold" fill="#8a8f98">serie · 6 digitos</text>
+    <text x="475" y="154" font-size="12" fill="#8a8f98">qual placa daquele fabricante</text>
+    <text x="475" y="172" font-size="11" fill="#8a8f98">ele nao repete dentro do bloco dele</text>
+  </g>
+
+  <!-- A SINALIZACAO: um destaque so por figura -->
+  <rect x="58" y="204" width="540" height="40" rx="8" fill="none" stroke="#d9702a" stroke-width="2"/>
+  <text x="328" y="230" text-anchor="middle" font-family="monospace" font-size="15" font-weight="bold" fill="#d9702a">12 digitos x 4 bits por digito = 48 bits</text>
+
+  <text x="328" y="272" text-anchor="middle" font-family="monospace" font-size="12" fill="#8a8f98">cada digito hexadecimal carrega 4 bits — e por isso 48 bits cabem em 12 digitos</text>
+</svg>

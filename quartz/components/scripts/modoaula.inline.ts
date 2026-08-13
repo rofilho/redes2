@@ -11,10 +11,20 @@
 //
 // Ver _CEREBRO/PADRAO_APRESENTACAO_AULA.md (fonte de verdade do padrão).
 
+// Camada 2: o que serve de prova na tela.
+// `pre` cobre o diagrama Mermaid e o bloco de código — os dois são literais.
+// `ol` entra porque lista numerada é sequência a executar, não narração: num
+// bloco de mão na massa, é justamente o que o aluno precisa ver enquanto faz.
+// `ul` fica de fora — lista com marcador é enumeração narrada.
+// `blockquote:not(.callout)` é a citação projetada; callout do Obsidian é nota,
+// e nota é narração.
 const PROVA = [
   "figure.au-fig",
   ".au-term",
   "table",
+  "pre",
+  "ol",
+  "blockquote:not(.callout)",
   ".au-pratica",
   ".au-resumo",
   ".au-slot",
@@ -32,36 +42,40 @@ const APARATO = [
   ".au-aposta-nota",
 ].join(",")
 
-type Passo = { titulo: HTMLElement | null; nos: HTMLElement[] }
+type Bloco = { titulo: HTMLElement | null; nos: HTMLElement[]; divisor: boolean }
+type Passo = { titulo: HTMLElement | null; no: HTMLElement | null; divisor: boolean }
 
-function montarPassos(raiz: HTMLElement): Passo[] {
-  const passos: Passo[] = []
-  let atual: Passo | null = null
+function montarBlocos(raiz: HTMLElement): Bloco[] {
+  const blocos: Bloco[] = []
+  let atual: Bloco | null = null
 
   for (const no of Array.from(raiz.children) as HTMLElement[]) {
+    // A aula acaba aqui. Daqui para baixo é aparato — questões, "para ir além",
+    // referências — que existe para o estudo em casa e nunca projeta.
+    if (no.matches("hr.au-fim-aula")) break
+
     if (no.matches(APARATO)) continue
 
-    // Um h2 abre um passo novo. É a camada 1: a afirmação.
+    // Um h2 abre um bloco novo. É a camada 1: a afirmação.
     if (no.tagName === "H2") {
-      atual = { titulo: no, nos: [] }
-      passos.push(atual)
+      atual = { titulo: no, nos: [], divisor: false }
+      blocos.push(atual)
       continue
     }
 
     // Antes do primeiro h2 vive a abertura (o caminho, a recuperação).
     if (!atual) {
-      if (no.matches(PROVA)) {
-        atual = { titulo: null, nos: [no] }
-        passos.push(atual)
-        atual = null
-      }
+      if (no.matches(PROVA)) blocos.push({ titulo: null, nos: [no], divisor: false })
       continue
     }
 
-    // h3 é sub-afirmação: abre passo próprio, herdando o contexto do h2.
+    // h3 é sub-afirmação: abre bloco próprio. E se ele vier logo depois de um h2
+    // ainda vazio, aquele h2 não era um bloco sem prova — era o anúncio da
+    // seção. Vira divisor, que é sinalização (Mayer), não defeito.
     if (no.tagName === "H3") {
-      atual = { titulo: no, nos: [] }
-      passos.push(atual)
+      if (atual.titulo?.tagName === "H2" && atual.nos.length === 0) atual.divisor = true
+      atual = { titulo: no, nos: [], divisor: false }
+      blocos.push(atual)
       continue
     }
 
@@ -71,9 +85,23 @@ function montarPassos(raiz: HTMLElement): Passo[] {
     // Todo o resto é camada 3 (narração) — fica no arquivo, não na tela.
   }
 
-  // Passo sem prova nenhuma continua existindo de propósito: na tela ele aparece
-  // com o aviso de vazio, e é assim que o professor descobre, ensaiando, que
-  // escreveu um título que era narração disfarçada.
+  return blocos
+}
+
+// Uma prova por tela. Duas evidências disputando a mesma tela é atenção
+// dividida; separadas, com a afirmação repetida, viram segmentação.
+// Bloco sem prova nenhuma e que não é divisor continua aparecendo com o aviso
+// de vazio — é assim que o professor descobre, ensaiando, que escreveu um
+// título que era narração disfarçada.
+function montarPassos(blocos: Bloco[]): Passo[] {
+  const passos: Passo[] = []
+  for (const b of blocos) {
+    if (b.nos.length === 0) {
+      passos.push({ titulo: b.titulo, no: null, divisor: b.divisor })
+      continue
+    }
+    for (const no of b.nos) passos.push({ titulo: b.titulo, no, divisor: false })
+  }
   return passos
 }
 
@@ -83,7 +111,7 @@ function montarPalco(passos: Passo[]): HTMLElement {
 
   passos.forEach((p, i) => {
     const tela = document.createElement("section")
-    tela.className = "au-tela"
+    tela.className = p.divisor ? "au-tela au-tela-divisor" : "au-tela"
     tela.dataset.n = String(i + 1)
 
     if (p.titulo) {
@@ -97,17 +125,17 @@ function montarPalco(passos: Passo[]): HTMLElement {
       tela.appendChild(h)
     }
 
-    if (p.nos.length === 0) {
+    if (p.no) {
+      const corpo = document.createElement("div")
+      corpo.className = "au-tela-prova"
+      corpo.appendChild(p.no.cloneNode(true))
+      tela.appendChild(corpo)
+    } else if (!p.divisor) {
       const vazio = document.createElement("div")
       vazio.className = "au-tela-vazia"
       vazio.textContent =
         "Sem prova visual. Este bloco era narração — no padrão, ele não sobe a título."
       tela.appendChild(vazio)
-    } else {
-      const corpo = document.createElement("div")
-      corpo.className = "au-tela-prova"
-      p.nos.forEach((n) => corpo.appendChild(n.cloneNode(true)))
-      tela.appendChild(corpo)
     }
 
     palco.appendChild(tela)
@@ -126,7 +154,7 @@ document.addEventListener("nav", () => {
 
   if (!artigo) return
 
-  const passos = montarPassos(artigo)
+  const passos = montarPassos(montarBlocos(artigo))
   if (passos.length === 0) return
 
   let i = 0
