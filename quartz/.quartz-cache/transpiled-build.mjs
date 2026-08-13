@@ -865,7 +865,169 @@ footer ul {
     text-align: left;
   }
 }
-`;var LessonNavigation_default=__name((()=>LessonNavigation),"default");var sharedPageComponents={head:Head_default(),header:[PageTitle_default(),Search_default(),Darkmode_default()],afterBody:[],footer:Footer_default({links:{"Mural Uniube":"https://uniube.br"}})},defaultContentPageLayout={beforeBody:[ConditionalRender_default({component:Breadcrumbs_default(),condition:__name(page=>page.fileData.slug!=="index","condition")}),LessonNavigation_default(),ArticleTitle_default(),ContentMeta_default(),TagList_default()],left:[],right:[]},defaultListPageLayout={beforeBody:[Breadcrumbs_default(),ArticleTitle_default(),ContentMeta_default()],left:[],right:[]};import{styleText as styleText8}from"util";async function processContent(ctx,tree,fileData,allFiles,opts,resources){let slug=fileData.slug,cfg=ctx.cfg.configuration,externalResources=pageResources(pathToRoot(slug),resources),content=renderPage(cfg,slug,{ctx,fileData,externalResources,cfg,children:[],tree,allFiles},opts,externalResources);return write({ctx,content,slug,ext:".html"})}__name(processContent,"processContent");var ContentPage=__name(userOpts=>{let opts={...sharedPageComponents,...defaultContentPageLayout,pageBody:Content_default(),...userOpts},{head:Head,header,beforeBody,pageBody,afterBody,left,right,footer:Footer}=opts,Header2=Header_default(),Body2=Body_default();return{name:"ContentPage",getQuartzComponents(){return[Head,Header2,Body2,...header,...beforeBody,pageBody,...afterBody,...left,...right,Footer]},async*emit(ctx,content,resources){let allFiles=content.map(c=>c[1].data),containsIndex=!1;for(let[tree,file]of content){let slug=file.data.slug;slug==="index"&&(containsIndex=!0),!(slug.endsWith("/index")||slug.startsWith("tags/"))&&(yield processContent(ctx,tree,file.data,allFiles,opts,resources))}containsIndex||console.log(styleText8("yellow",`
+`;var LessonNavigation_default=__name((()=>LessonNavigation),"default");var modoaula_inline_default='var p=["figure.au-fig",".au-term","table",".au-pratica",".au-resumo",".au-slot",".au-caminho","details.au-aposta"].join(","),h=[".au-antes",".au-refs",".au-proxima",".au-reflexao",".au-podcast",".au-aposta-nota"].join(",");function E(s){let o=[],t=null;for(let a of Array.from(s.children))if(!a.matches(h)){if(a.tagName==="H2"){t={titulo:a,nos:[]},o.push(t);continue}if(!t){a.matches(p)&&(t={titulo:null,nos:[a]},o.push(t),t=null);continue}if(a.tagName==="H3"){t={titulo:a,nos:[]},o.push(t);continue}a.matches(p)&&t.nos.push(a)}return o}function v(s){let o=document.createElement("div");return o.className="au-palco",s.forEach((t,a)=>{let l=document.createElement("section");if(l.className="au-tela",l.dataset.n=String(a+1),t.titulo){let e=document.createElement("div");e.className="au-tela-afirmacao";let r=t.titulo.cloneNode(!0);r.querySelectorAll("a[role=\'anchor\'], .au-selo").forEach(i=>i.remove()),e.textContent=(r.textContent??"").replace(/\\s*\\[[^\\]]*\\]\\s*$/,"").trim(),e.dataset.nivel=t.titulo.tagName,l.appendChild(e)}if(t.nos.length===0){let e=document.createElement("div");e.className="au-tela-vazia",e.textContent="Sem prova visual. Este bloco era narra\\xE7\\xE3o \\u2014 no padr\\xE3o, ele n\\xE3o sobe a t\\xEDtulo.",l.appendChild(e)}else{let e=document.createElement("div");e.className="au-tela-prova",t.nos.forEach(r=>e.appendChild(r.cloneNode(!0))),l.appendChild(e)}o.appendChild(l)}),o}document.addEventListener("nav",()=>{let s=document.querySelector(".au-leitura"),o=document.documentElement;if(document.querySelectorAll(".au-palco, .au-hud, .au-botao-aula").forEach(n=>n.remove()),o.classList.remove("au-modo-aula"),!s)return;let t=E(s);if(t.length===0)return;let a=0,l=null,e=null,r=()=>{!l||!e||(Array.from(l.children).forEach((n,u)=>n.classList.toggle("on",u===a)),e.querySelector(".au-hud-n").textContent=`${a+1} / ${t.length}`,e.querySelector(".au-hud-bar i").style.width=`${(a+1)/t.length*100}%`)},i=n=>{let u=a+n;u<0||u>=t.length||(a=u,r())},f=()=>{o.classList.remove("au-modo-aula"),l?.remove(),e?.remove(),l=null,e=null,document.removeEventListener("keydown",d)},d=n=>{if(o.classList.contains("au-modo-aula")){if(n.key==="Escape")return f();if(["ArrowRight","ArrowDown","PageDown"," "].includes(n.key))return n.preventDefault(),i(1);if(["ArrowLeft","ArrowUp","PageUp"].includes(n.key))return n.preventDefault(),i(-1)}},m=()=>{a=0,l=v(t),e=document.createElement("div"),e.className="au-hud",e.innerHTML=\'<span class="au-hud-n"></span><span class="au-hud-bar"><i></i></span><span class="au-hud-dica">\\u2190 \\u2192 navega \\xB7 Esc sai</span>\',document.body.appendChild(l),document.body.appendChild(e),o.classList.add("au-modo-aula"),document.addEventListener("keydown",d),r()},c=document.createElement("button");c.className="au-botao-aula",c.type="button",c.title="Modo Aula \\u2014 projetar (tecla A)",c.innerHTML="<span>\\u25B6</span> Modo Aula",c.addEventListener("click",m),s.parentElement?.insertBefore(c,s),document.addEventListener("keydown",n=>{if(o.classList.contains("au-modo-aula"))return;let u=n.target;u&&/^(INPUT|TEXTAREA|SELECT)$/.test(u.tagName)||(n.key==="a"||n.key==="A")&&m()})});\n';var ModoAula=__name(()=>null,"ModoAula");ModoAula.afterDOMLoaded=modoaula_inline_default;ModoAula.css=`
+/* ==========================================================================
+   MODO AULA \u2014 a p\xE1gina renderizada para proje\xE7\xE3o
+   --------------------------------------------------------------------------
+   Piso tipogr\xE1fico: nada abaixo do equivalente a 24 pt, que \xE9 o m\xEDnimo
+   recomendado para slide projetado a uma plateia ao vivo.
+   Fundo claro e texto escuro: sala clara e l\xE2mpada cansada lavam a imagem, e
+   cor clara sobre fundo claro some primeiro.
+   Fonte de verdade do padr\xE3o: _CEREBRO/PADRAO_APRESENTACAO_AULA.md
+   ========================================================================== */
+
+/* \u2500\u2500 o bot\xE3o de entrada \u2500\u2500 */
+.au-botao-aula {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--au-par-laranja, #d9702a) 45%, transparent);
+  background: color-mix(in srgb, var(--au-par-laranja, #d9702a) 10%, transparent);
+  color: var(--au-par-laranja, #d9702a);
+  font-family: var(--au-mono, monospace);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.au-botao-aula:hover {
+  background: color-mix(in srgb, var(--au-par-laranja, #d9702a) 18%, transparent);
+  transform: translateY(-1px);
+}
+.au-botao-aula span { font-size: 0.7rem; }
+
+/* \u2500\u2500 com o modo ligado, a p\xE1gina de leitura sai de cena \u2500\u2500 */
+html.au-modo-aula,
+html.au-modo-aula body { overflow: hidden; height: 100%; }
+html.au-modo-aula body > *:not(.au-palco):not(.au-hud) { display: none !important; }
+
+/* \u2500\u2500 o palco \u2500\u2500 */
+.au-palco {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: #fafaf8;
+  color: #2b2e35;
+}
+
+.au-tela {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5vh;
+  padding: 6vh 7vw 11vh;
+  overflow: hidden;
+}
+.au-tela.on { display: flex; }
+
+/* \u2500\u2500 camada 1: a afirma\xE7\xE3o \u2500\u2500
+   Frase completa, n\xE3o r\xF3tulo. \xC9 a diferen\xE7a medida em p < 0,01 entre a
+   estrutura afirma\xE7\xE3o-evid\xEAncia e o t\xEDtulo-t\xF3pico com bullets. */
+.au-tela-afirmacao {
+  font-family: var(--au-display, system-ui), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  font-size: clamp(1.9rem, 3.6vw, 3.4rem);
+  max-width: 22ch;
+  flex: none;
+}
+/* h3 \xE9 sub-afirma\xE7\xE3o: mesma fam\xEDlia, um degrau abaixo, e uma marca \xE0 esquerda
+   para o aluno saber que continua dentro do bloco anterior. */
+.au-tela-afirmacao[data-nivel="H3"] {
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+  max-width: 26ch;
+  padding-left: 0.7em;
+  border-left: 5px solid var(--au-par-laranja, #d9702a);
+}
+
+/* \u2500\u2500 camada 2: a prova \u2500\u2500 */
+.au-tela-prova {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
+}
+.au-tela-prova > * { margin: 0 !important; max-width: none !important; }
+
+/* a figura manda: ela \xE9 a evid\xEAncia, e ocupa o que sobrar */
+.au-tela-prova figure.au-fig,
+.au-tela-prova figure.au-fig img,
+.au-tela-prova svg {
+  max-height: 62vh;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+/* a legenda diz o que SIGNIFICA \u2014 e por isso continua na tela, ao contr\xE1rio
+   da narra\xE7\xE3o. Mas em corpo menor: ela apoia a figura, n\xE3o compete com ela. */
+.au-tela-prova .au-legenda {
+  font-size: clamp(0.95rem, 1.15vw, 1.25rem);
+  line-height: 1.4;
+  text-align: center;
+  max-width: 70ch;
+  margin-inline: auto !important;
+}
+
+/* terminal e tabela: piso de legibilidade a dist\xE2ncia */
+.au-tela-prova .au-term { font-size: clamp(0.95rem, 1.25vw, 1.45rem); }
+.au-tela-prova .au-term-b { line-height: 1.6; }
+.au-tela-prova table { font-size: clamp(0.95rem, 1.3vw, 1.5rem); width: 100%; }
+.au-tela-prova table :is(td, th) { padding: 0.6em 0.8em; }
+
+/* a pr\xE1tica vira checklist projet\xE1vel: um item por linha, confer\xEDvel de longe */
+.au-tela-prova .au-pratica li { font-size: clamp(1rem, 1.4vw, 1.6rem); margin-bottom: 0.5em; }
+
+/* a aposta: a pergunta ocupa a tela; a resposta s\xF3 aparece quando o professor
+   abre. \xC9 o Prever-Observar-Explicar, mecanizado. */
+.au-tela-prova details.au-aposta > summary {
+  font-size: clamp(1.2rem, 2vw, 2.1rem);
+  line-height: 1.25;
+  font-weight: 600;
+}
+.au-tela-prova details.au-aposta :is(p, li) { font-size: clamp(1rem, 1.3vw, 1.5rem); }
+.au-tela-prova .au-caminho summary { font-size: clamp(1.05rem, 1.6vw, 1.8rem); }
+
+/* o bloco que n\xE3o tem prova \u2014 o defeito aparece ensaiando, n\xE3o em sala */
+.au-tela-vazia {
+  font-family: var(--au-mono, monospace);
+  font-size: 1rem;
+  color: #a33c33;
+  border: 1px dashed #d7a8a2;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  background: #fdf5f4;
+}
+
+/* \u2500\u2500 o HUD \u2500\u2500 */
+.au-hud {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 9001;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.7rem 2.5vw;
+  background: #fafaf8;
+  border-top: 1px solid #e8e6e0;
+  font-family: var(--au-mono, monospace);
+  font-size: 0.85rem;
+  color: #8a8f98;
+}
+.au-hud-n { font-weight: 700; color: #2b2e35; }
+.au-hud-bar { flex: 1; height: 3px; background: #e8e6e0; border-radius: 2px; overflow: hidden; }
+.au-hud-bar i { display: block; height: 100%; background: var(--au-par-laranja, #d9702a); transition: width 180ms ease; }
+.au-hud-dica { letter-spacing: 0.05em; }
+
+@media print { .au-botao-aula { display: none; } }
+`;var ModoAula_default=__name((()=>ModoAula),"default");var sharedPageComponents={head:Head_default(),header:[PageTitle_default(),Search_default(),Darkmode_default()],afterBody:[],footer:Footer_default({links:{"Mural Uniube":"https://uniube.br"}})},defaultContentPageLayout={beforeBody:[ConditionalRender_default({component:Breadcrumbs_default(),condition:__name(page=>page.fileData.slug!=="index","condition")}),LessonNavigation_default(),ModoAula_default(),ArticleTitle_default(),ContentMeta_default(),TagList_default()],left:[],right:[]},defaultListPageLayout={beforeBody:[Breadcrumbs_default(),ArticleTitle_default(),ContentMeta_default()],left:[],right:[]};import{styleText as styleText8}from"util";async function processContent(ctx,tree,fileData,allFiles,opts,resources){let slug=fileData.slug,cfg=ctx.cfg.configuration,externalResources=pageResources(pathToRoot(slug),resources),content=renderPage(cfg,slug,{ctx,fileData,externalResources,cfg,children:[],tree,allFiles},opts,externalResources);return write({ctx,content,slug,ext:".html"})}__name(processContent,"processContent");var ContentPage=__name(userOpts=>{let opts={...sharedPageComponents,...defaultContentPageLayout,pageBody:Content_default(),...userOpts},{head:Head,header,beforeBody,pageBody,afterBody,left,right,footer:Footer}=opts,Header2=Header_default(),Body2=Body_default();return{name:"ContentPage",getQuartzComponents(){return[Head,Header2,Body2,...header,...beforeBody,pageBody,...afterBody,...left,...right,Footer]},async*emit(ctx,content,resources){let allFiles=content.map(c=>c[1].data),containsIndex=!1;for(let[tree,file]of content){let slug=file.data.slug;slug==="index"&&(containsIndex=!0),!(slug.endsWith("/index")||slug.startsWith("tags/"))&&(yield processContent(ctx,tree,file.data,allFiles,opts,resources))}containsIndex||console.log(styleText8("yellow",`
 Warning: you seem to be missing an \`index.md\` home page file at the root of your \`${ctx.argv.directory}\` folder (\`${path7.join(ctx.argv.directory,"index.md")} does not exist\`). This may cause errors when deploying.`))},async*partialEmit(ctx,content,resources,changeEvents){let allFiles=content.map(c=>c[1].data),changedSlugs=new Set;for(let changeEvent of changeEvents)changeEvent.file&&(changeEvent.type==="add"||changeEvent.type==="change")&&changedSlugs.add(changeEvent.file.data.slug);for(let[tree,file]of content){let slug=file.data.slug;changedSlugs.has(slug)&&(slug.endsWith("/index")||slug.startsWith("tags/")||(yield processContent(ctx,tree,file.data,allFiles,opts,resources)))}}}},"ContentPage");import{VFile}from"vfile";function defaultProcessedContent(vfileData){let root={type:"root",children:[]},vfile=new VFile("");return vfile.data=vfileData,[root,vfile]}__name(defaultProcessedContent,"defaultProcessedContent");function computeTagInfo(allFiles,content,locale){let tags=new Set(allFiles.flatMap(data=>data.frontmatter?.tags??[]).flatMap(getAllSegmentPrefixes));tags.add("index");let tagDescriptions=Object.fromEntries([...tags].map(tag=>{let title=tag==="index"?i18n(locale).pages.tagContent.tagIndex:`${i18n(locale).pages.tagContent.tag}: ${tag}`;return[tag,defaultProcessedContent({slug:joinSegments("tags",tag),frontmatter:{title,tags:[]}})]}));for(let[tree,file]of content){let slug=file.data.slug;if(slug.startsWith("tags/")){let tag=slug.slice(5);tags.has(tag)&&(tagDescriptions[tag]=[tree,file],file.data.frontmatter?.title===tag&&(file.data.frontmatter.title=`${i18n(locale).pages.tagContent.tag}: ${tag}`))}}return[tags,tagDescriptions]}__name(computeTagInfo,"computeTagInfo");async function processTagPage(ctx,tag,tagContent,allFiles,opts,resources){let slug=joinSegments("tags",tag),[tree,file]=tagContent,cfg=ctx.cfg.configuration,externalResources=pageResources(pathToRoot(slug),resources),componentData={ctx,fileData:file.data,externalResources,cfg,children:[],tree,allFiles},content=renderPage(cfg,slug,componentData,opts,externalResources);return write({ctx,content,slug:file.data.slug,ext:".html"})}__name(processTagPage,"processTagPage");var TagPage=__name(userOpts=>{let opts={...sharedPageComponents,...defaultListPageLayout,pageBody:TagContent_default({sort:userOpts?.sort}),...userOpts},{head:Head,header,beforeBody,pageBody,afterBody,left,right,footer:Footer}=opts,Header2=Header_default(),Body2=Body_default();return{name:"TagPage",getQuartzComponents(){return[Head,Header2,Body2,...header,...beforeBody,pageBody,...afterBody,...left,...right,Footer]},async*emit(ctx,content,resources){let allFiles=content.map(c=>c[1].data),cfg=ctx.cfg.configuration,[tags,tagDescriptions]=computeTagInfo(allFiles,content,cfg.locale);for(let tag of tags)yield processTagPage(ctx,tag,tagDescriptions[tag],allFiles,opts,resources)},async*partialEmit(ctx,content,resources,changeEvents){let allFiles=content.map(c=>c[1].data),cfg=ctx.cfg.configuration,affectedTags=new Set;for(let changeEvent of changeEvents){if(!changeEvent.file)continue;let slug=changeEvent.file.data.slug;if(slug.startsWith("tags/")){let tag=slug.slice(5);affectedTags.add(tag)}(changeEvent.file.data.frontmatter?.tags??[]).flatMap(getAllSegmentPrefixes).forEach(tag=>affectedTags.add(tag)),affectedTags.add("index")}if(affectedTags.size>0){let[_tags,tagDescriptions]=computeTagInfo(allFiles,content,cfg.locale);for(let tag of affectedTags)tagDescriptions[tag]&&(yield processTagPage(ctx,tag,tagDescriptions[tag],allFiles,opts,resources))}}}},"TagPage");import path8 from"path";async function*processFolderInfo(ctx,folderInfo,allFiles,opts,resources){for(let[folder,folderContent]of Object.entries(folderInfo)){let slug=joinSegments(folder,"index"),[tree,file]=folderContent,cfg=ctx.cfg.configuration,externalResources=pageResources(pathToRoot(slug),resources),componentData={ctx,fileData:file.data,externalResources,cfg,children:[],tree,allFiles},content=renderPage(cfg,slug,componentData,opts,externalResources);yield write({ctx,content,slug,ext:".html"})}}__name(processFolderInfo,"processFolderInfo");function computeFolderInfo(folders,content,locale){let folderInfo=Object.fromEntries([...folders].map(folder=>[folder,defaultProcessedContent({slug:joinSegments(folder,"index"),frontmatter:{title:`${i18n(locale).pages.folderContent.folder}: ${folder}`,tags:[]}})]));for(let[tree,file]of content){let slug=stripSlashes(simplifySlug(file.data.slug));folders.has(slug)&&(folderInfo[slug]=[tree,file])}return folderInfo}__name(computeFolderInfo,"computeFolderInfo");function _getFolders(slug){var folderName=path8.dirname(slug??"");let parentFolderNames=[folderName];for(;folderName!==".";)folderName=path8.dirname(folderName??""),parentFolderNames.push(folderName);return parentFolderNames}__name(_getFolders,"_getFolders");var FolderPage=__name(userOpts=>{let opts={...sharedPageComponents,...defaultListPageLayout,pageBody:FolderContent_default({sort:userOpts?.sort}),...userOpts},{head:Head,header,beforeBody,pageBody,afterBody,left,right,footer:Footer}=opts,Header2=Header_default(),Body2=Body_default();return{name:"FolderPage",getQuartzComponents(){return[Head,Header2,Body2,...header,...beforeBody,pageBody,...afterBody,...left,...right,Footer]},async*emit(ctx,content,resources){let allFiles=content.map(c=>c[1].data),cfg=ctx.cfg.configuration,folders=new Set(allFiles.flatMap(data=>data.slug?_getFolders(data.slug).filter(folderName=>folderName!=="."&&folderName!=="tags"):[])),folderInfo=computeFolderInfo(folders,content,cfg.locale);yield*processFolderInfo(ctx,folderInfo,allFiles,opts,resources)},async*partialEmit(ctx,content,resources,changeEvents){let allFiles=content.map(c=>c[1].data),cfg=ctx.cfg.configuration,affectedFolders=new Set;for(let changeEvent of changeEvents){if(!changeEvent.file)continue;let slug=changeEvent.file.data.slug;_getFolders(slug).filter(folderName=>folderName!=="."&&folderName!=="tags").forEach(folder=>affectedFolders.add(folder))}if(affectedFolders.size>0){let folderInfo=computeFolderInfo(affectedFolders,content,cfg.locale);yield*processFolderInfo(ctx,folderInfo,allFiles,opts,resources)}}}},"FolderPage");import{toHtml as toHtml2}from"hast-util-to-html";import{jsx as jsx38}from"preact/jsx-runtime";var defaultOptions15={enableSiteMap:!0,enableRSS:!0,rssLimit:10,rssFullHtml:!1,rssSlug:"index",includeEmptyFiles:!0};function generateSiteMap(cfg,idx){let base=cfg.baseUrl??"",createURLEntry=__name((slug,content)=>`<url>
     <loc>https://${joinSegments(base,encodeURI(slug))}</loc>
     ${content.date&&`<lastmod>${content.date.toISOString()}</lastmod>`}

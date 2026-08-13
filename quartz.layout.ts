@@ -25,6 +25,7 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.LessonNavigation(),
+    Component.ModoAula(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
