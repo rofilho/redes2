@@ -131,16 +131,16 @@ O componente-assinatura. Isola uma camada do desenho com radio button — funcio
 </div>
 <svg class="au-camadas" viewBox="0 0 420 160" role="img" aria-label="Switch com hosts em duas VLANs">
 <rect x="150" y="10" width="120" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"></rect>
-<text x="210" y="32" text-anchor="middle" font-size="13" fill="#8a8f98" font-family="monospace">SW-ACESSO-01</text>
+<text x="210" y="32" text-anchor="middle" font-size="13" style="fill:#8a8f98" font-family="monospace">SW-ACESSO-01</text>
 <g class="c1">
 <line x1="180" y1="44" x2="90" y2="100" stroke="#2778c4" stroke-width="2"></line>
 <rect x="40" y="100" width="100" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"></rect>
-<text x="90" y="120" text-anchor="middle" font-size="12" fill="#2778c4" font-family="monospace">PC-A · VLAN 10</text>
+<text x="90" y="120" text-anchor="middle" font-size="12" style="fill:#2778c4" font-family="monospace">PC-A · VLAN 10</text>
 </g>
 <g class="c2">
 <line x1="240" y1="44" x2="330" y2="100" stroke="#00aa9f" stroke-width="2"></line>
 <rect x="280" y="100" width="100" height="30" rx="5" fill="none" stroke="#00aa9f" stroke-width="2"></rect>
-<text x="330" y="120" text-anchor="middle" font-size="12" fill="#00aa9f" font-family="monospace">PC-B · VLAN 20</text>
+<text x="330" y="120" text-anchor="middle" font-size="12" style="fill:#00aa9f" font-family="monospace">PC-B · VLAN 20</text>
 </g>
 </svg>
 <figcaption class="au-legenda">Isole uma VLAN: o que some da tela é exatamente o que some do domínio de broadcast.</figcaption>
