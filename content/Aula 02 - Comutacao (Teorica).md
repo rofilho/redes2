@@ -238,7 +238,7 @@ O quadro 1 é o **ARP Request**; o quadro 2 é o **ARP Reply**. O **B** recebeu 
 <div class="au-term-h"><b>A · 10.0.0.1</b> <span>· logo depois do ARP Reply</span></div>
 <div class="au-term-b"><span class="cm">! o que o A guardou da conversa</span>
 <span class="ps">C:\&gt;</span> <span class="kw">arp -a</span>
-
+<span> </span>
 Interface: 10.0.0.1 --- 0x4
   Endereco IP           Endereco fisico       Tipo
 <span class="mark">  10.0.0.8              aa-aa-aa-aa-aa-a7     dinamico</span>
