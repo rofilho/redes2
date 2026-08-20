@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 262" role="img"
+     aria-label="Um switch de acesso com quatro computadores, todos na VLAN 1. Nas portas 1 e 2 estao as maquinas do financeiro; nas portas 3 e 4, as da recepcao. Um contorno continuo envolve o conjunto inteiro, indicando um unico dominio de broadcast. Uma linha tracejada atravessa os quatro cabos, mostrando que um quadro de broadcast enviado pelo financeiro e entregue nas quatro portas">
+
+  <!-- o contorno CONTINUO: um dominio de broadcast so -->
+  <rect x="12" y="16" width="656" height="204" rx="10" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="28" y="212" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">1 dominio de broadcast — as 4 portas estao na VLAN 1</text>
+
+  <rect x="70" y="32" width="540" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="340" y="54" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">SW-ACESSO-01 · nenhuma VLAN criada</text>
+
+  <g font-family="monospace">
+    <!-- os quatro cabos -->
+    <line x1="99"  y1="66" x2="99"  y2="118" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="261" y1="66" x2="261" y2="118" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="423" y1="66" x2="423" y2="118" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="585" y1="66" x2="585" y2="118" stroke="#8a8f98" stroke-width="2"/>
+
+    <!-- a entrega do broadcast: uma linha que corta os quatro cabos -->
+    <line x1="46" y1="94" x2="638" y2="94" stroke="#d9702a" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="340" y="86" text-anchor="middle" font-size="11" font-weight="bold" fill="#d9702a">1 quadro de broadcast do FIN-1 = 4 entregas</text>
+
+    <!-- as portas -->
+    <text x="99"  y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/1</text>
+    <text x="261" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/2</text>
+    <text x="423" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/3</text>
+    <text x="585" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/4</text>
+
+    <!-- as estacoes -->
+    <rect x="46"  y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="99"  y="137" text-anchor="middle" font-size="12" fill="#2778c4">FIN-1</text>
+    <rect x="208" y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="261" y="137" text-anchor="middle" font-size="12" fill="#2778c4">FIN-2</text>
+    <rect x="370" y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="423" y="137" text-anchor="middle" font-size="12" fill="#2778c4">REC-1</text>
+    <rect x="532" y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="585" y="137" text-anchor="middle" font-size="12" fill="#2778c4">REC-2</text>
+
+    <!-- os setores -->
+    <text x="180" y="172" text-anchor="middle" font-size="11" fill="#8a8f98">setor financeiro</text>
+    <text x="504" y="172" text-anchor="middle" font-size="11" fill="#8a8f98">setor recepcao</text>
+    <line x1="46"  y1="182" x2="314" y2="182" stroke="#8a8f98" stroke-width="1"/>
+    <line x1="370" y1="182" x2="638" y2="182" stroke="#8a8f98" stroke-width="1"/>
+    <text x="340" y="202" text-anchor="middle" font-size="11" fill="#8a8f98">dois setores, um dominio: a recepcao recebe, le e descarta o que era do financeiro</text>
+  </g>
+</svg>

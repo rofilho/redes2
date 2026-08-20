@@ -1572,6 +1572,18 @@ article :target {
   color: var(--au-tx2);
 }
 
+
+/* critério de pronto POR EXERCÍCIO — inline, dentro da lista de exercícios de casa.
+   Difere do .au-pronto (que fecha o bloco inteiro): este fecha um item só. */
+.au-pratica .au-pronto-i {
+  display: block;
+  margin: var(--au-s-2) 0 var(--au-s-4) 0;
+  padding-left: var(--au-s-3);
+  border-left: 2px solid color-mix(in srgb, var(--au-par-laranja) 45%, transparent);
+  font-size: var(--au-t--1);
+  color: var(--au-tx2);
+}
+
 /* RESUMO — cheatsheet de fim de aula. Denso de propósito: é para consultar
    depois, não para ler agora. */
 .au-resumo {

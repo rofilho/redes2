@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 262" role="img"
+     aria-label="O mesmo switch de acesso SW-ACESSO-01, desenhado como uma caixa unica, com os mesmos quatro computadores e os mesmos cabos. Agora dois contornos continuos separados: um envolve as portas 1 e 2 na VLAN 10 FINANCEIRO, o outro envolve as portas 3 e 4 na VLAN 20 RECEPCAO. Uma linha tracejada vertical atravessa o switch por dentro, entre a porta 2 e a porta 3, indicando que nenhum quadro atravessa de uma VLAN para a outra">
+  <!-- Vocabulario visual fixo do semestre:
+       contorno CONTINUO verde-agua = dominio de broadcast (igual a Aula 02)
+       azul = estacao · laranja = o destaque unico da figura
+       UMA caixa de switch: a tese e "mesmo equipamento, partido por configuracao". -->
+
+  <!-- dominio de broadcast 1 -->
+  <rect x="34" y="88" width="290" height="76" rx="9" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="179" y="182" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">VLAN 10 · FINANCEIRO — 1 dominio</text>
+
+  <!-- dominio de broadcast 2 -->
+  <rect x="356" y="88" width="290" height="76" rx="9" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="501" y="182" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">VLAN 20 · RECEPCAO — 1 dominio</text>
+
+  <!-- o switch: UMA caixa, o mesmo equipamento -->
+  <rect x="70" y="30" width="540" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="340" y="52" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">SW-ACESSO-01 · o mesmo equipamento</text>
+
+  <g font-family="monospace">
+    <!-- os mesmos quatro cabos, nas mesmas quatro portas -->
+    <line x1="129" y1="64" x2="129" y2="118" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="229" y1="64" x2="229" y2="118" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="451" y1="64" x2="451" y2="118" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="551" y1="64" x2="551" y2="118" stroke="#8a8f98" stroke-width="2"/>
+
+    <text x="129" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/1</text>
+    <text x="229" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/2</text>
+    <text x="451" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/3</text>
+    <text x="551" y="80" text-anchor="middle" font-size="10" fill="#8a8f98">Fa0/4</text>
+
+    <rect x="76"  y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="129" y="137" text-anchor="middle" font-size="12" fill="#2778c4">FIN-1</text>
+    <rect x="176" y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="229" y="137" text-anchor="middle" font-size="12" fill="#2778c4">FIN-2</text>
+    <rect x="398" y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="451" y="137" text-anchor="middle" font-size="12" fill="#2778c4">REC-1</text>
+    <rect x="498" y="118" width="106" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="551" y="137" text-anchor="middle" font-size="12" fill="#2778c4">REC-2</text>
+
+    <text x="340" y="204" text-anchor="middle" font-size="11" fill="#8a8f98">mesmo equipamento · mesmos cabos · mesmas quatro portas</text>
+    <text x="340" y="252" text-anchor="middle" font-size="11" fill="#8a8f98">o que mudou foi so a configuracao de 4 portas</text>
+  </g>
+
+  <!-- A SINALIZACAO: o unico destaque da figura, atravessando o switch por dentro -->
+  <line x1="340" y1="22" x2="340" y2="192" stroke="#d9702a" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <text x="340" y="230" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#d9702a">nenhum quadro atravessa — nem o broadcast</text>
+</svg>

@@ -206,7 +206,13 @@ O PC-3 e o PC-4 receberam o ARP Request — você viu os dois envelopes chegarem
 
 Eles receberam e ficaram quietos. O switch aprende lendo o **MAC de origem**, e quem só recebe nunca é origem de nada.
 
-**Prove que é isso, e não outra coisa:** do **PC-3**, dê `ping 192.168.1.14` e rode o `show mac address-table` mais uma vez. As duas máquinas caladas aparecem juntas, e a tabela passa a ter quatro linhas — sem você ter configurado nenhuma delas.
+**Prove que é isso, e não outra coisa** — três passos, nesta ordem:
+
+1. Do **PC-3**, `Desktop` → `Command Prompt` → `ping 192.168.1.14`.
+2. No switch, `show mac address-table` mais uma vez.
+3. Conte as linhas.
+
+As duas máquinas caladas aparecem **juntas**, e a tabela passa de duas para **quatro** linhas — sem você ter configurado nenhuma delas. O que mudou não foi a configuração: foi o silêncio.
 
 **Apareceram só duas?** Então o PC-1 e o PC-2 expiraram por inatividade: entrada dinâmica tem prazo de validade, e a teórica de terça deu o número — 300 segundos, cinco minutos. Não é erro seu. Repita o `ping` do PC-1 e rode o `show mac address-table` de novo.
 
@@ -295,6 +301,8 @@ O que você responder aqui **abre a próxima aula**.
 | **Nota** | Hoje **sem nota**. Quando valer, a régua é **8 dos 10 itens**. São cinco labs valendo e os cinco contam. |
 
 </div>
+
+<hr class="au-fim-aula">
 
 <div class="au-reflexao">
 <b>Para pensar até a próxima aula</b>
