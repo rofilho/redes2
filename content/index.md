@@ -19,7 +19,8 @@ title: "🌐 Redes de Computadores II"
   <span class="au-badge">49309 · 2026-2</span>
   <h1>Redes de Computadores II</h1>
   <p>Redes I ensinou a rede a funcionar. Aqui ela aprende a <b>não cair</b> — e a não deixar o problema de um setor derrubar os outros. Comutar, segmentar, rotear e proteger, com as mãos no simulador toda semana.</p>
-  <p style="margin-top:1rem"><a href="./Plano-de-Ensino-e-Contrato" data-spa><span class="au-badge" style="letter-spacing:.08em">📘 Plano de Ensino e Contrato — a referência do semestre</span></a></p>
+  <p style="margin-top:1rem"><a href="./Plano-de-Ensino-e-Contrato" data-spa><span class="au-badge" style="letter-spacing:.08em">📘 Plano de Ensino e Contrato — a referência do semestre</span></a>
+  <a href="./Manual-do-IOS-no-Packet-Tracer" data-spa><span class="au-badge" style="letter-spacing:.08em">🖥️ Manual do IOS no Packet Tracer — o console e a lista de comandos</span></a></p>
 </div>
 
 <div style="display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.5rem 0">
@@ -61,44 +62,54 @@ title: "🌐 Redes de Computadores II"
   <a href="./Aula-03---Lab-1-Switching-Basico-(Pratica)" data-spa>
     <div class="au-thumb">S03</div>
     <div class="au-pbar"><i style="width:100%"></i></div>
-    <div class="au-cap"><b>Lab 1 — Switching básico: ver o switch aprender</b><span>Prática · P12 13/08 · P11 na segunda</span></div>
+    <div class="au-cap"><b>Lab 1 — Switching básico: ver o switch aprender</b><span>Prática · P12 13/08 · P11 17/08</span></div>
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S03</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>VLANs: conceito, criação e portas de acesso</b><span>data no AVA</span></div>
+<li class="au-card">
+  <a href="./Aula-04---VLANs-(Teorica)" data-spa>
+    <div class="au-thumb">S04</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>VLANs: a fronteira que se digita em vez de se comprar</b><span>Teórica · 18/08</span></div>
+  </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S04</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Trunking 802.1Q</b><span>18/08 · Lab 3</span></div>
+<li class="au-card">
+  <a href="./Aula-04---Lab-2-VLANs-(Pratica)" data-spa>
+    <div class="au-thumb">S04</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 2 — VLANs: medir a fronteira que terça levantou</b><span>Prática · P12 20/08 · P11 24/08</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S05</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Roteamento entre VLANs (router-on-a-stick)</b><span>25/08 · Lab 4</span></div>
+  <div class="au-cap"><b>Trunking 802.1Q</b><span>25/08 · Lab 3</span></div>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S06</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>01/09</span></div>
+  <div class="au-cap"><b>Roteamento entre VLANs (router-on-a-stick)</b><span>01/09 · Lab 4</span></div>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S07</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>EtherChannel e redundância de gateway</b><span>08/09</span></div>
+  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>08/09</span></div>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S08</div>
   <div class="au-pbar"><i style="width:0"></i></div>
   <div class="au-cap"><b>DHCPv4, SLAAC/DHCPv6 e revisão N1</b><span>15/09 · Lab 5</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">—</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>EtherChannel e redundância de gateway</b><span>data no AVA</span></div>
 </li>
 
 </ul>
@@ -193,7 +204,7 @@ title: "🌐 Redes de Computadores II"
 </div>
 
 <div style="padding:0 1.5rem 1.5rem;font-family:var(--au-mono);font-size:var(--au-t--2);color:var(--au-tx3)">
-  Prof. Romualdo Mathias Filho · Uniube · atualizado em 11/08/2026
+  Prof. Romualdo Mathias Filho · Uniube · atualizado em 17/08/2026
 </div>
 
 </div>
