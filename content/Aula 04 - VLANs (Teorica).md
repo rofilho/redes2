@@ -547,9 +547,9 @@ IEEE. **IEEE Std 802.1Q — Bridges and Bridged Networks.** New York: IEEE.
 <div class="au-refs">
 <b>Referências desta aula</b>
 
-- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 6. ed. São Paulo: Pearson, 2013. <span class="au-pag">seç. 5.4.4 — redes locais virtuais (VLANs), p. 357–359; seç. 5.4.3 — comutadores da camada de enlace, p. 352–356</span>
-- TANENBAUM, A. S.; FEAMSTER, N.; WETHERALL, D. J. **Redes de Computadores.** 6. ed. Porto Alegre: Bookman/Pearson, 2021. <span class="au-pag">seç. 4.7 — comutação na camada de enlace de dados, p. 215–225; seç. 4.7.5 — LANs virtuais, p. 221–225</span>
-- CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems. Disponível em: https://www.netacad.com/. Acesso em: 17 ago. 2026. <span class="au-pag">módulo 3 — VLANs: definição, VLANs de dados, atribuição de portas de acesso e o comando <code>show vlan brief</code></span>
+- KUROSE, J. F.; ROSS, K. W. **Redes de computadores e a internet: uma abordagem top-down.** 6. ed. São Paulo: Pearson, 2013. <span class="au-pag">seç. 5.4.4, p. 357–359</span> — redes locais virtuais (VLANs); <span class="au-pag">seç. 5.4.3, p. 352–356</span> — comutadores da camada de enlace
+- TANENBAUM, A. S.; FEAMSTER, N.; WETHERALL, D. J. **Redes de Computadores.** 6. ed. Porto Alegre: Bookman/Pearson, 2021. <span class="au-pag">seç. 4.7, p. 215–225</span> — comutação na camada de enlace de dados; <span class="au-pag">seç. 4.7.5, p. 221–225</span> — LANs virtuais
+- CISCO NETWORKING ACADEMY. **CCNA: Switching, Routing, and Wireless Essentials (SRWE).** Cisco Systems. Disponível em: https://www.netacad.com/. Acesso em: 17 ago. 2026. <span class="au-pag">módulo 3</span> — VLANs: definição, VLANs de dados, atribuição de portas de acesso e o comando <code>show vlan brief</code>
 
 </div>
 

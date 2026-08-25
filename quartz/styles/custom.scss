@@ -451,9 +451,13 @@ article details > summary {
   color: var(--au-ac);
   min-height: 24px;
   list-style: none;
-  display: flex;
-  align-items: center;
-  gap: var(--au-s-2);
+
+  /* NAO usar `display: flex` aqui. Flex transforma cada trecho de texto e cada
+     <code> do summary num item, e a linha deixa de quebrar: medido em 25/08 a
+     390px de viewport, um summary de 569px dentro de um container de 290px
+     punha barra horizontal na aula inteira (621/375 na Aula 05, 660/375 na
+     Aula 04). Bloco com o marcador inline quebra como texto normal. */
+  display: block;
 }
 
 article details > summary::-webkit-details-marker {
@@ -464,6 +468,7 @@ article details > summary::before {
   content: "▸";
   transition: transform var(--au-transicao);
   display: inline-block;
+  margin-right: var(--au-s-2);
   flex: none;
 }
 
@@ -929,9 +934,8 @@ article a {
   color: var(--au-ac);
   min-height: 24px;
   list-style: none;
-  display: flex;
-  align-items: center;
-  gap: var(--au-s-2);
+  /* mesma razao do `article details > summary` acima: flex nao quebra linha. */
+  display: block;
 }
 
 .au-aposta > summary::-webkit-details-marker {
@@ -1688,7 +1692,15 @@ article :target {
   font-family: var(--au-mono);
   font-size: var(--au-t--2);
   color: var(--uni-azul);
-  white-space: nowrap;
+
+  /* NAO usar `white-space: nowrap` aqui. A intencao era manter "p. 357-359"
+     inteiro numa linha, mas o span as vezes carrega a descricao da secao junto:
+     em 25/08 um <li> de 610px continha um span de 801px, e a pagina inteira
+     ganhava barra horizontal (850px de scroll para 677px de viewport). Quem le
+     no celular arrasta a aula de lado para ler qualquer paragrafo. O intervalo
+     de paginas se mantem junto com &nbsp; no texto, que e local e nao vaza para
+     o layout. */
+  overflow-wrap: anywhere;
 }
 
 /* PRÓXIMA AULA — gancho de fechamento. Uma frase que abre laço, não um
