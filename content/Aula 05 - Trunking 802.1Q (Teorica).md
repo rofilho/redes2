@@ -8,6 +8,7 @@ turma: T (P11 + P12)
 date: 2026-08-25
 tags: [redes2, 2026-2, trunk, 802.1q, vlan-nativa, dtp, switchport, packet-tracer]
 ---
+
 <div class="au-leitura" data-aula="s05">
 
 # 🟢 Aula 05 — Trunking 802.1Q: o quadro passa a dizer de onde veio
@@ -104,6 +105,10 @@ Lista de consulta, não de leitura corrida: passe os olhos antes da aula e volte
 **Quadro** — a mensagem na camada de enlace: os dados mais os endereços MAC de origem e de destino. É ele que vai ganhar quatro bytes hoje.
 
 **Inundação** (*unknown unicast*) — o switch encaminha por todas as portas do domínio, menos a de origem, quando o MAC de destino não está na tabela.
+
+**EtherType** — o campo do quadro que diz o que vem nos dados: se é IPv4, IPv6, ARP. É um número, e o switch o lê para saber como tratar o conteúdo.
+
+**FCS** (*frame check sequence*) — os últimos quatro bytes do quadro, uma conta feita sobre todo o resto para detectar corrupção no caminho. Quem altera o quadro precisa refazer essa conta.
 
 <b class="au-nota-t">Novo hoje</b>
 
@@ -527,9 +532,9 @@ Uma estação ligada a uma porta de acesso na VLAN 10 do switch A envia um quadr
 Assinale a alternativa que descreve corretamente o que ocorre com a etiqueta 802.1Q nesse percurso.
 
 - **A)** A etiqueta é inserida pela estação de origem, atravessa os dois switches inalterada e é interpretada pela estação de destino.
-- **B)** A etiqueta é inserida pelo switch A ao encaminhar o quadro pelo tronco, é lida pelo switch B e removida por ele antes da entrega na porta de acesso, de modo que a estação de destino recebe um quadro sem etiqueta.
+- **B)** A etiqueta é inserida pelo switch A e removida pelo próprio switch A antes da transmissão, sendo o número da VLAN informado ao switch B por um protocolo de sinalização à parte.
 - **C)** A etiqueta não é inserida, porque origem e destino pertencem à mesma VLAN e o tronco encaminha esse tráfego sem marcação.
-- **D)** A etiqueta é inserida pelo switch A e removida pelo próprio switch A antes da transmissão, sendo o número da VLAN informado ao switch B por um protocolo de sinalização à parte.
+- **D)** A etiqueta é inserida pelo switch A ao encaminhar o quadro pelo tronco e removida pelo switch B antes da entrega na porta de acesso.
 - **E)** A etiqueta é inserida e mantida até a estação de destino, que a descarta apenas se o sistema operacional não reconhecer o padrão 802.1Q.
 
 ### Questão 3
@@ -545,8 +550,8 @@ Um tronco 802.1Q interliga dois switches de camada 2. Na interface do switch A, 
 Avalie a proposta.
 
 - **A)** A proposta é adequada: a mensagem é meramente informativa e a incompatibilidade de VLAN nativa não altera o encaminhamento de quadros.
-- **B)** A proposta é inadequada: quadros não etiquetados enviados na VLAN nativa de um lado são recebidos como pertencentes à VLAN nativa do outro, o que faz com que duas VLANs distintas passem a trocar tráfego sem que nenhuma falha visível ocorra.
-- **C)** A proposta é inadequada, porque a incompatibilidade impede a formação do tronco e as VLANs 10 e 20 deixam de atravessar o cabo.
+- **B)** A proposta é inadequada, porque a incompatibilidade impede a formação do tronco e as VLANs 10 e 20 deixam de atravessar o cabo.
+- **C)** A proposta é inadequada: o quadro sem etiqueta sai na VLAN nativa de um lado e chega na do outro, e duas VLANs distintas passam a trocar tráfego.
 - **D)** A proposta é adequada desde que a VLAN 99 não possua estações, pois nesse caso nenhum quadro é gerado nela.
 - **E)** A proposta é inadequada, porque a incompatibilidade faz o switch descartar todo quadro não etiquetado recebido no tronco, causando perda de tráfego de gerência.
 
