@@ -861,6 +861,24 @@ article a {
   color: #9aa4b0;
 } /* comentário — 5,4:1 no claro, 8,5:1 no escuro */
 
+/* Guard do terminal — mesma mecânica do guard de texto corrido acima, e a razão
+   de este bloco existir: o comentário lá em cima afirmava que o `.au-term` não
+   era atingido porque seu conteúdo é span/div. É falso sempre que houver uma
+   LINHA EM BRANCO dentro do `.au-term-b`: o markdown embrulha a saída num `<p>`,
+   e o Quartz declara `p, tr, td, li { color: var(--darkgray) }` direto no
+   elemento — declaração direta vence herança. No tema claro, --darkgray é
+   escuro e o terminal tem fundo escuro: a saída do equipamento fica ilegível.
+   Corrigir a aula uma a uma contrata a reincidência; a correção mora aqui.
+   (Achado na Aula 05, bloco 2.4, 2026-08-25.) */
+.au-term :is(p, tr, td, th, li, ol, ul),
+.au-term :is(p, li, td, th) > :is(strong, b, em, i),
+:root[saved-theme="dark"] .au-leitura .au-term :is(p, tr, td, th, li, ol, ul),
+:root[saved-theme="dark"] .au-leitura .au-term :is(p, li, td, th) > :is(strong, b, em, i) {
+  color: var(--au-cod-tx);
+  background: transparent;
+  margin: 0;
+}
+
 /* marca de sinalização: a linha que o texto ao lado está explicando
    (Alpizar et al. 2020, g = 0,53 em retenção) */
 .au-term-b .mark {

@@ -262,7 +262,7 @@ SW-ACESSO-01(config-if-range)# end
 
 | A linha | O que ela decide |
 | :--- | :--- |
-| `switchport mode access` | que esta porta serve **uma** VLAN só, e que ela **não negocia** nada com o equipamento do outro lado |
+| `switchport mode access` | que esta porta serve **uma** VLAN só, e que ela **não aceita** virar outra coisa por negociação com o equipamento do outro lado |
 | `switchport access vlan 10` | **qual** é essa VLAN |
 
 A ordem importa para o entendimento, não para o IOS: primeiro você declara o **tipo** da porta, depois o **número**. Uma porta de acesso é o lugar de uma estação — e o quadro que entra nela não carrega marca nenhuma de VLAN. Quem sabe a qual VLAN aquele tráfego pertence é o switch, pela porta.
@@ -274,7 +274,9 @@ A ordem importa para o entendimento, não para o IOS: primeiro você declara o *
 >
 > Por isso dois switches saídos da caixa, ligados entre si, **continuam** em acesso: nenhum dos dois propõe. O defeito só aparece quando alguém propõe, e é sempre no pior dia.
 >
-> `switchport mode access` é o que torna a porta **surda a negociação**. Sem ela, você não configurou uma porta de acesso: você teve sorte.
+> `switchport mode access` é o que faz a porta **recusar** a negociação: proponham o que propuserem do outro lado, ela continua sendo acesso. Sem ela, você não configurou uma porta de acesso — você teve sorte.
+>
+> Um detalhe de precisão, para quando o assunto voltar: recusar não é o mesmo que ficar calado. A porta continua **anunciando-se** ao vizinho, e desligar esse anúncio é outro comando, o `switchport nonegotiate`. Para uma porta de acesso isso não muda o resultado; num tronco, muda — e é lá que a distinção aparece.
 
 > [!WARNING] ⚠️ Gotcha — apagar a VLAN não devolve a porta para a VLAN 1
 > `no vlan 10` remove a VLAN. As portas que estavam nela **não** voltam para a `default`: ficam apontando para uma VLAN que não existe mais e param de encaminhar.

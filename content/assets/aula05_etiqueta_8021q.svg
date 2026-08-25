@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 330" role="img"
+     aria-label="Anatomia de um quadro Ethernet antes e depois da etiqueta 802.1Q, com as duas reguas alinhadas na mesma origem. Na primeira faixa, o quadro sem etiqueta: MAC de destino com 6 bytes, MAC de origem com 6 bytes, EtherType com 2 bytes, dados e FCS com 4 bytes, ate 1518 bytes. Na segunda faixa, os mesmos campos com exatamente as mesmas larguras, e quatro bytes inseridos entre o MAC de origem e o EtherType, o que empurra todo o resto para a direita e leva o total a 1522 bytes. Abaixo, esses quatro bytes sao ampliados em quatro campos com largura proporcional ao numero de bits: TPID de 16 bits com valor 0x8100, PCP de 3 bits, DEI de 1 bit e VID de 12 bits, destacado, que carrega o numero da VLAN">
+  <!-- Vocabulario visual fixo do semestre:
+       cinza = campo neutro do quadro · laranja = O destaque unico: os 4 bytes da etiqueta.
+       Esta figura nao tem verde-agua nem azul: nao desenha dominio nem estacao.
+       REGRA DO DESENHO: os campos comuns tem a MESMA largura nas duas faixas, e a
+       segunda faixa CRESCE para a direita. O quadro nao encolhe dados para caber a etiqueta.
+       AMPLIACAO: largura proporcional aos bits (16, 3, 1, 12 -> 8 px por bit). -->
+
+  <g font-family="monospace" font-size="10" fill="#8a8f98">
+
+    <!-- FAIXA 1: quadro sem etiqueta -->
+    <text x="14" y="26" font-size="12" font-weight="bold">Quadro que sai de uma porta de ACESSO — sem etiqueta</text>
+    <rect x="14"  y="36" width="96" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="62"  y="52" text-anchor="middle">MAC destino</text>
+    <text x="62"  y="65" text-anchor="middle">6 bytes</text>
+    <rect x="110" y="36" width="96" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="158" y="52" text-anchor="middle">MAC origem</text>
+    <text x="158" y="65" text-anchor="middle">6 bytes</text>
+    <rect x="206" y="36" width="72" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="242" y="52" text-anchor="middle">EtherType</text>
+    <text x="242" y="65" text-anchor="middle">2 bytes</text>
+    <rect x="278" y="36" width="240" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="398" y="57" text-anchor="middle">dados</text>
+    <rect x="518" y="36" width="72" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="554" y="52" text-anchor="middle">FCS</text>
+    <text x="554" y="65" text-anchor="middle">4 bytes</text>
+    <text x="598" y="58">ate 1518 bytes</text>
+
+    <!-- FAIXA 2: quadro etiquetado. Mesmas larguras; tudo depois da etiqueta desloca 40 px. -->
+    <text x="14" y="118" font-size="12" font-weight="bold">O mesmo quadro atravessando um TRONCO — etiquetado</text>
+    <rect x="14"  y="128" width="96" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="62"  y="144" text-anchor="middle">MAC destino</text>
+    <text x="62"  y="157" text-anchor="middle">6 bytes</text>
+    <rect x="110" y="128" width="96" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="158" y="144" text-anchor="middle">MAC origem</text>
+    <text x="158" y="157" text-anchor="middle">6 bytes</text>
+    <rect x="246" y="128" width="72" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="282" y="144" text-anchor="middle">EtherType</text>
+    <text x="282" y="157" text-anchor="middle">2 bytes</text>
+    <rect x="318" y="128" width="240" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="438" y="149" text-anchor="middle">dados — os MESMOS</text>
+    <rect x="558" y="128" width="72" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="594" y="144" text-anchor="middle">FCS</text>
+    <text x="594" y="157" text-anchor="middle">recalculado</text>
+    <text x="638" y="150">ate 1522</text>
+    <text x="14" y="182">mesmas larguras da faixa de cima: o quadro nao encolhe nada — ele cresce 4 bytes para a direita</text>
+
+    <!-- AMPLIACAO dos 4 bytes: 8 px por bit -->
+    <text x="14" y="222" font-size="12" font-weight="bold">Os 4 bytes, por dentro — largura proporcional ao numero de bits</text>
+    <rect x="14"  y="232" width="128" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="78"  y="248" text-anchor="middle">TPID = 0x8100</text>
+    <text x="78"  y="261" text-anchor="middle">16 bits</text>
+    <rect x="142" y="232" width="24" height="34" rx="4" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="154" y="248" text-anchor="middle">PCP</text>
+    <text x="154" y="261" text-anchor="middle">3</text>
+    <rect x="166" y="232" width="8" height="34" rx="2" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="182" y="284" font-size="9">DEI = 1 bit (a barra estreita)</text>
+    <text x="14" y="302" font-size="10">PCP e DEI sao de prioridade e descarte — nao e o assunto de hoje. O TPID, sempre 0x8100, e o aviso "sou etiquetado".</text>
+  </g>
+
+  <!-- A SINALIZACAO UNICA: a etiqueta na faixa 2, e o campo que importa dentro dela -->
+  <rect x="206" y="128" width="40" height="34" rx="4" fill="none" stroke="#d9702a" stroke-width="3"/>
+  <text x="226" y="144" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#d9702a">etiq.</text>
+  <text x="226" y="156" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#d9702a">4 B</text>
+  <line x1="226" y1="162" x2="226" y2="200" stroke="#d9702a" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="226" y1="200" x2="270" y2="200" stroke="#d9702a" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="270" y1="200" x2="270" y2="232" stroke="#d9702a" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="174" y="232" width="96" height="34" rx="4" fill="none" stroke="#d9702a" stroke-width="3"/>
+  <text x="222" y="248" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#d9702a">VID — 12 bits</text>
+  <text x="222" y="261" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#d9702a">a VLAN: 1 a 4094</text>
+</svg>
