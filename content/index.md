@@ -82,22 +82,26 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S05</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Trunking 802.1Q</b><span>25/08 · Lab 3</span></div>
+<li class="au-card">
+  <a href="./Aula-05---Trunking-802.1Q-(Teorica)" data-spa>
+    <div class="au-thumb">S05</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Trunking 802.1Q: o quadro passa a dizer de onde veio</b><span>Teórica · 25/08</span></div>
+  </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S06</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Roteamento entre VLANs (router-on-a-stick)</b><span>01/09 · Lab 4</span></div>
+<li class="au-card">
+  <a href="./Aula-06---Roteamento-Inter-VLAN-(Teorica)" data-spa>
+    <div class="au-thumb">S06</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Roteamento entre VLANs: as duas redes voltam a conversar</b><span>Teórica · 08/09</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S07</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>08/09</span></div>
+  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>data a confirmar</span></div>
 </li>
 
 <li class="au-card au-espera">

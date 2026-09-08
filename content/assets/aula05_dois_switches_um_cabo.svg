@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" role="img"
+     aria-label="Dois switches de acesso, SW-ANDAR-1 e SW-ANDAR-2, desenhados lado a lado e ligados por um unico cabo destacado em laranja entre eles. Acima de cada switch ha uma estacao do financeiro, FIN-1 e FIN-2, e abaixo de cada switch uma estacao da recepcao, REC-1 e REC-2. Um contorno continuo verde-agua envolve a metade de cima dos dois switches junto com as duas estacoes do financeiro, formando o dominio de broadcast da VLAN 10 atravessando os dois equipamentos. Outro contorno continuo verde-agua envolve a metade de baixo dos dois switches junto com as duas estacoes da recepcao, formando o dominio da VLAN 20. Entre os dois contornos passa o unico cabo que liga os switches, que precisa carregar as duas VLANs">
+  <!-- Vocabulario visual fixo do semestre:
+       contorno CONTINUO verde-agua = dominio de broadcast (Aula 02, Aula 04)
+       azul = estacao · cinza = equipamento, cabo, porta, rotulo neutro
+       laranja = O destaque unico: o cabo entre os switches. UM elemento marcado, nao tres.
+       Os dois contornos cortam as caixas dos switches ao meio de proposito:
+       o dominio atravessa o equipamento, e o equipamento serve as duas VLANs. -->
+
+  <!-- dominio da VLAN 10: metade de cima dos dois switches + as duas estacoes do financeiro -->
+  <rect x="30" y="58" width="640" height="94" rx="9" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="350" y="76" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">VLAN 10 · FINANCEIRO — um dominio, dois andares</text>
+
+  <!-- dominio da VLAN 20: metade de baixo dos dois switches + as duas estacoes da recepcao -->
+  <rect x="30" y="162" width="640" height="94" rx="9" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="350" y="246" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">VLAN 20 · RECEPCAO — um dominio, dois andares</text>
+
+  <g font-family="monospace">
+    <!-- estacoes do financeiro, acima -->
+    <rect x="75"  y="86" width="90" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="120" y="105" text-anchor="middle" font-size="12" fill="#2778c4">FIN-1</text>
+    <rect x="525" y="86" width="90" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="570" y="105" text-anchor="middle" font-size="12" fill="#2778c4">FIN-2</text>
+
+    <!-- cabos das estacoes do financeiro -->
+    <line x1="120" y1="114" x2="120" y2="140" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="570" y1="114" x2="570" y2="140" stroke="#8a8f98" stroke-width="2"/>
+    <text x="138" y="131" font-size="9" fill="#8a8f98">Fa0/1 · acesso 10</text>
+    <text x="588" y="131" font-size="9" fill="#8a8f98">Fa0/1 · acesso 10</text>
+
+    <!-- os dois switches: cada caixa e atravessada pelos DOIS contornos -->
+    <rect x="60"  y="140" width="130" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="125" y="162" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a8f98">SW-ANDAR-1</text>
+    <rect x="510" y="140" width="130" height="34" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+    <text x="575" y="162" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a8f98">SW-ANDAR-2</text>
+
+    <!-- cabos das estacoes da recepcao -->
+    <line x1="120" y1="174" x2="120" y2="200" stroke="#8a8f98" stroke-width="2"/>
+    <line x1="570" y1="174" x2="570" y2="200" stroke="#8a8f98" stroke-width="2"/>
+    <text x="138" y="190" font-size="9" fill="#8a8f98">Fa0/2 · acesso 20</text>
+    <text x="588" y="190" font-size="9" fill="#8a8f98">Fa0/2 · acesso 20</text>
+
+    <!-- estacoes da recepcao, abaixo -->
+    <rect x="75"  y="200" width="90" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="120" y="219" text-anchor="middle" font-size="12" fill="#2778c4">REC-1</text>
+    <rect x="525" y="200" width="90" height="28" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+    <text x="570" y="219" text-anchor="middle" font-size="12" fill="#2778c4">REC-2</text>
+
+    <!-- rotulos neutros -->
+    <text x="350" y="40" text-anchor="middle" font-size="11" fill="#8a8f98">cada dominio atravessa os DOIS equipamentos: o contorno corta a caixa do switch ao meio</text>
+    <text x="350" y="290" text-anchor="middle" font-size="11" fill="#8a8f98">porta de acesso serve UMA VLAN. Qual das duas voce escolheria no cabo do meio?</text>
+  </g>
+
+  <!-- A SINALIZACAO UNICA: o cabo entre os switches, exatamente na fronteira dos dois dominios -->
+  <line x1="190" y1="157" x2="510" y2="157" stroke="#d9702a" stroke-width="3"/>
+  <text x="350" y="150" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#d9702a">um cabo so — e as duas VLANs para atravessar</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img"
+     aria-label="Duas solucoes desenhadas lado a lado, separadas por uma linha vertical cinza. A esquerda, o router-on-a-stick: um switch de camada 2 embaixo e um roteador em cima, ligados por um unico cabo destacado em laranja, desenhado como dois tracos paralelos no mesmo enlace para mostrar que o pacote sobe e desce por ele. As subinterfaces G0-barra-0 ponto 10 e ponto 20 estao rotuladas no roteador. A direita, a solucao com SVI: um unico switch de camada 3, desenhado como uma caixa grande, com as interfaces virtuais interface vlan 10 e interface vlan 20 desenhadas dentro dele e um traco laranja curto ligando as duas por dentro do equipamento, sem nenhum cabo externo">
+
+  <!-- Vocabulario visual fixo do semestre:
+       cinza = equipamento, cabo, porta, rotulo neutro · azul = estacao
+       laranja = O destaque unico de cada painel: a esquerda o cabo que o trafego
+       percorre duas vezes; a direita a ausencia desse cabo, o salto por dentro.
+       Sem verde-agua nesta figura: ela nao desenha dominio de broadcast,
+       desenha por onde o pacote passa. -->
+
+  <text x="175" y="30" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">ROUTER-ON-A-STICK</text>
+  <text x="175" y="48" text-anchor="middle" font-size="11" fill="#8a8f98">um roteador ligado por fora, num tronco</text>
+
+  <!-- roteador -->
+  <rect x="95" y="70" width="160" height="46" rx="7" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="175" y="92" text-anchor="middle" font-family="monospace" font-size="12" fill="#8a8f98">R-BORDA</text>
+  <text x="175" y="108" text-anchor="middle" font-family="monospace" font-size="10" fill="#8a8f98">G0/0.10 · G0/0.20</text>
+
+  <!-- switch de camada 2 -->
+  <rect x="95" y="215" width="160" height="46" rx="7" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="175" y="237" text-anchor="middle" font-family="monospace" font-size="12" fill="#8a8f98">SW-ANDAR-1</text>
+  <text x="175" y="253" text-anchor="middle" font-family="monospace" font-size="10" fill="#8a8f98">camada 2 · Fa0/23 tronco</text>
+
+  <!-- estacoes -->
+  <rect x="30" y="278" width="86" height="26" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="73" y="295" text-anchor="middle" font-size="11" fill="#2778c4">FIN-1 · v10</text>
+  <line x1="73" y1="278" x2="115" y2="261" stroke="#8a8f98" stroke-width="1.5"/>
+  <rect x="234" y="278" width="86" height="26" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="277" y="295" text-anchor="middle" font-size="11" fill="#2778c4">SRV · v20</text>
+  <line x1="277" y1="278" x2="235" y2="261" stroke="#8a8f98" stroke-width="1.5"/>
+
+  <!-- A SINALIZACAO UNICA DO PAINEL A: o cabo unico, percorrido nos dois sentidos.
+       Dois tracos e um rotulo: o resto do painel e cinza de proposito. -->
+  <line x1="163" y1="215" x2="163" y2="116" stroke="#d9702a" stroke-width="3"/>
+  <line x1="187" y1="116" x2="187" y2="215" stroke="#d9702a" stroke-width="3"/>
+  <text x="200" y="150" font-family="monospace" font-size="11" font-weight="bold" fill="#d9702a">sobe e desce</text>
+  <text x="200" y="166" font-family="monospace" font-size="10" fill="#8a8f98">o mesmo cabo,</text>
+  <text x="200" y="179" font-family="monospace" font-size="10" fill="#8a8f98">duas vezes</text>
+
+  <!-- divisoria -->
+  <line x1="350" y1="20" x2="350" y2="300" stroke="#8a8f98" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <text x="525" y="30" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">SVI EM SWITCH DE CAMADA 3</text>
+  <text x="525" y="48" text-anchor="middle" font-size="11" fill="#8a8f98">o roteamento acontece dentro do proprio switch</text>
+
+  <!-- switch de camada 3 -->
+  <rect x="400" y="70" width="250" height="191" rx="7" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="525" y="92" text-anchor="middle" font-family="monospace" font-size="12" fill="#8a8f98">SW-NUCLEO · camada 3</text>
+
+  <!-- as duas SVIs, por dentro -->
+  <rect x="425" y="110" width="200" height="34" rx="5" fill="none" stroke="#8a8f98" stroke-width="1.5"/>
+  <text x="525" y="132" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">interface vlan 10 · .10.1</text>
+  <rect x="425" y="196" width="200" height="34" rx="5" fill="none" stroke="#8a8f98" stroke-width="1.5"/>
+  <text x="525" y="218" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">interface vlan 20 · .20.1</text>
+
+  <!-- A SINALIZACAO UNICA DO PAINEL B: o salto interno. Um traco so, e o rotulo em cinza:
+       o destaque aqui e justamente a AUSENCIA do cabo que o painel A marcou. -->
+  <line x1="525" y1="144" x2="525" y2="196" stroke="#d9702a" stroke-width="3"/>
+  <text x="592" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#8a8f98">sem cabo nenhum</text>
+
+  <!-- estacoes -->
+  <rect x="392" y="278" width="86" height="26" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="435" y="295" text-anchor="middle" font-size="11" fill="#2778c4">FIN-1 · v10</text>
+  <line x1="435" y1="278" x2="450" y2="261" stroke="#8a8f98" stroke-width="1.5"/>
+  <rect x="572" y="278" width="86" height="26" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="615" y="295" text-anchor="middle" font-size="11" fill="#2778c4">SRV · v20</text>
+  <line x1="615" y1="278" x2="600" y2="261" stroke="#8a8f98" stroke-width="1.5"/>
+</svg>

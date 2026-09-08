@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 336" role="img"
+     aria-label="Um switch de camada 2 desenhado como uma caixa alta a direita, com duas estacoes a esquerda. A estacao FIN-1, no endereco 192.168.10.11, esta dentro de um contorno continuo verde-agua que representa o dominio de broadcast da VLAN 10 e que corta a metade de cima do switch. O servidor SRV-REC, no endereco 192.168.20.50, esta dentro de outro contorno verde-agua, o da VLAN 20, que corta a metade de baixo do mesmo switch. No meio do switch, separando as duas metades, ha uma linha tracejada laranja com um X laranja sobre ela, mostrando que nao existe caminho de uma metade para a outra dentro do equipamento">
+
+  <!-- Vocabulario visual fixo do semestre:
+       contorno CONTINUO verde-agua = dominio de broadcast (Aula 02, Aula 04, Aula 05)
+       azul = estacao · cinza = equipamento, cabo, porta, rotulo neutro
+       laranja = O destaque unico: a parede dentro do switch e o X sobre ela.
+       Os contornos cortam a caixa do switch ao meio pelo mesmo motivo da Aula 05:
+       o dominio atravessa o equipamento. A novidade de hoje e que a parede
+       tambem esta dentro dele. -->
+
+  <!-- dominio da VLAN 10: FIN-1 + a metade de cima do switch -->
+  <rect x="30" y="100" width="560" height="70" rx="9" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="300" y="116" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">VLAN 10 · FINANCEIRO · 192.168.10.0/24</text>
+
+  <!-- dominio da VLAN 20: SRV-REC + a metade de baixo do switch -->
+  <rect x="30" y="185" width="560" height="70" rx="9" fill="none" stroke="#00aa9f" stroke-width="2.5"/>
+  <text x="300" y="201" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00aa9f">VLAN 20 · RECEPCAO · 192.168.20.0/24</text>
+
+  <!-- o switch, cortado pelos dois dominios -->
+  <rect x="470" y="80" width="170" height="180" rx="7" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="555" y="72" text-anchor="middle" font-family="monospace" font-size="12" fill="#8a8f98">SW-ANDAR-1 · camada 2</text>
+
+  <!-- estacoes -->
+  <rect x="60" y="120" width="120" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="120" y="139" text-anchor="middle" font-size="12" fill="#2778c4">FIN-1</text>
+  <text x="120" y="164" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">192.168.10.11</text>
+
+  <rect x="60" y="205" width="120" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="120" y="224" text-anchor="middle" font-size="12" fill="#2778c4">SRV-REC</text>
+  <text x="120" y="249" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">192.168.20.50</text>
+
+  <!-- cabos ate o switch -->
+  <line x1="180" y1="135" x2="470" y2="135" stroke="#8a8f98" stroke-width="2"/>
+  <text x="325" y="130" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">Fa0/1 · acesso 10</text>
+  <line x1="180" y1="220" x2="470" y2="220" stroke="#8a8f98" stroke-width="2"/>
+  <text x="325" y="215" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">Fa0/3 · acesso 20</text>
+
+  <!-- A SINALIZACAO UNICA: a parede dentro do switch, e o X sobre ela -->
+  <line x1="480" y1="177" x2="630" y2="177" stroke="#d9702a" stroke-width="3" stroke-dasharray="7 5"/>
+  <line x1="546" y1="168" x2="564" y2="186" stroke="#d9702a" stroke-width="3"/>
+  <line x1="564" y1="168" x2="546" y2="186" stroke="#d9702a" stroke-width="3"/>
+
+  <!-- rotulos neutros -->
+  <text x="350" y="40" text-anchor="middle" font-size="11" fill="#8a8f98">o tronco da aula passada levou as duas VLANs para o outro andar. Nenhuma delas passou para a outra.</text>
+  <text x="350" y="296" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#d9702a">o switch decide por MAC, nao por IP</text>
+  <text x="350" y="316" text-anchor="middle" font-size="11" fill="#8a8f98">e por isso nao ha caminho entre as duas metades: ninguem ali le o endereco que diria para onde ir</text>
+</svg>
