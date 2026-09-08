@@ -18,9 +18,15 @@
 // `ul` fica de fora — lista com marcador é enumeração narrada.
 // `blockquote:not(.callout)` é a citação projetada; callout do Obsidian é nota,
 // e nota é narração.
+// `div.table-container` vem antes de `table` porque o Quartz embrulha TODA
+// tabela de markdown nesse div: o `table` nunca é filho direto do artigo, e
+// sozinho ele não casava com nada. O efeito era silencioso e caro — todo bloco
+// cuja única prova era uma tabela subia ao projetor com o aviso de vazio.
+// (Achado ensaiando a Aula 06, blocos 1.2 e 2.1, 2026-09-08.)
 const PROVA = [
   "figure.au-fig",
   ".au-term",
+  "div.table-container",
   "table",
   "pre",
   "ol",
