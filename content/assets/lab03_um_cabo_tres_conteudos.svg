@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" role="img"
+     aria-label="O tronco do Lab 3 visto como um unico cabo entre SW-1 e SW-2, ligando as portas Fa0 barra 24 dos dois switches. Acima e abaixo de cada switch ha uma estacao: PC-1 com 192.168.10.11 e PC-3 com 192.168.10.13 na VLAN 10, PC-2 com 192.168.20.12 e PC-4 com 192.168.20.14 na VLAN 20. Dentro do contorno do cabo ha tres faixas empilhadas, representando os tres tipos de quadro que passam pelo mesmo fio: a primeira, quadro da VLAN 10 com etiqueta 802.1Q de VID 10; a segunda, quadro da VLAN 20 com etiqueta de VID 20; a terceira, destacada, quadro sem etiqueta nenhuma, que cai na VLAN nativa do tronco">
+  <!-- Fundo TRANSPARENTE: o mesmo arquivo serve aos tres modos. Nenhum traco e preto.
+       Vocabulario visual fixo do semestre:
+         azul   = ESTACAO
+         cinza  = equipamento, cabo, porta, campo neutro
+         laranja = O destaque unico da figura: aqui, o cabo do tronco e a faixa SEM etiqueta,
+                   que e o assunto do bloco 2 (VLAN nativa).
+       Nao ha verde-agua nesta figura de proposito: o tronco pertence aos DOIS dominios de
+       broadcast ao mesmo tempo, e um contorno so o desenharia como se pertencesse a um. -->
+
+  <!-- estacoes de cima: VLAN 10 -->
+  <rect x="30"  y="40" width="112" height="40" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="86"  y="58" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#2778c4">PC-1</text>
+  <text x="86"  y="73" text-anchor="middle" font-family="monospace" font-size="10" fill="#2778c4">192.168.10.11</text>
+  <rect x="558" y="40" width="112" height="40" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="614" y="58" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#2778c4">PC-3</text>
+  <text x="614" y="73" text-anchor="middle" font-family="monospace" font-size="10" fill="#2778c4">192.168.10.13</text>
+  <text x="350" y="26" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">VLAN 10 &#183; FINANCEIRO &#183; portas Fa0/1</text>
+
+  <!-- estacoes de baixo: VLAN 20 -->
+  <rect x="30"  y="220" width="112" height="40" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="86"  y="238" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#2778c4">PC-2</text>
+  <text x="86"  y="253" text-anchor="middle" font-family="monospace" font-size="10" fill="#2778c4">192.168.20.12</text>
+  <rect x="558" y="220" width="112" height="40" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
+  <text x="614" y="238" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#2778c4">PC-4</text>
+  <text x="614" y="253" text-anchor="middle" font-family="monospace" font-size="10" fill="#2778c4">192.168.20.14</text>
+  <text x="350" y="282" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">VLAN 20 &#183; RECEPCAO &#183; portas Fa0/2</text>
+
+  <!-- os dois switches -->
+  <rect x="30"  y="106" width="112" height="88" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="86"  y="156" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">SW-1</text>
+  <rect x="558" y="106" width="112" height="88" rx="6" fill="none" stroke="#8a8f98" stroke-width="2"/>
+  <text x="614" y="156" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8a8f98">SW-2</text>
+
+  <!-- cabos de acesso: estacao ao switch -->
+  <line x1="86"  y1="80"  x2="86"  y2="106" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="614" y1="80"  x2="614" y2="106" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="86"  y1="194" x2="86"  y2="220" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="614" y1="194" x2="614" y2="220" stroke="#8a8f98" stroke-width="2"/>
+
+  <!-- O tronco: UM cabo so, e o destaque da figura -->
+  <rect x="152" y="100" width="396" height="100" rx="8" fill="none" stroke="#d9702a" stroke-width="2.5"/>
+  <text x="350" y="93" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#d9702a">Fa0/24 &#8596; Fa0/24 &#183; UM cabo, tres conteudos</text>
+
+  <!-- as tres faixas: o que passa dentro do mesmo fio -->
+  <rect x="166" y="110" width="368" height="24" rx="4" fill="none" stroke="#8a8f98" stroke-width="1.5"/>
+  <text x="178" y="126" font-family="monospace" font-size="11" fill="#8a8f98">quadro da VLAN 10 &#183; COM etiqueta 802.1Q, VID 10</text>
+
+  <rect x="166" y="138" width="368" height="24" rx="4" fill="none" stroke="#8a8f98" stroke-width="1.5"/>
+  <text x="178" y="154" font-family="monospace" font-size="11" fill="#8a8f98">quadro da VLAN 20 &#183; COM etiqueta 802.1Q, VID 20</text>
+
+  <rect x="166" y="166" width="368" height="24" rx="4" fill="none" stroke="#d9702a" stroke-width="2"/>
+  <text x="178" y="182" font-family="monospace" font-size="11" font-weight="bold" fill="#d9702a">quadro SEM etiqueta &#183; cai na VLAN nativa</text>
+</svg>

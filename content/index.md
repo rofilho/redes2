@@ -91,6 +91,14 @@ title: "🌐 Redes de Computadores II"
 </li>
 
 <li class="au-card">
+  <a href="./Aula-05---Lab-3-Trunk-entre-switches-(Pratica)" data-spa>
+    <div class="au-thumb">S05</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 3 — Trunk entre switches</b><span>Prática · P12 27/08</span></div>
+  </a>
+</li>
+
+<li class="au-card">
   <a href="./Aula-06---Roteamento-Inter-VLAN-(Teorica)" data-spa>
     <div class="au-thumb">S06</div>
     <div class="au-pbar"><i style="width:100%"></i></div>

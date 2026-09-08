@@ -1,7 +1,12 @@
 ---
-title: "Aula 05 - Trunking 802.1Q"
-publicar: true
-tags: [redes2, 2026-2, aula05, trunking, 802.1q, vlan]
+title: "Aula 05 — Trunking 802.1Q: o quadro passa a dizer de onde veio"
+disciplina: Redes de Computadores II
+codigo: "49309"
+aula: 5
+tipo: teorica
+turma: T (P11 + P12)
+date: 2026-08-25
+tags: [redes2, 2026-2, trunk, 802.1q, vlan-nativa, dtp, switchport, packet-tracer]
 ---
 
 <div class="au-leitura" data-aula="s05">
