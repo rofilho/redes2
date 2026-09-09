@@ -105,6 +105,13 @@ title: "🌐 Redes de Computadores II"
     <div class="au-cap"><b>Roteamento entre VLANs: as duas redes voltam a conversar</b><span>Teórica · 08/09</span></div>
   </a>
 </li>
+<li class="au-card">
+  <a href="./Aula-06---Lab-4-Router-on-a-stick-(Pratica)" data-spa>
+    <div class="au-thumb">S06</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 4 — Router-on-a-stick: o cabo que faltava</b><span>Prática · 09/09</span></div>
+  </a>
+</li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">S07</div>
