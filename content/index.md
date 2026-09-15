@@ -113,22 +113,24 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S07</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>data a confirmar</span></div>
-</li>
-
-<li class="au-card au-espera">
-  <div class="au-thumb">S08</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>DHCPv4, SLAAC/DHCPv6 e revisão N1</b><span>15/09 · Lab 5</span></div>
+<li class="au-card">
+  <a href="./Aula-08---Revisao-Geral-N1-(Teorica)" data-spa>
+    <div class="au-thumb">S08</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Revisão geral para a N1: três redes quebradas</b><span>Teórica · 15/09</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
   <div class="au-thumb">—</div>
   <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>EtherChannel e redundância de gateway</b><span>data no AVA</span></div>
+  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>depois da N1</span></div>
+</li>
+
+<li class="au-card au-espera">
+  <div class="au-thumb">—</div>
+  <div class="au-pbar"><i style="width:0"></i></div>
+  <div class="au-cap"><b>EtherChannel e redundância de gateway</b><span>depois da N1</span></div>
 </li>
 
 </ul>
