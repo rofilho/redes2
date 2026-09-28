@@ -23,11 +23,11 @@
 
   <!-- estacoes -->
   <rect x="60" y="120" width="120" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
-  <text x="120" y="139" text-anchor="middle" font-size="12" fill="#2778c4">PC-1</text>
+  <text font-family="Inter, Arial, sans-serif" x="120" y="139" text-anchor="middle" font-size="12" fill="#2778c4">PC-1</text>
   <text x="120" y="164" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">192.168.10.11</text>
 
   <rect x="60" y="205" width="120" height="30" rx="5" fill="none" stroke="#2778c4" stroke-width="2"/>
-  <text x="120" y="224" text-anchor="middle" font-size="12" fill="#2778c4">PC-2</text>
+  <text font-family="Inter, Arial, sans-serif" x="120" y="224" text-anchor="middle" font-size="12" fill="#2778c4">PC-2</text>
   <text x="120" y="249" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a8f98">192.168.20.12</text>
 
   <!-- cabos ate o switch -->
@@ -42,7 +42,7 @@
   <line x1="564" y1="168" x2="546" y2="186" stroke="#d9702a" stroke-width="3"/>
 
   <!-- rotulos neutros -->
-  <text x="350" y="40" text-anchor="middle" font-size="11" fill="#8a8f98">o tronco do Lab 3 leva as duas VLANs ate o SW-2. Nenhuma delas passa para a outra.</text>
-  <text x="350" y="296" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#d9702a">o switch decide por MAC, nao por IP</text>
-  <text x="350" y="316" text-anchor="middle" font-size="11" fill="#8a8f98">e por isso nao ha caminho entre as duas metades: ninguem ali le o endereco que diria para onde ir</text>
+  <text font-family="Inter, Arial, sans-serif" x="350" y="40" text-anchor="middle" font-size="11" fill="#8a8f98">o tronco do Lab 3 leva as duas VLANs até o SW-2. Nenhuma delas passa para a outra.</text>
+  <text x="350" y="296" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#d9702a">o switch decide por MAC, não por IP</text>
+  <text font-family="Inter, Arial, sans-serif" x="350" y="316" text-anchor="middle" font-size="11" fill="#8a8f98">e por isso não há caminho entre as duas metades: ninguém ali lê o endereço que diria para onde ir</text>
 </svg>
