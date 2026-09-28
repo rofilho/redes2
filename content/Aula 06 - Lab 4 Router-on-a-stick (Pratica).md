@@ -8,7 +8,7 @@ title: Lab 4 - Router-on-a-stick
 # 🟢 Lab 4 — Router-on-a-stick: o cabo que faltava para as duas redes se falarem
 
 <b>Disciplina:</b> Redes de Computadores II · 49309<br>
-<b>Semana:</b> S06 · <b>Data:</b> 09/09<br>
+<b>Semana:</b> S06 · <b>Data:</b> 28/09<br>
 <b>Formato:</b> prática em Packet Tracer · 75 min<br>
 <b>Pré-requisito:</b> a topologia do [[Aula 05 - Lab 3 Trunk entre switches (Pratica)|Lab 3]] de pé
 
@@ -510,7 +510,7 @@ Agora imagine essa mesma filial com **cinco** VLANs e um backup noturno de 300 M
 delas, num enlace de 1 Gbps. **Quanto daquele cabo o backup consome, e por que o sintoma que o
 cliente relata é "a rede fica lenta" em vez de "o backup está lento"?**
 
-*Não há resposta nesta página de propósito. Traga a sua na terça.*
+*Não há resposta nesta página de propósito. Traga a sua na próxima aula.*
 
 </div>
 
@@ -537,7 +537,7 @@ dentro do próprio switch, que este lab não usa.
 <b>➡️ Na próxima aula</b>
 
 
-Você acabou de criar um caminho único por onde tudo passa duas vezes. Na terça a gente pergunta
+Você acabou de criar um caminho único por onde tudo passa duas vezes. Na próxima aula a gente pergunta
 o que acontece quando existe **mais de um** caminho entre dois switches — e por que a rede, em
 vez de ficar mais rápida, para completamente.
 
