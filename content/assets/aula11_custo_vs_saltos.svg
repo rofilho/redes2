@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -40 820 440" width="820" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
-  <title>Custo decide, nao saltos: um caminho de 1 salto lento perde para dois saltos rapidos</title>
+  <title>Custo decide, nao saltos: 1 salto lento (custo 10) perde para 2 saltos rapidos (custo 2)</title>
   <defs>
     <marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2e7d52"/></marker>
     <marker id="o" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8a8f98"/></marker>
@@ -16,24 +16,24 @@
   <text x="715" y="200" text-anchor="middle" font-size="15" fill="#2e7d52" font-weight="600">LAN destino</text>
   <text x="715" y="222" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">192.168.30.0/24</text>
 
-  <!-- caminho A (de cima): 1 salto, 10 Mbps, custo alto -->
-  <path d="M110,170 C 300,40 500,40 680,170" fill="none" stroke="#8a8f98" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#o)"/>
-  <rect x="310" y="30" width="200" height="46" rx="6" fill="#f7f7f8" stroke="#8a8f98" stroke-width="1"/>
-  <text x="410" y="50" text-anchor="middle" font-size="13" fill="#8a8f98">Caminho A — 1 salto</text>
-  <text x="410" y="68" text-anchor="middle" font-size="13" fill="#8a8f98">link 10 Mbps · custo alto</text>
+  <!-- caminho A (de cima): 1 salto, 10 Mbps, custo 10, PERDE -->
+  <path d="M110,170 C 300,40 500,40 680,170" fill="none" stroke="#b1541b" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#o)"/>
+  <rect x="300" y="28" width="220" height="48" rx="6" fill="#fbeee4" stroke="#b1541b" stroke-width="1"/>
+  <text x="410" y="47" text-anchor="middle" font-size="13" fill="#b1541b" font-weight="600">Caminho A — 1 salto (menos!)</text>
+  <text x="410" y="66" text-anchor="middle" font-size="13" fill="#b1541b">link 10 Mbps · custo 10 ✗</text>
 
   <!-- roteador intermediario (caminho B) -->
   <rect x="340" y="300" width="120" height="60" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
   <text x="400" y="336" text-anchor="middle" font-size="18" fill="#1f5fa8" font-weight="600">R-int</text>
 
-  <!-- caminho B (de baixo): 2 saltos, Gigabit, custo baixo -->
+  <!-- caminho B (de baixo): 2 saltos, rapido, custo 1+1=2, GANHA -->
   <line x1="140" y1="230" x2="340" y2="320" stroke="#2e7d52" stroke-width="3"/>
   <line x1="460" y1="320" x2="660" y2="235" stroke="#2e7d52" stroke-width="3" marker-end="url(#g)"/>
-  <text x="235" y="300" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">1 Gbps</text>
-  <text x="565" y="300" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">1 Gbps</text>
-  <rect x="300" y="366" width="200" height="30" rx="6" fill="#e5f3ec" stroke="#2e7d52" stroke-width="1"/>
-  <text x="400" y="386" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">Caminho B — 2 saltos · custo MENOR ✓</text>
+  <text x="225" y="298" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">custo 1</text>
+  <text x="575" y="298" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">custo 1</text>
+  <rect x="285" y="366" width="230" height="30" rx="6" fill="#e5f3ec" stroke="#2e7d52" stroke-width="1"/>
+  <text x="400" y="386" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">Caminho B — 2 saltos · custo 1+1=2 ✓</text>
 
   <!-- selo escolhido -->
-  <text x="565" y="150" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">← o OSPF escolhe este</text>
+  <text x="575" y="150" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">← o OSPF escolhe este (custo 2 &lt; 10)</text>
 </svg>
