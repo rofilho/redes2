@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -80 820 720" width="820" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Duas ilhas: R1 e R2, cada um com sua LAN, ainda sem se enxergar; OSPF e a ponte</title>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#b1541b"/></marker>
+  </defs>
+
+  <!-- titulo -->
+  <text x="390" y="-40" text-anchor="middle" font-size="27" fill="#1d2057" font-weight="600">Duas ilhas, uma rede que ainda não se enxerga</text>
+
+  <!-- balao 1 -->
+  <rect x="70" y="60" width="180" height="70" rx="8" fill="#f5f8fc" stroke="#1f5fa8" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="82" y="82" font-size="13" fill="#1f5fa8">Eu conheço:</text>
+  <text x="82" y="100" font-size="13" fill="#1f5fa8">• minha LAN 10</text>
+  <text x="82" y="118" font-size="13" fill="#1f5fa8">• o link do meio</text>
+
+  <!-- balao 2 -->
+  <rect x="630" y="60" width="180" height="70" rx="8" fill="#f5f8fc" stroke="#1f5fa8" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="642" y="82" font-size="13" fill="#1f5fa8">Eu conheço:</text>
+  <text x="642" y="100" font-size="13" fill="#1f5fa8">• minha LAN 20</text>
+  <text x="642" y="118" font-size="13" fill="#1f5fa8">• o link do meio</text>
+
+  <!-- pergunta + seta + interrogacao -->
+  <text x="440" y="170" text-anchor="middle" font-size="15" fill="#b1541b">como o R1 descobre a LAN 20?</text>
+  <ellipse cx="440" cy="210" rx="35" ry="35" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="440" y="223" text-anchor="middle" font-size="36" fill="#b1541b" font-weight="700">?</text>
+  <line x1="270" y1="265" x2="605" y2="265" stroke="#b1541b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+
+  <!-- R1 -->
+  <rect x="120" y="290" width="150" height="80" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="195" y="338" text-anchor="middle" font-size="24" fill="#1f5fa8" font-weight="600">R1</text>
+  <!-- R2 -->
+  <rect x="610" y="290" width="150" height="80" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="685" y="338" text-anchor="middle" font-size="24" fill="#1f5fa8" font-weight="600">R2</text>
+
+  <!-- link central -->
+  <line x1="270" y1="330" x2="610" y2="330" stroke="#8a8f98" stroke-width="2"/>
+  <text x="440" y="322" text-anchor="middle" font-size="14" fill="#8a8f98">link 10.0.0.0/24</text>
+
+  <!-- conexoes verticais -->
+  <line x1="195" y1="370" x2="195" y2="460" stroke="#2e7d52" stroke-width="2"/>
+  <line x1="685" y1="370" x2="685" y2="460" stroke="#2e7d52" stroke-width="2"/>
+
+  <!-- LAN 10 -->
+  <rect x="120" y="460" width="150" height="64" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="195" y="484" text-anchor="middle" font-size="16" fill="#2e7d52" font-weight="600">LAN 10</text>
+  <text x="195" y="506" text-anchor="middle" font-size="13" fill="#2e7d52" font-family="monospace">192.168.10.0/24</text>
+  <!-- LAN 20 -->
+  <rect x="610" y="460" width="150" height="64" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="685" y="484" text-anchor="middle" font-size="16" fill="#2e7d52" font-weight="600">LAN 20</text>
+  <text x="685" y="506" text-anchor="middle" font-size="13" fill="#2e7d52" font-family="monospace">192.168.20.0/24</text>
+
+  <!-- rodape -->
+  <rect x="120" y="560" width="640" height="56" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="440" y="585" text-anchor="middle" font-size="15" fill="#1d2057">OSPF é a ponte: cada roteador conta ao vizinho as redes que</text>
+  <text x="440" y="605" text-anchor="middle" font-size="15" fill="#1d2057">conhece — e no fim os dois têm o mapa inteiro.</text>
+</svg>
