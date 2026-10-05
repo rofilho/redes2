@@ -157,10 +157,20 @@ title: "🌐 Redes de Computadores II"
 
 <ul class="au-cards au-vb2">
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S11</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>Roteamento dinâmico e OSPF: introdução</b><span>06/10 · Lab 6</span></div>
+<li class="au-card">
+  <a href="./Aula-11---Lab-6-OSPF-Area-Unica-(Pratica)" data-spa>
+    <div class="au-thumb">S11</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 6 — OSPF área única: a rede aprende o caminho</b><span>Prática · P11 05/10</span></div>
+  </a>
+</li>
+
+<li class="au-card">
+  <a href="./Aula-11---OSPF-Roteamento-Dinamico-(Teorica)" data-spa>
+    <div class="au-thumb">S11</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Roteamento dinâmico e OSPF: como a rede aprende</b><span>Teórica · 06/10</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
