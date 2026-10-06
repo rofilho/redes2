@@ -361,6 +361,32 @@ que está fisicamente no meio · **(D)** nenhum — eles revezam. Vote no Plicke
 
 ---
 
+<div class="au-quiz" data-quiz="s07t-stp">
+<script type="application/json" class="au-quiz-data">
+[
+  {"q": "Por que um loop na camada 2 derruba a rede, se um loop de roteamento na camada 3 só a atrapalha?", "opcoes": ["Porque o switch é mais lento que o roteador", "Porque o quadro Ethernet não tem TTL e circula para sempre", "Porque o broadcast de L2 é maior que o pacote de L3"], "correta": 1, "explica": "O pacote IP tem <b>TTL</b>: decrementa a cada salto e é descartado no zero. O quadro Ethernet <b>não tem</b> contador nenhum — num loop ele circula para sempre e vira broadcast storm."},
+  {"q": "Como o STP elege a Root Bridge?", "opcoes": ["O switch mais rápido vence", "O switch ligado primeiro vence", "O de menor Bridge ID (prioridade + MAC) vence"], "correta": 2, "explica": "Vence o <b>menor Bridge ID</b> = prioridade (padrão 32768) seguida do MAC. Com prioridade igual, o desempate é o <b>menor MAC</b> — por isso o switch mais antigo costuma virar raiz numa rede sem configuração."},
+  {"q": "Para que serve a porta que o STP coloca em blocking?", "opcoes": ["É cabo desperdiçado que deve ser removido", "É o backup: o cabo fica ligado e reabre sozinho se o caminho principal cair", "É uma porta com defeito que o STP isolou"], "correta": 1, "explica": "A porta em <code>blocking</code> é o <b>backup</b>. O cabo continua ligado, só não encaminha quadros; quando os BPDUs param de chegar pelo caminho principal, o STP <b>reabre</b> essa porta. Redundância útil, não desperdício."},
+  {"q": "O que o RSTP (802.1w) melhorou em relação ao STP clássico?", "opcoes": ["Passou a usar TTL no quadro Ethernet", "Convergência em segundos em vez de 30–50 s", "Eliminou a necessidade de Root Bridge"], "correta": 1, "explica": "Mesma lógica (eleger raiz, bloquear porta, árvore sem ciclo), mas as portas <b>negociam a transição ativamente</b> em vez de esperar temporizadores fixos — convergência em <b>segundos</b>. Veio porque os 30–50 s do STP clássico eram inaceitáveis."}
+]
+</script>
+<div class="au-quiz-stage" tabindex="0" role="group" aria-live="polite">
+  <div class="au-quiz-q"></div>
+  <div class="au-quiz-opcoes" role="radiogroup"></div>
+  <div class="au-quiz-feedback" aria-live="polite"></div>
+  <div class="au-quiz-foot">
+    <span class="au-quiz-score"></span>
+    <div class="au-quiz-nav">
+      <button class="au-quiz-prev" type="button" aria-label="Questão anterior">←</button>
+      <span class="au-quiz-count"></span>
+      <button class="au-quiz-next" type="button" aria-label="Próxima questão">→</button>
+    </div>
+  </div>
+</div>
+</div>
+
+---
+
 <div class="au-reflexao">
 <b>🤔 Para pensar até a próxima aula</b>
 

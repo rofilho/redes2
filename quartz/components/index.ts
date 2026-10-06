@@ -26,6 +26,8 @@ import ConditionalRender from "./ConditionalRender"
 import LessonNavigation from "./LessonNavigation"
 import ModoAula from "./ModoAula"
 import Flashcards from "./Flashcards"
+import Quiz from "./Quiz"
+import Podcast from "./Podcast"
 
 export {
   ArticleTitle,
@@ -56,4 +58,6 @@ export {
   LessonNavigation,
   ModoAula,
   Flashcards,
+  Quiz,
+  Podcast,
 }
