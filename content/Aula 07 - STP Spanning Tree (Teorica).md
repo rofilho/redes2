@@ -387,6 +387,19 @@ que está fisicamente no meio · **(D)** nenhum — eles revezam. Vote no Plicke
 
 ---
 
+<div class="au-video-wrap" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-azul,#1f5fa8) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<b>🎬 Para ver em casa — como a rede acha o caminho (em português)</b>
+
+O STP decide caminhos dentro de uma rede local; para ver a visão maior — como os **pacotes viajam e
+os roteadores acham o caminho** pela internet inteira — assista à série **"Como a Internet
+Funciona"** do **NIC.br** (Núcleo de Informação e Coordenação do Ponto BR), a instituição que
+administra o domínio `.br`. É didática, curta e **narrada em português**.
+
+<p class="au-video-cap" style="font-family:var(--au-mono,monospace);font-size:var(--au-t--2,.8rem);color:var(--au-tx3,#5a6b8c);margin:.5rem 0 0">▶️ Canal oficial: <a href="https://www.youtube.com/@NICbrvideos" target="_blank" rel="noopener">youtube.com/@NICbrvideos</a> — série "Como a Internet Funciona".</p>
+</div>
+
+---
+
 <div class="au-reflexao">
 <b>🤔 Para pensar até a próxima aula</b>
 
