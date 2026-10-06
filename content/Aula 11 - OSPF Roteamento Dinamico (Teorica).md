@@ -103,6 +103,53 @@ continua apontando para um link morto até alguém reescrever.
 
 ---
 
+## 📌 1.5 OSPF em quatro perguntas: o quê, por quê, quando, o que ganha [Conceito ⏳ 6 min]
+
+Antes de abrir o motor, o conceito inteiro em quatro perguntas diretas — é o que você precisa saber
+dizer sobre o OSPF mesmo sem lembrar os detalhes internos.
+
+> [!INFO] 📖 O que é o OSPF, em uma frase
+> **OSPF** (*Open Shortest Path First*) é um **protocolo de roteamento dinâmico interno** que faz os
+> roteadores de uma rede **trocarem entre si a descrição de como estão ligados**, para que cada um
+> monte sozinho o **mapa completo** da rede e calcule o **melhor caminho** para cada destino —
+> recalculando automaticamente quando a topologia muda. "Open" = padrão aberto (qualquer fabricante
+> implementa); "Shortest Path First" = o algoritmo que ele usa para achar o melhor caminho.
+
+**Por que ele existe / por que usar.** Porque escrever rota à mão (estática) não acompanha uma rede
+que **cresce** ou que **muda**: cada mudança viraria trabalho manual em vários roteadores, e uma
+falha de link deixaria o tráfego parado até alguém consertar. O OSPF troca esse trabalho manual por
+uma conversa automática entre os roteadores — eles se mantêm atualizados sozinhos.
+
+**Quando se usa (e quando não).**
+
+| Use OSPF quando… | Prefira rota estática quando… |
+| :-- | :-- |
+| a rede tem **vários roteadores** e caminhos alternativos | a rede é **pequena e estável** (2–3 roteadores) |
+| a topologia **muda** (links caem, filiais entram) | a topologia **não muda** |
+| você quer **recuperação automática** de falha | é a **rota default** para a saída da internet |
+| é uma rede **corporativa, de campus ou de provedor** | você quer **zero** tráfego de controle rodando |
+
+**O que se ganha — as vantagens, em uma olhada.**
+
+| Vantagem | O que significa na prática |
+| :-- | :-- |
+| **Escala** | adicionar um roteador não exige reescrever as tabelas dos outros |
+| **Convergência rápida** | quando um link cai, a rede acha o caminho alternativo em segundos, sozinha |
+| **Melhor caminho por custo** | escolhe pela **banda** do link, não por número de saltos (ao contrário do RIP) |
+| **Padrão aberto** | funciona entre equipamentos de fabricantes diferentes (não é preso à Cisco) |
+| **Hierarquia por áreas** | divide redes grandes para não sobrecarregar cada roteador |
+
+> [!TIP] 💡 O preço das vantagens
+> Nada é de graça: o OSPF consome mais **CPU e memória** (cada roteador guarda o mapa inteiro e roda
+> o cálculo) e gera **tráfego de controle** (os roteadores conversando). Numa rede pequena e
+> estável, esse preço não compensa — é por isso que "use dinâmico onde a rede cresce ou muda" é a
+> regra, não "dinâmico é sempre melhor".
+
+Os blocos seguintes abrem **como** o OSPF faz tudo isso: a conversa (LSA), o mapa (LSDB), o cálculo
+(Dijkstra) e o custo.
+
+---
+
 ## 📌 2. O desenho: duas ilhas e a ponte [Topologia ⏳ 4 min]
 
 <figure class="au-fig">
