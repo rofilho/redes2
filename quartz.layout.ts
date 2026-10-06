@@ -9,7 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.Search(),
     Component.Darkmode(),
   ],
-  afterBody: [Component.Flashcards()],
+  afterBody: [Component.Flashcards(), Component.Quiz(), Component.Podcast()],
   footer: Component.Footer({
     links: {
       "Mural Uniube": "https://uniube.br",

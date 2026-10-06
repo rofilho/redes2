@@ -291,4 +291,82 @@ Cards de vira-e-revela para revisão espaçada. **HTML + CSS/JS do tema** — ro
 > [!WARNING] ⚠️ Sem resposta de avaliação aqui
 > Flashcards são **estudo**, não prova: nada é enviado nem guardado (não há backend). Pergunta que vale nota vai no Banco de Questões (nos marcadores de comentário do Obsidian, que o gate exige), nunca num card público.
 
+---
+
+## 16. Quiz autocorretivo (verificação ativa, sem backend)
+
+Múltipla escolha que se corrige na hora. O aluno clica numa opção: acerto fica **verde**, erro fica **laranja**, a explicação aparece, a questão **trava** (uma resposta só) e o placar soma. **HTML + CSS/JS do tema** — roda no site estático, no celular e no teclado, sem servidor e **sem guardar nota** (é estudo, não avaliação). O conteúdo vive num `<script type="application/json">`; adicionar questão é editar a lista. O **comportamento e o estilo são globais** (componente `Quiz` do Quartz): a aula escreve só o bloco de dados + o esqueleto.
+
+<div class="au-quiz" data-quiz="exemplo">
+<script type="application/json" class="au-quiz-data">
+[
+  {"q": "O que a VLAN corta?", "opcoes": ["O domínio de colisão", "O domínio de broadcast", "O cabo físico"], "correta": 1, "explica": "A VLAN segmenta o <b>domínio de broadcast</b> na camada 2 — o domínio de colisão quem resolve é o switch."},
+  {"q": "Dois hosts em VLANs diferentes no mesmo switch se pingam direto?", "opcoes": ["Sim, mesmo switch", "Não, precisam de roteamento entre VLANs"], "correta": 1, "explica": "Mesmo switch, mas domínios diferentes: precisa de roteamento entre VLANs (a aula seguinte)."}
+]
+</script>
+<div class="au-quiz-stage" tabindex="0" role="group" aria-live="polite">
+  <div class="au-quiz-q"></div>
+  <div class="au-quiz-opcoes" role="radiogroup"></div>
+  <div class="au-quiz-feedback" aria-live="polite"></div>
+  <div class="au-quiz-foot">
+    <span class="au-quiz-score"></span>
+    <div class="au-quiz-nav">
+      <button class="au-quiz-prev" type="button" aria-label="Questão anterior">←</button>
+      <span class="au-quiz-count"></span>
+      <button class="au-quiz-next" type="button" aria-label="Próxima questão">→</button>
+    </div>
+  </div>
+</div>
+</div>
+
+> [!TIP] 💡 Como reusar numa aula
+> Copie só o bloco `<div class="au-quiz">` (dados em JSON + esqueleto). **Não** cole `<style>` nem `<script>` executável: o Quartz remove script executável vindo do Markdown, e o estilo+comportamento já vêm do componente global `Quiz` (`quartz/components/Quiz.tsx`). Troque o `data-quiz` por um id único e edite a lista JSON. Cada questão é `{"q": "enunciado", "opcoes": ["a","b","c"], "correta": 0, "explica": "por quê"}` — `correta` é o **índice** (começa em 0). Quantos blocos quiser por página — a hidratação é idempotente.
+
+> [!WARNING] ⚠️ Estudo, não avaliação
+> O quiz é **client-side puro**: nada é enviado nem guardado, o placar some ao recarregar. Pergunta que vale nota vai no Banco de Questões (nos marcadores de comentário do Obsidian), **nunca** aqui — a resposta certa fica visível no JSON da página.
+
+---
+
+## 17. Podcast da aula (componente global, CSS-only)
+
+Resumo em áudio da aula, gerado por IA (NotebookLM / Gemini Notebook) a partir do documento-fonte. Bloco discreto de apoio de revisão. O `<audio controls>` nativo já traz os controles — o componente global `Podcast` só estiliza a moldura (**sem JavaScript**).
+
+<div class="au-podcast">
+<p>🎧 Resumo em áudio — 8 min</p>
+<p>Conversa de dois locutores sobre os pontos da aula. Serve para ouvir no trajeto.</p>
+<p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
+<audio controls preload="none" src="assets/aula-exemplo-podcast.mp3"></audio>
+</div>
+
+> [!TIP] 💡 Como reusar numa aula
+> Copie só o bloco `<div class="au-podcast">`. **Não** cole `<style>`: o estilo vem do componente global `Podcast` (`quartz/components/Podcast.tsx`). O **mp3 não existe por padrão** — gere o áudio no NotebookLM, salve o arquivo em `content/assets/` e troque o `src="assets/aula-exemplo-podcast.mp3"` pelo nome real (ex.: `src="assets/aula07_podcast.mp3"`). Sem JS, sem backend; o `preload="none"` evita baixar o áudio antes de o aluno dar play.
+
+> [!NOTE] 📖 Formato do arquivo
+> `.mp3` é o mais compatível. `.m4a` também funciona no `<audio>` nativo (ver a seção 11). Mantenha o áudio curto (6–10 min) e avise que é **gerado por IA**.
+
+---
+
+## 18. Diagrama clicável (Mermaid, nativo do Quartz)
+
+O Quartz **já renderiza Mermaid por padrão** (opção `mermaid: true` do Obsidian Flavored Markdown — não precisa de componente nem de plugin). Para um diagrama **clicável**, use a diretiva `click` do próprio Mermaid: cada nó vira um link. É a opção de **menos atrito** — zero JavaScript nosso, zero `.tsx`, roda no SPA e no dark mode nativamente.
+
+Escreva um bloco de código com a linguagem `mermaid` e, no fim, uma linha `click NODE "url"` por nó que deve navegar:
+
+````markdown
+```mermaid
+graph TD
+  A[Loop de camada 2] --> B[STP bloqueia uma porta]
+  B --> C[Árvore sem ciclo]
+  B --> D[RSTP: converge em segundos]
+  click A "./Aula-07-STP-Spanning-Tree-Teorica" "Ir para a aula de STP"
+  click D "./Aula-08-EtherChannel" "Ir para EtherChannel"
+```
+````
+
+> [!TIP] 💡 Como ligar os nós
+> `click <ID do nó> "<url>" "<tooltip opcional>"`. A URL pode ser **interna** (`./Nome-da-Aula`, resolvida pelo Quartz como link do portal) ou **externa** (`https://...`). O ID é a letra/rótulo que você deu ao nó no `graph` (`A`, `B`, `C`…). O cursor vira mãozinha nos nós clicáveis; os demais ficam estáticos.
+
+> [!NOTE] 📖 Por que Mermaid e não um SVG com hidratador
+> Como o Mermaid já está ligado no `quartz.config.ts`, um diagrama clicável custa **só sintaxe Markdown** — não há componente a manter. Se algum dia precisar de um SVG desenhado à mão (Excalidraw) com áreas clicáveis, aí sim vale um `<a href>` dentro do SVG inline (a figura da seção 3 já aceita `<a>`); mas para fluxos e árvores, o Mermaid nativo resolve com menos código.
+
 </div>
