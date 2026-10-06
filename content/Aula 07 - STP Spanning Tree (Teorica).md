@@ -400,6 +400,23 @@ administra o domínio `.br`. É didática, curta e **narrada em português**.
 
 ---
 
+<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<b>🎧 Podcast da aula — "Como um cabo extra derruba a rede"</b>
+
+Dois apresentadores conversam sobre o STP (Spanning Tree Protocol) como se explicassem a um colega:
+o loop de camada 2, por que a rede cai, e como o protocolo bloqueia uma porta para resolver. Ouça no
+caminho, antes ou depois de ler a aula.
+
+<audio controls preload="none" style="width:100%;margin-top:.75rem">
+<source src="assets/aula07-stp-podcast.m4a" type="audio/mp4">
+Seu navegador não reproduz áudio embutido — <a href="assets/aula07-stp-podcast.m4a">baixe o episódio aqui</a>.
+</audio>
+
+<p style="font-family:var(--au-mono,monospace);font-size:var(--au-t--2,.8rem);color:var(--au-tx3,#5a6b8c);margin:.5rem 0 0">🎙️ Gerado com Google NotebookLM (Audio Overview, em português). Material de apoio — a fonte da aula é o texto acima.</p>
+</div>
+
+---
+
 <div class="au-reflexao">
 <b>🤔 Para pensar até a próxima aula</b>
 
