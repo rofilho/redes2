@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -60 820 560" width="820" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Tres switches em triangulo (loop fisico). O STP elege a Root Bridge e BLOQUEIA uma porta para quebrar o ciclo; os outros enlaces ficam em forwarding.</title>
+  <defs>
+    <marker id="xx" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto"><path d="M2,2 L10,10 M10,2 L2,10" stroke="#b1541b" stroke-width="2" fill="none"/></marker>
+  </defs>
+
+  <!-- titulo -->
+  <text x="390" y="-28" text-anchor="middle" font-size="26" fill="#1d2057" font-weight="600">O loop existe no cabo; o STP o quebra na lógica</text>
+
+  <!-- SW1 = Root Bridge (topo) -->
+  <rect x="300" y="30" width="180" height="78" rx="10" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2.5"/>
+  <text x="390" y="62" text-anchor="middle" font-size="20" fill="#2e7d52" font-weight="600">SW1 — Root Bridge</text>
+  <text x="390" y="86" text-anchor="middle" font-size="13" fill="#2e7d52" font-family="monospace">menor Bridge ID</text>
+  <text x="390" y="102" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">prioridade + MAC</text>
+
+  <!-- SW2 (baixo-esquerda) -->
+  <rect x="70" y="320" width="150" height="72" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="145" y="350" text-anchor="middle" font-size="20" fill="#1f5fa8" font-weight="600">SW2</text>
+  <text x="145" y="372" text-anchor="middle" font-size="12" fill="#1f5fa8" font-family="monospace">custo até a raiz: 4</text>
+  <text x="145" y="386" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">porta p/ raiz: FWD</text>
+
+  <!-- SW3 (baixo-direita) -->
+  <rect x="560" y="320" width="150" height="72" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="635" y="350" text-anchor="middle" font-size="20" fill="#1f5fa8" font-weight="600">SW3</text>
+  <text x="635" y="372" text-anchor="middle" font-size="12" fill="#1f5fa8" font-family="monospace">custo até a raiz: 4</text>
+  <text x="635" y="386" text-anchor="middle" font-size="12" fill="#2e7d52" font-family="monospace">porta p/ raiz: FWD</text>
+
+  <!-- enlace SW1-SW2 (forwarding) -->
+  <line x1="305" y1="100" x2="160" y2="320" stroke="#2e7d52" stroke-width="4"/>
+  <text x="200" y="205" text-anchor="middle" font-size="14" fill="#2e7d52" font-weight="600" transform="rotate(56 200 205)">FORWARDING</text>
+
+  <!-- enlace SW1-SW3 (forwarding) -->
+  <line x1="475" y1="100" x2="620" y2="320" stroke="#2e7d52" stroke-width="4"/>
+  <text x="580" y="205" text-anchor="middle" font-size="14" fill="#2e7d52" font-weight="600" transform="rotate(-56 580 205)">FORWARDING</text>
+
+  <!-- enlace SW2-SW3 (o terceiro cabo: BLOQUEADO numa ponta) -->
+  <line x1="220" y1="360" x2="560" y2="360" stroke="#8a8f98" stroke-width="3" stroke-dasharray="9 6"/>
+  <!-- X de porta bloqueada perto do SW3 -->
+  <circle cx="500" cy="360" r="20" fill="#fbeee4" stroke="#b1541b" stroke-width="2.5"/>
+  <path d="M491,351 L509,369 M509,351 L491,369" stroke="#b1541b" stroke-width="3" fill="none"/>
+  <text x="360" y="344" text-anchor="middle" font-size="14" fill="#b1541b" font-weight="600">porta BLOCKING — o STP a desliga</text>
+  <text x="360" y="378" text-anchor="middle" font-size="12.5" fill="#8a8f98">custos empatados (4 = 4): desempata o maior Bridge ID → SW3 bloqueia</text>
+  <text x="360" y="394" text-anchor="middle" font-size="12.5" fill="#8a8f98">o cabo continua ligado; só não encaminha quadros</text>
+
+  <!-- rodape explicativo -->
+  <rect x="70" y="430" width="640" height="56" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="390" y="455" text-anchor="middle" font-size="14.5" fill="#1d2057">O triângulo de cabos é um loop físico. O STP elege a raiz, calcula o custo até ela</text>
+  <text x="390" y="475" text-anchor="middle" font-size="14.5" fill="#1d2057">e põe UMA porta em <tspan font-weight="700" fill="#b1541b">blocking</tspan> — resta uma árvore sem ciclo, com backup pronto.</text>
+</svg>

@@ -121,10 +121,12 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">—</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>depois da N1</span></div>
+<li class="au-card">
+  <a href="./Aula-07---STP-Spanning-Tree-(Teorica)" data-spa>
+    <div class="au-thumb">S07</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>STP: por que um loop de camada 2 derruba a rede</b><span>Teórica · 06/10</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
