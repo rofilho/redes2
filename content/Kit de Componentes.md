@@ -260,4 +260,35 @@ Uma frase que abre laço. Não é índice do que vem.
 <p>Hoje você cortou a rede em duas e elas pararam de se falar — de propósito. Na próxima, elas voltam a conversar sem perder o isolamento: <b>roteamento entre VLANs</b>. E vai bastar uma interface.</p>
 </div>
 
+---
+
+## 15. Flashcards (revisão ativa, sem backend)
+
+Cards de vira-e-revela para revisão espaçada. **HTML + CSS/JS do tema** — roda no site estático, no celular e no teclado, sem servidor e sem conta. Clique (ou Enter/Espaço) vira o card; os botões navegam. O conteúdo vive num `<script type="application/json">`, então adicionar card é editar uma lista. O **comportamento e o estilo são globais** (componente `Flashcards` do Quartz): a aula escreve só o bloco de dados + o esqueleto.
+
+<div class="au-flashcards" data-fc="exemplo">
+<script type="application/json" class="au-fc-data">
+[
+  {"q": "O que o switch usa para aprender um MAC?", "a": "O MAC de <b>origem</b> do primeiro quadro que chega na porta."},
+  {"q": "O que a VLAN corta?", "a": "O <b>domínio de broadcast</b>, na camada 2."},
+  {"q": "Dois hosts em VLANs diferentes no mesmo switch se pingam?", "a": "<b>Não</b> — precisam de roteamento entre VLANs."}
+]
+</script>
+<div class="au-fc-stage" tabindex="0" role="button" aria-live="polite">
+  <div class="au-fc-face au-fc-q"></div>
+  <div class="au-fc-hint">clique para virar</div>
+</div>
+<div class="au-fc-nav">
+  <button class="au-fc-prev" type="button" aria-label="Card anterior">←</button>
+  <span class="au-fc-count"></span>
+  <button class="au-fc-next" type="button" aria-label="Próximo card">→</button>
+</div>
+</div>
+
+> [!TIP] 💡 Como reusar numa aula
+> Copie só o bloco `<div class="au-flashcards">` (dados em JSON + esqueleto). **Não** cole `<style>` nem `<script>`: o Quartz remove script executável vindo do Markdown, e o estilo+comportamento já vêm do componente global `Flashcards` (`quartz/components/Flashcards.tsx`). Troque o `data-fc` por um id único e edite a lista JSON. Quantos blocos quiser por página — a hidratação é idempotente.
+
+> [!WARNING] ⚠️ Sem resposta de avaliação aqui
+> Flashcards são **estudo**, não prova: nada é enviado nem guardado (não há backend). Pergunta que vale nota vai no Banco de Questões (nos marcadores de comentário do Obsidian, que o gate exige), nunca num card público.
+
 </div>

@@ -103,6 +103,53 @@ continua apontando para um link morto até alguém reescrever.
 
 ---
 
+## 📌 1.5 OSPF em quatro perguntas: o quê, por quê, quando, o que ganha [Conceito ⏳ 6 min]
+
+Antes de abrir o motor, o conceito inteiro em quatro perguntas diretas — é o que você precisa saber
+dizer sobre o OSPF mesmo sem lembrar os detalhes internos.
+
+> [!INFO] 📖 O que é o OSPF, em uma frase
+> **OSPF** (*Open Shortest Path First*) é um **protocolo de roteamento dinâmico interno** que faz os
+> roteadores de uma rede **trocarem entre si a descrição de como estão ligados**, para que cada um
+> monte sozinho o **mapa completo** da rede e calcule o **melhor caminho** para cada destino —
+> recalculando automaticamente quando a topologia muda. "Open" = padrão aberto (qualquer fabricante
+> implementa); "Shortest Path First" = o algoritmo que ele usa para achar o melhor caminho.
+
+**Por que ele existe / por que usar.** Porque escrever rota à mão (estática) não acompanha uma rede
+que **cresce** ou que **muda**: cada mudança viraria trabalho manual em vários roteadores, e uma
+falha de link deixaria o tráfego parado até alguém consertar. O OSPF troca esse trabalho manual por
+uma conversa automática entre os roteadores — eles se mantêm atualizados sozinhos.
+
+**Quando se usa (e quando não).**
+
+| Use OSPF quando… | Prefira rota estática quando… |
+| :-- | :-- |
+| a rede tem **vários roteadores** e caminhos alternativos | a rede é **pequena e estável** (2–3 roteadores) |
+| a topologia **muda** (links caem, filiais entram) | a topologia **não muda** |
+| você quer **recuperação automática** de falha | é a **rota default** para a saída da internet |
+| é uma rede **corporativa, de campus ou de provedor** | você quer **zero** tráfego de controle rodando |
+
+**O que se ganha — as vantagens, em uma olhada.**
+
+| Vantagem | O que significa na prática |
+| :-- | :-- |
+| **Escala** | adicionar um roteador não exige reescrever as tabelas dos outros |
+| **Convergência rápida** | quando um link cai, a rede acha o caminho alternativo em segundos, sozinha |
+| **Melhor caminho por custo** | escolhe pela **banda** do link, não por número de saltos (ao contrário do RIP) |
+| **Padrão aberto** | funciona entre equipamentos de fabricantes diferentes (não é preso à Cisco) |
+| **Hierarquia por áreas** | divide redes grandes para não sobrecarregar cada roteador |
+
+> [!TIP] 💡 O preço das vantagens
+> Nada é de graça: o OSPF consome mais **CPU e memória** (cada roteador guarda o mapa inteiro e roda
+> o cálculo) e gera **tráfego de controle** (os roteadores conversando). Numa rede pequena e
+> estável, esse preço não compensa — é por isso que "use dinâmico onde a rede cresce ou muda" é a
+> regra, não "dinâmico é sempre melhor".
+
+Os blocos seguintes abrem **como** o OSPF faz tudo isso: a conversa (LSA), o mapa (LSDB), o cálculo
+(Dijkstra) e o custo.
+
+---
+
 ## 📌 2. O desenho: duas ilhas e a ponte [Topologia ⏳ 4 min]
 
 <figure class="au-fig">
@@ -281,6 +328,30 @@ link de 10 Mbps, e **(B)** dois saltos por links de 1 Gbps. **Qual o OSPF escolh
 | "área é só um número" | é condição de adjacência e divisão do mapa |
 | "rota estática é sempre pior" | não — é melhor em rede pequena/estável e na default |
 
+</div>
+
+---
+
+<div class="au-flashcards" data-fc="s11t-ospf">
+<script type="application/json" class="au-fc-data">
+[
+  {"q": "O que é o OSPF, em uma frase?", "a": "Um protocolo de roteamento dinâmico <b>interno</b> em que os roteadores trocam a descrição de como estão ligados, montam o <b>mapa completo</b> da rede e calculam o melhor caminho — recalculando sozinhos quando a topologia muda."},
+  {"q": "Por que a rota estática não escala?", "a": "Cada mudança vira trabalho <b>manual</b> em vários roteadores, e ela <b>não reage</b> a falha: o tráfego para até alguém reescrever."},
+  {"q": "O que é um LSA?", "a": "O \"cartão de visita\" de cada roteador: a quem ele está ligado e com que custo. É <b>inundado</b> pela rede até todos terem cópia."},
+  {"q": "O que é a LSDB, e o que ela tem de especial?", "a": "A coleção completa dos LSAs — o <b>mapa da área</b>. Todos os roteadores da área têm a LSDB <b>idêntica</b>. É o que o <code>FULL</code> sincroniza."},
+  {"q": "OSPF escolhe o caminho de menos saltos?", "a": "<b>Não</b> — escolhe o de <b>menor custo acumulado</b>, e custo vem da banda. Contar saltos é RIP."},
+  {"q": "Por que dois roteadores em áreas diferentes não viram vizinhos?", "a": "O OSPF trata áreas como mapas separados; sem LSDB comum não há adjacência. A área é <b>condição</b> de vizinhança, não enfeite."}
+]
+</script>
+<div class="au-fc-stage" tabindex="0" role="button" aria-live="polite">
+  <div class="au-fc-face au-fc-q"></div>
+  <div class="au-fc-hint">clique para virar</div>
+</div>
+<div class="au-fc-nav">
+  <button class="au-fc-prev" type="button" aria-label="Card anterior">←</button>
+  <span class="au-fc-count"></span>
+  <button class="au-fc-next" type="button" aria-label="Próximo card">→</button>
+</div>
 </div>
 
 ---
