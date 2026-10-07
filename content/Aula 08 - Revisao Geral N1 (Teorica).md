@@ -55,7 +55,7 @@ Os três têm em comum a coisa que a prova mais cobra: **nenhuma interface está
 
 > [!WARNING] ⚠️ Um laço que fica aberto, e é justo você saber
 > A aula passada terminou perguntando o que acontece quando você puxa **dois** cabos entre os
-> mesmos dois switches. A resposta chama-se **STP**, e ela não cabe antes de 22/09: o assunto
+> mesmos dois switches. A resposta chama-se **[STP](./Aula-07---STP-Spanning-Tree-(Teorica))**, e ela não cabe antes de 22/09: o assunto
 > vem depois da prova, junto com EtherChannel. **Nada de STP cai na N1.** Se você estudou por
 > conta própria, ótimo — só não gaste nisso os seis dias que faltam.
 
