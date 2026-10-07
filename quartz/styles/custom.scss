@@ -341,6 +341,26 @@ article h1 {
   color: var(--au-tx);
 }
 
+/* INVERSÃO DE POLARIDADE NO TEMA ESCURO (decisão Romualdo, 2026-10-07).
+   O design original fixava o corpo de leitura (.au-leitura) em fundo claro
+   mesmo no dark mode ("polaridade positiva", Piepenbrock 2013/2014). Na
+   prática ficava uma folha branca gritante dentro da moldura escura. Agora o
+   corpo acompanha o tema: no escuro, .au-leitura herda as variáveis escuras
+   (as mesmas que o :root[saved-theme="dark"] já define para a moldura). O
+   .au-leitura redefine --au-* localmente, e variável definida no próprio
+   elemento vence a herdada do :root — por isso o override precisa mirar
+   `.au-leitura` diretamente, não o :root. Os guards de texto abaixo seguem
+   válidos: como --au-tx passa a ser claro, o texto fica claro sobre o fundo
+   escuro. Blocos de código (--au-cod-*) já eram escuros e não mudam. */
+:root[saved-theme="dark"] .au-leitura {
+  --au-bg: #12161c;
+  --au-bg2: #191f27;
+  --au-bd: #29313c;
+  --au-tx: #dfe4ea;
+  --au-tx2: #98a2b0;
+  --au-tx3: #6b7683;
+}
+
 /* Guard de texto corrido no tema escuro — generaliza os remendos pontuais que
    já existem neste arquivo (article h1, .au-resumo>b, .au-reflexao).
 
