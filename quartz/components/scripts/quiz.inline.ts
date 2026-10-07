@@ -133,6 +133,15 @@ function hidratar(root: HTMLElement): void {
   pintar()
 }
 
-document.addEventListener("nav", () => {
+function hidratarTodos(): void {
   document.querySelectorAll<HTMLElement>(".au-quiz").forEach(hidratar)
-})
+}
+
+// Hidrata na carga inicial E a cada 'nav' (SPA) — idempotente via dataset.
+// Só o 'nav' deixava o quiz vazio numa carga direta (abrir a URL / F5).
+document.addEventListener("nav", hidratarTodos)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", hidratarTodos)
+} else {
+  hidratarTodos()
+}

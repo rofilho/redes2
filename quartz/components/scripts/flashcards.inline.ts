@@ -95,6 +95,17 @@ function hidratar(root: HTMLElement): void {
   pintar()
 }
 
-document.addEventListener("nav", () => {
+function hidratarTodos(): void {
   document.querySelectorAll<HTMLElement>(".au-flashcards").forEach(hidratar)
-})
+}
+
+// Quartz dispara 'nav' na navegação SPA. Mas numa carga DIRETA (abrir a URL, F5)
+// o listener pode ser registrado tarde e perder o 'nav' inicial — então o card
+// ficava vazio na primeira carga e só populava ao navegar. Hidratamos nos DOIS
+// momentos: agora (carga inicial) e a cada 'nav' (idempotente via dataset.fcReady).
+document.addEventListener("nav", hidratarTodos)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", hidratarTodos)
+} else {
+  hidratarTodos()
+}
