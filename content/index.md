@@ -163,7 +163,7 @@ title: "🌐 Redes de Computadores II"
   <a href="./Aula-11---Lab-6-OSPF-Area-Unica-(Pratica)" data-spa>
     <div class="au-thumb">S11</div>
     <div class="au-pbar"><i style="width:100%"></i></div>
-    <div class="au-cap"><b>Lab 6 — OSPF área única: a rede aprende o caminho</b><span>Prática · P11 05/10</span></div>
+    <div class="au-cap"><b>Lab 6 — OSPF área única: a rede aprende o caminho</b><span>Prática · P11 05/10 · P12 08/10</span></div>
   </a>
 </li>
 
