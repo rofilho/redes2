@@ -1,7 +1,7 @@
 @use "./base.scss";
 
 /* ==========================================================================
-   REDES DE COMPUTADORES II (49309) · Uniube · 2026-2
+   REDES DE COMPUTADORES II (49309) Â· Uniube Â· 2026-2
    Design System de Aulas v2.0 — porte para Quartz
 
    Fonte de verdade: vault → .claude/skills/criacao-aulas/references/
@@ -297,9 +297,17 @@ article :is(h1, h2, h3, h4, h5, h6) {
   -webkit-hyphens: manual;
 }
 
-@media (max-width: 34rem) {
+/* Medida da linha curta -> desliga o justify (volta a margem irregular).
+   Em `em`, não `rem`: em media query o `em` usa o tamanho de fonte INICIAL
+   do navegador, imune ao zoom de página (Ctrl +), que escala o `rem` do
+   root junto e fazia o breakpoint 34rem nunca disparar — a prosa seguia
+   justificada numa coluna estreita e abria rios de espaço. 48em cobre
+   tela estreita E zoom. (Romualdo 08/10/2026) */
+@media (max-width: 48em) {
   article :is(p, li) {
     text-align: left;
+    hyphens: manual;
+    -webkit-hyphens: manual;
   }
 }
 
