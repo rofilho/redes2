@@ -227,6 +227,10 @@ article {
   font-size: var(--au-t-0);
   line-height: 1.65;
   color: var(--au-tx);
+  /* Container de inline-size: deixa a container query medir a largura REAL
+     do texto em `ch` e desligar o justify sob zoom (Ctrl +). Ver bloco
+     "Prosa justificada" abaixo. */
+  container: au-doc / inline-size;
 }
 
 /* A medida de leitura vale para o TEXTO, não para o artigo: tabela de
@@ -298,12 +302,15 @@ article :is(h1, h2, h3, h4, h5, h6) {
 }
 
 /* Medida da linha curta -> desliga o justify (volta a margem irregular).
-   Em `em`, não `rem`: em media query o `em` usa o tamanho de fonte INICIAL
-   do navegador, imune ao zoom de página (Ctrl +), que escala o `rem` do
-   root junto e fazia o breakpoint 34rem nunca disparar — a prosa seguia
-   justificada numa coluna estreita e abria rios de espaço. 48em cobre
-   tela estreita E zoom. (Romualdo 08/10/2026) */
-@media (max-width: 48em) {
+   NÃO é media query de viewport: o zoom de página (Ctrl +) encolhe a medida
+   REAL da linha sem mexer na largura do viewport em `rem`/`em`, então um
+   breakpoint de largura (34rem, 48em) nunca dispara no zoom — a 125% a prosa
+   seguia justificada numa coluna estreita e abria rios de espaço.
+   A régua certa é a largura do PRÓPRIO texto, medida em `ch` (que escala com
+   a fonte, logo com o zoom): abaixo de ~46 caracteres por linha, justificar
+   estraga. Container query no `article` responde a isso em qualquer zoom.
+   (Romualdo 08/10/2026 — reportou 120% ok, 125% quebrado) */
+@container au-doc (max-width: 46ch) {
   article :is(p, li) {
     text-align: left;
     hyphens: manual;
