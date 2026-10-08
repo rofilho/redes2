@@ -9,7 +9,7 @@ tags: [redes2, lab, ospf, roteamento-dinamico]
 # 🟢 Lab 6 — OSPF área única: a rede aprende sozinha o caminho
 
 <b>Disciplina:</b> Redes de Computadores II · 49309<br>
-<b>Semana:</b> S11 · <b>Data:</b> 05/10<br>
+<b>Semana:</b> S11 · <b>Data:</b> P11 05/10 · P12 08/10<br>
 <b>Formato:</b> prática em Packet Tracer · 75 min · <b>formativo (sem nota)</b><br>
 <b>Pré-requisito de Redes I:</b> ler uma tabela de rotas e saber o que é máscara de sub-rede
 
@@ -118,8 +118,8 @@ wildcard é amanhã.
 
 ## 📌 1. Passo a passo: ligue o OSPF e veja a adjacência subir [Mão na massa ⏳ 25 min]
 
-Aqui a gente constrói junto. **Eu monto o R1 na tela, narrando cada comando; você reproduz nos
-dois roteadores.** Não corra na frente: o momento mais importante da aula é uma linha que o IOS
+Aqui a gente constrói junto, acompanhando o R1 passo a passo e reproduzindo cada comando nos
+dois roteadores. Não corra na frente: o momento mais importante da aula é uma linha que o IOS
 imprime sozinho, e se você estiver digitando outra coisa, vai perder.
 
 ### 1.1 Exercício 1 — a topologia e o estado inicial [⏳ 6 min]
@@ -240,7 +240,7 @@ C    192.168.10.0/24 is directly connected, GigabitEthernet0/1
 
 ### 2.2 Exercício 5 — quebre a área e veja o silêncio [⏳ 13 min]
 
-Este é o erro conceitual mais comum do OSPF, e você vai **criá-lo de propósito** para reconhecer o
+Este é o erro conceitual mais comum do OSPF, e você vai criá-lo de propósito para reconhecer o
 sintoma — que é justamente **não ter sintoma gritado**.
 
 <details class="au-aposta">
