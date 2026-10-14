@@ -18,49 +18,19 @@ tags: [redes2, 2026-2, lab02, pratica, packet-tracer, vlan, porta-de-acesso]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Na terça a fronteira subiu no projetor e você repetiu a configuração em casa, no pré-lab. Hoje você **mede** essa fronteira. Responda **antes** de abrir — o que você errar aqui é o que vai te travar no laboratório.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Num switch de fábrica você digita <code>vlan 10</code>, <code>name FINANCEIRO</code> e sai. Quantos domínios de broadcast existem agora?</summary>
+<summary>Mesma rede IP, VLANs diferentes: o ARP de um PC chega ao outro?</summary>
 
-**Um.** Criar a VLAN cria o **destino**, não move ninguém para dentro dele.
-
-As quatro portas continuam na VLAN 1, e é o número de VLANs **com porta** que conta. O `show vlan brief` mostra a linha da VLAN 10 com a coluna `Ports` vazia.
-
-Foi o passo 6 do pré-lab, e é de onde o laboratório de hoje parte.
-
-</details>
-
-<details>
-<summary>Duas estações na mesma sub-rede, com a mesma máscara, em VLANs diferentes. O <code>ping</code> falha. Em que camada está a falha, e qual comando prova isso?</summary>
-
-**Camada 2**, e quem prova é o `arp -a` da estação de origem.
-
-A VLAN barra o `ARP Request`, que é broadcast. Sem resposta, o campo de MAC de destino não tem valor, e **o quadro do `ping` nunca é montado**.
-
-A prova é a **ausência** da linha do destino no `arp -a`: se a falha fosse depois, no encaminhamento, a linha estaria lá.
+**Não: o ARP não atravessa a VLAN.** Hoje o <code>arp -a</code> prova isso.
 
 </details>
 
 <details>
 <summary>Uma porta que ninguém configurou está em qual VLAN?</summary>
 
-**Na VLAN 1.** Não existe porta fora de VLAN num switch Cisco.
-
-"Sem VLAN configurada" nunca quis dizer "sem VLAN nenhuma" — quis dizer "na VLAN de número 1, que é a de fábrica".
-
-Guarde isto para o item 5 do critério de pronto de hoje: **a VLAN 1 não fica vazia** só porque você moveu quatro portas. Um 2960 tem 26.
-
-</details>
-
-<details>
-<summary>Do Lab 1: o switch preenche a tabela MAC lendo <b>qual</b> campo dos quadros que passam por ele?</summary>
-
-**O campo de MAC de origem.** Uma tabela MAC não é a lista de quem está conectado — é a lista de **quem transmitiu**.
-
-Foi o que você mediu no Lab 1: o PC-3 estava ligado, com link verde, e não aparecia na tabela, porque nunca tinha sido origem de nada.
-
-**Por que isto importa hoje:** a coluna `Vlan` dessa tabela é um dos itens que valem ponto. Se você só gerar tráfego de um lado da fronteira, ela vai mostrar **um** número, não dois — e você vai achar que errou a configuração.
+**Na VLAN 1.** Hoje você confere isso no <code>show vlan brief</code>.
 
 </details>
 </div>

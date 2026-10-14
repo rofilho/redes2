@@ -19,42 +19,27 @@ tags: [redes2, 2026-2, aula11, ospf, roteamento-dinamico, custo, area]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Na sua prática desta semana (o Lab 6) você ligou o OSPF com dois comandos e **viu** a rota do
-vizinho aparecer sozinha na tabela, marcada com `O`. Hoje a gente abre a caixa: **como** ela
-apareceu, **por que** o número do custo estava ali, e **por que** existe aquela palavra "área".
-
-Quatro perguntas de retomada. As três primeiras são do Lab 6; a quarta é da Aula 06 (Inter-VLAN), e
-volta a servir hoje. Responda **antes** de continuar.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>No Lab 6, antes de ligar o OSPF, o <code>ping</code> entre as duas LANs falhava mesmo com o link físico de pé. Por quê?</summary>
+<summary>Rota escrita à mão: quem a atualiza quando a rede muda?</summary>
 
-Porque faltava a **rota**. O R1 só conhecia de nascença as redes ligadas direto nele (as linhas
-`C`); a LAN do outro roteador não estava na tabela, então o pacote era descartado. O link existir
-não basta — o roteador precisa **saber** que a rede existe e por onde chegar.
+**Só você.**
+
 </details>
 
 <details>
-<summary>Depois de ligar o OSPF, uma linha apareceu na tabela com a letra <code>O</code>. O que ela significava, e quem a digitou?</summary>
+<summary>O que o roteador olha para decidir por onde mandar o pacote?</summary>
 
-`O` = rota aprendida por **OSPF**. **Ninguém a digitou** — ela apareceu sozinha porque os dois
-roteadores se contaram as redes que conheciam. É o oposto da rota estática, que é escrita à mão.
+**O IP de destino, na tabela de rotas.**
+
 </details>
 
 <details>
-<summary>No Lab 6, quando você pôs <code>area 0</code> num roteador e <code>area 1</code> no outro, a adjacência não subiu — e <b>sem mensagem de erro</b>. O que isso te diz sobre "área"?</summary>
+<summary>Destino sem rota nenhuma na tabela: o roteador encaminha ou descarta?</summary>
 
-Que "área" não é enfeite: é **condição** para dois roteadores trocarem rotas. Dois roteadores no
-mesmo enlace só viram vizinhos se estiverem na mesma área. Hoje você descobre **por que** o OSPF
-organiza a rede em áreas — e por que a área 0 tem nome especial.
-</details>
+**Descarta o pacote.**
 
-<details>
-<summary>Da Aula 06: a tabela de rotas tem linhas <code>C</code> (connected) e <code>L</code> (local). O que o roteador faz quando o destino de um pacote <b>não casa</b> com nenhuma linha da tabela?</summary>
-
-Ele **descarta** o pacote (a não ser que tenha uma rota default). A tabela de rotas é a única fonte
-de verdade do encaminhamento: o que não está nela não existe para o roteador. É por isso que
-**preencher a tabela** — à mão ou via OSPF — é o assunto de hoje.
 </details>
 </div>
 

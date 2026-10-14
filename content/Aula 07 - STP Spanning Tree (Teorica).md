@@ -19,40 +19,27 @@ tags: [redes2, 2026-2, aula07, stp, spanning-tree, loop-camada-2, redundancia, r
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Antes da N1 você viu o switch **aprender** endereços MAC e **inundar** (flooding) o que não
-conhece. Hoje a gente descobre o que acontece quando esse mesmo switch tem **dois caminhos** para o
-mesmo lugar — e por que isso, sem proteção, derruba a rede inteira. Responda **antes** de continuar.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Quando o switch recebe um quadro cujo MAC de destino <b>não está</b> na tabela, o que ele faz com esse quadro?</summary>
+<summary>MAC de destino fora da tabela: o que o switch faz com o quadro?</summary>
 
-Faz **flooding**: replica o quadro em **todas** as portas do mesmo domínio de broadcast, menos a de
-origem. Guarde isto — é a peça que, num loop, faz a rede explodir: o mesmo quadro é copiado para
-sempre.
+**Manda por todas as portas da mesma VLAN, menos a de entrada (flooding).**
+
 </details>
 
 <details>
-<summary>Um quadro de <b>broadcast</b> (destino <code>FF:FF:FF:FF:FF:FF</code>) é tratado como? Para onde o switch o manda?</summary>
+<summary>Para que serve o TTL do pacote IP?</summary>
 
-Para **todas** as portas, sempre — broadcast nunca está "na tabela", é por definição para todo
-mundo. Num caminho em anel, cada switch recebe o broadcast e o reenvia aos outros, que o reenviam de
-volta: o início da **tempestade**.
+**Para descartar o pacote que roda em círculo: cada roteador tira 1, e no zero ele é descartado.**
+
 </details>
 
 <details>
-<summary>Da camada 3 (Redes I): o cabeçalho IP tem um campo <b>TTL</b>. Para que ele serve, e o que acontece quando chega a zero?</summary>
+<summary>No router-on-a-stick, o cabo até o roteador é de acesso ou tronco?</summary>
 
-O **TTL** (*Time To Live*) é um contador que cada roteador **decrementa**; ao chegar a zero, o
-pacote é **descartado**. É a trava que impede um pacote IP de rodar em círculo para sempre. Guarde
-esta ideia: hoje você vai ver que o quadro **Ethernet não tem** nada parecido.
-</details>
+**Tronco.**
 
-<details>
-<summary>Por que uma empresa ligaria dois switches com <b>dois</b> cabos em vez de um só, se um já basta para eles conversarem?</summary>
-
-Por **redundância**: se um cabo (ou uma porta) falha, o outro assume e a rede não cai. É um objetivo
-legítimo e desejável — o problema, que hoje a aula resolve, é que a redundância física na camada 2
-cria um **loop**, e o loop, sem o STP, é pior que a falha que ele deveria cobrir.
 </details>
 </div>
 

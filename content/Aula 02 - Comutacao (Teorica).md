@@ -23,26 +23,26 @@ tags: [redes2, 2026-2, comutacao, endereco-mac, arp, tabela-mac, dominio-de-broa
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Primeira aula de conteúdo: não há semana anterior para retomar. As três perguntas abaixo não cobram memória, cobram **palpite**. Responda cada uma **antes** de abrir a resposta.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Seu computador pede um endereço IP ao servidor da rede. Mas para <i>conversar</i> com esse servidor ele já precisaria ter um endereço. Como ele consegue?</summary>
+<summary>Além do IP, que outro endereço a placa de rede tem?</summary>
 
-Porque o IP não é o único endereço que uma máquina tem. Existe um segundo, gravado na placa de rede pelo fabricante, que já está lá quando você tira o computador da caixa.
+**O MAC, gravado de fábrica.**
 
 </details>
 
 <details>
-<summary>Você liga dois PCs novos num switch, no Packet Tracer, e dá <code>ping</code>. O primeiro quase sempre volta <code>Request timed out</code>. Por quê?</summary>
+<summary>O ARP descobre o IP ou o MAC?</summary>
 
-Porque antes do primeiro pacote a máquina precisa **descobrir** um endereço que ela ainda não tem, e essa descoberta demora. O primeiro `ping` morre esperando. Não é erro de configuração: é o preço da primeira pergunta, e ele se paga uma vez só.
+**O MAC, a partir do IP.**
 
 </details>
 
 <details>
-<summary>Quarenta estações num switch só, e o que uma manda para "todo mundo" chega em todas as outras. Trocar por um switch melhor resolve?</summary>
+<summary>O que a máscara define?</summary>
 
-Não. Um switch melhor comuta mais rápido e tem mais portas. Nada disso muda a regra: mandar para todos aquilo que é endereçado a todos **é o que um switch faz**, por definição.
+**Quais endereços são da mesma sub-rede.**
 
 </details>
 </div>

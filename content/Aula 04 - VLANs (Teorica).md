@@ -18,45 +18,26 @@ tags: [redes2, 2026-2, teorica, vlan, dominio-broadcast]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Na aula passada o switch aprendeu sozinho, e **não cortou o broadcast** — não havia como impedir. Hoje você impede, com configuração.
-
-Quatro perguntas de retomada. As três primeiras são da aula passada; a quarta é de Redes I, e é a que mais vai te servir no fim de hoje. Responda **antes** de abrir.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>A rede tinha três PCs e a tabela do switch tinha duas linhas. Por quê?</summary>
+<summary>Cache ARP e tabela MAC: qual fica na estação e qual fica no switch?</summary>
 
-Porque o switch aprende lendo o **MAC de origem** de quem transmite. O terceiro PC recebeu a pergunta do ARP, viu que o IP não era dele e ficou quieto — nunca foi origem de nada.
-
-Uma tabela MAC não é a lista de quem está conectado: é a lista de **quem transmitiu**.
+**O cache ARP fica na estação (IP ↔ MAC); a tabela MAC fica no switch (MAC ↔ porta).**
 
 </details>
 
 <details>
-<summary>Cache ARP e tabela MAC: onde cada um vive, e o que cada um casa?</summary>
+<summary>Switch com 30 estações e nenhuma VLAN criada. Quantos domínios de broadcast?</summary>
 
-O **cache ARP** vive na **estação**, no sistema operacional, e casa **IP ↔ MAC**. Vê-se com `arp -a`.
-
-A **tabela MAC** vive no **switch**, e casa **MAC ↔ porta**. Vê-se com `show mac address-table`.
-
-Regra de bolso: quem tem IP na cabeça é a estação; quem tem porta na cabeça é o switch.
+**Um.** Hoje você vai cortá-lo em vários, com VLAN.
 
 </details>
 
 <details>
-<summary>Switch de 48 portas, 30 estações, nenhuma VLAN. Quantos domínios de broadcast? E quem corta um domínio de broadcast?</summary>
+<summary><code>192.168.1.20</code> e <code>192.168.1.30</code>, máscara <code>255.255.255.0</code>. Estão na mesma rede?</summary>
 
-**Um.** Sem VLAN, o switch inteiro é um domínio de broadcast só — tenha ele 48 portas ou 4. Os 30 domínios de colisão são outra contagem, e é o switch que os cria.
-
-Quem corta domínio de broadcast é o **roteador** — ou a **VLAN**. É o assunto de hoje.
-
-</details>
-
-<details>
-<summary>De Redes I: uma máquina é <code>192.168.1.20</code> com máscara <code>255.255.255.0</code>, a outra é <code>192.168.1.30</code> com a mesma máscara. Elas estão na mesma rede? Como você decide isso?</summary>
-
-**Estão.** A máscara `255.255.255.0` diz que os três primeiros números são a parte de rede: as duas são `192.168.1`, então pertencem à mesma sub-rede e conversam **sem roteador**.
-
-Guarde essa conclusão. Hoje ela vai falhar — duas máquinas nessa exata situação não vão se alcançar, e a máscara não terá nada a ver com isso.
+**Estão.** Com essa máscara, a rede é dada pelos três primeiros números.
 
 </details>
 </div>

@@ -23,43 +23,26 @@ tags: [redes2, 2026-2, lab, packet-tracer, diagnostico, troubleshooting]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Esta é a primeira prática de Redes II, então o "até aqui" é **Redes I**. Nenhum defeito do laboratório de hoje exige algo que você ainda não viu — é de propósito: o objetivo de hoje não é conteúdo novo, é **método**.
-
-Responda **antes** de abrir. O que você errar aqui é o que vai te custar tempo na hora de diagnosticar.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Você pinga o gateway com sucesso. O que isso <i>prova</i>, e o que não prova?</summary>
+<summary>O que o <code>ping</code> testa?</summary>
 
-**Prova:** que existe caminho íntegro de ida e volta entre a sua máquina e a interface do roteador — cabo, porta, switch e a sua pilha IP local funcionando. Prova também, e isto quase todo mundo esquece, que **a sua máscara inclui o gateway**: se não incluísse, você nem teria tentado entregar o pacote a ele.
-
-**Não prova:** que o roteador *encaminha* para os outros lados, que a rota existe, que o destino está no ar, nem que nomes resolvem. "Pinga o gateway" é um teste de trecho, não um atestado de saúde da rede.
-
-Guarde a distinção: cada teste vale pelo que **elimina**, não pelo que confirma.
+**Se um pacote chega ao destino e a resposta volta.**
 
 </details>
 
 <details>
-<summary>PC-A é 192.168.10.20/24 e PC-B é 192.168.10.200/26, no mesmo switch. Quem enxerga quem?</summary>
+<summary>O que a máscara define?</summary>
 
-**A conversa fica torta — e é a assimetria, não a falha, que denuncia máscara.** Cada host calcula sozinho quem é vizinho:
-
-- **PC-A (`/24`)** enxerga o bloco `192.168.10.0–255`. Para ele, PC-B é local: envia o quadro direto, sem gateway.
-- **PC-B (`/26`)** enxerga só `192.168.10.192–255`. Para ele, PC-A é estrangeiro: manda para o gateway.
-
-Um lado entrega direto e o outro pede carona ao roteador. Dependendo do que houver no caminho o ping pode até andar, por rota indireta — mas **a rede parou de ser simétrica**, e é isso que você tem de notar.
-
-A lição que vale o semestre: **a máscara é a fronteira, e ela decide sozinha.** Cada VLAN da S03 vai ser uma sub-rede, e cada gateway da S05 vai depender desta conta.
+**Quais endereços são da mesma sub-rede.**
 
 </details>
 
 <details>
-<summary>O que um cabo console conecta, exatamente?</summary>
+<summary>Para que serve o gateway?</summary>
 
-**A porta de gerenciamento, não o plano de dados.** O acesso por console existe para *configurar* o equipamento, tipicamente quando a rede está indisponível, e é deliberadamente independente do encaminhamento. **Nenhum quadro de usuário atravessa essa porta.**
-
-Por isso "as duas caixas estão ligadas por um cabo" nunca é resposta para "há enlace de dados?". São perguntas sobre coisas diferentes.
-
-**"Tem cabo" e "tem rede" são afirmações diferentes** — é o primeiro degrau do fluxo de diagnóstico, e o degrau em que mais gente escorrega em campo.
+**Para enviar o que vai para fora da sua rede.**
 
 </details>
 </div>

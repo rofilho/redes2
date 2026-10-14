@@ -11,24 +11,22 @@ anatomia: sim
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-<p>Quatro perguntas. Papel, sem consulta, seis minutos. Não vale nota, e é por isso que
-funciona: o que você não recuperar agora é exatamente o que precisa de estudo nos seis dias
-que faltam.</p>
+<p>Quatro perguntas. Papel, sem consulta, seis minutos. Não vale nota: o que você não lembrar agora é o que estudar nos seis dias que faltam.</p>
 
 <ol>
-<li>Um switch recebe um quadro cujo MAC de destino <b>não está</b> na tabela dele. O que ele faz, e como a tabela muda depois disso?</li>
-<li>Duas portas de acesso no mesmo switch, VLANs diferentes, mesma faixa de IP. Os dois PCs se pingam? Por quê?</li>
-<li><b>Semana passada:</b> numa topologia router-on-a-stick, por que o cabo entre o switch e o roteador precisa ser tronco, e não porta de acesso?</li>
-<li><b>Espiral (Redes I):</b> 192.168.10.0/26 — quantos hosts úteis, e qual o último endereço utilizável?</li>
+<li>MAC de destino fora da tabela: o que o switch faz com o quadro?</li>
+<li>Mesma faixa de IP, VLANs diferentes, mesmo switch: os PCs se pingam?</li>
+<li>No router-on-a-stick, por que o cabo até o roteador é tronco?</li>
+<li>Para que serve o STP?</li>
 </ol>
 
 <details>
-<summary><b>Respostas</b> — abra só depois de ter escrito as suas</summary>
+<summary><b>Respostas</b> (abra só depois de escrever as suas)</summary>
 <ol>
-<li><b>Inunda</b> por todas as portas daquela VLAN, menos a de entrada. A tabela não muda por causa do destino; ela muda porque o switch leu o MAC de <b>origem</b> desse mesmo quadro e anotou a porta de onde ele veio.</li>
-<li><b>Não.</b> VLANs diferentes são domínios de broadcast diferentes: o ARP de um nunca chega ao outro. A faixa de IP ser a mesma não ajuda, e na verdade piora — os dois PCs acham que são vizinhos e por isso nem tentam usar o gateway.</li>
-<li>Porque o roteador precisa saber <b>de qual VLAN</b> cada quadro veio para decidir por qual subinterface tratá-lo. Porta de acesso entrega quadro sem etiqueta: chegaria tudo indistinguível, e uma subinterface só poderia ser usada.</li>
-<li><b>62 hosts úteis</b> (2⁶ − 2). A sub-rede vai de 192.168.10.0 a 192.168.10.63; o último utilizável é <b>192.168.10.62</b>, porque o .63 é o broadcast.</li>
+<li><b>Inunda</b> por todas as portas da VLAN, menos a de entrada.</li>
+<li><b>Não.</b> O ARP de um nunca chega ao outro.</li>
+<li><b>Para levar várias VLANs:</b> o roteador precisa saber de qual VLAN veio cada quadro, e só o tronco leva essa etiqueta.</li>
+<li><b>Bloquear uma porta</b> para quebrar o loop entre switches.</li>
 </ol>
 </details>
 </div>

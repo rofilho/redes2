@@ -24,43 +24,19 @@ tags: [redes2, 2026-2, trunk, 802.1q, vlan-nativa, dtp, switchport, packet-trace
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Na aula passada você levantou uma parede dentro de um switch, com dez linhas de configuração. Hoje a parede tem de atravessar um **cabo** — e um cabo não tem paredes.
-
-Quatro perguntas de retomada. As três primeiras são da aula passada; a quarta é da Aula 02, e é a que mais vai te servir no meio de hoje. Responda **antes** de abrir.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Criei a VLAN 10 e a VLAN 20 e não mexi em porta nenhuma. Quantos domínios de broadcast com estação dentro?</summary>
+<summary>Broadcast da VLAN 10 chega a um PC da VLAN 20?</summary>
 
-**Um.** Criar a VLAN cria o **destino**; ninguém se mudou. A coluna `Ports` das duas continua vazia no `show vlan brief`, e as estações seguem todas na VLAN 1.
+**Não.**
 
 </details>
 
 <details>
-<summary>Duas máquinas, <code>192.168.1.11</code> e <code>192.168.1.13</code>, mesma máscara, VLANs diferentes. O <code>ping</code> falha <b>onde</b>?</summary>
+<summary>Mesma rede IP, VLANs diferentes: o pedido ARP chega ao outro PC?</summary>
 
-No **ARP**, antes de o primeiro pacote existir. O `ARP Request` é broadcast e não atravessa a fronteira da VLAN; sem resposta, o campo de MAC de destino fica vazio e o quadro não sai da placa.
-
-A prova é o `arp -a` **sem** a entrada do destino.
-
-</details>
-
-<details>
-<summary>O que a porta de acesso faz com a informação de VLAN, quando o quadro entra por ela?</summary>
-
-Nada — porque não há informação de VLAN no quadro. Numa porta de acesso o quadro entra e sai **limpo**. Quem sabe a qual VLAN aquele tráfego pertence é o **switch**, pela porta em que ele entrou.
-
-Guarde isso: hoje a informação vai ter de viajar **dentro do quadro**, e é a primeira vez no semestre que isso acontece.
-
-</details>
-
-<details>
-<summary>Da Aula 02, e olhando a figura da próxima seção: o SW-ANDAR-1 recebe um quadro do FIN-1 (VLAN 10) para um MAC que ele não conhece, e <b>inunda</b>. Uma das portas do domínio é o cabo que sobe para o SW-ANDAR-2. Quando o quadro chega lá, <b>em qual VLAN ele cai?</b></summary>
-
-Escreveu "na 10"? É a resposta que quase todo mundo dá, e ela pressupõe uma coisa que **ainda não é verdade**: que a VLAN viaja junto com o quadro.
-
-A resposta honesta, com o que você sabe até agora, é: **o SW-ANDAR-2 não tem como saber.** O que chegou nele foi um quadro Ethernet comum — dois endereços MAC e dados. A informação de que aquilo era da VLAN 10 vivia na **porta** do primeiro switch, e ficou lá.
-
-A primeira metade da inundação você já sabia: o switch repete por todas as portas do domínio, menos a de origem. A segunda metade é a fatura de hoje — **a travessia apaga a VLAN**, e a aula inteira é sobre devolvê-la ao quadro.
+**Não, ele morre na fronteira da VLAN.**
 
 </details>
 </div>

@@ -36,25 +36,25 @@ Esta página é o **guia vivo** da plataforma: cada bloco que uma aula pode ter 
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Responda **antes** de abrir. Se errar, você acabou de descobrir o que revisar hoje.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Na Aula 02, o switch aprendeu o endereço MAC de um host. Como?</summary>
+<summary>Para que serve o gateway?</summary>
 
-Olhando o **MAC de origem** do primeiro quadro que chegou naquela porta. O switch nunca "pergunta" — ele aprende observando o que passa, e guarda o par porta ↔ MAC na tabela.
+**Para enviar o que vai para fora da sua rede.**
 
 </details>
 
 <details>
-<summary>Se o MAC de destino não está na tabela, o que o switch faz?</summary>
+<summary>O que a máscara define?</summary>
 
-Faz **flooding**: replica o quadro em todas as portas do mesmo domínio de broadcast, menos a de origem. É por isso que um domínio grande demais degrada a rede inteira — e é exatamente o problema que a VLAN resolve.
+**Quais endereços são da mesma sub-rede.**
 
 </details>
 </div>
 
 > [!NOTE] Por que perguntas e não um resumo
-> Recap passivo é quase inerte. Prática de recuperação em sala rende **g = 0,50** (Yang et al., 2021; Rowland, 2014) e **g = 0,74** quando espaçada (Latimier et al., 2021). O ganho vem do esforço de lembrar — se a resposta já está na tela, não há esforço. **Nunca** escrever este bloco como parágrafo pronto.
+> Recap passivo é quase inerte. Prática de recuperação em sala rende **g = 0,50** (Yang et al., 2021; Rowland, 2014) e **g = 0,74** quando espaçada (Latimier et al., 2021). O ganho vem do esforço de lembrar — se a resposta já está na tela, não há esforço. Regras de cada pergunta: tabela "Como escrever cada pergunta" do manual de conteúdo (`MANUAL_AGENTE_CONTEUDO.md`, bloco 1). **Nunca** escrever este bloco como parágrafo pronto.
 
 ---
 
@@ -215,10 +215,13 @@ Cheatsheet de consulta. Denso de propósito.
 
 Gerado no Gemini Notebook (ex-NotebookLM) a partir do documento-fonte. Bloco discreto: é apoio de revisão, não a aula.
 
-<div class="au-podcast">
-<p><b>🎧 Resumo em áudio — 8 min</b></p>
-<p>Conversa de dois locutores sobre os pontos da aula. Serve para ouvir no trajeto. <b>Gerado por IA</b> a partir do material da disciplina — se divergir da aula, a aula vence.</p>
-<audio controls preload="none" src="assets/audio/aula03_resumo.m4a"></audio>
+<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<b>🎧 Podcast da aula — "TÍTULO DO EPISÓDIO"</b>
+<p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
+<audio controls preload="none" style="width:100%;margin-top:.5rem">
+<source src="assets/aulaNN-tema-podcast.m4a" type="audio/mp4">
+Seu navegador não reproduz áudio embutido — <a href="assets/aulaNN-tema-podcast.m4a">baixe o episódio aqui</a>.
+</audio>
 </div>
 
 ---
@@ -331,11 +334,13 @@ Múltipla escolha que se corrige na hora. O aluno clica numa opção: acerto fic
 
 Resumo em áudio da aula, gerado por IA (NotebookLM / Gemini Notebook) a partir do documento-fonte. Bloco discreto de apoio de revisão. O `<audio controls>` nativo já traz os controles — o componente global `Podcast` só estiliza a moldura (**sem JavaScript**).
 
-<div class="au-podcast">
-<p>🎧 Resumo em áudio — 8 min</p>
-<p>Conversa de dois locutores sobre os pontos da aula. Serve para ouvir no trajeto.</p>
+<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<b>🎧 Podcast da aula — "TÍTULO DO EPISÓDIO"</b>
 <p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
-<audio controls preload="none" src="assets/aula-exemplo-podcast.mp3"></audio>
+<audio controls preload="none" style="width:100%;margin-top:.5rem">
+<source src="assets/aulaNN-tema-podcast.m4a" type="audio/mp4">
+Seu navegador não reproduz áudio embutido — <a href="assets/aulaNN-tema-podcast.m4a">baixe o episódio aqui</a>.
+</audio>
 </div>
 
 > [!TIP] 💡 Como reusar numa aula
