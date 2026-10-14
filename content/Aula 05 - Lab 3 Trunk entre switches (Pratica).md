@@ -18,18 +18,28 @@ tags: [redes2, 2026-2, lab03, pratica, packet-tracer, trunk, 802.1q, vlan-nativa
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Na terça você viu **por que** um cabo entre switches precisa etiquetar quadro. Hoje você põe esse cabo para funcionar, quebra ele de propósito e olha a etiqueta com os próprios olhos, no simulador.
+Tente responder de cabeça. Depois abra e confira.
 
-Antes de mexer em qualquer coisa, responda de cabeça. As respostas estão logo abaixo de cada pergunta, mas **tentar primeiro é o que fixa** — ler a resposta sem tentar não vale quase nada.
+<details>
+<summary>Onde o quadro leva a etiqueta 802.1Q?</summary>
 
-<details><summary>1. Um cabo entre dois switches, com as duas pontas em porta de acesso na VLAN 10. Quem atravessa?</summary>Só a VLAN 10. A porta de acesso serve **uma** VLAN, e o switch trata aquele cabo como mais uma porta dela — o tráfego da VLAN 20 nem chega a ser encaminhado para lá.</details>
+**Só no tronco.**
 
-<details><summary>2. Onde a etiqueta 802.1Q nasce e onde ela morre?</summary>Nasce no switch que **entrega** o quadro ao tronco e morre no switch que o **retira** do tronco, antes de entregá-lo na porta de acesso. A estação nunca vê etiqueta nenhuma — nem a de origem, nem a de destino.</details>
+</details>
 
-<details><summary>3. O que é a VLAN nativa de um tronco?</summary>É a VLAN em que cai tudo o que trafega **sem etiqueta** naquele tronco. De fábrica é a VLAN 1, e ninguém precisou escolher isso — é o padrão, não uma decisão.</details>
+<details>
+<summary>O que é a VLAN nativa de um tronco?</summary>
 
-<details><summary>4. Do Lab 2: quando o PC-1 pingou uma estação da VLAN 20, por quantas portas saiu o <code>ARP Request</code>?</summary>Por **uma** — a outra porta de acesso da VLAN 10 daquele switch, e o quadro nunca deixou o equipamento. Guarde essa imagem: hoje o número vai ser o mesmo, e mesmo assim a tela vai ser outra. Descobrir **por quê** é o bloco 3.</details>
+**A VLAN onde cai o quadro que chega sem etiqueta.** De fábrica, é a VLAN 1.
 
+</details>
+
+<details>
+<summary>Broadcast da VLAN 10 sai por uma porta da VLAN 20?</summary>
+
+**Não: o switch só repete para portas da mesma VLAN.**
+
+</details>
 </div>
 
 > [!INFO] 🎯 O que você leva desta aula

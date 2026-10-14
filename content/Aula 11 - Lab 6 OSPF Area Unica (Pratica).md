@@ -16,16 +16,22 @@ tags: [redes2, lab, ospf, roteamento-dinamico]
 ---
 
 <div class="au-caminho">
+<b>Nosso caminho até aqui</b>
+
+Tente responder de cabeça. Depois abra e confira.
+
 <details>
-<summary>🧭 <b>Antes de abrir o Packet Tracer:</b> no Lab 4, o roteador encaminhava entre as duas VLANs porque as duas redes estavam <b>diretamente conectadas</b> nele. E se a rede que você quer alcançar está do outro lado de <b>outro</b> roteador — uma rede que o seu roteador nunca viu? Como ele fica sabendo que ela existe?</summary>
+<summary>O que o roteador olha para decidir por onde mandar o pacote?</summary>
 
-Ele **não fica** sabendo sozinho. Um roteador só conhece de nascença as redes ligadas direto nas
-interfaces dele — as linhas `C` da tabela, como no Lab 4. Qualquer rede além disso ele precisa que
-**alguém conte**.
+**O IP de destino, na tabela de rotas.**
 
-Hoje você vai ver duas formas de contar, e por que uma delas não escala: ou **você** escreve a
-rota à mão em cada roteador (rota estática), ou os roteadores **conversam entre si** e descobrem
-sozinhos (roteamento dinâmico). O bloco 0 mostra a dor da primeira; o resto da aula monta a segunda.
+</details>
+
+<details>
+<summary>Um tronco carrega uma VLAN ou várias?</summary>
+
+**Várias.**
+
 </details>
 </div>
 

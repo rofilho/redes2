@@ -19,45 +19,19 @@ tags: [redes2, 2026-2, aula06, inter-vlan, router-on-a-stick, svi]
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Nas duas aulas passadas você levantou uma parede e ensinou essa parede a atravessar um cabo. Hoje alguém bate na parede e pede passagem — e você vai abrir uma porta, sem derrubar nada.
-
-Quatro perguntas de retomada. As três primeiras são de 25/08; a quarta é da Aula 02, e é a que mais vai te servir no meio de hoje. Responda **antes** de abrir.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>Um quadro sai da porta de acesso do FIN-1, atravessa o tronco e chega ao FIN-2. Em que ponto do percurso ele tem a etiqueta 802.1Q?</summary>
+<summary>Em que trecho do caminho o quadro leva a etiqueta 802.1Q?</summary>
 
-**Só dentro do tronco.** O switch de saída **insere** os quatro bytes ao encaminhar pelo tronco; o de entrada os **remove** antes de entregar na porta de acesso. A estação nunca vê etiqueta.
-
-Guarde a forma disso, porque hoje vai acontecer de novo com outro equipamento no meio: **quem etiqueta e desetiqueta é sempre o equipamento, nas bordas do tronco.**
+**Só no tronco, entre os equipamentos.**
 
 </details>
 
 <details>
-<summary>O que acontece com um quadro que chega ao tronco <b>sem</b> etiqueta nenhuma?</summary>
+<summary>Antes de mandar um pacote, como a estação decide se precisa do gateway?</summary>
 
-Ele **não é descartado**: cai na **VLAN nativa** daquela porta, que de fábrica é a VLAN 1. E tudo o que sai para a VLAN nativa sai limpo, sem etiqueta.
-
-</details>
-
-<details>
-<summary>No pré-laboratório da aula passada, o campo <b>gateway</b> dos quatro PCs ficou em branco. Por que isso não impediu o <code>ping</code> entre FIN-1 e FIN-2 de funcionar?</summary>
-
-Porque os dois estão na **mesma rede IP**. Quando origem e destino compartilham a sub-rede, a estação não precisa de gateway: ela descobre o MAC do destino por ARP e entrega direto.
-
-O gateway só entra em cena quando o destino está **fora** da rede da origem — e é exatamente esse o caso de hoje. O campo que ficou em branco vai ser preenchido nesta aula, e é ele que faz a aula acontecer.
-
-</details>
-
-<details>
-<summary>Da Aula 02: o FIN-1 (<code>192.168.10.11</code>) quer falar com o SRV-REC (<code>192.168.20.50</code>). Antes de o primeiro pacote existir, a estação faz uma conta. <b>Qual conta, e o que ela decide?</b></summary>
-
-Ela aplica a **máscara** ao endereço de destino e compara com a própria rede. `192.168.20.50` com máscara `/24` está na rede `192.168.20.0`; ela está na `192.168.10.0`. **São redes diferentes.**
-
-E essa conta decide **para quem ela vai pedir o MAC**. Se o destino estivesse na mesma rede, ela pediria por ARP o MAC do próprio destino. Como está fora, ela pede o MAC de **outra máquina**: a do gateway.
-
-Escreveu "ela faz ARP do `192.168.20.50`"? É a resposta que quase todo mundo dá, e ela pula justamente a conta. A estação **nunca** faz ARP de um endereço fora da sua rede — ela não teria como, o ARP é broadcast e não sai do domínio.
-
-A fatura de hoje é essa: **falta a máquina que responde por esse gateway.** A aula inteira é sobre colocá-la lá.
+**Aplica a máscara e compara a rede do destino com a dela.**
 
 </details>
 </div>

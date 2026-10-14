@@ -24,34 +24,26 @@ tags: [redes2, 2026-2, lab, packet-tracer, tabela-mac, arp, inundacao, simulatio
 <div class="au-caminho">
 <b>Nosso caminho até aqui</b>
 
-Terça você viu, no quadro, o switch aprender. Hoje você vê na sua tela. Responda **antes** de abrir — o que você errar aqui é o que vai te confundir na hora do laboratório.
+Tente responder de cabeça. Depois abra e confira.
 
 <details>
-<summary>O PC-1 vai falar com o PC-2 pela primeira vez. Quantos quadros saem antes de o primeiro dado trafegar, e para quem cada um vai?</summary>
+<summary>A pergunta do ARP vai para um PC só ou para todos?</summary>
 
-**Dois.** O primeiro é o **ARP Request**, e vai para `FF:FF:FF:FF:FF:FF` — todos. O PC-1 não sabe o MAC do PC-2, e não sabe a quem perguntar.
-
-O segundo é o **ARP Reply**, e vai **só para o PC-1**, em unicast. O PC-2 já sabe quem perguntou: o endereço do PC-1 veio escrito no campo de origem do Request.
-
-Hoje você vai **ver** os dois na tela, um de cada vez.
+**Para todos (broadcast).**
 
 </details>
 
 <details>
-<summary>O switch está ligado, com quatro máquinas conectadas e link verde nas quatro. Quantas entradas tem a tabela MAC dele?</summary>
+<summary>O switch aprende o MAC pela origem ou pelo destino do quadro?</summary>
 
-**Nenhuma.** O switch aprende lendo o campo **MAC de origem** dos quadros que passam por ele. Se ninguém transmitiu, não passou quadro nenhum, e não há o que aprender.
-
-Uma tabela MAC não é a lista de quem está conectado — é a lista de **quem transmitiu**. Este é o ponto que o laboratório de hoje mede.
+**Pela origem.**
 
 </details>
 
 <details>
-<summary>Você dá <code>ping</code> do PC-1 para o PC-2 e o primeiro dos quatro pacotes volta <code>Request timed out</code>. Consertar o quê?</summary>
+<summary>O cache ARP fica no PC ou no switch?</summary>
 
-**Nada.** O primeiro pacote morreu esperando o ARP resolver — é o custo da primeira pergunta, e ele se paga uma vez só.
-
-Leia sempre **as quatro linhas e a estatística**, nunca a primeira. Quem julga pela primeira linha vai "consertar" uma rede que já estava certa.
+**No PC.**
 
 </details>
 </div>

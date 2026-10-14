@@ -15,20 +15,22 @@ title: Lab 4 - Router-on-a-stick
 ---
 
 <div class="au-caminho">
+<b>Nosso caminho até aqui</b>
+
+Tente responder de cabeça. Depois abra e confira.
+
 <details>
-<summary>🧭 <b>Antes de abrir o Packet Tracer:</b> no Lab 3, o <code>ping</code> do PC-1 para o PC-4 falhou — e eu disse que <b>tinha</b> que falhar. O que exatamente estava faltando ali?</summary>
+<summary>Sem gateway, um PC tenta pingar outra rede. O pedido sai do PC?</summary>
 
-Faltava **alguém que lesse IP**.
+**Não: o PC vê que o destino é de outra rede e desiste.** Hoje você preenche o gateway e põe o roteador.
 
-O switch entregou tudo o que sabia fazer: separou as duas VLANs e ainda as carregou pelo mesmo
-cabo, cada uma na sua etiqueta. Mas switch lê **MAC**, e MAC não tem noção de "outra rede". Para
-o PC-1, o `192.168.20.14` está numa sub-rede que não é a dele, e a regra da pilha é clara: o que
-não é meu vai para o **gateway**. O gateway estava em branco.
+</details>
 
-Por isso o erro foi `Destination host unreachable` **respondido pelo próprio PC-1**: ele nem
-chegou a colocar quadro no cabo. A falha aconteceu antes do primeiro pacote existir.
+<details>
+<summary>Um tronco carrega uma VLAN ou várias?</summary>
 
-Hoje você coloca no cabo quem lê IP — e preenche aquele campo que ficou vazio de propósito.
+**Várias.**
+
 </details>
 </div>
 
