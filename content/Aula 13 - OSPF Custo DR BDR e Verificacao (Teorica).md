@@ -291,7 +291,7 @@ configurado com prioridade **10**. **Quem vira DR?** Vote no Plickers.
 ---
 
 <div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
-<b>🎧 Podcast da aula — "Como o OSPF decide o melhor caminho"</b>
+<b>🎧 Podcast da aula — "Custo de banda e eleição no OSPF"</b>
 <p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
 <audio controls preload="none" style="width:100%;margin-top:.5rem">
 <source src="assets/aula13-ospf-podcast.m4a" type="audio/mp4">
