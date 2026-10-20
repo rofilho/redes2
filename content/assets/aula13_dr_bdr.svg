@@ -1,0 +1,77 @@
+<!-- BRIEF: OSPF DR/BDR numa rede multiacesso. ESQUERDA: 4 roteadores todos adjacentes a todos (6 linhas emaranhadas) = caos. DIREITA: a solucao - DR (porta-voz) e BDR (reserva) no centro; os demais (DROTHER) falam so com DR/BDR via switch. Broadcast x spoke. Estetica hand-drawn/Excalidraw, fundo transparente, halo off-white para o tema escuro. Paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="A esquerda, quatro roteadores formando adjacencia todos com todos, um emaranhado de seis linhas. A direita, a solucao OSPF: um DR e um BDR como porta-vozes, e os demais roteadores falando so com eles.">
+  <defs>
+    <style>
+      .sk   { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl  { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text  { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+      .rt   { fill:#e4f0fb; stroke:#1d2057; stroke-width:2.6; }
+    </style>
+  </defs>
+
+  <!-- divisor central -->
+  <path class="sk" d="M480,70 q6,180 0,370" stroke="#c8ccdd" stroke-width="2" stroke-dasharray="4 7"/>
+
+  <!-- ============================ ESQUERDA: CAOS ============================ -->
+  <text x="235" y="42" text-anchor="middle" class="lbl" font-size="21" font-weight="bold" fill="#b1541b">Sem porta-voz: caos</text>
+  <text x="235" y="66" text-anchor="middle" class="lbl" font-size="14" fill="#1d2057">todos adjacentes a todos &#183; 6 relacoes</text>
+
+  <!-- 4 roteadores nos cantos de um quadrado -->
+  <!-- A (cima-esq) B (cima-dir) C (baixo-esq) D (baixo-dir) -->
+  <!-- linhas emaranhadas (6) primeiro, atras dos nos -->
+  <g stroke="#b1541b" stroke-width="2.4" class="sk">
+    <path d="M150,170 q85,-12 170,0"/>            <!-- A-B -->
+    <path d="M150,170 q-12,85 0,170"/>            <!-- A-C -->
+    <path d="M150,170 q92,88 170,170"/>           <!-- A-D (diagonal) -->
+    <path d="M320,170 q-92,88 -170,170"/>         <!-- B-C (diagonal) -->
+    <path d="M320,170 q12,85 0,170"/>             <!-- B-D -->
+    <path d="M150,340 q85,12 170,0"/>             <!-- C-D -->
+  </g>
+  <g>
+    <circle cx="150" cy="170" r="26" class="rt"/><text x="150" y="176" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#1d2057">R1</text>
+    <circle cx="320" cy="170" r="26" class="rt"/><text x="320" y="176" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#1d2057">R2</text>
+    <circle cx="150" cy="340" r="26" class="rt"/><text x="150" y="346" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#1d2057">R3</text>
+    <circle cx="320" cy="340" r="26" class="rt"/><text x="320" y="346" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#1d2057">R4</text>
+  </g>
+  <text x="235" y="430" text-anchor="middle" class="lbl" font-size="14" fill="#b1541b">n&#215;(n-1)/2 &#8594; explode quando a rede cresce</text>
+
+  <!-- ============================ DIREITA: SOLUCAO ============================ -->
+  <text x="725" y="42" text-anchor="middle" class="lbl" font-size="21" font-weight="bold" fill="#2e7d52">Com DR e BDR: ordem</text>
+  <text x="725" y="66" text-anchor="middle" class="lbl" font-size="14" fill="#1d2057">todos falam so com o porta-voz</text>
+
+  <!-- switch no centro -->
+  <g>
+    <path class="sk" d="M662,236 q-4,-15 12,-14 l102,1 q15,-1 13,14 l0,34 q2,15 -13,14 l-102,-1 q-15,1 -12,-14 z" fill="#1d2057" stroke="#1d2057" stroke-width="2.6"/>
+    <text x="725" y="259" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#ffffff">SWITCH</text>
+  </g>
+
+  <!-- DR (destaque) e BDR -->
+  <g>
+    <circle cx="725" cy="128" r="30" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="3.4"/>
+    <text x="725" y="126" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#2e7d52">DR</text>
+    <text x="725" y="142" text-anchor="middle" class="lbl" font-size="10" fill="#2e7d52">porta-voz</text>
+    <circle cx="856" cy="250" r="27" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.8" stroke-dasharray="5 4"/>
+    <text x="856" y="248" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#2e7d52">BDR</text>
+    <text x="856" y="263" text-anchor="middle" class="lbl" font-size="10" fill="#2e7d52">reserva</text>
+  </g>
+  <!-- DROTHER -->
+  <g>
+    <circle cx="604" cy="128" r="24" class="rt"/><text x="604" y="133" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#1d2057">R6</text>
+    <circle cx="604" cy="372" r="24" class="rt"/><text x="604" y="377" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#1d2057">R7</text>
+    <circle cx="725" cy="392" r="24" class="rt"/><text x="725" y="397" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#1d2057">R8</text>
+  </g>
+  <!-- ligacoes limpas ao switch (spoke) -->
+  <g stroke="#2e7d52" stroke-width="2.6" class="sk">
+    <path d="M725,158 l0,64"/>        <!-- DR-switch -->
+    <path d="M834,262 q-40,8 -62,6"/> <!-- BDR-switch -->
+    <path d="M624,145 q40,45 44,78"/> <!-- R3-switch -->
+    <path d="M624,356 q40,-42 46,-70"/><!-- R4-switch -->
+    <path d="M725,368 l0,-82"/>        <!-- R5-switch -->
+  </g>
+  <!-- multicast labels -->
+  <text x="748" y="196" class="lbl" font-size="12" fill="#2e7d52">224.0.0.6</text>
+  <text x="725" y="462" text-anchor="middle" class="lbl" font-size="14" fill="#2e7d52">o DR coleta os LSAs e os redistribui</text>
+</svg>

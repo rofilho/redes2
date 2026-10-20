@@ -1,0 +1,80 @@
+<!-- BRIEF: OSPF custo - dois caminhos ate a mesma rede. Caminho A: 1 salto, link 10 Mbps, custo 10 (perde). Caminho B: 2 saltos, 2 links 1 Gbps, custo 1+1=2 (vence). O OSPF escolhe B (menor custo acumulado), nao A (menos saltos). Estetica hand-drawn/Excalidraw, fonte manuscrita, fundo transparente, halo off-white para sobreviver ao tema escuro. Paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="OSPF escolhe o caminho B, de dois saltos por links Gigabit (custo 2), em vez do caminho A de um salto por link de 10 Mbps (custo 10)">
+  <defs>
+    <style>
+      .sk   { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl  { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text  { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+    <marker id="c-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1541b"/>
+    </marker>
+    <marker id="c-grn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d52"/>
+    </marker>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="38" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">Menor custo &#8800; menos saltos</text>
+  <path class="sk" d="M300,50 q75,7 150,3 q75,-4 150,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- ORIGEM (R0, esquerda) -->
+  <g>
+    <circle cx="90" cy="240" r="34" class="sk" fill="#e4f0fb" stroke="#1d2057" stroke-width="3"/>
+    <text x="90" y="247" text-anchor="middle" class="lbl" font-size="17" font-weight="bold" fill="#1d2057">R0</text>
+    <text x="90" y="300" text-anchor="middle" class="lbl" font-size="14" fill="#1d2057">origem</text>
+  </g>
+
+  <!-- DESTINO (rede, direita) -->
+  <g>
+    <path class="sk" d="M770,214 q22,-6 44,0 q8,26 0,52 q-22,6 -44,0 q-8,-26 0,-52 z" fill="#eaf5ee" stroke="#2e7d52" stroke-width="3"/>
+    <text x="792" y="236" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#2e7d52">rede</text>
+    <text x="792" y="253" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#2e7d52">destino</text>
+    <text x="792" y="318" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">192.168.30.0</text>
+  </g>
+
+  <!-- ===================== CAMINHO A (cima): 1 salto, 10 Mbps, custo 10 ===================== -->
+  <g>
+    <!-- rotulo do caminho -->
+    <text x="300" y="98" class="lbl" font-size="18" font-weight="bold" fill="#b1541b">Caminho A</text>
+    <text x="408" y="98" class="lbl" font-size="15" fill="#1d2057">&#183; 1 salto, direto</text>
+    <!-- seta direta curvada por cima -->
+    <path class="sk" d="M116,214 q330,-120 672,0" stroke="#b1541b" stroke-width="3.5" marker-end="url(#c-red)"/>
+    <!-- etiqueta do link -->
+    <rect x="378" y="118" width="150" height="32" rx="9" fill="#fbeee6" stroke="#b1541b" stroke-width="2"/>
+    <text x="453" y="140" text-anchor="middle" class="lbl" font-size="15" fill="#b1541b">link 10 Mbps</text>
+    <!-- custo -->
+    <text x="610" y="128" class="lbl" font-size="17" font-weight="bold" fill="#b1541b">custo = 10</text>
+  </g>
+
+  <!-- ===================== CAMINHO B (baixo): 2 saltos, 2x 1 Gbps, custo 2 ===================== -->
+  <g>
+    <!-- roteador intermediario -->
+    <circle cx="440" cy="392" r="30" class="sk" fill="#e4f0fb" stroke="#1d2057" stroke-width="3"/>
+    <text x="440" y="398" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#1d2057">R1</text>
+    <!-- rotulo do caminho -->
+    <text x="150" y="360" class="lbl" font-size="18" font-weight="bold" fill="#2e7d52">Caminho B</text>
+    <text x="258" y="360" class="lbl" font-size="15" fill="#1d2057">&#183; 2 saltos</text>
+    <!-- seta R0 -> R1 -->
+    <path class="sk" d="M108,272 q130,120 304,120" stroke="#2e7d52" stroke-width="3.5" marker-end="url(#c-grn)"/>
+    <!-- seta R1 -> destino -->
+    <path class="sk" d="M470,388 q180,-10 300,-108" stroke="#2e7d52" stroke-width="3.5" marker-end="url(#c-grn)"/>
+    <!-- etiquetas dos links -->
+    <rect x="196" y="398" width="130" height="30" rx="9" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2"/>
+    <text x="261" y="419" text-anchor="middle" class="lbl" font-size="14" fill="#2e7d52">1 Gbps &#183; c1</text>
+    <rect x="560" y="398" width="130" height="30" rx="9" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2"/>
+    <text x="625" y="419" text-anchor="middle" class="lbl" font-size="14" fill="#2e7d52">1 Gbps &#183; c1</text>
+    <!-- custo acumulado -->
+    <text x="330" y="458" class="lbl" font-size="17" font-weight="bold" fill="#2e7d52">custo acumulado = 1 + 1 = 2</text>
+  </g>
+
+  <!-- VENCEDOR -->
+  <g>
+    <path class="sk" d="M636,360 q40,-6 78,0 q10,20 0,40 q-40,6 -78,0 q-9,-20 0,-40 z" fill="#2e7d52" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="675" y="376" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#ffffff">OSPF</text>
+    <text x="675" y="392" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#ffffff">escolhe B</text>
+  </g>
+</svg>
