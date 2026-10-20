@@ -1,0 +1,65 @@
+<!-- BRIEF: Os quatro comandos 'show' de verificacao do OSPF, cada um como um cartao: comando (mono) + a pergunta que responde + o que prova. neighbor=conversa, interface=custo e papel, route ospf=resultado, protocols=configuracao. Estetica hand-drawn/Excalidraw, fundo transparente, halo off-white para o tema escuro. Paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="Os quatro comandos show do OSPF e o que cada um prova: neighbor prova a conversa, interface prova o custo e o papel, route ospf prova o resultado, protocols prova a configuracao.">
+  <defs>
+    <style>
+      .sk   { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl  { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      .mono { font-family:'JetBrains Mono','Consolas',monospace; }
+      text  { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="40" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">4 comandos, 4 provas diferentes</text>
+  <path class="sk" d="M300,52 q75,7 150,3 q75,-4 150,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- ============ CARTAO 1: neighbor (conversa) ============ -->
+  <g>
+    <path class="sk" d="M50,86 q210,-8 400,0 q6,80 0,120 q-210,8 -400,0 q-6,-62 0,-120 z" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.8"/>
+    <rect x="72" y="104" width="356" height="30" rx="8" fill="#1d2057"/>
+    <text x="84" y="125" class="mono" font-size="15" fill="#ffffff">show ip ospf neighbor</text>
+    <text x="72" y="160" class="lbl" font-size="15" font-style="italic" fill="#2778c4">"Meus vizinhos estao falando comigo?"</text>
+    <text x="72" y="188" class="lbl" font-size="16" font-weight="bold" fill="#1d2057">&#8594; prova a CONVERSA</text>
+    <text x="72" y="212" class="lbl" font-size="12.5" fill="#1d2057">vizinhos, estado FULL, quem e DR/BDR</text>
+  </g>
+
+  <!-- ============ CARTAO 2: interface (custo e papel) ============ -->
+  <g>
+    <path class="sk" d="M460,86 q190,-8 390,0 q6,80 0,120 q-190,8 -390,0 q-6,-62 0,-120 z" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.8"/>
+    <rect x="482" y="104" width="346" height="30" rx="8" fill="#1d2057"/>
+    <text x="494" y="125" class="mono" font-size="14" fill="#ffffff">show ip ospf interface</text>
+    <text x="482" y="160" class="lbl" font-size="15" font-style="italic" fill="#2e7d52">"Ligado aqui, com quais parametros?"</text>
+    <text x="482" y="188" class="lbl" font-size="16" font-weight="bold" fill="#1d2057">&#8594; prova o CUSTO e o PAPEL</text>
+    <text x="482" y="212" class="lbl" font-size="12.5" fill="#1d2057">custo, prioridade, DR/BDR/DROTHER</text>
+  </g>
+
+  <!-- ============ CARTAO 3: route ospf (resultado) ============ -->
+  <g>
+    <path class="sk" d="M50,266 q210,-8 400,0 q6,80 0,120 q-210,8 -400,0 q-6,-62 0,-120 z" fill="#fbeee6" stroke="#b1541b" stroke-width="2.8"/>
+    <rect x="72" y="284" width="356" height="30" rx="8" fill="#1d2057"/>
+    <text x="84" y="305" class="mono" font-size="15" fill="#ffffff">show ip route ospf</text>
+    <text x="72" y="340" class="lbl" font-size="15" font-style="italic" fill="#b1541b">"O que o OSPF instalou de fato?"</text>
+    <text x="72" y="368" class="lbl" font-size="16" font-weight="bold" fill="#1d2057">&#8594; prova o RESULTADO</text>
+    <text x="72" y="392" class="lbl" font-size="12.5" fill="#1d2057">rotas O, com [distancia / custo]</text>
+  </g>
+
+  <!-- ============ CARTAO 4: protocols (configuracao) ============ -->
+  <g>
+    <path class="sk" d="M460,266 q190,-8 390,0 q6,80 0,120 q-190,8 -390,0 q-6,-62 0,-120 z" fill="#f0eefb" stroke="#6a4fb3" stroke-width="2.8"/>
+    <rect x="482" y="284" width="346" height="30" rx="8" fill="#1d2057"/>
+    <text x="494" y="305" class="mono" font-size="15" fill="#ffffff">show ip protocols</text>
+    <text x="482" y="340" class="lbl" font-size="15" font-style="italic" fill="#6a4fb3">"Qual protocolo roda, e como?"</text>
+    <text x="482" y="368" class="lbl" font-size="16" font-weight="bold" fill="#1d2057">&#8594; prova a CONFIGURACAO</text>
+    <text x="482" y="392" class="lbl" font-size="12.5" fill="#1d2057">OSPF ativo, Router ID, redes anunciadas</text>
+  </g>
+
+  <!-- RODAPE: a ordem do funil -->
+  <g>
+    <path class="sk" d="M70,440 q380,-10 760,0 q4,30 0,56 q-380,10 -760,0 q-4,-24 0,-56 z" fill="#eaf7f6" stroke="#00aa9f" stroke-width="2.6"/>
+    <text x="450" y="466" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#00aa9f">Diagnostico e funil, nao loteria:</text>
+    <text x="450" y="488" text-anchor="middle" class="lbl" font-size="13.5" fill="#1d2057">neighbor primeiro (ha vizinho FULL?) &#8594; depois route, interface, protocols</text>
+  </g>
+</svg>
