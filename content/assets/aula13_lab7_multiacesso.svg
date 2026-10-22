@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -70 840 700" width="840" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Topologia multiacesso: um switch central liga R1, R2 e R3 na mesma rede Ethernet; o OSPF elege um DR e um BDR, e o terceiro fica como DROTHER</title>
+  <defs>
+    <style>
+      text { paint-order: stroke; stroke: #fafaf8; stroke-width: 3px; stroke-linejoin: round; }
+      text.inv { stroke: none; }
+    </style>
+  </defs>
+
+  <!-- titulo -->
+  <text x="400" y="-34" text-anchor="middle" font-size="26" fill="#1d2057" font-weight="600">Um segmento, três roteadores: quem é o porta-voz?</text>
+
+  <!-- segmento Ethernet (barramento logico) -->
+  <text x="400" y="36" text-anchor="middle" font-size="14" fill="#8a8f98">segmento Ethernet 10.0.0.0/24 — a rede multiacesso</text>
+
+  <!-- switch central -->
+  <rect x="320" y="250" width="160" height="70" rx="10" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="400" y="282" text-anchor="middle" font-size="19" fill="#1d2057" font-weight="600">Switch</text>
+  <text x="400" y="304" text-anchor="middle" font-size="12" fill="#5a6473" font-family="monospace">segmento compartilhado</text>
+
+  <!-- linhas do switch aos tres roteadores -->
+  <line x1="340" y1="250" x2="175" y2="150" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="460" y1="250" x2="625" y2="150" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="400" y1="320" x2="400" y2="420" stroke="#8a8f98" stroke-width="2"/>
+
+  <!-- R3 : DR (esquerda-alto) -->
+  <rect x="80" y="95" width="180" height="92" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="170" y="126" text-anchor="middle" font-size="22" fill="#1f5fa8" font-weight="600">R3</text>
+  <text x="170" y="148" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">10.0.0.3 · RID 3.3.3.3</text>
+  <rect x="104" y="158" width="132" height="22" rx="11" fill="#2e7d52"/>
+  <text x="170" y="174" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">DR (porta-voz)</text>
+
+  <!-- R2 : BDR (direita-alto) -->
+  <rect x="540" y="95" width="180" height="92" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="630" y="126" text-anchor="middle" font-size="22" fill="#1f5fa8" font-weight="600">R2</text>
+  <text x="630" y="148" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">10.0.0.2 · RID 2.2.2.2</text>
+  <rect x="564" y="158" width="132" height="22" rx="11" fill="#00807a"/>
+  <text x="630" y="174" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">BDR (reserva)</text>
+
+  <!-- R1 : DROTHER (baixo) -->
+  <rect x="310" y="420" width="180" height="92" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="400" y="451" text-anchor="middle" font-size="22" fill="#1f5fa8" font-weight="600">R1</text>
+  <text x="400" y="473" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">10.0.0.1 · RID 1.1.1.1</text>
+  <rect x="334" y="483" width="132" height="22" rx="11" fill="#b1541b"/>
+  <text x="400" y="499" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">DROTHER</text>
+
+  <!-- LANs penduradas em cada roteador -->
+  <line x1="170" y1="187" x2="90" y2="225" stroke="#2e7d52" stroke-width="2"/>
+  <rect x="8" y="225" width="150" height="46" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="83" y="244" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">LAN do R3</text>
+  <text x="83" y="262" text-anchor="middle" font-size="11" fill="#1d2057" font-family="monospace">192.168.3.0/24</text>
+
+  <line x1="630" y1="187" x2="710" y2="225" stroke="#2e7d52" stroke-width="2"/>
+  <rect x="642" y="225" width="150" height="46" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="717" y="244" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">LAN do R2</text>
+  <text x="717" y="262" text-anchor="middle" font-size="11" fill="#1d2057" font-family="monospace">192.168.2.0/24</text>
+
+  <line x1="490" y1="466" x2="560" y2="466" stroke="#2e7d52" stroke-width="2"/>
+  <rect x="560" y="443" width="150" height="46" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="635" y="462" text-anchor="middle" font-size="13" fill="#2e7d52" font-weight="600">LAN do R1</text>
+  <text x="635" y="480" text-anchor="middle" font-size="11" fill="#1d2057" font-family="monospace">192.168.1.0/24</text>
+
+  <!-- rodape explicativo -->
+  <rect x="60" y="548" width="680" height="62" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="400" y="573" text-anchor="middle" font-size="14" fill="#1d2057">Prioridades iguais (padrão 1), então o maior RID decide: R3 (3.3.3.3) vira DR,</text>
+  <text x="400" y="593" text-anchor="middle" font-size="14" fill="#1d2057">R2 (2.2.2.2) vira BDR, e o R1 fica como DROTHER. Todos falam com o DR.</text>
+</svg>

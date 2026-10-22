@@ -175,10 +175,12 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S13</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>OSPF: custo, DR/BDR e verificação</b><span>20/10 · Lab 7</span></div>
+<li class="au-card">
+  <a href="./Aula-13---Lab-7-OSPF-Custo-DR-BDR-e-Verificacao-(Pratica)" data-spa>
+    <div class="au-thumb">S13</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 7 — OSPF multiacesso: quem é o porta-voz</b><span>Prática · P11 segunda · P12 quinta</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
