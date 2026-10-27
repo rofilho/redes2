@@ -1,0 +1,63 @@
+<!-- BRIEF: a ideia do NAT. Esquerda: rede privada (192.168.1.0/24) com um host 192.168.1.10. Meio: roteador NAT na borda. Direita: internet/nuvem. O host sai como 192.168.1.10 e chega como 200.200.10.5. Mostrar inside local -> inside global. Hand-drawn, halo off-white, fundo transparente, paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="O host usa o IP privado 192.168.1.10 dentro da rede; na borda, o NAT o apresenta à internet como 200.200.10.5">
+  <defs>
+    <style>
+      .sk  { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+    <marker id="n-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2778c4"/>
+    </marker>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="40" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">O NAT traduz na borda: privado vira público</text>
+  <path class="sk" d="M290,52 q80,7 160,3 q80,-4 160,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- REDE PRIVADA (caixa grande esquerda) -->
+  <g>
+    <rect x="50" y="120" width="250" height="200" rx="16" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="175" y="150" text-anchor="middle" class="lbl" font-size="16" font-weight="bold" fill="#2e7d52">rede privada</text>
+    <text x="175" y="170" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">192.168.1.0/24</text>
+    <!-- host -->
+    <rect x="100" y="200" width="150" height="56" rx="10" class="sk" fill="#ffffff" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="175" y="224" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#1d2057">PC</text>
+    <text x="175" y="244" text-anchor="middle" class="lbl" font-size="14" fill="#2e7d52">192.168.1.10</text>
+    <text x="175" y="290" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">(inside local — não roteável fora)</text>
+  </g>
+
+  <!-- ROTEADOR NAT (borda, centro) -->
+  <g>
+    <circle cx="450" cy="220" r="52" class="sk" fill="#e4f0fb" stroke="#1d2057" stroke-width="3.5"/>
+    <text x="450" y="212" text-anchor="middle" class="lbl" font-size="16" font-weight="bold" fill="#1d2057">R1</text>
+    <text x="450" y="232" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#2778c4">NAT</text>
+    <text x="450" y="296" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">a borda</text>
+  </g>
+
+  <!-- INTERNET (nuvem direita) -->
+  <g>
+    <path class="sk" d="M660,200 q0,-34 40,-40 q14,-24 44,-18 q26,-14 48,4 q34,-2 40,26 q20,10 12,34 q2,30 -28,34 l-146,0 q-24,-8 -10,-40 z" fill="#eef1f7" stroke="#6a7390" stroke-width="3"/>
+    <text x="752" y="206" text-anchor="middle" class="lbl" font-size="17" font-weight="bold" fill="#1d2057">internet</text>
+    <text x="752" y="290" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">só enxerga públicos</text>
+  </g>
+
+  <!-- FLUXO: host -> NAT (privado) -->
+  <g>
+    <path class="sk" d="M252,228 q90,-10 146,-6" stroke="#2e7d52" stroke-width="3.5" marker-end="url(#n-blue)"/>
+    <text x="330" y="200" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#2e7d52">sai 192.168.1.10</text>
+  </g>
+
+  <!-- FLUXO: NAT -> internet (público) -->
+  <g>
+    <path class="sk" d="M502,216 q80,-8 158,-6" stroke="#2778c4" stroke-width="3.5" marker-end="url(#n-blue)"/>
+    <text x="585" y="190" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#2778c4">chega 200.200.10.5</text>
+    <text x="585" y="248" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">(inside global)</text>
+  </g>
+
+  <!-- RODAPE -->
+  <text x="450" y="384" text-anchor="middle" class="lbl" font-size="15" fill="#1d2057">A internet nunca vê o 192.168.x.x — ela só enxerga o público da borda</text>
+</svg>
