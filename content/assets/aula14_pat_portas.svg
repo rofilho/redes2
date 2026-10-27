@@ -1,0 +1,66 @@
+<!-- BRIEF: PAT em detalhe. Esquerda: 3 hosts privados (.10, .11, .12) com portas de origem. Centro: roteador com tabela de traducao (inside local -> inside global:porta). Direita: um unico IP publico 200.200.10.1. As 3 conexoes viram 200.200.10.1:40001/2/3. Hand-drawn, halo off-white, fundo transparente, paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="Três hosts privados saem pelo mesmo IP público 200.200.10.1, e a tabela de tradução distingue cada um pela porta 40001, 40002 e 40003">
+  <defs>
+    <style>
+      .sk  { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+    <marker id="p-grn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d52"/>
+    </marker>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="38" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">PAT: mesmo IP, portas diferentes</text>
+  <path class="sk" d="M310,50 q70,7 140,3 q70,-4 140,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- HOSTS (esquerda) -->
+  <g>
+    <rect x="50" y="110" width="150" height="48" rx="9" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="125" y="131" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">192.168.1.10</text>
+    <text x="125" y="149" text-anchor="middle" class="lbl" font-size="12" fill="#2e7d52">:50123</text>
+    <rect x="50" y="200" width="150" height="48" rx="9" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="125" y="221" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">192.168.1.11</text>
+    <text x="125" y="239" text-anchor="middle" class="lbl" font-size="12" fill="#2e7d52">:50124</text>
+    <rect x="50" y="290" width="150" height="48" rx="9" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="125" y="311" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">192.168.1.12</text>
+    <text x="125" y="329" text-anchor="middle" class="lbl" font-size="12" fill="#2e7d52">:50125</text>
+  </g>
+
+  <!-- setas hosts -> tabela -->
+  <path class="sk" d="M202,134 q80,30 126,66" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#p-grn)"/>
+  <path class="sk" d="M202,224 q60,4 116,-6" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#p-grn)"/>
+  <path class="sk" d="M202,314 q76,-20 122,-52" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#p-grn)"/>
+
+  <!-- TABELA DE TRADUCAO (centro) -->
+  <g>
+    <rect x="330" y="120" width="310" height="220" rx="12" class="sk" fill="#fffdf7" stroke="#b1541b" stroke-width="3"/>
+    <text x="485" y="150" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#b1541b">Tabela NAT do roteador</text>
+    <line x1="348" y1="162" x2="622" y2="162" class="sk" stroke="#b1541b" stroke-width="1.5"/>
+    <text x="352" y="186" class="lbl" font-size="12" fill="#1d2057">inside local</text>
+    <text x="616" y="186" text-anchor="end" class="lbl" font-size="12" fill="#1d2057">inside global</text>
+    <text x="352" y="218" class="lbl" font-size="13" fill="#1d2057">192.168.1.10:50123</text>
+    <text x="616" y="218" text-anchor="end" class="lbl" font-size="13" font-weight="bold" fill="#2778c4">200.200.10.1:40001</text>
+    <text x="352" y="252" class="lbl" font-size="13" fill="#1d2057">192.168.1.11:50124</text>
+    <text x="616" y="252" text-anchor="end" class="lbl" font-size="13" font-weight="bold" fill="#2778c4">200.200.10.1:40002</text>
+    <text x="352" y="286" class="lbl" font-size="13" fill="#1d2057">192.168.1.12:50125</text>
+    <text x="616" y="286" text-anchor="end" class="lbl" font-size="13" font-weight="bold" fill="#2778c4">200.200.10.1:40003</text>
+    <text x="485" y="322" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">mesmo IP, porta diferente</text>
+  </g>
+
+  <!-- IP PUBLICO (direita) -->
+  <g>
+    <path class="sk" d="M642,214 q50,-8 78,0" stroke="#2778c4" stroke-width="3.5" marker-end="url(#p-grn)"/>
+    <path class="sk" d="M726,190 q0,-28 30,-32 q12,-18 34,-14 q20,-10 36,4 q24,0 26,20 q14,8 8,26 q0,22 -22,24 l-104,0 q-18,-8 -8,-28 z" fill="#e4f0fb" stroke="#2778c4" stroke-width="3"/>
+    <text x="790" y="196" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#1d2057">200.200.10.1</text>
+    <text x="790" y="250" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">1 público só</text>
+  </g>
+
+  <!-- RODAPE -->
+  <text x="450" y="390" text-anchor="middle" class="lbl" font-size="15" fill="#1d2057">Na volta, a resposta chega para <tspan font-weight="bold" fill="#2778c4">200.200.10.1:40002</tspan> —</text>
+  <text x="450" y="414" text-anchor="middle" class="lbl" font-size="15" fill="#1d2057">a tabela diz: é do 192.168.1.11. É o caderno da portaria.</text>
+</svg>
