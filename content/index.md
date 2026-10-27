@@ -183,10 +183,12 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S14</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>NAT estático, dinâmico e PAT</b><span>27/10 · Lab 8</span></div>
+<li class="au-card">
+  <a href="./Aula-14---NAT-Estatico-Dinamico-e-PAT-(Teorica)" data-spa>
+    <div class="au-thumb">S14</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>NAT estático, dinâmico e PAT</b><span>Teórica · 27/10</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
