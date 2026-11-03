@@ -1,0 +1,64 @@
+<!-- BRIEF: fluxograma da logica ACL. Pacote entra no topo; desce por 3 caixas de regra (linha 10 deny host .50; linha 20 permit rede; ...); cada caixa: casa? sim -> acao (PARA); nao -> desce. No fundo: deny implicito. Lateral: "primeiro match PARA". Hand-drawn, halo off-white, fundo transparente, paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="Fluxograma: o pacote desce pela lista de regras; no primeiro que casa, a ação é aplicada e a leitura para; se não casa em nenhuma, cai no deny implícito">
+  <defs>
+    <style>
+      .sk  { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+    <marker id="l-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d2057"/>
+    </marker>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="38" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">Primeiro match para tudo</text>
+  <path class="sk" d="M330,50 q60,7 120,3 q60,-4 120,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- PACOTE -->
+  <g>
+    <rect x="350" y="66" width="200" height="44" rx="10" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="450" y="94" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#1d2057">chega um pacote</text>
+  </g>
+  <path class="sk" d="M450,110 q0,16 0,20" stroke="#1d2057" stroke-width="2.5" marker-end="url(#l-blue)"/>
+
+  <!-- LINHA 10 -->
+  <g>
+    <rect x="310" y="136" width="280" height="60" rx="10" class="sk" fill="#fbeee6" stroke="#b1541b" stroke-width="2.5"/>
+    <text x="450" y="160" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#b1541b">10 &#183; deny host .50</text>
+    <text x="450" y="180" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">casa? &#8594; barra e PARA</text>
+    <text x="640" y="170" class="lbl" font-size="12" fill="#1d2057">&#8595; não casa, desce</text>
+  </g>
+  <path class="sk" d="M450,196 q0,14 0,18" stroke="#1d2057" stroke-width="2.5" marker-end="url(#l-blue)"/>
+
+  <!-- LINHA 20 -->
+  <g>
+    <rect x="310" y="220" width="280" height="60" rx="10" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="450" y="244" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#2e7d52">20 &#183; permit rede /24</text>
+    <text x="450" y="264" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">casa? &#8594; deixa passar e PARA</text>
+    <text x="640" y="254" class="lbl" font-size="12" fill="#1d2057">&#8595; não casa, desce</text>
+  </g>
+  <path class="sk" d="M450,280 q0,14 0,18" stroke="#1d2057" stroke-width="2.5" marker-end="url(#l-blue)"/>
+
+  <!-- RETICENCIAS -->
+  <text x="450" y="320" text-anchor="middle" class="lbl" font-size="18" fill="#1d2057">&#8942;</text>
+  <path class="sk" d="M450,330 q0,14 0,16" stroke="#1d2057" stroke-width="2.5" marker-end="url(#l-blue)"/>
+
+  <!-- DENY IMPLICITO -->
+  <g>
+    <rect x="290" y="352" width="320" height="64" rx="10" class="sk" fill="#f3eafa" stroke="#7a4fb0" stroke-width="3" stroke-dasharray="8 5"/>
+    <text x="450" y="378" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#7a4fb0">deny implícito (invisível)</text>
+    <text x="450" y="400" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">quem não casou em nada cai aqui e morre</text>
+  </g>
+
+  <!-- NOTA LATERAL: ordem importa -->
+  <g>
+    <rect x="80" y="440" width="740" height="90" rx="12" class="sk" fill="#fffdf7" stroke="#b1541b" stroke-width="2.5"/>
+    <text x="450" y="472" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#b1541b">A ordem das linhas É a política</text>
+    <text x="450" y="496" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">permit a rede ANTES de deny o host &#8594; o host casa no permit e passa; a exceção morreu.</text>
+    <text x="450" y="518" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#2e7d52">Regra de bolso: do mais específico para o mais geral, sempre.</text>
+  </g>
+</svg>

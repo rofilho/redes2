@@ -1,0 +1,49 @@
+<!-- BRIEF: a conta da wildcard. Mascara 255.255.255.0 -> wildcard 0.0.0.255 (255-255=0, 255-255=0, 255-255=0, 255-0=255). Em baixo, o significado: 0 confere (cadeado), 255 ignora (tanto faz). Exemplo: 192.168.1.0 0.0.0.255 casa .1 ate .254. Hand-drawn, halo off-white, fundo transparente, paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="A wildcard é a máscara invertida: 255.255.255.255 menos 255.255.255.0 dá 0.0.0.255; zero confere, 255 ignora">
+  <defs>
+    <style>
+      .sk  { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="40" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">Wildcard = a máscara ao contrário</text>
+  <path class="sk" d="M290,52 q80,7 160,3 q80,-4 160,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- A CONTA -->
+  <g>
+    <rect x="180" y="80" width="540" height="150" rx="14" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="3"/>
+    <text x="450" y="112" text-anchor="middle" class="lbl" font-size="16" font-weight="bold" fill="#2778c4">a conta de 10 segundos</text>
+
+    <text x="270" y="150" text-anchor="end" class="lbl" font-size="17" fill="#1d2057">255 . 255 . 255 . 255</text>
+    <text x="270" y="180" text-anchor="end" class="lbl" font-size="17" fill="#1d2057">&#8722; 255 . 255 . 255 . 0</text>
+    <line x1="290" y1="192" x2="610" y2="192" class="sk" stroke="#2778c4" stroke-width="2"/>
+    <text x="270" y="218" text-anchor="end" class="lbl" font-size="17" font-weight="bold" fill="#2778c4">0 . 0 . 0 . 255</text>
+
+    <text x="660" y="150" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">sempre 255</text>
+    <text x="660" y="180" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">a máscara /24</text>
+    <text x="660" y="218" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#2778c4">a wildcard</text>
+  </g>
+
+  <!-- SIGNIFICADO: 0 confere / 255 ignora -->
+  <g>
+    <rect x="110" y="260" width="320" height="100" rx="12" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="270" y="292" text-anchor="middle" class="lbl" font-size="18" font-weight="bold" fill="#2e7d52">0 &#183; tem que bater</text>
+    <text x="270" y="320" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">o octeto CONFERE com o IP da linha</text>
+    <text x="270" y="342" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">192.168.1._ &#8594; o 192.168.1 casa</text>
+
+    <rect x="470" y="260" width="320" height="100" rx="12" class="sk" fill="#fbeee6" stroke="#b1541b" stroke-width="2.5"/>
+    <text x="630" y="292" text-anchor="middle" class="lbl" font-size="18" font-weight="bold" fill="#b1541b">255 &#183; tanto faz</text>
+    <text x="630" y="320" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">o octeto é IGNORADO na comparação</text>
+    <text x="630" y="342" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">_._._._.255 &#8594; qualquer host</text>
+  </g>
+
+  <!-- RODAPE -->
+  <text x="450" y="410" text-anchor="middle" class="lbl" font-size="15" fill="#1d2057">192.168.1.0 &#183; 0.0.0.255 casa de 192.168.1.1 até 192.168.1.254</text>
+  <text x="450" y="436" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#2e7d52">atalhos: host = 0.0.0.0 (um só) &#183; any = 255.255.255.255 (todos)</text>
+</svg>
