@@ -1,0 +1,74 @@
+<!-- BRIEF: topologia PC(.50) - R1 - R2 - Servidor/Internet. Painel esquerdo ERRADO: ACL na saida de R1 (perto da origem) bloqueia o .50 para TODOS os destinos (X vermelho em tudo). Painel direito CERTO: ACL na interface de R2 (perto do destino) barra so ate o servidor alvo, o resto passa. Hand-drawn, halo off-white, fundo transparente, paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="Dois painéis: ACL padrão perto da origem bloqueia o host para todos os destinos, errado; perto do destino barra só até o alvo, certo">
+  <defs>
+    <style>
+      .sk  { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+    <marker id="p-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1541b"/>
+    </marker>
+    <marker id="p-grn2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d52"/>
+    </marker>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="38" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">Onde a ACL padrão mora faz toda a diferença</text>
+  <path class="sk" d="M270,50 q90,7 180,3 q90,-4 180,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- ============ PAINEL ESQUERDO: ERRADO ============ -->
+  <g>
+    <rect x="40" y="70" width="390" height="330" rx="14" class="sk" fill="#fbeee6" stroke="#b1541b" stroke-width="3"/>
+    <text x="235" y="102" text-anchor="middle" class="lbl" font-size="16" font-weight="bold" fill="#b1541b">&#10007; Perto da ORIGEM</text>
+    <text x="235" y="124" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">ACL na saída do R1 (perto do .50)</text>
+
+    <!-- topologia -->
+    <circle cx="110" cy="200" r="26" class="sk" fill="#ffffff" stroke="#1d2057" stroke-width="2.5"/>
+    <text x="110" y="206" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">.50</text>
+    <circle cx="235" cy="200" r="26" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="235" y="206" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#2778c4">R1</text>
+    <circle cx="360" cy="200" r="26" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="360" y="206" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#2778c4">R2</text>
+
+    <!-- trava na saida de R1 -->
+    <rect x="196" y="244" width="80" height="30" rx="8" class="sk" fill="#ffffff" stroke="#b1541b" stroke-width="2"/>
+    <text x="236" y="264" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#b1541b">ACL aqui</text>
+
+    <!-- X em todos os destinos -->
+    <text x="235" y="320" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#b1541b">barrado para o servidor &#10007;</text>
+    <text x="235" y="346" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#b1541b">barrado para a internet &#10007;</text>
+    <text x="235" y="372" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#b1541b">barrado para TUDO &#10007;</text>
+  </g>
+
+  <!-- ============ PAINEL DIREITO: CERTO ============ -->
+  <g>
+    <rect x="470" y="70" width="390" height="330" rx="14" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="3"/>
+    <text x="665" y="102" text-anchor="middle" class="lbl" font-size="16" font-weight="bold" fill="#2e7d52">&#10003; Perto do DESTINO</text>
+    <text x="665" y="124" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">ACL na interface do R2 (perto do alvo)</text>
+
+    <!-- topologia -->
+    <circle cx="540" cy="200" r="26" class="sk" fill="#ffffff" stroke="#1d2057" stroke-width="2.5"/>
+    <text x="540" y="206" text-anchor="middle" class="lbl" font-size="12" fill="#1d2057">.50</text>
+    <circle cx="665" cy="200" r="26" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="665" y="206" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#2778c4">R1</text>
+    <circle cx="790" cy="200" r="26" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="790" y="206" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#2778c4">R2</text>
+
+    <!-- trava na interface de R2 -->
+    <rect x="750" y="244" width="80" height="30" rx="8" class="sk" fill="#ffffff" stroke="#2e7d52" stroke-width="2"/>
+    <text x="790" y="264" text-anchor="middle" class="lbl" font-size="12" font-weight="bold" fill="#2e7d52">ACL aqui</text>
+
+    <!-- resultados -->
+    <text x="665" y="320" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#b1541b">para o servidor-alvo: barrado &#10007;</text>
+    <text x="665" y="346" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#2e7d52">para a internet: passa &#10003;</text>
+    <text x="665" y="372" text-anchor="middle" class="lbl" font-size="13" font-weight="bold" fill="#2e7d52">para o resto: passa &#10003;</text>
+  </g>
+
+  <!-- RODAPE -->
+  <text x="450" y="436" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#1d2057">"Padrão no destino, estendida na origem" &#8212; aplique onde ela sabe o bastante para não barrar o legítimo</text>
+</svg>

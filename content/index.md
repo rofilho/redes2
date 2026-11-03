@@ -191,10 +191,12 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S15</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>ACLs padrão: lógica, wildcard e posicionamento</b><span>03/11</span></div>
+<li class="au-card">
+  <a href="./Aula-15---ACLs-Padrao-Logica-Wildcard-e-Posicionamento-(Teorica)" data-spa>
+    <div class="au-thumb">S15</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>ACLs padrão: lógica, wildcard e posicionamento</b><span>Teórica · 03/11</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
