@@ -1,0 +1,61 @@
+<!-- BRIEF: a ACL como filtro na interface do roteador. Pacotes chegando da esquerda (varias cores); no meio, um funil/barreira "ACL"; a direita, so os permitidos passam (verde), os barrados ficam com X vermelho. Hand-drawn, halo off-white, fundo transparente, paleta Uniube. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="100%" role="img"
+     font-family="'Comic Sans MS','Comic Neue',cursive"
+     aria-label="Pacotes chegam a um filtro ACL na interface do roteador; os permitidos passam, os barrados ficam de fora">
+  <defs>
+    <style>
+      .sk  { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+      .lbl { font-family:'Comic Sans MS','Comic Neue',cursive; }
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text[fill="#ffffff"] { stroke:none; }
+    </style>
+    <marker id="f-grn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d52"/>
+    </marker>
+  </defs>
+
+  <!-- TITULO -->
+  <text x="450" y="40" text-anchor="middle" class="lbl" font-size="24" font-weight="bold" fill="#1d2057">A ACL é o filtro da interface</text>
+  <path class="sk" d="M310,52 q70,7 140,3 q70,-4 140,2" stroke="#00aa9f" stroke-width="2.5"/>
+
+  <!-- PACOTES DE ENTRADA (esquerda) -->
+  <g>
+    <circle cx="110" cy="150" r="22" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="110" y="156" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">.10</text>
+    <circle cx="110" cy="210" r="22" class="sk" fill="#fbeee6" stroke="#b1541b" stroke-width="2.5"/>
+    <text x="110" y="216" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">.50</text>
+    <circle cx="110" cy="270" r="22" class="sk" fill="#e4f0fb" stroke="#2778c4" stroke-width="2.5"/>
+    <text x="110" y="276" text-anchor="middle" class="lbl" font-size="13" fill="#1d2057">.99</text>
+  </g>
+
+  <!-- FILTRO / BARREIRA ACL (centro) -->
+  <g>
+    <path class="sk" d="M400,110 q30,15 20,45 q-10,30 20,45 q30,15 20,45 q-10,30 20,45" stroke="#1d2057" stroke-width="4"/>
+    <rect x="370" y="300" width="160" height="46" rx="10" class="sk" fill="#fffdf7" stroke="#b1541b" stroke-width="2.5"/>
+    <text x="450" y="329" text-anchor="middle" class="lbl" font-size="16" font-weight="bold" fill="#b1541b">ACL 10 na interface</text>
+    <!-- setas de entrada -->
+    <path class="sk" d="M132,150 q140,20 250,30" stroke="#2778c4" stroke-width="3"/>
+    <path class="sk" d="M132,210 q130,10 250,-14" stroke="#b1541b" stroke-width="3"/>
+    <path class="sk" d="M132,270 q130,-14 250,-56" stroke="#2778c4" stroke-width="3"/>
+  </g>
+
+  <!-- BARRADO (.50) -->
+  <g>
+    <text x="290" y="126" text-anchor="middle" class="lbl" font-size="15" font-weight="bold" fill="#b1541b">.50 &#8212; deny</text>
+    <text x="290" y="146" text-anchor="middle" class="lbl" font-size="22" font-weight="bold" fill="#b1541b">&#10007;</text>
+  </g>
+
+  <!-- SAIDA (direita): so permitidos -->
+  <g>
+    <path class="sk" d="M462,180 q150,-30 250,-36" stroke="#2e7d52" stroke-width="3.5" marker-end="url(#f-grn)"/>
+    <path class="sk" d="M462,196 q150,10 250,60" stroke="#2e7d52" stroke-width="3.5" marker-end="url(#f-grn)"/>
+    <circle cx="760" cy="146" r="22" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="760" y="152" text-anchor="middle" class="lbl" font-size="13" fill="#2e7d52">.10</text>
+    <circle cx="760" cy="252" r="22" class="sk" fill="#eaf5ee" stroke="#2e7d52" stroke-width="2.5"/>
+    <text x="760" y="258" text-anchor="middle" class="lbl" font-size="13" fill="#2e7d52">.99</text>
+    <text x="760" y="310" text-anchor="middle" class="lbl" font-size="14" font-weight="bold" fill="#2e7d52">permit passa</text>
+  </g>
+
+  <!-- RODAPE -->
+  <text x="450" y="380" text-anchor="middle" class="lbl" font-size="15" fill="#1d2057">Cada pacote é conferido contra as regras — quem tem permissão passa, quem não tem fica de fora</text>
+</svg>
