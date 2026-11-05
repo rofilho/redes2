@@ -199,6 +199,14 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
+<li class="au-card">
+  <a href="./Aula-15---Pratica-ACLs-Padrao-(Pratica)" data-spa>
+    <div class="au-thumb">S15</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Prática — ACL padrão no Packet Tracer</b><span>Prática · P12 quinta · 05/11</span></div>
+  </a>
+</li>
+
 <li class="au-card au-espera">
   <div class="au-thumb">S16</div>
   <div class="au-pbar"><i style="width:0"></i></div>
