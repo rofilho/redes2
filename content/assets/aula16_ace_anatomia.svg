@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Anatomia de uma linha de ACL estendida: a linha access-list 110 permit tcp 192.168.10.0 0.0.0.255 host 192.168.20.10 eq 80 partida em sete peças coloridas: o comando, o número 110 (100 a 199 é estendida), a ação permit, o protocolo tcp, a origem com a wildcard, o destino host 192.168.20.10 e a porta de destino eq 80.</title>
+  <defs>
+    <style>
+      text { paint-order: stroke; stroke: #fafaf8; stroke-width: 3px; stroke-linejoin: round; }
+      text.inv { stroke: none; }
+    </style>
+  </defs>
+  <rect id="fundo-card" x="0" y="0" width="900" height="440" rx="18" fill="#fafaf8"/>
+
+  <text x="450" y="40" text-anchor="middle" font-size="24" fill="#1d2057" font-weight="600">Uma linha de ACL estendida, peça por peça</text>
+  <text x="450" y="68" text-anchor="middle" font-size="14" fill="#5a6473">cada cor é uma pergunta que a estendida faz ao pacote</text>
+
+  <!-- linhas-guia (por baixo) -->
+  <line x1="106" y1="150" x2="106" y2="186" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="200" y1="150" x2="200" y2="280" stroke="#7a4fb0" stroke-width="1.5"/>
+  <line x1="271" y1="150" x2="271" y2="186" stroke="#2e7d52" stroke-width="1.5"/>
+  <line x1="342" y1="150" x2="342" y2="280" stroke="#00807a" stroke-width="1.5"/>
+  <line x1="485" y1="150" x2="485" y2="186" stroke="#1f5fa8" stroke-width="1.5"/>
+  <line x1="691" y1="150" x2="691" y2="280" stroke="#b1541b" stroke-width="1.5"/>
+  <line x1="820" y1="150" x2="820" y2="186" stroke="#8a8f98" stroke-width="2"/>
+
+  <!-- as sete peças -->
+  <rect x="47" y="110" width="119" height="40" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="106" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">access-list</text>
+
+  <rect x="172" y="110" width="56" height="40" rx="8" fill="#f0e9f8" stroke="#7a4fb0" stroke-width="2"/>
+  <text x="200" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">110</text>
+
+  <rect x="234" y="110" width="74" height="40" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="271" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">permit</text>
+
+  <rect x="314" y="110" width="56" height="40" rx="8" fill="#e0f1f0" stroke="#00807a" stroke-width="2"/>
+  <text x="342" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">tcp</text>
+
+  <rect x="376" y="110" width="218" height="40" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="485" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">192.168.10.0 0.0.0.255</text>
+
+  <rect x="600" y="110" width="182" height="40" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="691" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">host 192.168.20.10</text>
+
+  <rect x="788" y="110" width="65" height="40" rx="8" fill="#eceef7" stroke="#1d2057" stroke-width="2"/>
+  <text x="820" y="136" text-anchor="middle" font-size="15" fill="#1d2057" font-family="monospace" font-weight="700">eq 80</text>
+
+  <!-- rotulos: fileira de cima -->
+  <rect x="31" y="186" width="150" height="70" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="106" y="208" text-anchor="middle" font-size="14" fill="#5a6473" font-weight="700">comando</text>
+  <text x="106" y="227" text-anchor="middle" font-size="12" fill="#1d2057">abre uma linha de</text>
+  <text x="106" y="243" text-anchor="middle" font-size="12" fill="#1d2057">ACL numerada</text>
+
+  <rect x="216" y="186" width="110" height="70" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="271" y="208" text-anchor="middle" font-size="14" fill="#2e7d52" font-weight="700">ação</text>
+  <text x="271" y="227" text-anchor="middle" font-size="12" fill="#1d2057">permit = passa</text>
+  <text x="271" y="243" text-anchor="middle" font-size="12" fill="#1d2057">deny = barra</text>
+
+  <rect x="380" y="186" width="210" height="70" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="485" y="208" text-anchor="middle" font-size="14" fill="#1f5fa8" font-weight="700">origem + wildcard</text>
+  <text x="485" y="227" text-anchor="middle" font-size="12" fill="#1d2057">quem manda:</text>
+  <text x="485" y="243" text-anchor="middle" font-size="12" fill="#1d2057">a rede dos alunos</text>
+
+  <rect x="762" y="186" width="125" height="70" rx="8" fill="#eceef7" stroke="#1d2057" stroke-width="2"/>
+  <text x="824" y="208" text-anchor="middle" font-size="14" fill="#1d2057" font-weight="700">porta de destino</text>
+  <text x="824" y="227" text-anchor="middle" font-size="12" fill="#1d2057">eq = igual a</text>
+  <text x="824" y="243" text-anchor="middle" font-size="12" fill="#1d2057">80 = web (HTTP)</text>
+
+  <!-- rotulos: fileira de baixo -->
+  <rect x="40" y="280" width="280" height="70" rx="8" fill="#f0e9f8" stroke="#7a4fb0" stroke-width="2"/>
+  <text x="180" y="302" text-anchor="middle" font-size="14" fill="#7a4fb0" font-weight="700">número da ACL</text>
+  <text x="180" y="321" text-anchor="middle" font-size="12" fill="#1d2057">100–199 e 2000–2699: estendida</text>
+  <text x="180" y="337" text-anchor="middle" font-size="12" fill="#1d2057">1–99 e 1300–1999: padrão</text>
+
+  <rect x="330" y="280" width="150" height="70" rx="8" fill="#e0f1f0" stroke="#00807a" stroke-width="2"/>
+  <text x="405" y="302" text-anchor="middle" font-size="14" fill="#00807a" font-weight="700">protocolo</text>
+  <text x="405" y="321" text-anchor="middle" font-size="12" fill="#1d2057">ip · tcp · udp · icmp</text>
+  <text x="405" y="337" text-anchor="middle" font-size="12" fill="#1d2057">tcp e udp têm porta</text>
+
+  <rect x="560" y="280" width="260" height="70" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="690" y="302" text-anchor="middle" font-size="14" fill="#b1541b" font-weight="700">destino</text>
+  <text x="690" y="321" text-anchor="middle" font-size="12" fill="#1d2057">host 192.168.20.10:</text>
+  <text x="690" y="337" text-anchor="middle" font-size="12" fill="#1d2057">só o servidor web</text>
+
+  <!-- rodape -->
+  <rect x="47" y="372" width="806" height="48" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="450" y="394" text-anchor="middle" font-size="14" fill="#1d2057">A ACL padrão só tem a peça da origem.</text>
+  <text x="450" y="411" text-anchor="middle" font-size="14" fill="#1d2057">Protocolo, destino e porta são o que a estendida acrescenta.</text>
+</svg>
