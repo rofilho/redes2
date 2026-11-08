@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" width="900" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>MAC flooding em três passos. Passo 1: o atacante manda milhares de quadros, cada um com um endereço MAC de origem falso, e enche a tabela de endereços MAC do switch. Passo 2: com a tabela cheia, o switch não sabe onde está o Host B e manda o quadro do Host A por todas as portas; o atacante passa a ouvir. Passo 3: com port security, o segundo endereço MAC que aparece na porta do atacante é uma violação e a porta cai, então o quadro de A chega só a B.</title>
+  <defs>
+    <style>
+      text { paint-order: stroke; stroke: #fafaf8; stroke-width: 3px; stroke-linejoin: round; }
+      text.inv { stroke: none; }
+    </style>
+    <marker id="seta-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1541b"/>
+    </marker>
+    <marker id="seta-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a4fb0"/>
+    </marker>
+    <marker id="seta-v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d52"/>
+    </marker>
+  </defs>
+  <rect id="fundo-card" x="0" y="0" width="900" height="410" rx="18" fill="#fafaf8"/>
+
+  <text x="450" y="34" text-anchor="middle" font-size="22" fill="#1d2057" font-weight="600">MAC flooding: a tabela enche, o switch inunda, o port security corta</text>
+
+  <!-- ================= PAINEL 1 ================= -->
+  <rect x="10" y="56" width="280" height="336" rx="12" fill="#f5f7fb" stroke="#8a8f98" stroke-width="1.5"/>
+  <rect x="24" y="70" width="252" height="28" rx="14" fill="#b1541b"/>
+  <text x="150" y="89" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">1 · A tabela enche</text>
+
+  <line x1="86" y1="185" x2="114" y2="185" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="186" y1="165" x2="214" y2="142" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="186" y1="205" x2="214" y2="238" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="88" y1="174" x2="111" y2="174" stroke="#b1541b" stroke-width="2" marker-end="url(#seta-o)"/>
+  <line x1="88" y1="185" x2="111" y2="185" stroke="#b1541b" stroke-width="2" marker-end="url(#seta-o)"/>
+  <line x1="88" y1="196" x2="111" y2="196" stroke="#b1541b" stroke-width="2" marker-end="url(#seta-o)"/>
+
+  <rect x="18" y="160" width="68" height="50" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="52" y="189" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">Atacante</text>
+  <text x="52" y="228" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">MACs falsos</text>
+  <rect x="114" y="150" width="72" height="70" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="150" y="190" text-anchor="middle" font-size="14" fill="#1d2057" font-weight="700">Switch</text>
+  <rect x="214" y="116" width="68" height="36" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="248" y="139" text-anchor="middle" font-size="13" fill="#1f5fa8" font-weight="700">Host A</text>
+  <rect x="214" y="222" width="68" height="36" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="248" y="245" text-anchor="middle" font-size="13" fill="#1f5fa8" font-weight="700">Host B</text>
+
+  <text x="150" y="284" text-anchor="middle" font-size="13" fill="#1d2057">O atacante manda milhares de quadros,</text>
+  <text x="150" y="302" text-anchor="middle" font-size="13" fill="#1d2057">cada um com um MAC de origem falso.</text>
+
+  <rect x="30" y="326" width="240" height="58" rx="8" fill="#ffffff" stroke="#5a6473" stroke-width="1.5"/>
+  <text x="150" y="343" text-anchor="middle" font-size="12" fill="#1d2057" font-weight="700">tabela de endereços MAC</text>
+  <text x="150" y="358" text-anchor="middle" font-size="12" fill="#1d2057">MAC falso 1 · MAC falso 2 · …</text>
+  <text x="150" y="374" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">cheia: não cabe mais nenhum</text>
+
+  <!-- ================= PAINEL 2 ================= -->
+  <rect x="310" y="56" width="280" height="336" rx="12" fill="#f5f7fb" stroke="#8a8f98" stroke-width="1.5"/>
+  <rect x="324" y="70" width="252" height="28" rx="14" fill="#7a4fb0"/>
+  <text x="450" y="89" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">2 · Cheia: o switch inunda</text>
+
+  <line x1="386" y1="185" x2="414" y2="185" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="486" y1="165" x2="514" y2="142" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="486" y1="205" x2="514" y2="238" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="514" y1="140" x2="489" y2="162" stroke="#7a4fb0" stroke-width="2.5" marker-end="url(#seta-p)"/>
+  <line x1="489" y1="208" x2="512" y2="236" stroke="#7a4fb0" stroke-width="2.5" marker-end="url(#seta-p)"/>
+  <line x1="412" y1="185" x2="389" y2="185" stroke="#b1541b" stroke-width="2.5" stroke-dasharray="4 3" marker-end="url(#seta-o)"/>
+
+  <rect x="318" y="160" width="68" height="50" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="352" y="189" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">Atacante</text>
+  <text x="352" y="228" text-anchor="middle" font-size="13" fill="#b1541b" font-weight="700">ouve tudo</text>
+  <rect x="414" y="150" width="72" height="70" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="450" y="190" text-anchor="middle" font-size="14" fill="#1d2057" font-weight="700">Switch</text>
+  <rect x="514" y="116" width="68" height="36" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="548" y="139" text-anchor="middle" font-size="13" fill="#1f5fa8" font-weight="700">Host A</text>
+  <rect x="514" y="222" width="68" height="36" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="548" y="245" text-anchor="middle" font-size="13" fill="#1f5fa8" font-weight="700">Host B</text>
+
+  <text x="450" y="284" text-anchor="middle" font-size="13" fill="#1d2057">A tabela está cheia: o switch não sabe</text>
+  <text x="450" y="302" text-anchor="middle" font-size="13" fill="#1d2057">onde está o Host B e manda o quadro</text>
+  <text x="450" y="320" text-anchor="middle" font-size="13" fill="#1d2057">por todas as portas.</text>
+
+  <rect x="330" y="328" width="240" height="56" rx="8" fill="#ffffff" stroke="#5a6473" stroke-width="1.5"/>
+  <text x="450" y="344" text-anchor="middle" font-size="12" fill="#1d2057" font-weight="700">tabela de endereços MAC</text>
+  <text x="450" y="359" text-anchor="middle" font-size="12" fill="#1d2057">cheia de MACs falsos</text>
+  <text x="450" y="374" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">o atacante passa a ouvir</text>
+
+  <!-- ================= PAINEL 3 ================= -->
+  <rect x="610" y="56" width="280" height="336" rx="12" fill="#f5f7fb" stroke="#8a8f98" stroke-width="1.5"/>
+  <rect x="624" y="70" width="252" height="28" rx="14" fill="#2e7d52"/>
+  <text x="750" y="89" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">3 · Port security: a porta cai</text>
+
+  <line x1="686" y1="185" x2="714" y2="185" stroke="#b1541b" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="694" y1="178" x2="706" y2="192" stroke="#b1541b" stroke-width="3"/>
+  <line x1="694" y1="192" x2="706" y2="178" stroke="#b1541b" stroke-width="3"/>
+  <line x1="786" y1="165" x2="814" y2="142" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="786" y1="205" x2="814" y2="238" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="814" y1="140" x2="789" y2="162" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#seta-v)"/>
+  <line x1="789" y1="208" x2="812" y2="236" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#seta-v)"/>
+
+  <rect x="618" y="160" width="68" height="50" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="652" y="189" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">Atacante</text>
+  <text x="652" y="228" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">err-disabled</text>
+  <rect x="714" y="150" width="72" height="70" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="750" y="190" text-anchor="middle" font-size="14" fill="#1d2057" font-weight="700">Switch</text>
+  <rect x="814" y="116" width="68" height="36" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="848" y="139" text-anchor="middle" font-size="13" fill="#1f5fa8" font-weight="700">Host A</text>
+  <rect x="814" y="222" width="68" height="36" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="848" y="245" text-anchor="middle" font-size="13" fill="#1f5fa8" font-weight="700">Host B</text>
+
+  <text x="750" y="284" text-anchor="middle" font-size="13" fill="#1d2057">O 2º MAC que aparece na porta do</text>
+  <text x="750" y="302" text-anchor="middle" font-size="13" fill="#1d2057">atacante é violação: a porta cai e o</text>
+  <text x="750" y="320" text-anchor="middle" font-size="13" fill="#1d2057">quadro de A chega só a B.</text>
+
+  <rect x="630" y="328" width="240" height="56" rx="8" fill="#ffffff" stroke="#5a6473" stroke-width="1.5"/>
+  <text x="750" y="344" text-anchor="middle" font-size="12" fill="#1d2057" font-weight="700">port security na porta</text>
+  <text x="750" y="359" text-anchor="middle" font-size="12" fill="#1d2057">máximo 1 MAC · violação: shutdown</text>
+  <text x="750" y="374" text-anchor="middle" font-size="12" fill="#2e7d52" font-weight="700">porta do atacante: apagada</text>
+</svg>

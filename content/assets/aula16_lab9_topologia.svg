@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="900" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Topologia do Lab 9: o roteador R1 liga a LAN dos alunos (192.168.10.0/24, pelo switch S1) à LAN dos servidores (192.168.20.0/24, pelo switch S2). A ACL estendida ALUNOS-SERVIDORES fica na entrada da interface g0/0 do R1. O port security protege as portas f0/1 a f0/3 do S1, e um notebook intruso, desenhado tracejado, entra no lugar do PC-A1.</title>
+  <defs>
+    <style>
+      text { paint-order: stroke; stroke: #fafaf8; stroke-width: 3px; stroke-linejoin: round; }
+      text.inv { stroke: none; }
+    </style>
+  </defs>
+  <rect id="fundo-card" x="0" y="0" width="900" height="530" rx="18" fill="#fafaf8"/>
+
+  <!-- titulo -->
+  <text x="450" y="30" text-anchor="middle" font-size="22" fill="#1d2057" font-weight="600">Lab 9: ACL na entrada do R1, port security nas portas do S1</text>
+
+  <!-- molduras das duas LANs -->
+  <rect x="2" y="48" width="326" height="372" rx="12" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-dasharray="3 5"/>
+  <text x="14" y="68" font-size="13" fill="#5a6473" font-family="monospace">LAN dos alunos · 192.168.10.0/24</text>
+  <rect x="600" y="48" width="298" height="372" rx="12" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-dasharray="3 5"/>
+  <text x="612" y="68" font-size="13" fill="#5a6473" font-family="monospace">LAN dos servidores · 192.168.20.0/24</text>
+
+  <!-- cabos (por baixo das caixas) -->
+  <line x1="170" y1="198" x2="215" y2="198" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="170" y1="278" x2="215" y2="278" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="170" y1="358" x2="215" y2="358" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="170" y1="126" x2="215" y2="190" stroke="#b1541b" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="315" y1="278" x2="370" y2="278" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="560" y1="318" x2="615" y2="318" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="715" y1="300" x2="750" y2="278" stroke="#8a8f98" stroke-width="2"/>
+  <line x1="715" y1="336" x2="750" y2="358" stroke="#8a8f98" stroke-width="2"/>
+
+  <!-- notebook intruso (tracejado) -->
+  <rect x="10" y="84" width="160" height="68" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="90" y="106" text-anchor="middle" font-size="14" fill="#b1541b" font-weight="600">Laptop-X (intruso)</text>
+  <text x="90" y="124" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">192.168.10.50</text>
+  <text x="90" y="142" text-anchor="middle" font-size="11" fill="#5a6473">entra no lugar do PC-A1</text>
+
+  <!-- PCs -->
+  <rect x="10" y="170" width="160" height="56" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="90" y="193" text-anchor="middle" font-size="14" fill="#1f5fa8" font-weight="600">PC-A1</text>
+  <text x="90" y="212" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">192.168.10.11</text>
+
+  <rect x="10" y="250" width="160" height="56" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="90" y="273" text-anchor="middle" font-size="14" fill="#1f5fa8" font-weight="600">PC-A2</text>
+  <text x="90" y="292" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">192.168.10.12</text>
+
+  <rect x="10" y="330" width="160" height="56" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="90" y="353" text-anchor="middle" font-size="14" fill="#2e7d52" font-weight="600">PC-PROF · professor</text>
+  <text x="90" y="372" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">192.168.10.100</text>
+
+  <!-- selo do port security -->
+  <rect x="212" y="140" width="110" height="24" rx="12" fill="#2e7d52"/>
+  <text x="267" y="156" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">port security</text>
+
+  <!-- S1 -->
+  <rect x="215" y="170" width="100" height="216" rx="10" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="291" y="276" text-anchor="middle" font-size="20" fill="#1d2057" font-weight="600">S1</text>
+  <text x="291" y="294" text-anchor="middle" font-size="12" fill="#5a6473">2960</text>
+  <rect x="221" y="187" width="46" height="22" rx="11" fill="#2e7d52"/>
+  <text x="244" y="202" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">f0/1</text>
+  <rect x="221" y="267" width="46" height="22" rx="11" fill="#2e7d52"/>
+  <text x="244" y="282" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">f0/2</text>
+  <rect x="221" y="347" width="46" height="22" rx="11" fill="#2e7d52"/>
+  <text x="244" y="362" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">f0/3</text>
+  <!-- porta do S1 que liga ao R1: fora da faixa do port security -->
+  <rect x="319" y="267" width="47" height="22" rx="11" fill="#5a6473"/>
+  <text x="342" y="282" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">Gi0/1</text>
+
+  <!-- selo da ACL e seta ate a g0/0 -->
+  <rect x="372" y="170" width="120" height="26" rx="13" fill="#b1541b"/>
+  <text x="432" y="187" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">ACL · entrada</text>
+
+  <!-- R1 -->
+  <rect x="370" y="208" width="190" height="140" rx="10" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="465" y="238" text-anchor="middle" font-size="22" fill="#1f5fa8" font-weight="600">R1</text>
+  <text x="465" y="256" text-anchor="middle" font-size="12" fill="#5a6473">2911</text>
+  <rect x="378" y="267" width="44" height="22" rx="11" fill="#2778c4"/>
+  <text x="400" y="282" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">g0/0</text>
+  <text x="430" y="282" font-size="12" fill="#1d2057" font-family="monospace">192.168.10.1/24</text>
+  <rect x="508" y="307" width="44" height="22" rx="11" fill="#2778c4"/>
+  <text x="530" y="322" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">g0/1</text>
+  <text x="500" y="322" text-anchor="end" font-size="12" fill="#1d2057" font-family="monospace">192.168.20.1/24</text>
+  <line x1="398" y1="196" x2="398" y2="258" stroke="#b1541b" stroke-width="2.5"/>
+  <path d="M391,256 L398,268 L405,256 Z" fill="#b1541b"/>
+
+  <!-- portas do S2: uplink Gi0/1 ao R1, servidores nas f0/1 e f0/2 -->
+  <rect x="564" y="307" width="46" height="22" rx="11" fill="#5a6473"/>
+  <text x="587" y="322" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">Gi0/1</text>
+  <text x="745" y="268" text-anchor="end" font-size="11" fill="#5a6473" font-weight="700">f0/1</text>
+  <text x="745" y="377" text-anchor="end" font-size="11" fill="#5a6473" font-weight="700">f0/2</text>
+
+  <!-- S2 -->
+  <rect x="615" y="268" width="100" height="100" rx="10" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="665" y="314" text-anchor="middle" font-size="20" fill="#1d2057" font-weight="600">S2</text>
+  <text x="665" y="332" text-anchor="middle" font-size="12" fill="#5a6473">2960</text>
+
+  <!-- servidores -->
+  <rect x="750" y="250" width="140" height="56" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="820" y="273" text-anchor="middle" font-size="14" fill="#1f5fa8" font-weight="600">SRV-WEB</text>
+  <text x="820" y="292" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">192.168.20.10</text>
+  <rect x="750" y="330" width="140" height="56" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="820" y="353" text-anchor="middle" font-size="14" fill="#b1541b" font-weight="600">SRV-RH</text>
+  <text x="820" y="372" text-anchor="middle" font-size="12" fill="#1d2057" font-family="monospace">192.168.20.20</text>
+
+  <!-- legenda -->
+  <rect x="10" y="440" width="430" height="70" rx="10" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="28" y="468" font-size="15" fill="#2e7d52" font-weight="600">Port security no S1 (portas f0/1 a f0/3)</text>
+  <text x="28" y="492" font-size="13" fill="#1d2057">máximo 1 MAC · sticky · violação: shutdown</text>
+  <rect x="460" y="440" width="430" height="70" rx="10" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="478" y="468" font-size="15" fill="#b1541b" font-weight="600">ACL estendida ALUNOS-SERVIDORES</text>
+  <text x="478" y="492" font-size="13" fill="#1d2057">na g0/0 do R1, no sentido de entrada (in)</text>
+</svg>

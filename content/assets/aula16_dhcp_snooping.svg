@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>DHCP snooping: um switch com a porta Gi0/1 confiável, ligada ao servidor DHCP legítimo, e duas portas não confiáveis: a Fa0/1, do cliente, e a Fa0/2, onde está um servidor DHCP falso. O cliente pede um endereço, o servidor legítimo oferece e a oferta passa, o servidor falso oferece gateway e DNS falsos e o switch descarta essa oferta na porta não confiável, e o cliente recebe só a oferta legítima.</title>
+  <defs>
+    <style>
+      text { paint-order: stroke; stroke: #fafaf8; stroke-width: 3px; stroke-linejoin: round; }
+      text.inv { stroke: none; }
+    </style>
+    <marker id="seta-c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/>
+    </marker>
+    <marker id="seta-v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d52"/>
+    </marker>
+  </defs>
+  <rect id="fundo-card" x="0" y="0" width="900" height="480" rx="18" fill="#fafaf8"/>
+
+  <text x="450" y="32" text-anchor="middle" font-size="22" fill="#1d2057" font-weight="600">DHCP snooping: a oferta do servidor falso é descartada</text>
+
+  <!-- cabos e setas (por baixo das caixas) -->
+  <line x1="210" y1="92" x2="374" y2="175" stroke="#8a8f98" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="210" y1="310" x2="372" y2="251" stroke="#8a8f98" stroke-width="2.5" marker-end="url(#seta-c)"/>
+  <line x1="374" y1="263" x2="214" y2="336" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#seta-v)"/>
+  <line x1="688" y1="235" x2="534" y2="235" stroke="#2e7d52" stroke-width="2.5" marker-end="url(#seta-v)"/>
+
+  <!-- servidor falso -->
+  <rect x="20" y="60" width="190" height="64" rx="8" fill="#fbeee4" stroke="#b1541b" stroke-width="2"/>
+  <text x="115" y="87" text-anchor="middle" font-size="14" fill="#b1541b" font-weight="700">Servidor DHCP falso</text>
+  <text x="115" y="106" text-anchor="middle" font-size="12" fill="#1d2057">gateway e DNS falsos</text>
+
+  <!-- cliente -->
+  <rect x="20" y="290" width="190" height="64" rx="8" fill="#e8f0f9" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="115" y="317" text-anchor="middle" font-size="14" fill="#1f5fa8" font-weight="700">Cliente</text>
+  <text x="115" y="336" text-anchor="middle" font-size="12" fill="#1d2057">pede um endereço</text>
+
+  <!-- servidor legítimo -->
+  <rect x="690" y="203" width="190" height="64" rx="8" fill="#e5f3ec" stroke="#2e7d52" stroke-width="2"/>
+  <text x="785" y="230" text-anchor="middle" font-size="14" fill="#2e7d52" font-weight="700">Servidor DHCP legítimo</text>
+  <text x="785" y="249" text-anchor="middle" font-size="12" fill="#1d2057">entrega gateway e DNS certos</text>
+
+  <!-- switch -->
+  <rect x="370" y="160" width="160" height="110" rx="10" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="450" y="200" text-anchor="middle" font-size="18" fill="#1d2057" font-weight="600">Switch</text>
+  <text x="450" y="218" text-anchor="middle" font-size="12" fill="#5a6473">DHCP snooping ligado</text>
+  <rect x="374" y="164" width="46" height="22" rx="11" fill="#b1541b"/>
+  <text x="397" y="179" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">Fa0/2</text>
+  <rect x="374" y="244" width="46" height="22" rx="11" fill="#b1541b"/>
+  <text x="397" y="259" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">Fa0/1</text>
+  <rect x="476" y="224" width="46" height="22" rx="11" fill="#2e7d52"/>
+  <text x="499" y="239" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">Gi0/1</text>
+
+  <!-- X da oferta descartada -->
+  <line x1="322" y1="145" x2="338" y2="161" stroke="#b1541b" stroke-width="3.5"/>
+  <line x1="322" y1="161" x2="338" y2="145" stroke="#b1541b" stroke-width="3.5"/>
+  <text x="298" y="200" text-anchor="middle" font-size="12" fill="#b1541b" font-weight="700">oferta descartada</text>
+
+  <!-- numeros dos passos -->
+  <circle cx="291" cy="278" r="11" fill="#5a6473"/>
+  <text x="291" y="283" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">1</text>
+  <circle cx="610" cy="235" r="11" fill="#2e7d52"/>
+  <text x="610" y="240" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">2</text>
+  <circle cx="250" cy="112" r="11" fill="#b1541b"/>
+  <text x="250" y="117" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">3</text>
+  <circle cx="293" cy="306" r="11" fill="#2e7d52"/>
+  <text x="293" y="311" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700" class="inv">4</text>
+
+  <!-- passos -->
+  <rect x="20" y="385" width="540" height="84" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <text x="36" y="406" font-size="13" fill="#1d2057">1 · o cliente pede um endereço (broadcast)</text>
+  <text x="36" y="425" font-size="13" fill="#1d2057">2 · o servidor legítimo oferece: a porta é confiável e a oferta passa</text>
+  <text x="36" y="444" font-size="13" fill="#1d2057">3 · o servidor falso oferece gateway e DNS falsos: o switch descarta</text>
+  <text x="36" y="463" font-size="13" fill="#1d2057">4 · o cliente recebe só a oferta legítima</text>
+
+  <!-- legenda das portas -->
+  <rect x="580" y="385" width="300" height="84" rx="8" fill="#eef1f6" stroke="#5a6473" stroke-width="2"/>
+  <rect x="594" y="400" width="100" height="24" rx="12" fill="#2e7d52"/>
+  <text x="644" y="417" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">confiável</text>
+  <text x="702" y="417" font-size="12" fill="#1d2057">aceita a oferta do servidor</text>
+  <rect x="594" y="432" width="100" height="24" rx="12" fill="#b1541b"/>
+  <text x="644" y="449" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="700" class="inv">não confiável</text>
+  <text x="702" y="449" font-size="12" fill="#1d2057">descarta a oferta</text>
+</svg>

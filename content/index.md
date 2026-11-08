@@ -207,10 +207,20 @@ title: "🌐 Redes de Computadores II"
   </a>
 </li>
 
-<li class="au-card au-espera">
-  <div class="au-thumb">S16</div>
-  <div class="au-pbar"><i style="width:0"></i></div>
-  <div class="au-cap"><b>ACLs estendidas e segurança de camada 2</b><span>10/11 · Lab 9</span></div>
+<li class="au-card">
+  <a href="./Aula-16---Lab-9-ACL-Estendida-e-Port-Security-(Pratica)" data-spa>
+    <div class="au-thumb">S16</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>Lab 9 — ACL estendida e port security</b><span>Prática · P11 09/11 · P12 12/11</span></div>
+  </a>
+</li>
+
+<li class="au-card">
+  <a href="./Aula-16---ACLs-Estendidas-e-Seguranca-de-Camada-2-(Teorica)" data-spa>
+    <div class="au-thumb">S16</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>ACLs estendidas e segurança de camada 2</b><span>Teórica · 10/11</span></div>
+  </a>
 </li>
 
 <li class="au-card au-espera">
