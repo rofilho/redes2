@@ -1,0 +1,105 @@
+<!-- BRIEF: Aula 15 pratica (Redes II). O post-it por cima do endereco. Linha 1: /24, o post-it tapa o ultimo numero inteiro (wildcard 0.0.0.255). Linha 2: /26, o corte cai dentro do ultimo numero; os 8 bits do ultimo numero com os pesos; mascara 192 = 11000000, wildcard 63 = 00111111; o post-it tapa os 6 ultimos bits; 6 bits livres = 64 combinacoes = .64 a .127. Rodape: wildcard = 255 - mascara, numero a numero. Fundo: cartao off-white fixo. 2026-11-10. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" role="img"
+     font-family="system-ui,'Segoe UI',Roboto,sans-serif"
+     aria-label="Duas linhas. Na primeira, com mascara /24, o post-it tapa o ultimo numero do endereco 192.168.10.x inteiro: a wildcard 0.0.0.255 confere os tres primeiros numeros e ignora o ultimo. Na segunda, com mascara /26, o corte cai dentro do ultimo numero: em bits, a mascara 192 e 11000000 e a wildcard 63 e 00111111; o post-it tapa os seis ultimos bits do endereco 192.168.10.64, que ficam livres, e isso da 64 combinacoes, do .64 ao .127. Rodape: a wildcard e 255 menos a mascara, numero a numero.">
+  <defs>
+    <style>
+      text { paint-order:stroke; stroke:#fafaf8; stroke-width:3px; stroke-linejoin:round; }
+      text.inv { stroke:none; }
+    </style>
+  </defs>
+  <rect id="fundo-card" x="0" y="0" width="900" height="560" rx="18" fill="#fafaf8"/>
+
+  <text x="450" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1d2057">A wildcard é um post-it por cima do endereço</text>
+  <text x="450" y="62" text-anchor="middle" font-size="14" fill="#5a6478">o que o post-it tapa, o roteador não confere</text>
+
+  <!-- ===== LINHA 1: /24 ===== -->
+  <text x="40" y="100" font-size="16" font-weight="700" fill="#2778c4">/24: o post-it tapa um número inteiro</text>
+  <g font-size="22" font-weight="700" fill="#1d2057">
+    <rect x="60" y="116" width="90" height="52" rx="9" fill="#e4f0fb" stroke="#2778c4" stroke-width="2"/>
+    <text x="105" y="150" text-anchor="middle">192</text>
+    <text x="160" y="158" text-anchor="middle">.</text>
+    <rect x="170" y="116" width="90" height="52" rx="9" fill="#e4f0fb" stroke="#2778c4" stroke-width="2"/>
+    <text x="215" y="150" text-anchor="middle">168</text>
+    <text x="270" y="158" text-anchor="middle">.</text>
+    <rect x="280" y="116" width="90" height="52" rx="9" fill="#e4f0fb" stroke="#2778c4" stroke-width="2"/>
+    <text x="325" y="150" text-anchor="middle">10</text>
+    <text x="380" y="158" text-anchor="middle">.</text>
+  </g>
+  <rect x="390" y="112" width="96" height="60" rx="4" fill="#f6d55c" stroke="#c9a227" stroke-width="2" transform="rotate(-3 438 142)"/>
+  <text x="438" y="148" text-anchor="middle" font-size="15" font-weight="700" fill="#5a4a00">tanto faz</text>
+  <text x="200" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#2778c4">confere: 192.168.10</text>
+  <text x="438" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#b1541b">0 a 255</text>
+
+  <rect x="530" y="112" width="340" height="80" rx="12" fill="#f0f3f8" stroke="#5a6478" stroke-width="1.5"/>
+  <text x="550" y="140" font-size="15" fill="#1d2057">máscara   <tspan font-weight="700">255.255.255.0</tspan></text>
+  <text x="550" y="172" font-size="15" fill="#1d2057">wildcard  <tspan font-weight="700" fill="#b1541b">0.0.0.255</tspan></text>
+
+  <line x1="40" y1="216" x2="860" y2="216" stroke="#d6dae3" stroke-width="1.5"/>
+
+  <!-- ===== LINHA 2: /26 ===== -->
+  <text x="40" y="246" font-size="16" font-weight="700" fill="#7a4fb0">/26: o corte cai dentro do último número; olhe os 8 bits dele</text>
+
+  <!-- pesos -->
+  <g font-size="13" fill="#5a6478" text-anchor="middle">
+    <text x="345" y="276">128</text><text x="405" y="276">64</text><text x="465" y="276">32</text><text x="525" y="276">16</text>
+    <text x="585" y="276">8</text><text x="645" y="276">4</text><text x="705" y="276">2</text><text x="765" y="276">1</text>
+  </g>
+  <text x="300" y="276" text-anchor="end" font-size="13" fill="#5a6478">peso do bit</text>
+
+  <!-- rotulos das linhas -->
+  <g font-size="14" text-anchor="end" fill="#1d2057">
+    <text x="300" y="312"><tspan font-weight="700">endereço</tspan> 192.168.10.64</text>
+    <text x="300" y="362"><tspan font-weight="700">máscara</tspan> …192</text>
+    <text x="300" y="412"><tspan font-weight="700" fill="#b1541b">wildcard</tspan> …63</text>
+  </g>
+
+  <!-- celulas: endereco .64 = 01000000 -->
+  <g font-size="18" font-weight="700" text-anchor="middle" fill="#1d2057">
+    <rect x="320" y="288" width="50" height="38" rx="6" fill="#e4f0fb" stroke="#2778c4" stroke-width="2"/><text x="345" y="314">0</text>
+    <rect x="380" y="288" width="50" height="38" rx="6" fill="#e4f0fb" stroke="#2778c4" stroke-width="2"/><text x="405" y="314">1</text>
+    <rect x="440" y="288" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/>
+    <rect x="500" y="288" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/>
+    <rect x="560" y="288" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/>
+    <rect x="620" y="288" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/>
+    <rect x="680" y="288" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/>
+    <rect x="740" y="288" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/>
+  </g>
+  <!-- post-it sobre os 6 ultimos bits -->
+  <rect x="434" y="282" width="362" height="50" rx="4" fill="#f6d55c" stroke="#c9a227" stroke-width="2" transform="rotate(-1 615 307)"/>
+  <text x="615" y="313" text-anchor="middle" font-size="15" font-weight="700" fill="#5a4a00">tanto faz: o post-it tapa estes 6 bits</text>
+
+  <!-- mascara 192 = 11000000 -->
+  <g font-size="18" font-weight="700" text-anchor="middle">
+    <rect x="320" y="338" width="50" height="38" rx="6" fill="#2778c4"/><text class="inv" x="345" y="364" fill="#ffffff">1</text>
+    <rect x="380" y="338" width="50" height="38" rx="6" fill="#2778c4"/><text class="inv" x="405" y="364" fill="#ffffff">1</text>
+    <rect x="440" y="338" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="465" y="364" fill="#1d2057">0</text>
+    <rect x="500" y="338" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="525" y="364" fill="#1d2057">0</text>
+    <rect x="560" y="338" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="585" y="364" fill="#1d2057">0</text>
+    <rect x="620" y="338" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="645" y="364" fill="#1d2057">0</text>
+    <rect x="680" y="338" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="705" y="364" fill="#1d2057">0</text>
+    <rect x="740" y="338" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="765" y="364" fill="#1d2057">0</text>
+  </g>
+  <!-- wildcard 63 = 00111111 -->
+  <g font-size="18" font-weight="700" text-anchor="middle">
+    <rect x="320" y="388" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="345" y="414" fill="#1d2057">0</text>
+    <rect x="380" y="388" width="50" height="38" rx="6" fill="#ffffff" stroke="#9aa0ad" stroke-width="1.5"/><text x="405" y="414" fill="#1d2057">0</text>
+    <rect x="440" y="388" width="50" height="38" rx="6" fill="#b1541b"/><text class="inv" x="465" y="414" fill="#ffffff">1</text>
+    <rect x="500" y="388" width="50" height="38" rx="6" fill="#b1541b"/><text class="inv" x="525" y="414" fill="#ffffff">1</text>
+    <rect x="560" y="388" width="50" height="38" rx="6" fill="#b1541b"/><text class="inv" x="585" y="414" fill="#ffffff">1</text>
+    <rect x="620" y="388" width="50" height="38" rx="6" fill="#b1541b"/><text class="inv" x="645" y="414" fill="#ffffff">1</text>
+    <rect x="680" y="388" width="50" height="38" rx="6" fill="#b1541b"/><text class="inv" x="705" y="414" fill="#ffffff">1</text>
+    <rect x="740" y="388" width="50" height="38" rx="6" fill="#b1541b"/><text class="inv" x="765" y="414" fill="#ffffff">1</text>
+  </g>
+
+  <!-- chaves -->
+  <path d="M322,440 v8 h106 v-8" fill="none" stroke="#2778c4" stroke-width="2.5"/>
+  <text x="375" y="468" text-anchor="middle" font-size="13" font-weight="700" fill="#2778c4">confere 2 bits</text>
+  <path d="M442,440 v8 h346 v-8" fill="none" stroke="#b1541b" stroke-width="2.5"/>
+  <text x="615" y="468" text-anchor="middle" font-size="13" font-weight="700" fill="#b1541b">6 bits livres = 64 combinações = do .64 ao .127</text>
+
+  <!-- rodape -->
+  <rect x="110" y="488" width="680" height="54" rx="12" fill="#f0f3f8" stroke="#5a6478" stroke-width="1.5"/>
+  <text x="450" y="511" text-anchor="middle" font-size="15" font-weight="700" fill="#1d2057">wildcard = 255 − máscara, número a número</text>
+  <text x="450" y="531" text-anchor="middle" font-size="14" fill="#1d2057">255 − 255 = 0 (confere) · 255 − 0 = 255 (tanto faz) · 255 − 192 = 63 (parte confere, parte tanto faz)</text>
+</svg>
