@@ -50,7 +50,7 @@ Tente responder de cabeça. Depois abra e confira.
 </figure>
 
 > [!INFO] 🎯 O que você leva desta prática
-> - Ler e escrever uma **wildcard mask** sem decorar: com post-it, com CEP e com bloco de cadeiras.
+> - Ler e escrever uma **wildcard mask** sem decorar: com um post-it por cima do endereço e com uma conta só, 255 menos a máscara.
 > - Escrever uma ACL padrão, **aplicar** na interface e **provar** que ela filtra pelo contador de match.
 > - Ver com os próprios olhos o que acontece quando a ACL vai para o lugar errado, quando a ordem das linhas está trocada e quando falta o `permit`.
 >
@@ -70,26 +70,21 @@ A wildcard responde a uma pergunta só: **"quais partes do endereço eu confiro,
 | Na wildcard | Quer dizer | No IP `192.168.10.50` com wildcard `0.0.0.255` |
 | :-- | :-- | :-- |
 | **0** | confere: tem de ser igual | `192`, `168` e `10` têm de bater |
-| **255** (bit 1) | tanto faz: pode ser qualquer coisa | o `50` pode ser qualquer número de 0 a 255 |
+| **255** | tanto faz: pode ser qualquer coisa | o `50` pode ser qualquer número de 0 a 255 |
 
-### 1.2 Três analogias que você pode tocar
+### 1.2 A imagem da aula: o porteiro e o post-it
 
-> [!TIP] 💡 O endereço de casa
-> "Entregue na **Rua das Flores**, em **qualquer número**." A rua confere, o número tanto faz.
-> No IP é igual: `192.168.10.0 0.0.0.255` quer dizer "os três primeiros pedaços conferem (`192.168.10`), o último tanto faz". É **qualquer casa da rua 192.168.10**, ou seja, a rede inteira.
+A ACL é o **porteiro** do roteador. Cada pacote chega com o endereço de quem o mandou, e o porteiro compara esse endereço com a linha da ACL. A wildcard diz **quanto do endereço o porteiro lê**.
 
-> [!TIP] 💡 O CEP
-> Um CEP como `38400-123` tem uma parte que diz a região e uma parte que diz a rua. Se você quer "**todo mundo da região 38400**", você confere os cinco primeiros dígitos e ignora os três últimos: `38400-xxx`.
-> A wildcard é o seu "xxx": ela marca **onde vai o x**.
+Imagine um post-it colado em cima do endereço, na lista do porteiro. **O que o post-it tapa, ele não confere.** O que fica visível tem de ser igual.
 
-> [!TIP] 💡 A portaria do condomínio
-> O porteiro recebe a ordem: "a encomenda é para **o Bloco B, qualquer apartamento**". Ele confere o bloco e não liga para o número do apartamento. Se a ordem fosse "**Bloco B, apartamento 50**", ele conferiria os dois.
-> Como no IP, o que se confere vem **primeiro** e o que tanto faz vem **no fim**. Bloco inteiro = `0.0.0.255`. Um apartamento só = `0.0.0.0`, ou a palavra `host`.
+| A ordem ao porteiro | O post-it tapa | Na ACL |
+| :-- | :-- | :-- |
+| "só a casa 50 da rua 192.168.10" | nada: ele confere tudo | `host 192.168.10.50` (o mesmo que a wildcard `0.0.0.0`) |
+| "qualquer casa da rua 192.168.10" | o número da casa | `192.168.10.0 0.0.0.255`: a rede inteira |
+| "qualquer pessoa" | o endereço todo | `any` (o mesmo que a wildcard `255.255.255.255`) |
 
-| A ordem | O que confere | O que tanto faz | No IP |
-| :-- | :-- | :-- | :-- |
-| "a rua toda", "o CEP 38400-xxx", "o Bloco B inteiro" | o começo | o fim | `192.168.10.0 0.0.0.255` |
-| "só a casa 50", "só o apto 50" | tudo | nada | `host 192.168.10.50` |
+No roteador, o post-it é a wildcard: **onde ela tem 255, há post-it**.
 
 ### 1.3 Exercício 1 — o post-it em cima do IP [⏳ 5 min]
 
@@ -106,16 +101,19 @@ Escreva num papel, em letra grande, os quatro pedaços de um endereço: `192 . 1
 
 <p class="au-pronto"><b>Pronto quando:</b> você olha para <code>0.0.0.255</code> e diz, sem conta, "confere os três primeiros, ignora o último".</p>
 
-### 1.4 Por que ela é "ao contrário" da máscara
+### 1.4 Por que ela se chama máscara inversa (ou contramáscara)
 
-A máscara e a wildcard respondem a **perguntas diferentes**:
+A máscara e a wildcard olham para o mesmo endereço e marcam partes **opostas**. A máscara marca com 255 a parte que diz **qual é a rede**. A wildcard marca com 255 a parte que **tanto faz**.
 
-| | A pergunta | Onde põe o número grande |
-| :-- | :-- | :-- |
-| **Máscara** `255.255.255.0` | "qual parte é o **nome da rede**?" | na parte da rede |
-| **Wildcard** `0.0.0.255` | "qual parte eu **ignoro**?" | na parte que tanto faz |
+Uma é o **avesso** da outra: onde a máscara tem 255, a wildcard tem 0, e onde a máscara tem 0, a wildcard tem 255. Por isso a wildcard também é chamada de **máscara inversa**, ou **contramáscara**.
 
-Mesma régua, olhada de lados opostos. Por isso a conta é sempre a mesma: **255.255.255.255 menos a máscara**.
+| | 1º número | 2º número | 3º número | 4º número |
+| :-- | :-: | :-: | :-: | :-: |
+| Máscara do /24 | 255 | 255 | 255 | 0 |
+| Wildcard | 0 | 0 | 0 | 255 |
+| A conta | 255 − 255 = 0 | 255 − 255 = 0 | 255 − 255 = 0 | 255 − 0 = 255 |
+
+A regra prática é uma só: **wildcard = 255 − máscara, número a número.** Ela vale para qualquer máscara, inclusive a do próximo exercício.
 
 <details class="au-aposta">
 <summary>Aposte: um colega trocou as bolas e escreveu a <b>máscara</b> no lugar da wildcard: <code>access-list 10 deny 192.168.10.0 255.255.255.0</code>, mais o <code>permit any</code>, na saída da g0/2. O PC-Aluno1 (.11) chega ao servidor?</summary>
@@ -124,16 +122,47 @@ Mesma régua, olhada de lados opostos. Por isso a conta é sempre a mesma: **255
 
 </details>
 
-### 1.5 Exercício 2 — e quando o corte cai no meio do pedaço? [⏳ 5 min]
+### 1.5 Exercício 2 — e quando o corte cai no meio do número? [⏳ 5 min]
 
-Com /24 o post-it tapa um pedaço inteiro. Com **/26** o corte cai **dentro** do último pedaço. A saída é pensar em **blocos de cadeiras**:
+<details class="au-aposta">
+<summary>Aposte antes de ler: as câmeras de segurança ficam em <code>192.168.10.64/26</code> (máscara <code>255.255.255.192</code>). Qual wildcard casa só elas: <code>0.0.0.64</code>, <code>0.0.0.63</code> ou <code>0.0.0.192</code>?</summary>
 
-> [!NOTE] 📖 O auditório de 256 cadeiras
-> O último pedaço do IP vai de 0 a 255: são 256 cadeiras. O tamanho do bloco sai da máscara: **256 menos o último número dela**. Para /26 (`255.255.255.192`): 256 − 192 = **64**. O auditório fica dividido em blocos de 64 (0–63, 64–127, 128–191, 192–255).
-> O endereço que vai na ACL é a **primeira cadeira do bloco**. A wildcard diz **quanto você pode andar a partir dela**: de 0 a 63, ou seja, `63`. As 64 cadeiras do bloco casam.
-> Exemplos: o primeiro bloco é `192.168.10.0 0.0.0.63`; o segundo é `192.168.10.64 0.0.0.63`. Confira pela outra conta: 255 − 192 = **63**.
+**`0.0.0.63`.** O 64 é o **tamanho** do bloco, e o 192 é a própria **máscara**; nenhum dos dois é a wildcard. A figura e os quatro passos abaixo mostram de onde sai o 63.
 
-Agora no papel, sem o Packet Tracer. Para cada linha: tamanho do bloco (256 menos o último número da máscara), depois a wildcard (bloco menos 1).
+</details>
+
+Com /24 o post-it tapa um número inteiro. Com **/26** a máscara termina em `192`, e o corte cai **dentro** do último número. O post-it tapa só **parte** dele.
+
+Para ver qual parte, olhe os 8 bits desse número. Cada número do endereço tem 8 bits. Wildcard `255` é `11111111`: o post-it tapa os 8 bits. Wildcard `0` é `00000000`: não tapa nenhum. É a mesma regra das seções anteriores, agora vista bit a bit: **onde a wildcard tem 1, há post-it**.
+
+<figure class="au-fig">
+<img src="assets/aula15p_wildcard_bits.svg" alt="Duas linhas. Na primeira, com /24, o post-it tapa o último número do endereço 192.168.10 inteiro, e a wildcard é 0.0.0.255. Na segunda, com /26, aparecem os 8 bits do último número: a máscara 192 é 11000000, a wildcard 63 é 00111111, e o post-it tapa os 6 últimos bits do endereço 192.168.10.64. Seis bits livres dão 64 combinações, do .64 ao .127.">
+<figcaption class="au-legenda">O post-it tapa os bits onde a wildcard tem 1. No /24, são os 8 bits do último número. No /26, são só os 6 últimos, e por isso a wildcard é 63, e não 255.</figcaption>
+</figure>
+
+Leia a figura de cima para baixo:
+
+1. A máscara `192` em bits é `11000000`. Os 2 primeiros bits são de rede.
+2. A wildcard é o negativo dela: `00111111`, que vale 32 + 16 + 8 + 4 + 2 + 1 = **63**. A conta direta dá o mesmo: 255 − 192 = 63.
+3. O post-it tapa os 6 bits em que a wildcard tem 1. Seis bits livres dão 2 × 2 × 2 × 2 × 2 × 2 = **64** combinações.
+4. Por isso a linha `192.168.10.64 0.0.0.63` casa os 64 endereços de `.64` a `.127`.
+
+> [!NOTE] 📖 O mesmo resultado sem bits: o auditório de 256 cadeiras
+> O último número do IP vai de 0 a 255: são 256 cadeiras. Com /26, elas se dividem em blocos de 256 − 192 = **64**: de 0 a 63, de 64 a 127, de 128 a 191 e de 192 a 255. Na ACL vai a **primeira cadeira do bloco**, e a wildcard 63 diz que você pode andar 63 cadeiras a partir dela.
+
+> [!WARNING] ⚠️ Cuidado: escreva sempre o começo do bloco
+> Os bits tapados pelo post-it nem são lidos. Então `192.168.10.70 0.0.0.63` casa o mesmo bloco de `.64` a `.127`, e não "do .70 em diante". Para quem lê a ACL não se enganar, escreva o começo do bloco: `192.168.10.64`.
+
+**Exemplos de pedidos reais** (os endereços são exemplos):
+
+| O pedido | Máscara da rede | A linha da ACL |
+| :-- | :-- | :-- |
+| a impressora da secretaria, só ela, em `172.16.5.200` | uma máquina só | `host 172.16.5.200` |
+| o laboratório de informática, `172.16.40.0/24` | 255.255.255.0 | `172.16.40.0 0.0.0.255` |
+| as câmeras de segurança, `172.16.9.64/26` | 255.255.255.192 | `172.16.9.64 0.0.0.63` |
+| o Wi-Fi de visitantes, `10.50.0.0/16` | 255.255.0.0 | `10.50.0.0 0.0.255.255` |
+
+Agora no papel, sem o Packet Tracer. Para cada linha, faça a conta **número a número**: 255 menos cada número da máscara. Cuidado com a última linha.
 
 | Você quer casar | Máscara | Wildcard |
 | :-- | :-- | :-- |
@@ -141,15 +170,18 @@ Agora no papel, sem o Packet Tracer. Para cada linha: tamanho do bloco (256 meno
 | a sub-rede `192.168.10.32/27` | 255.255.255.224 | ? |
 | o link `10.0.0.0/30` | 255.255.255.252 | ? |
 | a rede `192.168.10.0/24` | 255.255.255.0 | ? |
+| a rede `172.16.16.0/20` | 255.255.240.0 | ? |
 
 <details>
 <summary>Confira as respostas</summary>
 
-Blocos de 16, 32, 4 e 256. Wildcards: `0.0.0.15` · `0.0.0.31` · `0.0.0.3` · `0.0.0.255`. Sempre o tamanho do bloco menos 1.
+Wildcards: `0.0.0.15` (255 − 240) · `0.0.0.31` (255 − 224) · `0.0.0.3` (255 − 252) · `0.0.0.255` (255 − 0). Elas casam blocos de 16, 32, 4 e 256 endereços.
+
+Na última, o corte cai no **terceiro** número: 255 − 255 = 0, 255 − 255 = 0, 255 − 240 = 15 e 255 − 0 = 255. A wildcard é `0.0.15.255`. Quem só subtraiu o último número escreveu `0.0.0.255` e casou uma rede 16 vezes menor.
 
 </details>
 
-<p class="au-pronto"><b>Pronto quando:</b> você acerta as quatro e explica uma delas para o colega com o auditório, sem falar em bit.</p>
+<p class="au-pronto"><b>Pronto quando:</b> você acerta as quatro e explica uma delas ao colega, com o post-it por cima dos bits ou com o auditório.</p>
 
 ---
 
