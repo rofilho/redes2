@@ -1,25 +1,27 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/footer.scss"
+import { pathToRoot } from "../util/path"
 
 interface Options {
   links: Record<string, string>
 }
 
 export default ((opts?: Options) => {
-  const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
+  const Footer: QuartzComponent = ({ displayClass, fileData }: QuartzComponentProps) => {
     const links = opts?.links ?? {}
+    const root = pathToRoot(fileData.slug!)
 
     return (
       <footer class={`footer ${displayClass ?? ""}`}>
         <div class="footer__brand">
           {/* Logo trocada via CSS — sem flash de ambas */}
           <img
-            src="https://uniube.br/img/landing/logo_azul.svg"
+            src={`${root}/static/logo_uniube_azul.svg`}
             alt="Universidade de Uberaba"
             class="footer__logo footer__logo--light"
           />
           <img
-            src="https://uniube.br/img/landing/logo_branca.svg"
+            src={`${root}/static/logo_uniube_branca.png`}
             alt="Universidade de Uberaba"
             class="footer__logo footer__logo--dark"
           />
