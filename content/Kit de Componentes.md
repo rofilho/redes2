@@ -97,9 +97,9 @@ Desenho nasce no **Excalidraw** e entra como `.svg`. A legenda fica **colada** n
 
 ---
 
-## 5. Slot interativo
+## 5. Momento interativo
 
-A moldura onde entra a ferramenta. O slot existe sempre; a ferramenta é opcional. **Todo slot declara o plano B** — a aula não pode depender da internet do campus.
+A moldura onde entra a ferramenta (classe `.au-slot`). O momento interativo existe sempre; a ferramenta é opcional. **Todo momento interativo declara o plano B** — a aula não pode depender da internet do campus.
 
 <div class="au-slot">
 <div class="au-slot-h"><b>Interativo</b> · Vevox · 3 min</div>
@@ -163,12 +163,12 @@ Config real, com prompt. Uma linha marcada por bloco — a que o texto ao lado e
 
 ## 8. Callouts
 
-Três, e só três: Pro-Tip, Gotcha e Pergunta de Entrevista.
+Três, e só três: Dica de produção, Cuidado e Pergunta de entrevista.
 
 > [!TIP] 💡 Dica de produção
 > Em rede de campus real, VLAN de voz e de dados vão na mesma porta — o telefone faz switch interno e etiqueta o próprio tráfego.
 
-> [!WARNING] ⚠️ Gotcha
+> [!WARNING] ⚠️ Cuidado
 > Um `switchport mode dynamic` esquecido negocia tronco sozinho. É assim que um host acaba enxergando VLAN que não deveria.
 
 > [!NOTE] 💼 Pergunta de entrevista
