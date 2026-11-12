@@ -80,9 +80,9 @@ Imagine um post-it colado em cima do endereço, na lista do porteiro. **O que o 
 
 | A ordem ao porteiro | O post-it tapa | Na ACL |
 | :-- | :-- | :-- |
-| "só a casa 50 da rua 192.168.10" | nada: ele confere tudo | `host 192.168.10.50` (o mesmo que a wildcard `0.0.0.0`) |
-| "qualquer casa da rua 192.168.10" | o número da casa | `192.168.10.0 0.0.0.255`: a rede inteira |
-| "qualquer pessoa" | o endereço todo | `any` (o mesmo que a wildcard `255.255.255.255`) |
+| “só a casa 50 da rua 192.168.10” | nada: ele confere tudo | `host 192.168.10.50` (o mesmo que a wildcard `0.0.0.0`) |
+| “qualquer casa da rua 192.168.10” | o número da casa | `192.168.10.0 0.0.0.255`: a rede inteira |
+| “qualquer pessoa” | o endereço todo | `any` (o mesmo que a wildcard `255.255.255.255`) |
 
 No roteador, o post-it é a wildcard: **onde ela tem 255, há post-it**.
 
@@ -401,11 +401,11 @@ Quem não casa em nenhuma linha cai no deny implícito do fim da lista.
 
 | O erro clássico | A correção |
 |---|---|
-| "criei a ACL e nada mudou" | faltou o `ip access-group` na interface |
-| "a rede inteira parou" | faltou o `permit any`; o deny implícito barrou o resto |
-| "a exceção não funciona" | a exceção está **depois** da regra geral |
-| "os alunos não acessam mais nada" | a ACL padrão foi aplicada perto da **origem** |
-| "achei que `0.0.0.255` fosse máscara" | é o contrário: 255 = tanto faz, 0 = confere |
+| “criei a ACL e nada mudou” | faltou o `ip access-group` na interface |
+| “a rede inteira parou” | faltou o `permit any`; o deny implícito barrou o resto |
+| “a exceção não funciona” | a exceção está **depois** da regra geral |
+| “os alunos não acessam mais nada” | a ACL padrão foi aplicada perto da **origem** |
+| “achei que `0.0.0.255` fosse máscara” | é o contrário: 255 = tanto faz, 0 = confere |
 
 </div>
 
@@ -450,7 +450,7 @@ No Exercício 6 você apagou a ACL inteira para pôr uma linha no topo. Numa red
 <div class="au-proxima">
 <b>➡️ Na próxima aula</b>
 
-Hoje a ACL só perguntou "de onde você veio?". Na terça entram as **ACLs estendidas**, que olham origem, destino e porta, e vão para perto da **origem**. Depois delas, o **Lab 9**: ACL estendida e segurança de porta no switch (port security).
+Hoje a ACL só perguntou “de onde você veio?”. Na terça entram as **ACLs estendidas**, que olham origem, destino e porta, e vão para perto da **origem**. Depois delas, o **Lab 9**: ACL estendida e segurança de porta no switch (port security).
 
 </div>
 

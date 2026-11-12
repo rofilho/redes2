@@ -286,9 +286,9 @@ A régua é a escala de uso de IA, de 1 a 5, declarada por atividade:
 | **Nosso caminho até aqui** | 3 a 4 questões de retomada — as recentes mais **uma antiga**, em espiral. Sem nota. | 6–8 min |
 | **Gancho** | Uma história real de rede que caiu, terminando numa pergunta. | 2 min |
 | **Exposição em blocos** | Nunca mais de 15 min seguidos falando. | — |
-| **Pausa de 2 minutos** | "Comparem anotações com o colega. Eu fico calado." | 2 min |
+| **Pausa de 2 minutos** | “Comparem anotações com o colega. Eu fico calado.” | 2 min |
 | **Pergunta de votação** | Você vota → discute com o vizinho → vota de novo. | 8 min |
-| **Bilhete de saída** | "O que ficou mais confuso hoje?" — e isso **abre** a aula seguinte. | 3 min |
+| **Bilhete de saída** | “O que ficou mais confuso hoje?” — e isso **abre** a aula seguinte. | 3 min |
 
 **O aviso:** você vai trabalhar mais aqui do que numa aula expositiva, e vai **sentir que está aprendendo menos**.
 

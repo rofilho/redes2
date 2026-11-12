@@ -1,5 +1,5 @@
 ---
-title: "Aula 16 - ACLs estendidas e segurança de camada 2"
+title: "Aula 16 — ACLs estendidas e segurança de camada 2"
 publicar: true
 tags: [redes2, {{PERIODO}}, aula16, acl, acl-estendida, port-security, dhcp-snooping, seguranca]
 ---
@@ -413,7 +413,7 @@ Enquanto fiscaliza, o switch monta a **tabela de vínculos** (em inglês, *bindi
 
 ---
 
-<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-podcast" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎧 Podcast da Aula 16 — ACLs estendidas e segurança de camada 2</b>
 <p class="au-podcast-origem">O áudio chega em breve — gerado por IA a partir do material da disciplina.</p>
 </div>

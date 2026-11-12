@@ -215,7 +215,7 @@ Cheatsheet de consulta. Denso de propósito.
 
 Gerado no Gemini Notebook (ex-NotebookLM) a partir do documento-fonte. Bloco discreto: é apoio de revisão, não a aula.
 
-<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-podcast" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎧 Podcast da aula — "TÍTULO DO EPISÓDIO"</b>
 <p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
 <audio controls preload="none" style="width:100%;margin-top:.5rem">
@@ -334,7 +334,7 @@ Múltipla escolha que se corrige na hora. O aluno clica numa opção: acerto fic
 
 Resumo em áudio da aula, gerado por IA (NotebookLM / Gemini Notebook) a partir do documento-fonte. Bloco discreto de apoio de revisão. O `<audio controls>` nativo já traz os controles — o componente global `Podcast` só estiliza a moldura (**sem JavaScript**).
 
-<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-podcast" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎧 Podcast da aula — "TÍTULO DO EPISÓDIO"</b>
 <p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
 <audio controls preload="none" style="width:100%;margin-top:.5rem">

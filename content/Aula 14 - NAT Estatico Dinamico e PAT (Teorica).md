@@ -192,8 +192,8 @@ Teoria é o mapa; a CLI (Command Line Interface) é o território. No Lab 8, tr�
 
 | Comando | Pergunta que responde | O que você confirma na tela |
 | :-- | :-- | :-- |
-| `show ip nat translations` | *"As traduções estão acontecendo?"* | A tabela inside local ↔ inside global, com protocolo e portas (no PAT) |
-| `show ip nat statistics` | *"O NAT está ativo e com que volume?"* | Total de traduções, interfaces inside/outside declaradas, expiradas |
+| `show ip nat translations` | *“As traduções estão acontecendo?”* | A tabela inside local ↔ inside global, com protocolo e portas (no PAT) |
+| `show ip nat statistics` | *“O NAT está ativo e com que volume?”* | Total de traduções, interfaces inside/outside declaradas, expiradas |
 | `clear ip nat translation *` | *(não é show — é o reset)* | Limpa a tabela para refazer o teste do zero |
 
 <div class="au-term">
@@ -218,7 +218,7 @@ Sua rede tem **40 hosts** e **3 endereços públicos**. Os 3 primeiros hosts nav
 <p class="au-slot-b"><b>Plano B — se o Plickers ou a internet do campus cair:</b> mão levantada — aumentar o pool de públicos (um dedo) ou trocar para PAT com `overload` (dois dedos). A resposta e o porquê vêm logo abaixo; o importante é você se comprometer com um palpite antes de ver.</p>
 </div>
 
-<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-podcast" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎧 Podcast da aula — "Como o NAT salvou a internet"</b>
 <p class="au-podcast-origem"><b>Gerado por IA</b> (NotebookLM) a partir do material da disciplina — se divergir da aula, a aula vence.</p>
 <audio controls preload="none" style="width:100%;margin-top:.5rem">
@@ -247,10 +247,10 @@ Seu navegador não reproduz áudio embutido — <a href="assets/aula14-nat-podca
 
 | O erro clássico | A correção |
 |---|---|
-| "NAT é um firewall" | não — ele traduz endereços; proteger é trabalho de ACL/firewall |
-| "o 6º host não sai por culpa da config" | não — o pool dinâmico **esgotou**; a matemática do pool é o limite |
-| "configurei o NAT e nada traduz" | faltou declarar `ip nat inside` / `ip nat outside` nas interfaces |
-| "dinâmico com `interface` basta para 40 hosts" | não — sem `overload` (PAT), falta público; com, todos cabem em um |
+| “NAT é um firewall” | não — ele traduz endereços; proteger é trabalho de ACL/firewall |
+| “o 6º host não sai por culpa da config” | não — o pool dinâmico **esgotou**; a matemática do pool é o limite |
+| “configurei o NAT e nada traduz” | faltou declarar `ip nat inside` / `ip nat outside` nas interfaces |
+| “dinâmico com `interface` basta para 40 hosts” | não — sem `overload` (PAT), falta público; com, todos cabem em um |
 
 </div>
 

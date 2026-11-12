@@ -16,7 +16,9 @@ Podcast.css = `
 .au-podcast {
   max-width: 620px;
   margin: 1.5rem auto;
-  background: var(--au-sfc, var(--secondary, #f0f3f8));
+  /* era var(--au-sfc, var(--secondary)): --au-sfc não existe, e o fundo virava
+     a cor de destaque inteira, com texto a 1,3 a 2,9:1 (QA 12/11/2026) */
+  background: var(--au-bg2, #ffffff);
   color: var(--au-tx, var(--dark, #1d2057));
   border: 1px solid color-mix(in srgb, var(--au-par-azul, #1f5fa8) 30%, transparent);
   border-left: 4px solid var(--au-par-azul, #1f5fa8);

@@ -95,6 +95,15 @@
   --au-par-laranja: #d9702a; /* atenção, quebra deliberada, VLAN de voz */
   --au-par-marrom: #8a5a34; /* legado, obsoleto, "não faça isso"       */
 
+  /* Variantes de TEXTO das cores acima (QA de 12/11/2026, WCAG 1.4.3). A cor de
+     marca continua nas bordas, fundos e figuras; em letra ela ficava abaixo de
+     4,5:1 (azul 4,39, turquesa 2,89, laranja 2,86 a 3,33 no tema claro). Estes
+     valores passam de 4,5:1 em todos os fundos medidos; o tema escuro os
+     redefine logo abaixo, no bloco de :root[saved-theme="dark"]. */
+  --uni-azul-tx: #1f69ad;
+  --uni-turquesa-tx: #00756c;
+  --au-laranja-tx: #a9501a;
+
   --au-raio: 14px;
   --au-borda: 1px;
   --au-transicao: 180ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -115,8 +124,8 @@
   --au-bd: #e8e6e0;
   --au-tx: #2b2e35;
   --au-tx2: #5d636d;
-  --au-tx3: #8a8f98;
-  --au-ac: var(--au-par-azul);
+  --au-tx3: #656a72; /* era #8a8f98, 3,1:1 (QA 12/11/2026) */
+  --au-ac: var(--uni-azul-tx);
   --au-cod-bg: #2b2f36;
   --au-cod-tx: #e4e7ea;
   /* texto secundário SOBRE o fundo de código — não usar --au-tx3 aqui:
@@ -133,8 +142,11 @@
   --au-bd: #29313c;
   --au-tx: #dfe4ea;
   --au-tx2: #98a2b0;
-  --au-tx3: #6b7683;
+  --au-tx3: #848e9c; /* era #6b7683, 3,5:1 (QA 12/11/2026) */
   --au-ac: #63c78e;
+  --uni-azul-tx: #7fb4ea;
+  --uni-turquesa-tx: #00aa9f;
+  --au-laranja-tx: #e58a4a;
   --au-cod-bg: #0b0e13;
   --au-cod-tx: #dfe4ea;
   --au-cod-tx2: #a7aeb8;
@@ -163,7 +175,7 @@
 .au-vitrine {
   /* herda a paleta do TEMA — a vitrine é off-white no claro e bancada no
      escuro, nunca mais um dark hardcoded que ignora o botão de tema */
-  --au-ac: var(--au-par-laranja);
+  --au-ac: var(--au-laranja-tx);
 
   background: var(--au-bg);
   color: var(--au-tx);
@@ -373,7 +385,10 @@ article h1 {
   --au-bd: #29313c;
   --au-tx: #dfe4ea;
   --au-tx2: #98a2b0;
-  --au-tx3: #6b7683;
+  --au-tx3: #848e9c;
+  /* o bloco claro acima também casa com .au-leitura e fixava --au-ac no azul
+     claro (3,6:1 sobre este fundo); no escuro o destaque é o azul de texto. */
+  --au-ac: var(--uni-azul-tx);
 }
 
 /* Guard de texto corrido no tema escuro — generaliza os remendos pontuais que
@@ -450,6 +465,14 @@ article h4 {
   font-size: var(--au-t-0) !important;
   font-weight: 650 !important;
   margin-bottom: var(--au-s-2) !important;
+}
+
+/* No tema claro as cores de callout do Quartz ficam de 2,3 a 3,3:1 como letra
+   (QA 12/11/2026). O título passa a usar a cor de texto; a cor do tipo fica
+   no ícone e na borda esquerda, que é onde ela sinaliza. */
+:root:not([saved-theme="dark"]) .callout-title,
+:root:not([saved-theme="dark"]) .callout-title > .callout-title-inner > p {
+  color: var(--au-tx);
 }
 
 .callout p {
@@ -873,7 +896,8 @@ article a {
 }
 
 .au-term-h b {
-  color: var(--au-ac);
+  /* o terminal é escuro nos dois temas: o destaque precisa ser o claro */
+  color: #7fb4ea;
   font-weight: 500;
 }
 .au-term-h .au-sep {
@@ -886,6 +910,11 @@ article a {
   white-space: pre;
   tab-size: 2;
   margin: 0;
+  /* sombra na borda direita so quando ha texto escondido (QA 12/11/2026): a
+     camada "local" rola junto e cobre a sombra "scroll" quando chega ao fim */
+  background:
+    linear-gradient(to left, var(--au-cod-bg), var(--au-cod-bg)) right / 24px 100% no-repeat local,
+    linear-gradient(to left, rgba(0, 0, 0, 0.55), transparent) right / 18px 100% no-repeat scroll;
 }
 
 .au-term-b .ps {
@@ -1487,7 +1516,7 @@ article :target {
   display: block;
   font-family: var(--au-display);
   font-size: var(--au-t-0);
-  color: var(--uni-turquesa);
+  color: var(--uni-turquesa-tx);
   margin-bottom: var(--au-s-2);
 }
 /* cada pergunta de recuperação */
@@ -1511,7 +1540,7 @@ article :target {
   margin-right: var(--au-s-2);
   border-radius: 50%;
   background: color-mix(in srgb, var(--uni-turquesa) 16%, transparent);
-  color: var(--uni-turquesa);
+  color: var(--uni-turquesa-tx);
   font-family: var(--au-mono);
   font-size: var(--au-t--2);
   font-weight: 700;
@@ -1550,7 +1579,7 @@ article :target {
   font-size: var(--au-t--2);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--uni-azul);
+  color: var(--uni-azul-tx);
 }
 .au-slot-h b {
   font-weight: 700;
@@ -1574,7 +1603,7 @@ article :target {
   color: var(--au-tx2);
 }
 .au-slot-b b {
-  color: var(--au-par-laranja);
+  color: var(--au-laranja-tx);
 }
 
 /* EXERCÍCIO PRÁTICO — só do que foi visto NO DIA. Numerado porque aqui a
@@ -1589,7 +1618,7 @@ article :target {
 .au-pratica > b:first-child {
   display: block;
   font-family: var(--au-display);
-  color: var(--au-par-laranja);
+  color: var(--au-laranja-tx);
   margin-bottom: var(--au-s-2);
 }
 .au-pratica ol {
@@ -1726,7 +1755,7 @@ article :target {
 .au-refs .au-pag {
   font-family: var(--au-mono);
   font-size: var(--au-t--2);
-  color: var(--uni-azul);
+  color: var(--uni-azul-tx);
 
   /* NAO usar `white-space: nowrap` aqui. A intencao era manter "p. 357-359"
      inteiro numa linha, mas o span as vezes carrega a descricao da secao junto:
@@ -1754,7 +1783,7 @@ article :target {
   font-size: var(--au-t--2);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--uni-azul);
+  color: var(--uni-azul-tx);
   margin-bottom: var(--au-s-2);
 }
 .au-proxima p {
@@ -1850,4 +1879,13 @@ article :target {
   article table {
     font-size: var(--au-t--2);
   }
+}
+
+/* Alvo de toque do caminho de navegação (WCAG 2.5.8, 24 × 24 px). QA de
+   12/11/2026: o link "Início" tinha a altura da letra. */
+.breadcrumb-element a {
+  display: inline-block;
+  min-height: 24px;
+  min-width: 24px;
+  line-height: 24px;
 }

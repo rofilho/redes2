@@ -30,7 +30,7 @@ ModoAula.css = `
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--au-par-laranja, #d9702a) 45%, transparent);
   background: color-mix(in srgb, var(--au-par-laranja, #d9702a) 10%, transparent);
-  color: var(--au-par-laranja, #d9702a);
+  color: var(--au-laranja-tx, #a9501a);
   font-family: var(--au-mono, monospace);
   font-size: 0.8125rem;
   letter-spacing: 0.04em;

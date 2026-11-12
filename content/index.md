@@ -184,6 +184,14 @@ title: "🌐 Redes de Computadores II"
 </li>
 
 <li class="au-card">
+  <a href="./Aula-13---OSPF-Custo-DR-BDR-e-Verificacao-(Teorica)" data-spa>
+    <div class="au-thumb">S13</div>
+    <div class="au-pbar"><i style="width:100%"></i></div>
+    <div class="au-cap"><b>OSPF: custo, DR/BDR e verificação</b><span>Teórica · 20/10</span></div>
+  </a>
+</li>
+
+<li class="au-card">
   <a href="./Aula-14---NAT-Estatico-Dinamico-e-PAT-(Teorica)" data-spa>
     <div class="au-thumb">S14</div>
     <div class="au-pbar"><i style="width:100%"></i></div>

@@ -58,11 +58,13 @@ const config: QuartzConfig = {
         lightMode: {
           light: "#fafaf8",
           lightgray: "#e9e7e2",
-          gray: "#8a8f98",
+          // gray, secondary e tertiary escurecidos em 12/11/2026 (QA, WCAG 1.4.3):
+          // eram 3,1, 4,39 e 2,54:1 sobre o fundo; agora todos acima de 4,5:1
+          gray: "#656a72",
           darkgray: "#252a3f",
           dark: "#1d2057",
-          secondary: "#2778c4",
-          tertiary: "#00aa9f",
+          secondary: "#1f69ad",
+          tertiary: "#00756c",
           highlight: "rgba(39, 120, 196, 0.07)",
           textHighlight: "#ffd97d66",
         },
@@ -71,7 +73,7 @@ const config: QuartzConfig = {
         darkMode: {
           light: "#10131f",
           lightgray: "#272c42",
-          gray: "#7b8397",
+          gray: "#848e9c", // era #7b8397 (4,46:1 no cartão de navegação)
           darkgray: "#e2e5ef",
           dark: "#f4f5f9",
           secondary: "#3fd0c4",

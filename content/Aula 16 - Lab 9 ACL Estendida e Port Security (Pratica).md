@@ -75,7 +75,7 @@ A teórica desta semana é na terça. A P11 faz este lab antes dela, na segunda.
 
 ### 0.1 O que a ACL estendida confere a mais
 
-A ACL padrão faz uma pergunta só: "de onde você veio?". A estendida faz a pergunta completa: **quem, para onde e qual serviço**.
+A ACL padrão faz uma pergunta só: “de onde você veio?”. A estendida faz a pergunta completa: **quem, para onde e qual serviço**.
 
 > [!NOTE] 📖 Três protocolos que você vai nomear hoje
 > **TCP (Transmission Control Protocol)** carrega a navegação na web, na porta 80. **UDP (User Datagram Protocol)** carrega consultas rápidas, como as de DNS (Domain Name System). **ICMP (Internet Control Message Protocol)** carrega o `ping`. O protocolo `ip` na ACL quer dizer "qualquer um deles".
@@ -484,12 +484,12 @@ Eu passo nas bancadas durante os blocos 1 e 2 e confiro estes seis na sua tela. 
 
 | O erro clássico | A correção |
 |---|---|
-| "o professor não abre o SRV-RH" | a linha dele está depois do `deny`; o professor vai **antes** |
-| "a rede inteira parou" | faltou o `permit ip any any`; o deny implícito cortou o resto |
-| "apliquei e nada barrou" | `out` na `g0/0` ou ACL sem `ip access-group`; o sentido certo é `in` |
-| "o IOS recusou o port security" | faltou `switchport mode access` na porta |
-| "o MAC não foi aprendido" | o aparelho ainda não mandou o primeiro quadro; dê um ping |
-| "a porta ficou apagada" | `err-disabled`: religar com `shutdown` e `no shutdown` |
+| “o professor não abre o SRV-RH” | a linha dele está depois do `deny`; o professor vai **antes** |
+| “a rede inteira parou” | faltou o `permit ip any any`; o deny implícito cortou o resto |
+| “apliquei e nada barrou” | `out` na `g0/0` ou ACL sem `ip access-group`; o sentido certo é `in` |
+| “o IOS recusou o port security” | faltou `switchport mode access` na porta |
+| “o MAC não foi aprendido” | o aparelho ainda não mandou o primeiro quadro; dê um ping |
+| “a porta ficou apagada” | `err-disabled`: religar com `shutdown` e `no shutdown` |
 
 </div>
 
