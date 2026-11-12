@@ -62,6 +62,9 @@ export default ((opts?: Options) => {
 
 /* ── Layout do rodapé ── */
 .footer {
+  /* o footer.scss do Quartz aplica opacity 0.7, que derrubava e-mail e links
+     abaixo de 4,5:1 (QA 12/11/2026) */
+  opacity: 1;
   margin-top: 4rem;
   padding: 1.5rem 0;
   border-top: 1px solid color-mix(in srgb, var(--gray) 25%, transparent);
@@ -83,11 +86,7 @@ export default ((opts?: Options) => {
 .footer__name {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--dark);
-}
-
-:root[saved-theme="dark"] .footer__name {
-  color: var(--light);
+  color: var(--dark); /* --dark ja e o texto claro no tema escuro */
 }
 
 .footer__email {

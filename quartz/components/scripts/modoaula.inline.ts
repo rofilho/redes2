@@ -237,3 +237,21 @@ document.addEventListener("nav", () => {
     if (e.key === "a" || e.key === "A") entrar()
   })
 })
+
+// Regiao com rolagem lateral precisa ser alcancavel pelo teclado (WCAG 2.1.1,
+// regra scrollable-region-focusable do axe). QA de 12/11/2026: no celular o
+// terminal (.au-term-b) e as tabelas largas rolam de lado e a tecla Tab nao chegava.
+document.addEventListener("nav", () => {
+  document.querySelectorAll<HTMLElement>("article :is(div, pre, code, figure, table)").forEach((el) => {
+    if (el.hasAttribute("tabindex") || el.scrollWidth <= el.clientWidth) return
+    const ox = getComputedStyle(el).overflowX
+    if (ox !== "auto" && ox !== "scroll") return
+    el.tabIndex = 0
+    if (!el.hasAttribute("role")) el.setAttribute("role", "region")
+    if (!el.hasAttribute("aria-label"))
+      el.setAttribute(
+        "aria-label",
+        el.matches(".au-term-b") ? "saída do terminal, role para o lado" : "conteúdo com rolagem lateral",
+      )
+  })
+})

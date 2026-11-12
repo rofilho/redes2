@@ -12,12 +12,12 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
       {/* Logos trocadas via CSS — sem flash */}
       <a href={baseDir} class="page-title__link">
         <img
-          src="https://uniube.br/img/landing/logo_azul.svg"
+          src={`${baseDir}/static/logo_uniube_azul.svg`}
           alt="Uniube"
           class="page-title__logo page-title__logo--light"
         />
         <img
-          src="https://uniube.br/img/landing/logo_branca.svg"
+          src={`${baseDir}/static/logo_uniube_branca.png`}
           alt="Uniube"
           class="page-title__logo page-title__logo--dark"
         />

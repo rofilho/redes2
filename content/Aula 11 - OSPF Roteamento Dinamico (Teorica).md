@@ -341,7 +341,7 @@ link de 10 Mbps, e **(B)** dois saltos por links de 1 Gbps. **Qual o OSPF escolh
 
 ---
 
-<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-podcast" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎧 Podcast da aula — "Como o OSPF decide o melhor caminho"</b>
 
 Dois apresentadores conversam sobre o OSPF (Open Shortest Path First) como se explicassem a um

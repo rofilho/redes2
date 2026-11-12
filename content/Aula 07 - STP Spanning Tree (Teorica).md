@@ -374,7 +374,7 @@ que está fisicamente no meio · **(D)** nenhum — eles revezam. Vote no Plicke
 
 ---
 
-<div class="au-video-wrap" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-azul,#1f5fa8) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-video-wrap" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-azul,#1f5fa8) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎬 Para ver em casa — como a rede acha o caminho (em português)</b>
 
 O STP decide caminhos dentro de uma rede local; para ver a visão maior — como os **pacotes viajam e
@@ -387,7 +387,7 @@ administra o domínio `.br`. É didática, curta e **narrada em português**.
 
 ---
 
-<div class="au-podcast" style="background:var(--au-sfc,var(--secondary,#f0f3f8));color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
+<div class="au-podcast" style="background:var(--au-bg2,#ffffff);color:var(--au-tx,var(--dark,#1d2057));border:1px solid color-mix(in srgb,var(--au-par-verde,#2e7d52) 30%,transparent);border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem auto;max-width:720px">
 <b>🎧 Podcast da aula — "Como um cabo extra derruba a rede"</b>
 
 Dois apresentadores conversam sobre o STP (Spanning Tree Protocol) como se explicassem a um colega:
