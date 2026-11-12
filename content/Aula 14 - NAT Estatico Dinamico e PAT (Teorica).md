@@ -192,8 +192,8 @@ Teoria é o mapa; a CLI (Command Line Interface) é o território. No Lab 8, tr�
 
 | Comando | Pergunta que responde | O que você confirma na tela |
 | :-- | :-- | :-- |
-| `show ip nat translations` | *"As traduções estão acontecendo?"* | A tabela inside local ↔ inside global, com protocolo e portas (no PAT) |
-| `show ip nat statistics` | *"O NAT está ativo e com que volume?"* | Total de traduções, interfaces inside/outside declaradas, expiradas |
+| `show ip nat translations` | *“As traduções estão acontecendo?”* | A tabela inside local ↔ inside global, com protocolo e portas (no PAT) |
+| `show ip nat statistics` | *“O NAT está ativo e com que volume?”* | Total de traduções, interfaces inside/outside declaradas, expiradas |
 | `clear ip nat translation *` | *(não é show — é o reset)* | Limpa a tabela para refazer o teste do zero |
 
 <div class="au-term">
@@ -247,10 +247,10 @@ Seu navegador não reproduz áudio embutido — <a href="assets/aula14-nat-podca
 
 | O erro clássico | A correção |
 |---|---|
-| "NAT é um firewall" | não — ele traduz endereços; proteger é trabalho de ACL/firewall |
-| "o 6º host não sai por culpa da config" | não — o pool dinâmico **esgotou**; a matemática do pool é o limite |
-| "configurei o NAT e nada traduz" | faltou declarar `ip nat inside` / `ip nat outside` nas interfaces |
-| "dinâmico com `interface` basta para 40 hosts" | não — sem `overload` (PAT), falta público; com, todos cabem em um |
+| “NAT é um firewall” | não — ele traduz endereços; proteger é trabalho de ACL/firewall |
+| “o 6º host não sai por culpa da config” | não — o pool dinâmico **esgotou**; a matemática do pool é o limite |
+| “configurei o NAT e nada traduz” | faltou declarar `ip nat inside` / `ip nat outside` nas interfaces |
+| “dinâmico com `interface` basta para 40 hosts” | não — sem `overload` (PAT), falta público; com, todos cabem em um |
 
 </div>
 
